@@ -74,7 +74,7 @@ const Index = () =>
           Built on three core principles.
         </h2>
         <p className="mt-5 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-          Every element of Elyxer is shaped by a philosophy that puts depth ahead of distraction.
+          Standards . Integrity . Clarity
         </p>
       </div>
     </section>
