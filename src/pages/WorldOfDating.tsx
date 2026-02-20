@@ -1,11 +1,17 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
+import coupleWomen from "@/assets/couple-women.jpg";
+import coupleLgbtqMen from "@/assets/couple-lgbtq-men.jpg";
+import coupleCafe from "@/assets/couple-cafe.jpg";
+import coupleGarden from "@/assets/couple-garden.jpg";
+import couplePark from "@/assets/couple-park.jpg";
 
 const featuredArticle = {
   title: "The Case for Slow Dating in a Fast World",
   excerpt:
     "In an era optimized for speed, the most radical act of connection may be patience. We explore why slowing down is the new competitive advantage in modern dating.",
   date: "February 2026",
+  image: coupleWomen,
 };
 
 const articles = [
@@ -13,21 +19,25 @@ const articles = [
     title: "Emotional Intelligence as a Dating Skill",
     excerpt: "Why understanding yourself is the first step to understanding someone else.",
     date: "January 2026",
+    image: coupleLgbtqMen,
   },
   {
     title: "Beyond the Profile: What Presence Really Means",
     excerpt: "How showing up authentically changes everything — online and off.",
     date: "December 2025",
+    image: coupleCafe,
   },
   {
     title: "The Architecture of Trust in Digital Spaces",
     excerpt: "Building platforms that prioritize safety without sacrificing spontaneity.",
     date: "November 2025",
+    image: coupleGarden,
   },
   {
     title: "Curated Spaces: The Future of Group Connection",
     excerpt: "Why the next frontier of dating isn't one-on-one — it's communal.",
     date: "October 2025",
+    image: couplePark,
   },
 ];
 
@@ -50,17 +60,25 @@ const WorldOfDating = () => {
       {/* Featured */}
       <section className="pb-16">
         <div className="container mx-auto px-6 max-w-4xl">
-          <div className="rounded-lg border border-border bg-card p-8 md:p-12 shadow-soft animate-fade-up">
-            <span className="font-sans text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
-              Featured
-            </span>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-4">
-              {featuredArticle.title}
-            </h2>
-            <p className="font-sans text-base text-muted-foreground leading-relaxed mb-4">
-              {featuredArticle.excerpt}
-            </p>
-            <span className="font-sans text-xs text-muted-foreground">{featuredArticle.date}</span>
+          <div className="rounded-xl border border-border bg-card overflow-hidden shadow-soft animate-fade-up">
+            <img
+              src={featuredArticle.image}
+              alt="Featured article"
+              className="w-full h-56 md:h-72 object-cover"
+              loading="lazy"
+            />
+            <div className="p-8 md:p-12">
+              <span className="font-sans text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
+                Featured
+              </span>
+              <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-4">
+                {featuredArticle.title}
+              </h2>
+              <p className="font-sans text-base text-muted-foreground leading-relaxed mb-4">
+                {featuredArticle.excerpt}
+              </p>
+              <span className="font-sans text-xs text-muted-foreground">{featuredArticle.date}</span>
+            </div>
           </div>
         </div>
       </section>
@@ -72,15 +90,23 @@ const WorldOfDating = () => {
             {articles.map((a) => (
               <div
                 key={a.title}
-                className="rounded-lg border border-border bg-card p-7 shadow-soft hover:shadow-soft-lg transition-shadow duration-300 cursor-pointer"
+                className="rounded-xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-soft-lg transition-shadow duration-300 cursor-pointer"
               >
-                <h3 className="text-lg font-serif font-semibold text-foreground mb-2">
-                  {a.title}
-                </h3>
-                <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-3">
-                  {a.excerpt}
-                </p>
-                <span className="font-sans text-xs text-muted-foreground">{a.date}</span>
+                <img
+                  src={a.image}
+                  alt={a.title}
+                  className="w-full h-44 object-cover"
+                  loading="lazy"
+                />
+                <div className="p-7">
+                  <h3 className="text-lg font-serif font-semibold text-foreground mb-2">
+                    {a.title}
+                  </h3>
+                  <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-3">
+                    {a.excerpt}
+                  </p>
+                  <span className="font-sans text-xs text-muted-foreground">{a.date}</span>
+                </div>
               </div>
             ))}
           </div>
