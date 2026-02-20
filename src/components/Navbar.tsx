@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import elyxerLogo from "@/assets/elyxer-logo.png";
 
 const navLinks = [
 { label: "Home", to: "/" },
@@ -33,8 +32,7 @@ const Navbar = () => {
       }>
 
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
-        <Link to="/" className="flex items-center gap-3 font-serif text-3xl font-semibold tracking-wide text-accent">
-          <img src={elyxerLogo} alt="Elyxer logo" className="h-12 w-12 rounded-lg" />
+        <Link to="/" className="font-serif font-semibold tracking-wide text-accent text-4xl">
           Elyxer
         </Link>
 
