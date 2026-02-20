@@ -88,6 +88,19 @@ const Index = () =>
     </section>
 
     {/* Feature cards with images */}
+    {/* Principles intro */}
+    <section className="py-16 md:py-20">
+      <div className="container mx-auto px-6 max-w-3xl text-center">
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground animate-fade-up">
+          Built on three core principles.
+        </h2>
+        <p className="mt-5 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
+          Every element of Elyxer is shaped by a philosophy that puts depth ahead of distraction.
+        </p>
+      </div>
+    </section>
+
+    {/* Feature cards with images */}
     <section className="py-24 md:py-32 mt-8 md:mt-12">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-6">
