@@ -6,28 +6,28 @@ import coupleLgbtqMen from "@/assets/couple-lgbtq-men.jpg";
 import couplePark from "@/assets/couple-park.jpg";
 
 const features = [
-  {
-    title: "Alignment over excess",
-    description:
-      "Every connection begins with shared values and emotional resonance — not volume, not velocity.",
-    image: couplePark,
-  },
-  {
-    title: "Intentionality over impulse",
-    description:
-      "Thoughtful interaction design that rewards deliberation, patience, and genuine curiosity.",
-    image: coupleLgbtqMen,
-  },
-  {
-    title: "Clarity over ambiguity",
-    description:
-      "Transparent communication frameworks that foster trust from the very first exchange.",
-    image: coupleHero,
-  },
-];
+{
+  title: "Alignment over excess",
+  description:
+  "Every connection begins with shared values and emotional resonance — not volume, not velocity.",
+  image: couplePark
+},
+{
+  title: "Intentionality over impulse",
+  description:
+  "Thoughtful interaction design that rewards deliberation, patience, and genuine curiosity.",
+  image: coupleLgbtqMen
+},
+{
+  title: "Clarity over ambiguity",
+  description:
+  "Transparent communication frameworks that foster trust from the very first exchange.",
+  image: coupleHero
+}];
 
-const Index = () => (
-  <Layout>
+
+const Index = () =>
+<Layout>
     {/* Hero */}
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
       <div className="container mx-auto px-6">
@@ -41,15 +41,15 @@ const Index = () => (
             </p>
             <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
               <Link
-                to="/early-access"
-                className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft"
-              >
+              to="/early-access"
+              className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
+
                 Get Early Access
               </Link>
               <Link
-                to="/product"
-                className="inline-flex items-center justify-center rounded-lg border border-border px-7 py-3.5 text-sm font-sans font-medium text-foreground transition-all duration-300 hover:bg-secondary"
-              >
+              to="/product"
+              className="inline-flex items-center justify-center rounded-lg border border-border px-7 py-3.5 text-sm font-sans font-medium text-foreground transition-all duration-300 hover:bg-secondary">
+
                 Explore the Product
               </Link>
             </div>
@@ -58,11 +58,11 @@ const Index = () => (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
             </div>
-            <img
-              src={phoneMockup}
-              alt="Elyxer app preview"
-              className="relative z-10 w-64 md:w-72 lg:w-80 drop-shadow-2xl"
-            />
+            
+
+
+
+
           </div>
         </div>
       </div>
@@ -73,11 +73,11 @@ const Index = () => (
       <div className="container mx-auto px-6">
         <div className="rounded-xl overflow-hidden shadow-soft-lg">
           <img
-            src={coupleHero}
-            alt="Elegant diverse couple walking hand in hand through an art gallery"
-            className="w-full h-64 md:h-96 object-cover"
-            loading="lazy"
-          />
+          src={coupleHero}
+          alt="Elegant diverse couple walking hand in hand through an art gallery"
+          className="w-full h-64 md:h-96 object-cover"
+          loading="lazy" />
+
         </div>
       </div>
     </section>
@@ -98,17 +98,17 @@ const Index = () => (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-6">
-          {features.map((f, i) => (
-            <div
-              key={f.title}
-              className={`rounded-xl border border-border bg-card overflow-hidden shadow-soft animate-fade-up-delay-${i + 1}`}
-            >
+          {features.map((f, i) =>
+        <div
+          key={f.title}
+          className={`rounded-xl border border-border bg-card overflow-hidden shadow-soft animate-fade-up-delay-${i + 1}`}>
+
               <img
-                src={f.image}
-                alt={f.title}
-                className="w-full h-48 object-cover"
-                loading="lazy"
-              />
+            src={f.image}
+            alt={f.title}
+            className="w-full h-48 object-cover"
+            loading="lazy" />
+
               <div className="p-8 md:p-10">
                 <h3 className="text-xl font-serif font-semibold text-foreground mb-3">
                   {f.title}
@@ -118,7 +118,7 @@ const Index = () => (
                 </p>
               </div>
             </div>
-          ))}
+        )}
         </div>
       </div>
     </section>
@@ -134,15 +134,15 @@ const Index = () => (
         </p>
         <div className="mt-10 animate-fade-up-delay-2">
           <Link
-            to="/early-access"
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft"
-          >
+          to="/early-access"
+          className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
+
             Request Invite
           </Link>
         </div>
       </div>
     </section>
-  </Layout>
-);
+  </Layout>;
+
 
 export default Index;
