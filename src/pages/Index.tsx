@@ -33,29 +33,29 @@ const Index = () =>
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={coupleCamden}
-          alt="Couple enjoying coffee together at a cozy Camden Market café"
-          className="w-full h-full object-cover"
-        />
+        src={coupleCamden}
+        alt="Couple enjoying coffee together at a cozy Camden Market café"
+        className="w-full h-full object-cover" />
+
         <div className="absolute inset-0 bg-black/50" />
       </div>
       <div className="relative container mx-auto px-6 py-56 md:py-72">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.15] tracking-tight text-white animate-fade-up">
-            Engineered for alignment. Designed for intention.
+            ​A Refined Architecture for Real Connection
           </h1>
           <p className="mt-6 text-lg font-sans text-white/80 leading-relaxed animate-fade-up-delay-1">
             A refined connection platform built on emotional alignment, intentional interaction, and authentic presence.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
             <Link
-              to="/early-access"
-              className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
+            to="/early-access"
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
               Get Early Access
             </Link>
             <Link
-              to="/product"
-              className="inline-flex items-center justify-center rounded-lg border border-white/30 px-7 py-3.5 text-sm font-sans font-medium text-white transition-all duration-300 hover:bg-white/10">
+            to="/product"
+            className="inline-flex items-center justify-center rounded-lg border border-white/30 px-7 py-3.5 text-sm font-sans font-medium text-white transition-all duration-300 hover:bg-white/10">
               Explore the Product
             </Link>
           </div>
