@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import phoneMockup from "@/assets/phone-mockup.png";
 import coupleHero from "@/assets/couple-hero.jpg";
 import coupleLgbtqMen from "@/assets/couple-lgbtq-men.jpg";
-import couplePark from "@/assets/couple-park.jpg";
+import coupleBeachSunset from "@/assets/couple-beach-sunset.png";
 import coupleCamden from "@/assets/couple-camden.jpg";
 
 const features = [
@@ -11,7 +11,7 @@ const features = [
   title: "Alignment over excess",
   description:
   "Every connection begins with shared values and emotional resonance — not volume, not velocity.",
-  image: couplePark
+  image: coupleBeachSunset
 },
 {
   title: "Intentionality over impulse",
