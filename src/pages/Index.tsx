@@ -59,11 +59,11 @@ const Index = () =>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
             </div>
-            
-
-
-
-
+            <img
+              src={coupleCamden}
+              alt="Couple enjoying coffee together at a cozy Camden Market café"
+              className="relative rounded-2xl shadow-soft-lg w-full max-w-md object-cover"
+            />
           </div>
         </div>
       </div>
