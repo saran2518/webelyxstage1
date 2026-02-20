@@ -31,7 +31,7 @@ const features = [
 const Index = () =>
 <Layout>
     {/* Hero */}
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-end overflow-hidden">
       <div className="absolute inset-0">
         <img
         src={coupleCamden}
@@ -40,7 +40,7 @@ const Index = () =>
 
         <div className="absolute inset-0 bg-black/50" />
       </div>
-      <div className="relative container mx-auto px-6 py-56 md:py-72">
+      <div className="relative container mx-auto px-6 pb-16 md:pb-24 pt-32">
         <div className="max-w-2xl">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal leading-[1.15] tracking-tight text-white animate-fade-up">
             ​A Refined Architecture for Real Connection
