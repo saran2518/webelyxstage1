@@ -45,7 +45,7 @@ const Index = () =>
             ​A Refined Architecture for Real Connection
           </h1>
           <p className="mt-6 text-lg font-sans text-white/80 leading-relaxed animate-fade-up-delay-1">
-            A refined connection platform built on emotional alignment, intentional interaction, and authentic presence.
+            ​Thoughtfully engineered connection platform designed to elevate the modern dating experience through alignment, intentionality, and trust.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
             <Link
