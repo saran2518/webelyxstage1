@@ -40,7 +40,7 @@ const Index = () =>
 
         <div className="absolute inset-0 bg-black/50" />
       </div>
-      <div className="relative container mx-auto px-6 pb-4 md:pb-6 pt-32">
+      <div className="relative container mx-auto px-6 pb-2 md:pb-3 pt-32">
         <div className="max-w-2xl">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-normal leading-[1.15] tracking-tight text-white animate-fade-up">
             ​A Refined Architecture for Real Connection
