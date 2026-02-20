@@ -88,7 +88,7 @@ const Index = () =>
     </section>
 
     {/* Feature cards with images */}
-    <section className="py-16 md:py-24">
+    <section className="py-24 md:py-32 mt-8 md:mt-12">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-6">
           {features.map((f, i) =>
