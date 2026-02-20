@@ -67,6 +67,18 @@ const Index = () =>
     {/* Divider */}
     <div className="w-full h-px bg-border" />
 
+    {/* Principles intro */}
+    <section className="py-16 md:py-20">
+      <div className="container mx-auto px-6 max-w-3xl text-center">
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground animate-fade-up">
+          Built on three core principles.
+        </h2>
+        <p className="mt-5 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
+          Every element of Elyxer is shaped by a philosophy that puts depth ahead of distraction.
+        </p>
+      </div>
+    </section>
+
     {/* Architecture section */}
     <section className="relative py-32 md:py-44">
       <div className="absolute inset-0">
@@ -83,19 +95,6 @@ const Index = () =>
         </h2>
         <p className="mt-6 text-base md:text-lg font-sans text-white/80 leading-relaxed animate-fade-up-delay-1">
           In a landscape of overstimulation and endless options, Elyxer restores clarity and deliberation to dating. We believe meaningful connection is not a matter of chance — it is a product of design.
-        </p>
-      </div>
-    </section>
-
-    {/* Feature cards with images */}
-    {/* Principles intro */}
-    <section className="py-16 md:py-20">
-      <div className="container mx-auto px-6 max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground animate-fade-up">
-          Built on three core principles.
-        </h2>
-        <p className="mt-5 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-          Every element of Elyxer is shaped by a philosophy that puts depth ahead of distraction.
         </p>
       </div>
     </section>
