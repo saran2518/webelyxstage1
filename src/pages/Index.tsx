@@ -65,7 +65,7 @@ const Index = () =>
     </section>
 
     {/* Architecture section */}
-    <section className="relative py-20 md:py-28">
+    <section className="relative py-32 md:py-44">
       <div className="absolute inset-0">
         <img
           src={coupleCooking}
