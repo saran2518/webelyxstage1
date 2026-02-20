@@ -73,7 +73,7 @@ const Index = () =>
         <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground animate-fade-up">
           Built on three core principles.
         </h2>
-        <p className="mt-5 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
+        <p className="mt-5 text-lg md:text-xl font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
           Standard . Integrity . Clarity
         </p>
       </div>
