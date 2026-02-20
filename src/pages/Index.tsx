@@ -5,6 +5,7 @@ import coupleHero from "@/assets/couple-hero.jpg";
 import coupleLgbtqMen from "@/assets/couple-lgbtq-men.jpg";
 import coupleBeachSunset from "@/assets/couple-beach-sunset.png";
 import coupleCamden from "@/assets/couple-camden.jpg";
+import coupleCooking from "@/assets/couple-cooking.png";
 
 const features = [
 {
@@ -64,12 +65,20 @@ const Index = () =>
     </section>
 
     {/* Architecture section */}
-    <section className="py-20 md:py-28">
-      <div className="container mx-auto px-6 max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground animate-fade-up">
+    <section className="relative py-20 md:py-28">
+      <div className="absolute inset-0">
+        <img
+          src={coupleCooking}
+          alt="Couple cooking together in a modern kitchen"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+      </div>
+      <div className="relative container mx-auto px-6 max-w-3xl text-center">
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white animate-fade-up">
           A refined architecture for modern connection.
         </h2>
-        <p className="mt-6 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
+        <p className="mt-6 text-base md:text-lg font-sans text-white/80 leading-relaxed animate-fade-up-delay-1">
           In a landscape of overstimulation and endless options, Elyxer restores clarity and deliberation to dating. We believe meaningful connection is not a matter of chance — it is a product of design.
         </p>
       </div>
