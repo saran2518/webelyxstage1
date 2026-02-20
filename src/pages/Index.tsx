@@ -1,22 +1,28 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import phoneMockup from "@/assets/phone-mockup.png";
+import coupleHero from "@/assets/couple-hero.jpg";
+import coupleLgbtqMen from "@/assets/couple-lgbtq-men.jpg";
+import couplePark from "@/assets/couple-park.jpg";
 
 const features = [
   {
     title: "Alignment over excess",
     description:
       "Every connection begins with shared values and emotional resonance — not volume, not velocity.",
+    image: couplePark,
   },
   {
     title: "Intentionality over impulse",
     description:
       "Thoughtful interaction design that rewards deliberation, patience, and genuine curiosity.",
+    image: coupleLgbtqMen,
   },
   {
     title: "Clarity over ambiguity",
     description:
       "Transparent communication frameworks that foster trust from the very first exchange.",
+    image: coupleHero,
   },
 ];
 
@@ -62,6 +68,20 @@ const Index = () => (
       </div>
     </section>
 
+    {/* Couple hero image banner */}
+    <section className="py-4">
+      <div className="container mx-auto px-6">
+        <div className="rounded-xl overflow-hidden shadow-soft-lg">
+          <img
+            src={coupleHero}
+            alt="Elegant diverse couple walking hand in hand through an art gallery"
+            className="w-full h-64 md:h-96 object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
     {/* Architecture section */}
     <section className="py-20 md:py-28">
       <div className="container mx-auto px-6 max-w-3xl text-center">
@@ -74,21 +94,29 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Feature cards */}
+    {/* Feature cards with images */}
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-6">
           {features.map((f, i) => (
             <div
               key={f.title}
-              className={`rounded-lg border border-border bg-card p-8 md:p-10 shadow-soft animate-fade-up-delay-${i + 1}`}
+              className={`rounded-xl border border-border bg-card overflow-hidden shadow-soft animate-fade-up-delay-${i + 1}`}
             >
-              <h3 className="text-xl font-serif font-semibold text-foreground mb-3">
-                {f.title}
-              </h3>
-              <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-                {f.description}
-              </p>
+              <img
+                src={f.image}
+                alt={f.title}
+                className="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div className="p-8 md:p-10">
+                <h3 className="text-xl font-serif font-semibold text-foreground mb-3">
+                  {f.title}
+                </h3>
+                <p className="font-sans text-sm text-muted-foreground leading-relaxed">
+                  {f.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
