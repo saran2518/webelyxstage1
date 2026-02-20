@@ -64,6 +64,9 @@ const Index = () =>
       </div>
     </section>
 
+    {/* Divider */}
+    <div className="w-full h-px bg-border" />
+
     {/* Architecture section */}
     <section className="relative py-32 md:py-44">
       <div className="absolute inset-0">
