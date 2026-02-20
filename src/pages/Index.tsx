@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import phoneMockup from "@/assets/phone-mockup.png";
-import coupleHero from "@/assets/couple-hero.jpg";
+import coupleHero from "@/assets/couple-beach-sunset2.png";
 import coupleLgbtqMen from "@/assets/couple-lgbtq-men.jpg";
 import coupleBeachSunset from "@/assets/couple-diverse-bw.png";
 import coupleCamden from "@/assets/couple-camden.jpg";
