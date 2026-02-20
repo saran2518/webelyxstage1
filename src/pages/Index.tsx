@@ -74,7 +74,7 @@ const Index = () =>
           Built on three core principles.
         </h2>
         <p className="mt-5 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-          Standards . Integrity . Clarity
+          Standard . Integrity . Clarity
         </p>
       </div>
     </section>
