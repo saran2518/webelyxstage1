@@ -30,55 +30,35 @@ const features = [
 const Index = () =>
 <Layout>
     {/* Hero */}
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="max-w-xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.15] tracking-tight text-foreground animate-fade-up">
-              Engineered for alignment. Designed for intention.
-            </h1>
-            <p className="mt-6 text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-              A refined connection platform built on emotional alignment, intentional interaction, and authentic presence.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
-              <Link
-              to="/early-access"
-              className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
-
-                Get Early Access
-              </Link>
-              <Link
-              to="/product"
-              className="inline-flex items-center justify-center rounded-lg border border-border px-7 py-3.5 text-sm font-sans font-medium text-foreground transition-all duration-300 hover:bg-secondary">
-
-                Explore the Product
-              </Link>
-            </div>
-          </div>
-          <div className="relative flex justify-center animate-fade-up-delay-2">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
-            </div>
-            <img
-              src={coupleCamden}
-              alt="Couple enjoying coffee together at a cozy Camden Market café"
-              className="relative rounded-2xl shadow-soft-lg w-full max-w-md object-cover"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Couple hero image banner */}
-    <section className="py-4">
-      <div className="container mx-auto px-6">
-        <div className="rounded-xl overflow-hidden shadow-soft-lg">
-          <img
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img
           src={coupleCamden}
           alt="Couple enjoying coffee together at a cozy Camden Market café"
-          className="w-full h-64 md:h-96 object-cover"
-          loading="lazy" />
-
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+      <div className="relative container mx-auto px-6 py-32 md:py-44">
+        <div className="max-w-2xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.15] tracking-tight text-white animate-fade-up">
+            Engineered for alignment. Designed for intention.
+          </h1>
+          <p className="mt-6 text-lg font-sans text-white/80 leading-relaxed animate-fade-up-delay-1">
+            A refined connection platform built on emotional alignment, intentional interaction, and authentic presence.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
+            <Link
+              to="/early-access"
+              className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
+              Get Early Access
+            </Link>
+            <Link
+              to="/product"
+              className="inline-flex items-center justify-center rounded-lg border border-white/30 px-7 py-3.5 text-sm font-sans font-medium text-white transition-all duration-300 hover:bg-white/10">
+              Explore the Product
+            </Link>
+          </div>
         </div>
       </div>
     </section>
