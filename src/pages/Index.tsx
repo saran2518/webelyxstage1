@@ -39,7 +39,7 @@ const Index = () =>
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
-      <div className="relative container mx-auto px-6 py-32 md:py-44">
+      <div className="relative container mx-auto px-6 py-44 md:py-56">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.15] tracking-tight text-white animate-fade-up">
             Engineered for alignment. Designed for intention.
