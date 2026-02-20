@@ -4,6 +4,7 @@ import phoneMockup from "@/assets/phone-mockup.png";
 import coupleHero from "@/assets/couple-hero.jpg";
 import coupleLgbtqMen from "@/assets/couple-lgbtq-men.jpg";
 import couplePark from "@/assets/couple-park.jpg";
+import coupleCamden from "@/assets/couple-camden.jpg";
 
 const features = [
 {
@@ -73,8 +74,8 @@ const Index = () =>
       <div className="container mx-auto px-6">
         <div className="rounded-xl overflow-hidden shadow-soft-lg">
           <img
-          src={coupleHero}
-          alt="Elegant diverse couple walking hand in hand through an art gallery"
+          src={coupleCamden}
+          alt="Couple enjoying coffee together at a cozy Camden Market café"
           className="w-full h-64 md:h-96 object-cover"
           loading="lazy" />
 
