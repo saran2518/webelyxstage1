@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import phoneMockup from "@/assets/phone-mockup.png";
 import coupleHero from "@/assets/couple-hero.jpg";
 import coupleLgbtqMen from "@/assets/couple-lgbtq-men.jpg";
-import coupleBeachSunset from "@/assets/couple-beach-lesbian.png";
+import coupleBeachSunset from "@/assets/couple-diverse-bw.png";
 import coupleCamden from "@/assets/couple-camden.jpg";
 import coupleCooking from "@/assets/couple-cooking.png";
 
