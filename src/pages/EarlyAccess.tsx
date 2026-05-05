@@ -47,7 +47,12 @@ const EarlyAccess = () => {
 
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
-    const parsed = detailsSchema.safeParse({ name, dob, email });
+    const dobDate = buildDob();
+    if (!dobDate) {
+      toast({ title: "Please select a valid date of birth", variant: "destructive" });
+      return;
+    }
+    const parsed = detailsSchema.safeParse({ name, dob: dobDate, email });
     if (!parsed.success) {
       toast({ title: "Please check your details", description: parsed.error.errors[0].message, variant: "destructive" });
       return;
