@@ -542,14 +542,19 @@ const PrivacyPolicy = () => (
           </ul>
         </Section>
 
-        <p className="mt-12 pt-6 border-t border-border font-sans text-xs text-muted-foreground italic text-center">
-          This Privacy Policy was drafted in compliance with the Digital Personal Data Protection Act, 2023 (India),
-          the Information Technology Act, 2000, and the IT (Intermediary Guidelines and Digital Media Ethics Code)
-          Rules, 2021.
-        </p>
-        <p className="mt-2 font-sans text-xs text-muted-foreground text-center">
-          © 2024 PROAPEX INNOVATIONS PRIVATE LIMITED. All rights reserved.
-        </p>
+        <div className="mt-20 pt-10 border-t border-border">
+          <p className="font-sans text-xs uppercase tracking-widest text-primary text-center mb-4">
+            Compliance
+          </p>
+          <p className="font-sans text-sm text-muted-foreground italic text-center max-w-2xl mx-auto leading-relaxed">
+            This Privacy Policy was drafted in compliance with the Digital Personal Data Protection Act, 2023 (India),
+            the Information Technology Act, 2000, and the IT (Intermediary Guidelines and Digital Media Ethics Code)
+            Rules, 2021.
+          </p>
+          <p className="mt-6 font-sans text-xs text-muted-foreground text-center">
+            © {new Date().getFullYear()} PROAPEX INNOVATIONS PRIVATE LIMITED. All rights reserved.
+          </p>
+        </div>
       </div>
     </article>
   </Layout>
