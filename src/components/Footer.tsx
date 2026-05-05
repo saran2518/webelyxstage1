@@ -23,6 +23,8 @@ const Footer = () => (
             <span className="font-sans text-xs font-semibold uppercase tracking-widest opacity-60 mb-1">Legal</span>
             <Link to="/privacy" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Privacy Policy</Link>
             <Link to="/terms" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Terms & Conditions</Link>
+            <Link to="/cookie-policy" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Cookie Policy</Link>
+            <Link to="/community-guidelines" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Community Guidelines</Link>
           </div>
         </div>
       </div>
