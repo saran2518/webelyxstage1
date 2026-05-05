@@ -1,36 +1,47 @@
 import Layout from "@/components/Layout";
 
 const Section = ({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) => (
-  <section id={id} className="mb-10">
-    <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-4">{title}</h2>
-    <div className="space-y-4 font-sans text-sm md:text-base text-muted-foreground leading-relaxed">
+  <section id={id} className="py-14 md:py-20 border-b border-border last:border-b-0">
+    <h2 className="text-3xl md:text-4xl font-serif font-normal text-foreground mb-8 tracking-tight">
+      {title}
+    </h2>
+    <div className="space-y-5 font-sans text-base text-muted-foreground leading-relaxed">
       {children}
     </div>
   </section>
 );
 
 const SubSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="mt-6">
-    <h3 className="text-lg md:text-xl font-serif font-semibold text-foreground mb-3">{title}</h3>
-    <div className="space-y-3">{children}</div>
+  <div className="mt-10">
+    <h3 className="text-xl md:text-2xl font-serif font-normal text-foreground mb-4 tracking-tight">
+      {title}
+    </h3>
+    <div className="space-y-4">{children}</div>
   </div>
 );
 
 const Table = ({ headers, rows }: { headers: string[]; rows: string[][] }) => (
-  <div className="overflow-x-auto my-4 rounded-lg border border-border">
+  <div className="overflow-x-auto my-6 rounded-2xl border border-border bg-secondary/40 shadow-soft">
     <table className="w-full text-sm">
-      <thead className="bg-muted">
-        <tr>
+      <thead>
+        <tr className="border-b border-border">
           {headers.map((h) => (
-            <th key={h} className="text-left font-sans font-semibold text-foreground px-4 py-3">{h}</th>
+            <th
+              key={h}
+              className="text-left font-sans text-xs font-semibold uppercase tracking-widest text-primary px-5 py-4"
+            >
+              {h}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody>
         {rows.map((row, i) => (
-          <tr key={i} className="border-t border-border">
+          <tr key={i} className="border-t border-border/60">
             {row.map((cell, j) => (
-              <td key={j} className="px-4 py-3 font-sans text-muted-foreground align-top">{cell}</td>
+              <td key={j} className="px-5 py-4 font-sans text-sm text-foreground/80 align-top leading-relaxed">
+                {cell}
+              </td>
             ))}
           </tr>
         ))}
@@ -40,30 +51,39 @@ const Table = ({ headers, rows }: { headers: string[]; rows: string[][] }) => (
 );
 
 const Callout = ({ title, children }: { title?: string; children: React.ReactNode }) => (
-  <div className="my-4 rounded-lg border border-border bg-card p-5 shadow-soft">
-    {title && <p className="font-sans font-semibold text-foreground mb-2">{title}</p>}
-    <div className="font-sans text-sm text-muted-foreground leading-relaxed">{children}</div>
+  <div className="my-6 rounded-2xl border-l-2 border-primary bg-secondary/50 p-6 md:p-7">
+    {title && (
+      <p className="font-sans text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+        {title}
+      </p>
+    )}
+    <div className="font-sans text-sm md:text-base text-foreground/80 leading-relaxed">{children}</div>
   </div>
 );
 
 const PrivacyPolicy = () => (
   <Layout>
-    <section className="pt-32 md:pt-44 pb-12">
-      <div className="container mx-auto px-6 max-w-3xl text-center">
-        <p className="font-sans text-xs uppercase tracking-widest text-muted-foreground mb-3">Elyxer</p>
-        <h1 className="text-4xl md:text-5xl font-serif font-semibold text-foreground animate-fade-up">
+    <section className="pt-32 md:pt-44 pb-16 md:pb-20 border-b border-border">
+      <div className="container mx-auto px-6 max-w-4xl">
+        <p className="font-sans text-xs font-semibold uppercase tracking-widest text-primary mb-6 animate-fade-up">
+          Legal · Privacy
+        </p>
+        <h1 className="text-5xl md:text-7xl font-serif font-normal text-foreground tracking-tight animate-fade-up-delay-1">
           Privacy Policy
         </h1>
-        <p className="mt-4 font-sans text-sm text-muted-foreground">
-          PROAPEX INNOVATIONS PRIVATE LIMITED
+        <p className="mt-8 max-w-2xl font-sans text-base md:text-lg text-muted-foreground leading-relaxed animate-fade-up-delay-2">
+          How PROAPEX INNOVATIONS PRIVATE LIMITED collects, processes and safeguards your personal data
+          across the Elyxer experience.
         </p>
-        <p className="mt-2 font-sans text-xs text-muted-foreground">
-          Effective Date: [INSERT DATE] · Last Updated: [INSERT DATE] · Version 1.0
-        </p>
+        <div className="mt-10 flex flex-wrap gap-x-10 gap-y-3 font-sans text-xs uppercase tracking-widest text-muted-foreground animate-fade-up-delay-3">
+          <span><span className="text-foreground/60">Effective</span> · [INSERT DATE]</span>
+          <span><span className="text-foreground/60">Updated</span> · [INSERT DATE]</span>
+          <span><span className="text-foreground/60">Version</span> · 1.0</span>
+        </div>
       </div>
     </section>
 
-    <article className="pb-20 md:pb-28">
+    <article className="pb-24 md:pb-32">
       <div className="container mx-auto px-6 max-w-3xl">
         <Callout title="Important Notice">
           This Privacy Policy applies to all users of the Elyxer application and related services operated by
