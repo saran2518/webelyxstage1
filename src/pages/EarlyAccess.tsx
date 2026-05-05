@@ -246,20 +246,6 @@ const EarlyAccess = () => {
               <p className="font-sans text-sm text-muted-foreground">
                 Come back when you've blown out a few more candles. We'll be waiting. 🎂
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-                <button
-                  onClick={() => { setStep("details"); setDob(undefined); }}
-                  className="inline-flex items-center justify-center rounded-lg border border-border px-7 py-3 text-sm font-sans font-medium text-foreground hover:bg-secondary transition-all"
-                >
-                  Edit My Details
-                </button>
-                <button
-                  onClick={() => navigate("/")}
-                  className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3 text-sm font-sans font-medium text-primary-foreground hover:opacity-90 transition-all"
-                >
-                  Return Home
-                </button>
-              </div>
             </div>
           )}
         </div>
