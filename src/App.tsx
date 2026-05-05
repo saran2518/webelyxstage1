@@ -8,6 +8,7 @@ import WhatWeDo from "./pages/WhatWeDo";
 import Product from "./pages/Product";
 import WorldOfDating from "./pages/WorldOfDating";
 import HelpFAQ from "./pages/HelpFAQ";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
