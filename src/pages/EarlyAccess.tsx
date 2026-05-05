@@ -1,0 +1,197 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Layout from "@/components/Layout";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
+import { z } from "zod";
+
+const detailsSchema = z.object({
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100),
+  age: z.coerce.number().int().min(18, "You must be at least 18").max(120),
+  email: z.string().trim().email("Please enter a valid email").max(255),
+});
+
+const EarlyAccess = () => {
+  const navigate = useNavigate();
+  const [step, setStep] = useState<"details" | "verify" | "success">("details");
+  const [loading, setLoading] = useState(false);
+
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [email, setEmail] = useState("");
+  const [otp, setOtp] = useState("");
+
+  const handleSendOtp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const parsed = detailsSchema.safeParse({ name, age, email });
+    if (!parsed.success) {
+      toast({ title: "Please check your details", description: parsed.error.errors[0].message, variant: "destructive" });
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithOtp({
+      email: parsed.data.email,
+      options: {
+        shouldCreateUser: true,
+        emailRedirectTo: `${window.location.origin}/early-access`,
+        data: { name: parsed.data.name, age: parsed.data.age },
+      },
+    });
+    setLoading(false);
+    if (error) {
+      toast({ title: "Could not send code", description: error.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "Verification code sent", description: `We sent a 6-digit code to ${parsed.data.email}` });
+    setStep("verify");
+  };
+
+  const handleVerifyAndRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (otp.length !== 6) {
+      toast({ title: "Enter the 6-digit code", variant: "destructive" });
+      return;
+    }
+    setLoading(true);
+    const { data, error } = await supabase.auth.verifyOtp({
+      email: email.trim(),
+      token: otp,
+      type: "email",
+    });
+    if (error || !data.user) {
+      setLoading(false);
+      toast({ title: "Invalid or expired code", description: error?.message, variant: "destructive" });
+      return;
+    }
+
+    const { error: insertError } = await supabase.from("early_access_signups").insert({
+      user_id: data.user.id,
+      name: name.trim(),
+      age: Number(age),
+      email: email.trim(),
+    });
+    setLoading(false);
+
+    if (insertError && !insertError.message.includes("duplicate")) {
+      toast({ title: "Could not complete registration", description: insertError.message, variant: "destructive" });
+      return;
+    }
+    setStep("success");
+  };
+
+  return (
+    <Layout>
+      <section className="min-h-[80vh] flex items-center justify-center py-24 md:py-32 px-5">
+        <div className="w-full max-w-xl bg-card border border-border rounded-2xl shadow-soft p-8 md:p-12 animate-fade-up">
+          <div className="text-center mb-10">
+            <p className="font-sans text-xs uppercase tracking-[0.25em] text-primary mb-3">Early Access</p>
+            <h1 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-foreground">
+              {step === "success" ? "Welcome to Elyxer" : "Request Your Invitation"}
+            </h1>
+            <p className="mt-4 font-sans text-sm text-muted-foreground leading-relaxed">
+              {step === "details" && "Share a few details to begin. We will verify your email with a one-time code."}
+              {step === "verify" && `Enter the 6-digit code sent to ${email}.`}
+              {step === "success" && "You are on the list. We will be in touch with next steps soon."}
+            </p>
+          </div>
+
+          {step === "details" && (
+            <form onSubmit={handleSendOtp} className="space-y-6">
+              <div className="space-y-2">
+                <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Name</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  maxLength={100}
+                  className="w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 font-serif text-lg text-foreground transition-colors"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Age</label>
+                <input
+                  type="number"
+                  min={18}
+                  max={120}
+                  value={age}
+                  onChange={(e) => setAge(e.target.value)}
+                  required
+                  className="w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 font-serif text-lg text-foreground transition-colors"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Email</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  maxLength={255}
+                  className="w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 font-serif text-lg text-foreground transition-colors"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full mt-4 inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 disabled:opacity-60"
+              >
+                {loading ? "Sending code..." : "Send Verification Code"}
+              </button>
+            </form>
+          )}
+
+          {step === "verify" && (
+            <form onSubmit={handleVerifyAndRegister} className="space-y-8">
+              <div className="flex justify-center">
+                <InputOTP maxLength={6} value={otp} onChange={setOtp}>
+                  <InputOTPGroup>
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                    <InputOTPSlot index={3} />
+                    <InputOTPSlot index={4} />
+                    <InputOTPSlot index={5} />
+                  </InputOTPGroup>
+                </InputOTP>
+              </div>
+              <button
+                type="submit"
+                disabled={loading || otp.length !== 6}
+                className="w-full inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 disabled:opacity-60"
+              >
+                {loading ? "Verifying..." : "Register for Early Access"}
+              </button>
+              <button
+                type="button"
+                onClick={() => setStep("details")}
+                className="w-full text-xs font-sans text-muted-foreground hover:text-foreground transition-colors"
+              >
+                ← Edit details
+              </button>
+            </form>
+          )}
+
+          {step === "success" && (
+            <div className="text-center space-y-6">
+              <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <button
+                onClick={() => navigate("/")}
+                className="inline-flex items-center justify-center rounded-lg border border-border px-7 py-3 text-sm font-sans font-medium text-foreground hover:bg-secondary transition-all"
+              >
+                Return Home
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default EarlyAccess;
