@@ -1,14 +1,10 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
 import Layout from "@/components/Layout";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { z } from "zod";
 import underAgeCartoon from "@/assets/under-age-cartoon.png";
 
@@ -32,13 +28,46 @@ const EarlyAccess = () => {
   const [loading, setLoading] = useState(false);
 
   const [name, setName] = useState("");
-  const [dob, setDob] = useState<Date | undefined>(undefined);
+  const [dobDay, setDobDay] = useState<string>("");
+  const [dobMonth, setDobMonth] = useState<string>("");
+  const [dobYear, setDobYear] = useState<string>("");
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
 
+  const days = useMemo(() => Array.from({ length: 31 }, (_, i) => i + 1), []);
+  const months = useMemo(
+    () => [
+      { value: 1, label: "January" }, { value: 2, label: "February" }, { value: 3, label: "March" },
+      { value: 4, label: "April" }, { value: 5, label: "May" }, { value: 6, label: "June" },
+      { value: 7, label: "July" }, { value: 8, label: "August" }, { value: 9, label: "September" },
+      { value: 10, label: "October" }, { value: 11, label: "November" }, { value: 12, label: "December" },
+    ],
+    []
+  );
+  const years = useMemo(() => {
+    const current = new Date().getFullYear();
+    return Array.from({ length: current - 1900 + 1 }, (_, i) => current - i);
+  }, []);
+
+  const buildDob = (): Date | null => {
+    if (!dobDay || !dobMonth || !dobYear) return null;
+    const d = new Date(Number(dobYear), Number(dobMonth) - 1, Number(dobDay));
+    if (
+      d.getFullYear() !== Number(dobYear) ||
+      d.getMonth() !== Number(dobMonth) - 1 ||
+      d.getDate() !== Number(dobDay)
+    ) return null;
+    return d;
+  };
+
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
-    const parsed = detailsSchema.safeParse({ name, dob, email });
+    const dobDate = buildDob();
+    if (!dobDate) {
+      toast({ title: "Please select a valid date of birth", variant: "destructive" });
+      return;
+    }
+    const parsed = detailsSchema.safeParse({ name, dob: dobDate, email });
     if (!parsed.success) {
       toast({ title: "Please check your details", description: parsed.error.errors[0].message, variant: "destructive" });
       return;
@@ -87,7 +116,7 @@ const EarlyAccess = () => {
     const { error: insertError } = await supabase.from("early_access_signups").insert({
       user_id: data.user.id,
       name: name.trim(),
-      age: dob ? calculateAge(dob) : 0,
+      age: (() => { const d = buildDob(); return d ? calculateAge(d) : 0; })(),
       email: email.trim(),
     });
     setLoading(false);
@@ -133,34 +162,38 @@ const EarlyAccess = () => {
               </div>
               <div className="space-y-2">
                 <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Date of Birth</label>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <button
-                      type="button"
-                      className={cn(
-                        "w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 font-serif text-lg text-left flex items-center justify-between transition-colors",
-                        !dob && "text-muted-foreground"
-                      )}
-                    >
-                      {dob ? format(dob, "PPP") : "Select your date of birth"}
-                      <CalendarIcon className="h-4 w-4 opacity-60" />
-                    </button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={dob}
-                      onSelect={setDob}
-                      disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
-                      captionLayout="dropdown-buttons"
-                      fromYear={1900}
-                      toYear={new Date().getFullYear()}
-                      defaultMonth={dob ?? new Date(2000, 0)}
-                      initialFocus
-                      className={cn("p-3 pointer-events-auto")}
-                    />
-                  </PopoverContent>
-                </Popover>
+                <div className="grid grid-cols-3 gap-3">
+                  <Select value={dobDay} onValueChange={setDobDay}>
+                    <SelectTrigger className="h-12 font-serif text-base">
+                      <SelectValue placeholder="Day" />
+                    </SelectTrigger>
+                    <SelectContent className="max-h-72 bg-popover">
+                      {days.map((d) => (
+                        <SelectItem key={d} value={String(d)}>{d}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <Select value={dobMonth} onValueChange={setDobMonth}>
+                    <SelectTrigger className="h-12 font-serif text-base">
+                      <SelectValue placeholder="Month" />
+                    </SelectTrigger>
+                    <SelectContent className="max-h-72 bg-popover">
+                      {months.map((m) => (
+                        <SelectItem key={m.value} value={String(m.value)}>{m.label}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <Select value={dobYear} onValueChange={setDobYear}>
+                    <SelectTrigger className="h-12 font-serif text-base">
+                      <SelectValue placeholder="Year" />
+                    </SelectTrigger>
+                    <SelectContent className="max-h-72 bg-popover">
+                      {years.map((y) => (
+                        <SelectItem key={y} value={String(y)}>{y}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
               <div className="space-y-2">
                 <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Email</label>
