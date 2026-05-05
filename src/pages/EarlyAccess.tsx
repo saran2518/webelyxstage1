@@ -31,6 +31,19 @@ const EarlyAccess = () => {
   const [dobDay, setDobDay] = useState<string>("");
   const [dobMonth, setDobMonth] = useState<string>("");
   const [dobYear, setDobYear] = useState<string>("");
+  const [email, setEmail] = useState("");
+  const [otp, setOtp] = useState("");
+
+  const buildDob = (): Date | null => {
+    if (!dobDay || !dobMonth || !dobYear) return null;
+    const d = new Date(Number(dobYear), Number(dobMonth) - 1, Number(dobDay));
+    if (
+      d.getFullYear() !== Number(dobYear) ||
+      d.getMonth() !== Number(dobMonth) - 1 ||
+      d.getDate() !== Number(dobDay)
+    ) return null;
+    return d;
+  };
 
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
