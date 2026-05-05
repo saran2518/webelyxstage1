@@ -1,32 +1,51 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
 import Layout from "@/components/Layout";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 import { z } from "zod";
+import underAgeCartoon from "@/assets/under-age-cartoon.png";
+
+const calculateAge = (dob: Date): number => {
+  const today = new Date();
+  let age = today.getFullYear() - dob.getFullYear();
+  const m = today.getMonth() - dob.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) age--;
+  return age;
+};
 
 const detailsSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100),
-  age: z.coerce.number().int().min(18, "You must be at least 18").max(120),
+  dob: z.date({ required_error: "Please select your date of birth" }),
   email: z.string().trim().email("Please enter a valid email").max(255),
 });
 
 const EarlyAccess = () => {
   const navigate = useNavigate();
-  const [step, setStep] = useState<"details" | "verify" | "success">("details");
+  const [step, setStep] = useState<"details" | "verify" | "success" | "underage">("details");
   const [loading, setLoading] = useState(false);
 
   const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  const [dob, setDob] = useState<Date | undefined>(undefined);
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
 
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
-    const parsed = detailsSchema.safeParse({ name, age, email });
+    const parsed = detailsSchema.safeParse({ name, dob, email });
     if (!parsed.success) {
       toast({ title: "Please check your details", description: parsed.error.errors[0].message, variant: "destructive" });
+      return;
+    }
+    const age = calculateAge(parsed.data.dob);
+    if (age < 18) {
+      setStep("underage");
       return;
     }
     setLoading(true);
@@ -35,7 +54,7 @@ const EarlyAccess = () => {
       options: {
         shouldCreateUser: true,
         emailRedirectTo: `${window.location.origin}/early-access`,
-        data: { name: parsed.data.name, age: parsed.data.age },
+        data: { name: parsed.data.name, age },
       },
     });
     setLoading(false);
@@ -68,7 +87,7 @@ const EarlyAccess = () => {
     const { error: insertError } = await supabase.from("early_access_signups").insert({
       user_id: data.user.id,
       name: name.trim(),
-      age: Number(age),
+      age: dob ? calculateAge(dob) : 0,
       email: email.trim(),
     });
     setLoading(false);
@@ -87,12 +106,15 @@ const EarlyAccess = () => {
           <div className="text-center mb-10">
             <p className="font-sans text-xs uppercase tracking-[0.25em] text-primary mb-3">Early Access</p>
             <h1 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-foreground">
-              {step === "success" ? "Welcome to Elyxer" : "Request Your Invitation"}
+              {step === "success" && "Welcome to Elyxer"}
+              {step === "underage" && "Almost There — Just Not Yet"}
+              {(step === "details" || step === "verify") && "Request Your Invitation"}
             </h1>
             <p className="mt-4 font-sans text-sm text-muted-foreground leading-relaxed">
               {step === "details" && "Share a few details to begin. We will verify your email with a one-time code."}
               {step === "verify" && `Enter the 6-digit code sent to ${email}.`}
               {step === "success" && "You are on the list. We will be in touch with next steps soon."}
+              {step === "underage" && "Elyxer is built for grown-ups. You must be at least 18 years old to join."}
             </p>
           </div>
 
@@ -110,16 +132,35 @@ const EarlyAccess = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Age</label>
-                <input
-                  type="number"
-                  min={18}
-                  max={120}
-                  value={age}
-                  onChange={(e) => setAge(e.target.value)}
-                  required
-                  className="w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 font-serif text-lg text-foreground transition-colors"
-                />
+                <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Date of Birth</label>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <button
+                      type="button"
+                      className={cn(
+                        "w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 font-serif text-lg text-left flex items-center justify-between transition-colors",
+                        !dob && "text-muted-foreground"
+                      )}
+                    >
+                      {dob ? format(dob, "PPP") : "Select your date of birth"}
+                      <CalendarIcon className="h-4 w-4 opacity-60" />
+                    </button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={dob}
+                      onSelect={setDob}
+                      disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
+                      captionLayout="dropdown-buttons"
+                      fromYear={1900}
+                      toYear={new Date().getFullYear()}
+                      defaultMonth={dob ?? new Date(2000, 0)}
+                      initialFocus
+                      className={cn("p-3 pointer-events-auto")}
+                    />
+                  </PopoverContent>
+                </Popover>
               </div>
               <div className="space-y-2">
                 <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Email</label>
@@ -186,6 +227,39 @@ const EarlyAccess = () => {
               >
                 Return Home
               </button>
+            </div>
+          )}
+
+          {step === "underage" && (
+            <div className="text-center space-y-6">
+              <img
+                src={underAgeCartoon}
+                alt="Friendly cartoon character holding a 'Come back later' sign"
+                width={768}
+                height={768}
+                loading="lazy"
+                className="mx-auto w-56 h-56 object-contain"
+              />
+              <p className="font-serif text-lg text-foreground">
+                Thanks for your curiosity — but you'll have to grow into this one.
+              </p>
+              <p className="font-sans text-sm text-muted-foreground">
+                Come back when you've blown out a few more candles. We'll be waiting. 🎂
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+                <button
+                  onClick={() => { setStep("details"); setDob(undefined); }}
+                  className="inline-flex items-center justify-center rounded-lg border border-border px-7 py-3 text-sm font-sans font-medium text-foreground hover:bg-secondary transition-all"
+                >
+                  Edit My Details
+                </button>
+                <button
+                  onClick={() => navigate("/")}
+                  className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3 text-sm font-sans font-medium text-primary-foreground hover:opacity-90 transition-all"
+                >
+                  Return Home
+                </button>
+              </div>
             </div>
           )}
         </div>
