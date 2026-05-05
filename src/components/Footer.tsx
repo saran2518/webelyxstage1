@@ -18,6 +18,7 @@ const Footer = () => (
             <Link to="/product" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Product</Link>
             <Link to="/world-of-dating" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">World of Dating</Link>
             <Link to="/help" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Help & FAQ</Link>
+            <Link to="/contact" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Contact Us</Link>
           </div>
           <div className="flex flex-col gap-3">
             <span className="font-sans text-xs font-semibold uppercase tracking-widest opacity-60 mb-1">Legal</span>
