@@ -101,7 +101,7 @@ const EarlyAccess = () => {
     const { error: insertError } = await supabase.from("early_access_signups").insert({
       user_id: data.user.id,
       name: name.trim(),
-      age: dob ? calculateAge(dob) : 0,
+      age: (() => { const d = buildDob(); return d ? calculateAge(d) : 0; })(),
       email: email.trim(),
     });
     setLoading(false);
