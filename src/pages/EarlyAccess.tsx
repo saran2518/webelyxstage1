@@ -28,9 +28,9 @@ const EarlyAccess = () => {
   const [loading, setLoading] = useState(false);
 
   const [name, setName] = useState("");
-  const [dob, setDob] = useState<Date | undefined>(undefined);
-  const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
+  const [dobDay, setDobDay] = useState<string>("");
+  const [dobMonth, setDobMonth] = useState<string>("");
+  const [dobYear, setDobYear] = useState<string>("");
 
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
