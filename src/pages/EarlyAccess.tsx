@@ -34,6 +34,21 @@ const EarlyAccess = () => {
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
 
+  const days = useMemo(() => Array.from({ length: 31 }, (_, i) => i + 1), []);
+  const months = useMemo(
+    () => [
+      { value: 1, label: "January" }, { value: 2, label: "February" }, { value: 3, label: "March" },
+      { value: 4, label: "April" }, { value: 5, label: "May" }, { value: 6, label: "June" },
+      { value: 7, label: "July" }, { value: 8, label: "August" }, { value: 9, label: "September" },
+      { value: 10, label: "October" }, { value: 11, label: "November" }, { value: 12, label: "December" },
+    ],
+    []
+  );
+  const years = useMemo(() => {
+    const current = new Date().getFullYear();
+    return Array.from({ length: current - 1900 + 1 }, (_, i) => current - i);
+  }, []);
+
   const buildDob = (): Date | null => {
     if (!dobDay || !dobMonth || !dobYear) return null;
     const d = new Date(Number(dobYear), Number(dobMonth) - 1, Number(dobDay));
