@@ -142,7 +142,7 @@ const Index = () =>
           to="/early-access"
           className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
 
-            Request Invite
+            Get Early Access
           </Link>
         </div>
       </div>
