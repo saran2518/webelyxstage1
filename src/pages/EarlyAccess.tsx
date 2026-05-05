@@ -147,34 +147,38 @@ const EarlyAccess = () => {
               </div>
               <div className="space-y-2">
                 <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Date of Birth</label>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <button
-                      type="button"
-                      className={cn(
-                        "w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 font-serif text-lg text-left flex items-center justify-between transition-colors",
-                        !dob && "text-muted-foreground"
-                      )}
-                    >
-                      {dob ? format(dob, "PPP") : "Select your date of birth"}
-                      <CalendarIcon className="h-4 w-4 opacity-60" />
-                    </button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={dob}
-                      onSelect={setDob}
-                      disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
-                      captionLayout="dropdown-buttons"
-                      fromYear={1900}
-                      toYear={new Date().getFullYear()}
-                      defaultMonth={dob ?? new Date(2000, 0)}
-                      initialFocus
-                      className={cn("p-3 pointer-events-auto")}
-                    />
-                  </PopoverContent>
-                </Popover>
+                <div className="grid grid-cols-3 gap-3">
+                  <Select value={dobDay} onValueChange={setDobDay}>
+                    <SelectTrigger className="h-12 font-serif text-base">
+                      <SelectValue placeholder="Day" />
+                    </SelectTrigger>
+                    <SelectContent className="max-h-72 bg-popover">
+                      {days.map((d) => (
+                        <SelectItem key={d} value={String(d)}>{d}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <Select value={dobMonth} onValueChange={setDobMonth}>
+                    <SelectTrigger className="h-12 font-serif text-base">
+                      <SelectValue placeholder="Month" />
+                    </SelectTrigger>
+                    <SelectContent className="max-h-72 bg-popover">
+                      {months.map((m) => (
+                        <SelectItem key={m.value} value={String(m.value)}>{m.label}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <Select value={dobYear} onValueChange={setDobYear}>
+                    <SelectTrigger className="h-12 font-serif text-base">
+                      <SelectValue placeholder="Year" />
+                    </SelectTrigger>
+                    <SelectContent className="max-h-72 bg-popover">
+                      {years.map((y) => (
+                        <SelectItem key={y} value={String(y)}>{y}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
               <div className="space-y-2">
                 <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Email</label>
