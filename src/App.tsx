@@ -25,6 +25,7 @@ const App = () => (
           <Route path="/product" element={<Product />} />
           <Route path="/world-of-dating" element={<WorldOfDating />} />
           <Route path="/help" element={<HelpFAQ />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
