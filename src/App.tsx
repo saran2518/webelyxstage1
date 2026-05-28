@@ -9,6 +9,8 @@ import Product from "./pages/Product";
 import WorldOfDating from "./pages/WorldOfDating";
 import HelpFAQ from "./pages/HelpFAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import CookiePolicy from "./pages/CookiePolicy";
 import EarlyAccess from "./pages/EarlyAccess";
 import NotFound from "./pages/NotFound";
 
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/world-of-dating" element={<WorldOfDating />} />
           <Route path="/help" element={<HelpFAQ />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/early-access" element={<EarlyAccess />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
