@@ -29,8 +29,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-transparent"}`
+      scrolled ? "glass-nav" : "bg-transparent"}`
       }>
+
 
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         <Link to="/" className="flex items-center gap-3 font-serif font-semibold tracking-wide text-accent text-4xl">
