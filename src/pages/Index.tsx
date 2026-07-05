@@ -70,36 +70,37 @@ const Index = () =>
     <div className="w-full h-px bg-border" />
 
     {/* Principles intro */}
-    <section className="py-16 md:py-20">
+    <section className="py-16 md:py-20" data-reveal>
       <div className="container mx-auto px-6 max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground animate-fade-up">
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
           Built on three core principles.
         </h2>
-        <p className="mt-5 text-lg md:text-xl font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
+        <p className="mt-5 text-lg md:text-xl font-sans text-muted-foreground leading-relaxed">
           Standard . Integrity . Clarity
         </p>
       </div>
     </section>
 
     {/* Architecture section */}
-    <section className="relative py-32 md:py-44">
+    <section className="relative py-32 md:py-44 overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={coupleCooking}
           alt="Couple cooking together in a modern kitchen"
-          className="w-full h-full object-cover"
+          className="parallax-slow w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/55" />
       </div>
-      <div className="relative container mx-auto px-6 max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white animate-fade-up">
+      <div className="relative container mx-auto px-6 max-w-3xl text-center" data-reveal>
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white">
           A refined architecture for modern connection.
         </h2>
-        <p className="mt-6 text-base md:text-lg font-sans text-white/80 leading-relaxed animate-fade-up-delay-1">
+        <p className="mt-6 text-base md:text-lg font-sans text-white/80 leading-relaxed">
           In a landscape of overstimulation and endless options, Elyxer restores clarity and deliberation to dating. We believe meaningful connection is not a matter of chance — it is a product of design.
         </p>
       </div>
     </section>
+
 
     {/* Feature cards with images */}
     <section className="py-24 md:py-32 mt-8 md:mt-12">
