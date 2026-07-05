@@ -105,11 +105,12 @@ const Index = () =>
     {/* Feature cards with images */}
     <section className="py-24 md:py-32 mt-8 md:mt-12">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-6">
-          {features.map((f, i) =>
+        <div className="grid md:grid-cols-3 gap-6" data-reveal-stagger>
+          {features.map((f) =>
         <div
           key={f.title}
-          className={`rounded-xl border border-border bg-card overflow-hidden shadow-soft animate-fade-up-delay-${i + 1}`}>
+          data-reveal-child
+          className="glass-light lift rounded-xl overflow-hidden">
 
               <img
             src={f.image}
@@ -132,22 +133,24 @@ const Index = () =>
     </section>
 
     {/* Final CTA */}
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28" data-reveal>
       <div className="container mx-auto px-6 text-center max-w-2xl">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground animate-fade-up">
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
           Connection, composed.
         </h2>
-        <p className="mt-5 text-base font-sans text-muted-foreground animate-fade-up-delay-1">
+        <p className="mt-5 text-base font-sans text-muted-foreground">
           Join a community of individuals who value depth, intention, and authentic connection.
         </p>
-        <div className="mt-10 animate-fade-up-delay-2">
+        <div className="mt-10">
           <Link
           to="/early-access"
-          className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
+          className="btn-glow inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-sans font-medium text-primary-foreground shadow-soft">
 
             Get Early Access
           </Link>
         </div>
+      </div>
+
       </div>
     </section>
   </Layout>;
