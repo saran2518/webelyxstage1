@@ -36,9 +36,10 @@ const Index = () =>
         <img
         src={coupleCamden}
         alt="Couple enjoying coffee together at a cozy Camden Market café"
-        className="w-full h-full object-cover" />
+        className="parallax-slow w-full h-full object-cover" />
 
         <div className="absolute inset-0 bg-black/50" />
+        <div className="aurora" />
       </div>
       <div className="relative container mx-auto px-6 pb-2 md:pb-3 pt-32">
         <div className="max-w-2xl">
@@ -51,18 +52,19 @@ const Index = () =>
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
             <Link
             to="/early-access"
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
+            className="btn-glow inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground shadow-soft">
               Get Early Access
             </Link>
             <Link
             to="/product"
-            className="inline-flex items-center justify-center rounded-lg border border-white/30 px-7 py-3.5 text-sm font-sans font-medium text-white transition-all duration-300 hover:bg-white/10">
+            className="btn-glow inline-flex items-center justify-center rounded-lg border border-white/30 px-7 py-3.5 text-sm font-sans font-medium text-white hover:bg-white/10">
               Explore the Product
             </Link>
           </div>
         </div>
       </div>
     </section>
+
 
     {/* Divider */}
     <div className="w-full h-px bg-border" />
