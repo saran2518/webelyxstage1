@@ -29,8 +29,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-transparent"}`
+      scrolled ? "glass-nav" : "bg-transparent"}`
       }>
+
 
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         <Link to="/" className="flex items-center gap-3 font-serif font-semibold tracking-wide text-accent text-4xl">
@@ -44,7 +45,7 @@ const Navbar = () => {
           <Link
             key={link.to}
             to={link.to}
-            className={`text-sm font-sans font-medium tracking-wide transition-colors duration-300 ${
+            className={`link-glow text-sm font-sans font-medium tracking-wide ${
             location.pathname === link.to ?
             "text-primary" :
             "text-muted-foreground hover:text-foreground"}`
@@ -55,10 +56,11 @@ const Navbar = () => {
           )}
           <Link
             to="/early-access"
-            className="ml-2 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90">
+            className="btn-glow ml-2 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-sans font-medium text-primary-foreground">
 
             Get Early Access
           </Link>
+
         </div>
 
         {/* Mobile toggle */}

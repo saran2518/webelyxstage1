@@ -36,9 +36,10 @@ const Index = () =>
         <img
         src={coupleCamden}
         alt="Couple enjoying coffee together at a cozy Camden Market café"
-        className="w-full h-full object-cover" />
+        className="parallax-slow w-full h-full object-cover" />
 
         <div className="absolute inset-0 bg-black/50" />
+        <div className="aurora" />
       </div>
       <div className="relative container mx-auto px-6 pb-2 md:pb-3 pt-32">
         <div className="max-w-2xl">
@@ -51,12 +52,12 @@ const Index = () =>
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
             <Link
             to="/early-access"
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
+            className="btn-glow inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground shadow-soft">
               Get Early Access
             </Link>
             <Link
             to="/product"
-            className="inline-flex items-center justify-center rounded-lg border border-white/30 px-7 py-3.5 text-sm font-sans font-medium text-white transition-all duration-300 hover:bg-white/10">
+            className="btn-glow inline-flex items-center justify-center rounded-lg border border-white/30 px-7 py-3.5 text-sm font-sans font-medium text-white hover:bg-white/10">
               Explore the Product
             </Link>
           </div>
@@ -64,49 +65,52 @@ const Index = () =>
       </div>
     </section>
 
+
     {/* Divider */}
     <div className="w-full h-px bg-border" />
 
     {/* Principles intro */}
-    <section className="py-16 md:py-20">
+    <section className="py-16 md:py-20" data-reveal>
       <div className="container mx-auto px-6 max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground animate-fade-up">
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
           Built on three core principles.
         </h2>
-        <p className="mt-5 text-lg md:text-xl font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
+        <p className="mt-5 text-lg md:text-xl font-sans text-muted-foreground leading-relaxed">
           Standard . Integrity . Clarity
         </p>
       </div>
     </section>
 
     {/* Architecture section */}
-    <section className="relative py-32 md:py-44">
+    <section className="relative py-32 md:py-44 overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={coupleCooking}
           alt="Couple cooking together in a modern kitchen"
-          className="w-full h-full object-cover"
+          className="parallax-slow w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/55" />
       </div>
-      <div className="relative container mx-auto px-6 max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white animate-fade-up">
+      <div className="relative container mx-auto px-6 max-w-3xl text-center" data-reveal>
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white">
           A refined architecture for modern connection.
         </h2>
-        <p className="mt-6 text-base md:text-lg font-sans text-white/80 leading-relaxed animate-fade-up-delay-1">
+        <p className="mt-6 text-base md:text-lg font-sans text-white/80 leading-relaxed">
           In a landscape of overstimulation and endless options, Elyxer restores clarity and deliberation to dating. We believe meaningful connection is not a matter of chance — it is a product of design.
         </p>
       </div>
     </section>
 
+
     {/* Feature cards with images */}
     <section className="py-24 md:py-32 mt-8 md:mt-12">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-6">
-          {features.map((f, i) =>
+        <div className="grid md:grid-cols-3 gap-6" data-reveal-stagger>
+          {features.map((f) =>
         <div
           key={f.title}
-          className={`rounded-xl border border-border bg-card overflow-hidden shadow-soft animate-fade-up-delay-${i + 1}`}>
+          data-reveal-child
+          className="glass-light lift rounded-xl overflow-hidden">
 
               <img
             src={f.image}
@@ -129,24 +133,25 @@ const Index = () =>
     </section>
 
     {/* Final CTA */}
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28" data-reveal>
       <div className="container mx-auto px-6 text-center max-w-2xl">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground animate-fade-up">
+        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
           Connection, composed.
         </h2>
-        <p className="mt-5 text-base font-sans text-muted-foreground animate-fade-up-delay-1">
+        <p className="mt-5 text-base font-sans text-muted-foreground">
           Join a community of individuals who value depth, intention, and authentic connection.
         </p>
-        <div className="mt-10 animate-fade-up-delay-2">
+        <div className="mt-10">
           <Link
           to="/early-access"
-          className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
+          className="btn-glow inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-sans font-medium text-primary-foreground shadow-soft">
 
             Get Early Access
           </Link>
         </div>
       </div>
     </section>
+
   </Layout>;
 
 
