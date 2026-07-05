@@ -150,9 +150,8 @@ const Index = () =>
           </Link>
         </div>
       </div>
-
-      </div>
     </section>
+
   </Layout>;
 
 
