@@ -14,10 +14,13 @@ const Index = () =>
     {/* Hero */}
     <section className="relative min-h-[90vh] flex items-end overflow-hidden">
       <div className="absolute inset-0">
-        <img
-        src={media.home.hero}
-        alt="Couple sitting together on a hilltop at sunset"
-        className="parallax-slow w-full h-full object-cover object-[70%_50%]" />
+        <picture className="block h-full w-full">
+          <source media="(max-width: 767px)" srcSet={media.home.heroMobile} />
+          <img
+            src={media.home.hero}
+            alt="Couple sitting together on a hilltop at sunset"
+            className="parallax-slow h-full w-full object-cover object-[70%_50%] max-md:object-[50%_50%]" />
+        </picture>
 
         <div className="absolute inset-0 bg-foreground/50" />
         <div className="aurora" />
@@ -57,11 +60,14 @@ const Index = () =>
     {/* Architecture section */}
     <section className="relative py-32 md:py-44 overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src={media.home.band}
-          alt="Couple laughing together at a cafe table in the rain"
-          className="parallax-slow w-full h-full object-cover object-[70%_50%]"
-        />
+        <picture className="block h-full w-full">
+          <source media="(max-width: 767px)" srcSet={media.home.bandMobile} />
+          <img
+            src={media.home.band}
+            alt="Couple laughing together at a cafe table in the rain"
+            className="parallax-slow h-full w-full object-cover object-[70%_50%] max-md:object-[50%_50%]"
+          />
+        </picture>
         <div className="absolute inset-0 bg-foreground/55" />
       </div>
       <div className="relative container mx-auto px-6 max-w-3xl text-center" data-reveal>
