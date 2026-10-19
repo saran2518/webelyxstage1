@@ -26,7 +26,7 @@ const ClosingWords = ({ className = "" }: { className?: string }) => (
 const Index = () =>
 <Layout>
     {/* Hero */}
-    <section className="relative min-h-[90vh] flex items-end md:items-start overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-end overflow-hidden">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
           <img
@@ -37,12 +37,12 @@ const Index = () =>
 
         <div className="absolute inset-0 bg-foreground/50" />
       </div>
-      <div className="relative container mx-auto px-6 pb-2 md:pb-3 pt-32">
-        <div className="max-w-4xl">
-          <h1 className="text-[40px] md:text-[56px] lg:text-[72px] lg:whitespace-nowrap font-display font-normal leading-[1.05] tracking-[0.01em] text-primary-foreground animate-fade-up">
+      <div className="relative container mx-auto px-6 pb-14 md:pb-24 pt-32">
+        <div className="max-w-[640px]">
+          <h1 className="text-[clamp(2.25rem,3.6vw,3.25rem)] font-display font-normal leading-[1.1] tracking-[0.01em] text-primary-foreground animate-fade-up">
             Chosen for who you are.
           </h1>
-          <p className="mt-5 text-[22px] md:text-[30px] font-display font-normal tracking-[0.01em] text-accent animate-fade-up-delay-1">Built to get you on real dates.</p>
+          <p className="mt-5 text-[clamp(1.125rem,1.6vw,1.5rem)] font-display font-normal tracking-[0.01em] text-accent animate-fade-up-delay-1">Built to get you on real dates.</p>
           <p className="mt-6 max-w-2xl text-lg font-sans text-primary-foreground/80 leading-relaxed animate-fade-up-delay-1">
             A dating app where you are seen for your interests, your life and your character, never your religion, ethnicity or income.
           </p>
