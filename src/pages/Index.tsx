@@ -26,7 +26,7 @@ const ClosingWords = ({ className = "" }: { className?: string }) => (
 const Index = () =>
 <Layout>
     {/* Hero */}
-    <section className="relative min-h-[90vh] flex items-end overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-end md:items-start overflow-hidden">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
           <img
