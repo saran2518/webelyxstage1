@@ -25,6 +25,7 @@ import videoHim from "@/assets/site/video-date-him.mp4.asset.json";
 import women from "@/assets/couple-women.jpg";
 import men from "@/assets/couple-lgbtq-men.jpg";
 import cartoon from "@/assets/under-age-cartoon.png";
+import appIcon from "@/assets/elyxer-logo.png";
 
 export type VideoSlot = { src?: string; poster: string };
 
@@ -58,6 +59,7 @@ export const media = {
     a4: gameNight.url, // game-night-home.jpg
   },
   brand: {
+    icon: appIcon, // elyxer-logo.png
     wordmarkDark: wordmarkDark.url, // Elyxer_wordmark_gold_for_dark_bg.svg
     wordmarkLight: wordmarkLight.url, // Elyxer_wordmark_gold_for_light_bg.svg
     usesLogoFallback: false,
