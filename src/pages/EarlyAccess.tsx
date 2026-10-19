@@ -134,7 +134,7 @@ const EarlyAccess = () => {
         <div className="w-full max-w-xl bg-card border border-border rounded-2xl shadow-soft p-8 md:p-12 animate-fade-up">
           <div className="text-center mb-10">
             <p className="font-sans text-xs uppercase tracking-[0.25em] text-primary mb-3">Early access</p>
-            <h1 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-foreground">
+            <h1 className="font-display text-3xl md:text-4xl font-normal tracking-[0.01em] text-foreground">
               {step === "success" && "Your spot is saved."}
               {step === "underage" && "Almost there, just not yet."}
               {(step === "details" || step === "verify") && "Save your spot"}

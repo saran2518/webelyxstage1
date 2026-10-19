@@ -22,7 +22,7 @@ const WorldOfDating = () => {
     <Layout>
       <section className="pt-32 md:pt-44 pb-16">
         <div className="container mx-auto px-6 max-w-3xl text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-semibold text-foreground animate-fade-up">
+          <h1 className="tracking-[0.01em] text-4xl md:text-5xl font-display font-normal text-foreground animate-fade-up">
             The world of dating, reconsidered.
           </h1>
           <p className="mt-6 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
@@ -46,7 +46,7 @@ const WorldOfDating = () => {
               <span className="font-sans text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
                 Featured
               </span>
-              <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-4">
+              <h2 className="tracking-[0.01em] text-2xl md:text-3xl font-display font-normal text-foreground mb-4">
                 {featuredArticle.title}
               </h2>
               <p className="font-sans text-base text-muted-foreground leading-relaxed mb-4">
@@ -75,7 +75,7 @@ const WorldOfDating = () => {
                   loading="lazy"
                 />
                 <div className="p-7">
-                  <h3 className="text-lg font-serif font-semibold text-foreground mb-2">
+                  <h3 className="tracking-[0.01em] text-lg font-display font-normal text-foreground mb-2">
                     {a.title}
                   </h3>
                   <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-3">
@@ -92,7 +92,7 @@ const WorldOfDating = () => {
       {/* Newsletter */}
       <section className="py-20 md:py-28 bg-secondary/50">
         <div className="container mx-auto px-6 max-w-xl text-center">
-          <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-4">
+          <h2 className="tracking-[0.01em] text-2xl md:text-3xl font-display font-normal text-foreground mb-4">
             Be the first to read.
           </h2>
           <p className="font-sans text-sm text-muted-foreground mb-8">

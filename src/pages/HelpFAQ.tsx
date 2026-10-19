@@ -36,7 +36,7 @@ const HelpFAQ = () => (
   <Layout>
     <section className="pt-32 md:pt-44 pb-16">
       <div className="container mx-auto px-6 max-w-3xl text-center">
-        <h1 className="text-4xl md:text-5xl font-serif font-semibold text-foreground animate-fade-up">
+        <h1 className="tracking-[0.01em] text-4xl md:text-5xl font-display font-normal text-foreground animate-fade-up">
           Help & FAQ
         </h1>
         <p className="mt-6 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
@@ -49,7 +49,7 @@ const HelpFAQ = () => (
       <div className="container mx-auto px-6 max-w-3xl">
         {faqSections.map((section) => (
           <div key={section.category} className="mb-12">
-            <h2 className="text-lg font-serif font-semibold text-foreground mb-4">
+            <h2 className="tracking-[0.01em] text-lg font-display font-normal text-foreground mb-4">
               {section.category}
             </h2>
             <Accordion type="single" collapsible className="space-y-2">
