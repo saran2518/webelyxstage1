@@ -1,5 +1,7 @@
 import heroHilltop from "@/assets/site/home-hero-hilltop.jpg.asset.json";
 import bandCafeRain from "@/assets/site/home-band-cafe-rain.jpg.asset.json";
+import heroPortrait from "@/assets/site/home-hero-hilltop-portrait.jpg";
+import bandPortrait from "@/assets/site/home-band-cafe-rain-portrait.jpg";
 import painter from "@/assets/site/painter.jpg.asset.json";
 import laughing from "@/assets/site/phone-laughing.jpg.asset.json";
 import ctaKitchen from "@/assets/site/home-cta-kitchen.jpg.asset.json";
@@ -36,7 +38,9 @@ export type VideoSlot = { src?: string; poster: string };
 export const media = {
   home: {
     hero: heroHilltop.url, // home-hero-hilltop.jpg
+    heroMobile: heroPortrait, // home-hero-hilltop-portrait.jpg (tall phone version)
     band: bandCafeRain.url, // home-band-cafe-rain.jpg
+    bandMobile: bandPortrait, // home-band-cafe-rain-portrait.jpg (tall phone version)
     card1: painter.url, // painter.jpg
     card2: laughing.url, // phone-laughing.jpg
     card3: { src: videoHer.url, poster: women } as VideoSlot, // video-date-her.mp4
