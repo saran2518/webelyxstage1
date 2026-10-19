@@ -6,7 +6,7 @@ import { toast } from "@/hooks/use-toast";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { z } from "zod";
-import underAgeCartoon from "@/assets/under-age-cartoon.png";
+import { media } from "@/content/media";
 
 const calculateAge = (dob: Date): number => {
   const today = new Date();
@@ -133,17 +133,17 @@ const EarlyAccess = () => {
       <section className="min-h-[80vh] flex items-center justify-center py-24 md:py-32 px-5">
         <div className="w-full max-w-xl bg-card border border-border rounded-2xl shadow-soft p-8 md:p-12 animate-fade-up">
           <div className="text-center mb-10">
-            <p className="font-sans text-xs uppercase tracking-[0.25em] text-primary mb-3">Early Access</p>
+            <p className="font-sans text-xs uppercase tracking-[0.25em] text-primary mb-3">Early access</p>
             <h1 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-foreground">
-              {step === "success" && "Welcome to Elyxer"}
-              {step === "underage" && "Almost There — Just Not Yet"}
-              {(step === "details" || step === "verify") && "Request Your Invitation"}
+              {step === "success" && "Your spot is saved."}
+              {step === "underage" && "Almost there, just not yet."}
+              {(step === "details" || step === "verify") && "Save your spot"}
             </h1>
             <p className="mt-4 font-sans text-sm text-muted-foreground leading-relaxed">
-              {step === "details" && "Share a few details to begin. We will verify your email with a one-time code."}
+              {step === "details" && "Early access is open in Bengaluru. Share a few details and we will verify your email with a one-time code."}
               {step === "verify" && `Enter the 6-digit code sent to ${email}.`}
-              {step === "success" && "You are on the list. We will be in touch with next steps soon."}
-              {step === "underage" && "Elyxer is built for grown-ups. You must be at least 18 years old to join."}
+              {step === "success" && "We will let you know the moment Elyxer is ready for you."}
+              {step === "underage" && "Elyxer is for adults aged 18 and over."}
             </p>
           </div>
 
@@ -161,7 +161,7 @@ const EarlyAccess = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Date of Birth</label>
+                <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Date of birth</label>
                 <div className="grid grid-cols-3 gap-3">
                   <Select value={dobDay} onValueChange={setDobDay}>
                     <SelectTrigger className="h-12 font-serif text-base">
@@ -211,7 +211,7 @@ const EarlyAccess = () => {
                 disabled={loading}
                 className="w-full mt-4 inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 disabled:opacity-60"
               >
-                {loading ? "Sending code..." : "Send Verification Code"}
+                {loading ? "Sending code..." : "Send code"}
               </button>
             </form>
           )}
@@ -235,14 +235,14 @@ const EarlyAccess = () => {
                 disabled={loading || otp.length !== 6}
                 className="w-full inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 disabled:opacity-60"
               >
-                {loading ? "Verifying..." : "Register for Early Access"}
+                {loading ? "Verifying..." : "Join early access"}
               </button>
               <button
                 type="button"
                 onClick={() => setStep("details")}
                 className="w-full text-xs font-sans text-muted-foreground hover:text-foreground transition-colors"
               >
-                ← Edit details
+                Edit details
               </button>
             </form>
           )}
@@ -258,7 +258,7 @@ const EarlyAccess = () => {
                 onClick={() => navigate("/")}
                 className="inline-flex items-center justify-center rounded-lg border border-border px-7 py-3 text-sm font-sans font-medium text-foreground hover:bg-secondary transition-all"
               >
-                Return Home
+                Back to home
               </button>
             </div>
           )}
@@ -266,7 +266,7 @@ const EarlyAccess = () => {
           {step === "underage" && (
             <div className="text-center space-y-6">
               <img
-                src={underAgeCartoon}
+                src={media.earlyAccess.underage}
                 alt="Friendly cartoon character holding a 'Come back later' sign"
                 width={768}
                 height={768}
@@ -274,10 +274,10 @@ const EarlyAccess = () => {
                 className="mx-auto w-56 h-56 object-contain"
               />
               <p className="font-serif text-lg text-foreground">
-                Thanks for your curiosity — but you'll have to grow into this one.
+                Thank you for your curiosity, but this one will have to wait.
               </p>
               <p className="font-sans text-sm text-muted-foreground">
-                Come back when you've blown out a few more candles. We'll be waiting. 🎂
+                Come back when you have blown out a few more candles.
               </p>
             </div>
           )}
