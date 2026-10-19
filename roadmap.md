@@ -9,4 +9,5 @@
 - [x] Add the four wide home photos, crop hero and band at 70% horizontal, and add phone portrait versions so both faces stay in frame.
 - [x] Replace Meet before you meet media with the two selfie photos (home card 3 + How it works 04 PiP with 10:00 pill); deleted video-date-her/him.mp4.
 - [x] Fix face cropping site-wide: per-slot focus values in media.ts, aspect-ratio containers matched to photo orientation, verified on desktop and mobile.
+- [x] Fix wide home sections: band and closing sections given aspect-matched min-heights, gradient overlays, parallax removed (hero only); mobile band text top-aligned so faces stay clear. Verified at 1280, 1440, 1920 and 390 widths.
 - [ ] Hide the live Lovable badge. Blocked pending user approval.
