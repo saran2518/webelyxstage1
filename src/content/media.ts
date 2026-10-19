@@ -3,7 +3,7 @@ import bandCafeRain from "@/assets/site/home-band-cafe-rain.jpg.asset.json";
 import bandPortrait from "@/assets/site/home-band-cafe-rain-portrait.jpg";
 import painter from "@/assets/site/painter.jpg.asset.json";
 import laughing from "@/assets/site/phone-laughing.jpg.asset.json";
-import ctaKitchen from "@/assets/site/home-cta-kitchen.jpg.asset.json";
+import ctaRooftop from "@/assets/site/home-cta-rooftop.png.asset.json";
 import pottery from "@/assets/site/pottery-wheel.jpg.asset.json";
 import park from "@/assets/site/park-coffee.jpg.asset.json";
 import cubbonPark from "@/assets/site/blog-cubbon-park.jpg.asset.json";
@@ -42,7 +42,7 @@ export const media = {
     card1: { src: painter.url, focus: "70% 30%" }, // painter.jpg
     card2: { src: laughing.url, focus: "50% 30%" }, // phone-laughing.jpg
     card3: { src: selfieHer.url, focus: "50% 28%" }, // selfie-her.png
-    cta: { src: ctaKitchen.url, focus: "40% 30%" }, // home-cta-kitchen.jpg
+    cta: { src: ctaRooftop.url, focus: "50% 30%" }, // home-cta-rooftop.png (rooftop night photo, background figure removed)
   },
   how: {
     s1: { src: pottery.url, focus: "65% 20%" }, // pottery-wheel.jpg
