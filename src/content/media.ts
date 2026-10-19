@@ -29,6 +29,8 @@ import cartoon from "@/assets/under-age-cartoon.png";
 import appIcon from "@/assets/elyxer-logo.png";
 
 export type VideoSlot = { src?: string; poster: string };
+// focus is the object-position that keeps faces in the crop (usually upper third).
+export type PhotoSlot = { src: string; focus?: string };
 
 // Uploaded site assets. Keep image posters available if a video is unavailable.
 // home.hero and home.band hold couples on the right of the frame: those two
@@ -39,29 +41,40 @@ export const media = {
     heroMobile: heroPortrait, // home-hero-hilltop-portrait.jpg (tall phone version)
     band: bandCafeRain.url, // home-band-cafe-rain.jpg
     bandMobile: bandPortrait, // home-band-cafe-rain-portrait.jpg (tall phone version)
-    card1: painter.url, // painter.jpg
-    card2: laughing.url, // phone-laughing.jpg
-    card3: selfieHer.url, // selfie-her.png
-    cta: ctaKitchen.url, // home-cta-kitchen.jpg
+    card1: { src: painter.url, focus: "70% 30%" }, // painter.jpg
+    card2: { src: laughing.url, focus: "50% 30%" }, // phone-laughing.jpg
+    card3: { src: selfieHer.url, focus: "50% 28%" }, // selfie-her.png
+    cta: { src: ctaKitchen.url, focus: "30% 40%" }, // home-cta-kitchen.jpg
   },
   how: {
-    s1: pottery.url, // pottery-wheel.jpg
-    s2: [park.url, reading.url, bookstore.url, surfing.url], // park-coffee.jpg, cafe-reading.jpg, bookstore.jpg, surfing.jpg
-    s3: [window.url, brick.url], // phone-window.jpg, cafe-brick.jpg
-    s4: [selfieHer.url, selfieHim.url], // selfie-her.png, selfie-him.png
-    s5: wall.url, // phone-wall.jpg
+    s1: { src: pottery.url, focus: "65% 20%" }, // pottery-wheel.jpg
+    s2: [
+      { src: park.url, focus: "40% 30%" }, // park-coffee.jpg
+      { src: reading.url, focus: "55% 30%" }, // cafe-reading.jpg
+      { src: bookstore.url, focus: "45% 30%" }, // bookstore.jpg
+      { src: surfing.url, focus: "55% 35%" }, // surfing.jpg
+    ],
+    s3: [
+      { src: window.url, focus: "60% 28%" }, // phone-window.jpg
+      { src: brick.url, focus: "45% 45%" }, // cafe-brick.jpg
+    ],
+    s4: [
+      { src: selfieHer.url, focus: "50% 28%" }, // selfie-her.png
+      { src: selfieHim.url, focus: "45% 22%" }, // selfie-him.png
+    ],
+    s5: { src: wall.url, focus: "40% 40%" }, // phone-wall.jpg
   },
   what: {
-    vision: beach.url, // beach-hug.jpg
-    mission: boardGame.url, // cafe-board-game.jpg
-    story: cycling.url, // cycling.jpg
+    vision: { src: beach.url, focus: "55% 55%" }, // beach-hug.jpg
+    mission: { src: boardGame.url, focus: "55% 40%" }, // cafe-board-game.jpg
+    story: { src: cycling.url, focus: "60% 45%" }, // cycling.jpg
   },
   blog: {
-    featured: vinyl.url, // vinyl-store-curly.jpg
-    a1: sweater.url, // cafe-sweater.jpg
-    a2: cubbonPark.url, // blog-cubbon-park.jpg
-    a3: bench.url, // pickleball-bench.jpg
-    a4: gameNight.url, // game-night-home.jpg
+    featured: { src: vinyl.url, focus: "45% 40%" }, // vinyl-store-curly.jpg
+    a1: { src: sweater.url, focus: "45% 45%" }, // cafe-sweater.jpg
+    a2: { src: cubbonPark.url, focus: "70% 50%" }, // blog-cubbon-park.jpg
+    a3: { src: bench.url, focus: "55% 40%" }, // pickleball-bench.jpg
+    a4: { src: gameNight.url, focus: "55% 40%" }, // game-night-home.jpg
   },
   brand: {
     icon: appIcon, // elyxer-logo.png
