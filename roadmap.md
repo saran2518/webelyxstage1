@@ -2,6 +2,7 @@
 - [x] Use the shared window-hug hero, restore the café band and remove hero gradients; verify logo and desktop faces at 1280 and 1920 widths.
 - [ ] Show both complete faces at 390px. Blocked: the requested cover crop at 72% 40% in the tall hero clips the man's right side; needs approval for a different mobile framing or photo.
 - [x] Update the selected home photos, remove only the rooftop background figure, preserve copy and heights, and verify complete faces and readable logo at 390, 1280 and 1920 widths. Phone photos use uncropped framing.
+- [x] Use the rooftop couple photo for the closing home section: desktop words on the empty left over a left-dark gradient, phone photo above a dark panel with a bottom fade; verified faces and readability at 390, 1280 and 1920.
 - [x] Restore the icon and inline wordmark lockup, then verify all four navbar states and the footer on desktop and mobile.
 - [x] Import uploaded site assets and connect all media slots, including surfing and both wordmarks.
 - [x] Verify uploaded image delivery, mobile fit and light/dark wordmark switching. Both MP4s delivered successfully; H.264 playback cannot be checked in sandbox Chromium.
