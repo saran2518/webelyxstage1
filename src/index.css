@@ -220,6 +220,13 @@
     will-change: transform;
   }
 
+  @media (max-width: 767px) {
+    .hero-mobile-photo {
+      animation: none;
+      transform: none;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .aurora,
     .parallax-slow {
