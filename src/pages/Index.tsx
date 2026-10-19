@@ -128,7 +128,7 @@ const Index = () =>
       <div className="md:hidden">
         <div className="relative">
           <SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full aspect-[2/3] object-cover object-[60%_35%]" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-foreground/70" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-foreground" />
         </div>
         <div className="bg-foreground px-6 py-14">
           <ClosingWords className="text-center" />
