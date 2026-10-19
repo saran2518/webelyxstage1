@@ -1,4 +1,5 @@
 # Tasks
+- [x] Update the selected home photos, remove only the rooftop background figure, preserve copy and heights, and verify complete faces and readable logo at 390, 1280 and 1920 widths. Phone photos use uncropped framing.
 - [x] Restore the icon and inline wordmark lockup, then verify all four navbar states and the footer on desktop and mobile.
 - [x] Import uploaded site assets and connect all media slots, including surfing and both wordmarks.
 - [x] Verify uploaded image delivery, mobile fit and light/dark wordmark switching. Both MP4s delivered successfully; H.264 playback cannot be checked in sandbox Chromium.

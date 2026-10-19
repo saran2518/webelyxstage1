@@ -197,6 +197,10 @@
   }
 
   /* ===== Hero aurora glow ===== */
+  .hero-logo-shade {
+    background: linear-gradient(to bottom, hsl(var(--foreground) / 0.55), transparent);
+  }
+
   .aurora {
     position: absolute;
     inset: -20%;
@@ -214,6 +218,13 @@
   .parallax-slow {
     animation: parallax-float 22s ease-in-out infinite alternate;
     will-change: transform;
+  }
+
+  @media (max-width: 767px) {
+    .hero-mobile-photo {
+      animation: none;
+      transform: none;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

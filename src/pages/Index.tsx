@@ -14,16 +14,17 @@ const Index = () =>
     {/* Hero */}
     <section className="relative min-h-[90vh] flex items-end overflow-hidden">
       <div className="absolute inset-0">
-        <picture className="block h-full w-full">
+        <picture className="block h-full w-full bg-foreground">
           <source media="(max-width: 767px)" srcSet={media.home.heroMobile} />
           <img
             src={media.home.hero}
-            alt="Couple sitting together on a hilltop at sunset"
-            className="parallax-slow h-full w-full object-cover object-[70%_50%] max-md:object-[50%_50%]" />
+             alt="Couple sharing a quiet moment on a rainy rooftop at night"
+             className="parallax-slow h-full w-full object-cover object-[60%_40%] max-md:object-contain max-md:object-[70%_45%] max-md:hero-mobile-photo" />
         </picture>
 
         <div className="absolute inset-0 bg-foreground/50" />
         <div className="aurora" />
+         <div className="hero-logo-shade absolute inset-x-0 top-0 h-40 pointer-events-none" />
       </div>
       <div className="relative container mx-auto px-6 pb-2 md:pb-3 pt-32">
         <div className="max-w-2xl">
@@ -60,12 +61,12 @@ const Index = () =>
     {/* Architecture section */}
     <section className="relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
       <div className="absolute inset-0">
-        <picture className="block h-full w-full">
+        <picture className="block h-full w-full bg-foreground">
           <source media="(max-width: 767px)" srcSet={media.home.bandMobile} />
           <img
             src={media.home.band}
             alt="Couple laughing together at a cafe table in the rain"
-            className="h-full w-full object-cover object-[70%_30%] max-md:object-[60%_50%]"
+             className="h-full w-full object-cover object-[70%_35%] max-md:absolute max-md:bottom-0 max-md:h-auto max-md:object-[70%_35%]"
           />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30 max-md:bg-gradient-to-b max-md:from-foreground/70 max-md:to-foreground/30" />
