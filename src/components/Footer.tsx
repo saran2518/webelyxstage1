@@ -1,12 +1,16 @@
 import { media } from "@/content/media";
 import { Link } from "react-router-dom";
+import Wordmark from "@/components/Wordmark";
 
 const Footer = () => (
   <footer className="bg-bronze text-bronze-foreground">
     <div className="container mx-auto px-6 py-16">
       <div className="flex flex-col md:flex-row items-start justify-between gap-10">
         <div>
-          <div className="mb-3"><img src={media.brand.wordmarkDark} alt="Elyxer" className="h-12 w-auto max-w-[200px] object-contain" /></div>
+          <Link to="/" aria-label="Elyxer home" className="mb-3 flex w-fit items-center gap-[10px]">
+            <img src={media.brand.icon} alt="" className="h-[34px] w-[34px] md:h-10 md:w-10 object-contain" />
+            <Wordmark variant="dark" className="h-[26px] w-auto md:h-8" />
+          </Link>
           <p className="font-sans text-sm opacity-80 max-w-xs leading-relaxed">
             Chosen for who you are.<br />Built to get you on real dates.
           </p>

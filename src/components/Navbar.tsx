@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { media } from "@/content/media";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
 import { Button } from "@/components/ui/button";
+import Wordmark from "@/components/Wordmark";
 
 const navLinks = [
 { label: "Home", to: "/" },
@@ -39,8 +40,9 @@ const Navbar = () => {
 
 
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
-        <Link to="/" className="flex items-center gap-3 font-serif font-semibold tracking-wide text-accent text-4xl">
-          <img src={onDark ? media.brand.wordmarkDark : media.brand.wordmarkLight} alt="Elyxer" className="h-12 w-auto max-w-[180px] object-contain" />
+        <Link to="/" aria-label="Elyxer home" className="flex shrink-0 items-center gap-[10px]">
+          <img src={media.brand.icon} alt="" className="h-[34px] w-[34px] md:h-10 md:w-10 object-contain" />
+          <Wordmark variant={onDark ? "dark" : "light"} className="h-[26px] w-auto md:h-8" />
         </Link>
 
         {/* Desktop nav */}
