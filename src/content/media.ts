@@ -23,10 +23,8 @@ import bench from "@/assets/site/pickleball-bench.jpg.asset.json";
 import gameNight from "@/assets/site/game-night-home.jpg.asset.json";
 import wordmarkDark from "@/assets/site/Elyxer_wordmark_gold_for_dark_bg.svg.asset.json";
 import wordmarkLight from "@/assets/site/Elyxer_wordmark_gold_for_light_bg.svg.asset.json";
-import videoHer from "@/assets/site/video-date-her.mp4.asset.json";
-import videoHim from "@/assets/site/video-date-him.mp4.asset.json";
-import women from "@/assets/couple-women.jpg";
-import men from "@/assets/couple-lgbtq-men.jpg";
+import selfieHer from "@/assets/site/selfie-her.png.asset.json";
+import selfieHim from "@/assets/site/selfie-him.png.asset.json";
 import cartoon from "@/assets/under-age-cartoon.png";
 import appIcon from "@/assets/elyxer-logo.png";
 
