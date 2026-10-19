@@ -58,7 +58,7 @@ const Index = () =>
     </section>
 
     {/* Architecture section */}
-    <section className="relative overflow-hidden flex items-center py-32 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
+    <section className="relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
       <div className="absolute inset-0">
         <picture className="block h-full w-full">
           <source media="(max-width: 767px)" srcSet={media.home.bandMobile} />
