@@ -40,8 +40,7 @@ const Navbar = () => {
 
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         <Link to="/" className="flex items-center gap-3 font-serif font-semibold tracking-wide text-accent text-4xl">
-          <img src={onDark ? media.brand.wordmarkDark : media.brand.wordmarkLight} alt={media.brand.usesLogoFallback ? "Elyxer logo" : "Elyxer"} className={media.brand.usesLogoFallback ? "h-12 w-12 rounded-lg" : "h-12 w-auto max-w-[180px] object-contain"} />
-          {media.brand.usesLogoFallback && "Elyxer"}
+          <img src={onDark ? media.brand.wordmarkDark : media.brand.wordmarkLight} alt="Elyxer" className="h-12 w-auto max-w-[180px] object-contain" />
         </Link>
 
         {/* Desktop nav */}
