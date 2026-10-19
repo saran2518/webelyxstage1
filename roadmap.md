@@ -1,6 +1,6 @@
 # Tasks
-- [ ] Import uploaded site assets and connect all media slots, including surfing and both wordmarks.
-- [ ] Verify uploaded images, video playback and light/dark wordmark switching.
+- [x] Import uploaded site assets and connect all media slots, including surfing and both wordmarks.
+- [x] Verify uploaded image delivery, mobile fit and light/dark wordmark switching. Both MP4s delivered successfully; H.264 playback cannot be checked in sandbox Chromium.
 - [x] Update marketing copy, navigation, footer and metadata to current positioning.
 - [x] Centralise all page media slots with existing asset fallbacks.
 - [x] Update early access copy without changing form behaviour.
