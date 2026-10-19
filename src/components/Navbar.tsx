@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import elyxerLogo from "@/assets/elyxer-logo.png";
+import { media } from "@/content/media";
+import EarlyAccessButton from "@/components/EarlyAccessButton";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
 { label: "Home", to: "/" },
-{ label: "What We Do", to: "/what-we-do" },
-{ label: "Product", to: "/product" },
-{ label: "World of Dating", to: "/world-of-dating" },
+{ label: "What we do", to: "/what-we-do" },
+{ label: "How it works", to: "/product" },
+{ label: "World of dating", to: "/world-of-dating" },
 { label: "Help & FAQ", to: "/help" }];
 
 
@@ -19,12 +21,15 @@ const Navbar = () => {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     setMobileOpen(false);
   }, [location]);
+
+  const onDark = location.pathname === "/" && !scrolled;
 
   return (
     <nav
@@ -35,8 +40,8 @@ const Navbar = () => {
 
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         <Link to="/" className="flex items-center gap-3 font-serif font-semibold tracking-wide text-accent text-4xl">
-          <img src={elyxerLogo} alt="Elyxer logo" className="h-12 w-12 rounded-lg" />
-          Elyxer
+          <img src={onDark ? media.brand.wordmarkDark : media.brand.wordmarkLight} alt={media.brand.usesLogoFallback ? "Elyxer logo" : "Elyxer"} className={media.brand.usesLogoFallback ? "h-12 w-12 rounded-lg" : "h-12 w-auto max-w-[180px] object-contain"} />
+          {media.brand.usesLogoFallback && "Elyxer"}
         </Link>
 
         {/* Desktop nav */}
@@ -48,29 +53,24 @@ const Navbar = () => {
             className={`link-glow text-sm font-sans font-medium tracking-wide ${
             location.pathname === link.to ?
             "text-primary" :
-            "text-muted-foreground hover:text-foreground"}`
+            onDark ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`
             }>
 
               {link.label}
             </Link>
           )}
-          <Link
-            to="/early-access"
-            className="btn-glow ml-2 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-sans font-medium text-primary-foreground">
-
-            Get Early Access
-          </Link>
+          <EarlyAccessButton className="ml-2 px-5 py-2.5" />
 
         </div>
 
         {/* Mobile toggle */}
-        <button
+        <Button variant="ghost" size="icon"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground"
-          aria-label="Toggle menu">
+          className={`md:hidden ${onDark ? "text-primary-foreground" : "text-foreground"}`}
+          aria-label="Toggle menu" aria-expanded={mobileOpen}>
 
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        </Button>
       </div>
 
       {/* Mobile nav */}
@@ -90,12 +90,7 @@ const Navbar = () => {
                 {link.label}
               </Link>
           )}
-            <Link
-            to="/early-access"
-            className="mt-2 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-sans font-medium text-primary-foreground">
-
-              Get Early Access
-            </Link>
+            <EarlyAccessButton className="mt-2" />
           </div>
         </div>
       }

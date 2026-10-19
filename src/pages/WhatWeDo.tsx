@@ -1,33 +1,10 @@
 import Layout from "@/components/Layout";
-import coupleGarden from "@/assets/couple-garden.jpg";
-import coupleCafe from "@/assets/couple-cafe.jpg";
-import coupleWomen from "@/assets/couple-women.jpg";
+import { media } from "@/content/media";
 
 const sections = [
-  {
-    label: "Vision",
-    title: "Redefining what dating can be.",
-    content:
-      "We envision a world where dating platforms are designed around alignment and intentional interaction — where every feature supports emotional intelligence, not behavioral exploitation. Elyxer exists to shift the paradigm from volume to value, from swiping to seeing.",
-    image: coupleGarden,
-    imageAlt: "Elegant couple walking through a sunset garden",
-  },
-  {
-    label: "Mission",
-    title: "Trust-led design. Curated connection.",
-    content:
-      "Our mission is to build a dating experience rooted in trust, transparency, and thoughtful design. We curate every interaction to foster genuine human connection — not engagement metrics. Every design decision we make begins with a single question: does this help people connect meaningfully?",
-    image: coupleCafe,
-    imageAlt: "Couple sharing an intimate moment at a sunlit cafe",
-  },
-  {
-    label: "Brand Story",
-    title: "Why Elyxer exists.",
-    content:
-      "Elyxer was born from a simple observation: modern dating platforms optimize for attention, not connection. They reward impulsivity, penalize vulnerability, and reduce people to profiles. We set out to design something fundamentally different — a platform that honors the complexity of human connection and treats every user as a whole person, not a data point.",
-    image: coupleWomen,
-    imageAlt: "Two elegant women at an art exhibition",
-  },
+  { label: "Vision", title: "Dating without judgement.", content: "We picture a world where people meet for who they are, not for their religion, caste, income or the colour of their skin. Elyxer is built for that world.", image: media.what.vision, imageAlt: "Couple sharing a quiet moment on a beach" },
+  { label: "Mission", title: "Built to get you on real dates.", content: "Fewer endless chats, more real dates. Every feature in Elyxer, from Moments to Invites to the Virtual Date Room, exists to help two people actually meet.", image: media.what.mission, imageAlt: "Couple spending time together at a café" },
+  { label: "Our story", title: "Why Elyxer exists.", content: "Elyxer began with a simple question: why do dating apps sort people like products? Filters for religion, income and background decide who you never get to meet. We built Elyxer so people are chosen for their lives, their interests and their character. The name comes from elixir, and it is said the same way: eh-LIX-er.", image: media.what.story, imageAlt: "Couple enjoying time outdoors" },
 ];
 
 const WhatWeDo = () => (
@@ -35,10 +12,10 @@ const WhatWeDo = () => (
     <section className="pt-32 md:pt-44 pb-20">
       <div className="container mx-auto px-6 max-w-3xl">
         <h1 className="text-4xl md:text-5xl font-serif font-semibold text-foreground text-center animate-fade-up">
-          What We Do
+          What we do
         </h1>
         <p className="mt-6 text-center text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-          We architect connection. Every detail is intentional, every interaction is designed, every experience is curated.
+          We are building a new world of meeting people, where you are chosen for who you are.
         </p>
       </div>
     </section>

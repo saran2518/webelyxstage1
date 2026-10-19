@@ -1,44 +1,18 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
-import coupleWomen from "@/assets/couple-women.jpg";
-import coupleLgbtqMen from "@/assets/couple-lgbtq-men.jpg";
-import coupleCafe from "@/assets/couple-cafe.jpg";
-import coupleGarden from "@/assets/couple-garden.jpg";
-import couplePark from "@/assets/couple-park.jpg";
+import { media } from "@/content/media";
+import { Button } from "@/components/ui/button";
 
 const featuredArticle = {
-  title: "The Case for Slow Dating in a Fast World",
-  excerpt:
-    "In an era optimized for speed, the most radical act of connection may be patience. We explore why slowing down is the new competitive advantage in modern dating.",
-  date: "February 2026",
-  image: coupleWomen,
+  title: "Chosen for who you are: why we left the filters out.",
+  excerpt: "Religion, caste, income. The filters most apps offer, and the reasons we decided to leave every one of them out.",
+  image: media.blog.featured,
 };
-
 const articles = [
-  {
-    title: "Emotional Intelligence as a Dating Skill",
-    excerpt: "Why understanding yourself is the first step to understanding someone else.",
-    date: "January 2026",
-    image: coupleLgbtqMen,
-  },
-  {
-    title: "Beyond the Profile: What Presence Really Means",
-    excerpt: "How showing up authentically changes everything — online and off.",
-    date: "December 2025",
-    image: coupleCafe,
-  },
-  {
-    title: "The Architecture of Trust in Digital Spaces",
-    excerpt: "Building platforms that prioritize safety without sacrificing spontaneity.",
-    date: "November 2025",
-    image: coupleGarden,
-  },
-  {
-    title: "Curated Spaces: The Future of Group Connection",
-    excerpt: "Why the next frontier of dating isn't one-on-one — it's communal.",
-    date: "October 2025",
-    image: couplePark,
-  },
+  { title: "Why one plan beats a hundred hellos.", excerpt: "Coffee, a long walk, dinner. Why a simple invite does more than weeks of small talk.", image: media.blog.a1 },
+  { title: "Who else thinks Sunday mornings belong to Cubbon Park?", excerpt: "The small, ordinary moments that say more about you than any bio.", image: media.blog.a2 },
+  { title: "Meet before you meet: the case for a first video date.", excerpt: "Ten minutes on video, from your own space, before you decide to meet in person.", image: media.blog.a3 },
+  { title: "What a Selfie Badge means, and what it does not.", excerpt: "A live selfie, taken in the app, shown on your profile. Here is exactly what it tells people.", image: media.blog.a4 },
 ];
 
 const WorldOfDating = () => {
@@ -49,10 +23,10 @@ const WorldOfDating = () => {
       <section className="pt-32 md:pt-44 pb-16">
         <div className="container mx-auto px-6 max-w-3xl text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-semibold text-foreground animate-fade-up">
-            The World of Dating, Reconsidered.
+            The world of dating, reconsidered.
           </h1>
           <p className="mt-6 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-            Perspectives on modern connection — thoughtful essays, research, and cultural commentary from the Elyxer editorial team.
+            Stories, ideas and honest thoughts on modern dating in India, from the Elyxer team.
           </p>
         </div>
       </section>
@@ -77,7 +51,7 @@ const WorldOfDating = () => {
               <p className="font-sans text-base text-muted-foreground leading-relaxed mb-4">
                 {featuredArticle.excerpt}
               </p>
-              <span className="font-sans text-xs text-muted-foreground">{featuredArticle.date}</span>
+              <span className="font-sans text-xs text-muted-foreground">Coming soon</span>
             </div>
           </div>
         </div>
@@ -90,7 +64,7 @@ const WorldOfDating = () => {
             {articles.map((a) => (
               <div
                 key={a.title}
-                className="rounded-xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-soft-lg transition-shadow duration-300 cursor-pointer"
+                className="rounded-xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-soft-lg transition-shadow duration-300"
               >
                 <img
                   src={a.image}
@@ -105,7 +79,7 @@ const WorldOfDating = () => {
                   <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-3">
                     {a.excerpt}
                   </p>
-                  <span className="font-sans text-xs text-muted-foreground">{a.date}</span>
+                  <span className="font-sans text-xs text-muted-foreground">Coming soon</span>
                 </div>
               </div>
             ))}
@@ -117,10 +91,10 @@ const WorldOfDating = () => {
       <section className="py-20 md:py-28 bg-secondary/50">
         <div className="container mx-auto px-6 max-w-xl text-center">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-4">
-            Stay considered.
+            Be the first to read.
           </h2>
           <p className="font-sans text-sm text-muted-foreground mb-8">
-            Subscribe to receive thoughtful perspectives on modern dating, delivered monthly.
+            New stories on dating, delivered when they are ready.
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}
@@ -133,12 +107,12 @@ const WorldOfDating = () => {
               placeholder="Your email address"
               className="flex-1 rounded-lg border border-border bg-background px-4 py-3 text-sm font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
-            <button
+            <Button
               type="submit"
               className="rounded-lg bg-primary px-6 py-3 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90"
             >
               Subscribe
-            </button>
+            </Button>
           </form>
         </div>
       </section>
