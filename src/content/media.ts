@@ -23,10 +23,8 @@ import bench from "@/assets/site/pickleball-bench.jpg.asset.json";
 import gameNight from "@/assets/site/game-night-home.jpg.asset.json";
 import wordmarkDark from "@/assets/site/Elyxer_wordmark_gold_for_dark_bg.svg.asset.json";
 import wordmarkLight from "@/assets/site/Elyxer_wordmark_gold_for_light_bg.svg.asset.json";
-import videoHer from "@/assets/site/video-date-her.mp4.asset.json";
-import videoHim from "@/assets/site/video-date-him.mp4.asset.json";
-import women from "@/assets/couple-women.jpg";
-import men from "@/assets/couple-lgbtq-men.jpg";
+import selfieHer from "@/assets/site/selfie-her.png.asset.json";
+import selfieHim from "@/assets/site/selfie-him.png.asset.json";
 import cartoon from "@/assets/under-age-cartoon.png";
 import appIcon from "@/assets/elyxer-logo.png";
 
@@ -43,14 +41,14 @@ export const media = {
     bandMobile: bandPortrait, // home-band-cafe-rain-portrait.jpg (tall phone version)
     card1: painter.url, // painter.jpg
     card2: laughing.url, // phone-laughing.jpg
-    card3: { src: videoHer.url, poster: women } as VideoSlot, // video-date-her.mp4
+    card3: selfieHer.url, // selfie-her.png
     cta: ctaKitchen.url, // home-cta-kitchen.jpg
   },
   how: {
     s1: pottery.url, // pottery-wheel.jpg
     s2: [park.url, reading.url, bookstore.url, surfing.url], // park-coffee.jpg, cafe-reading.jpg, bookstore.jpg, surfing.jpg
     s3: [window.url, brick.url], // phone-window.jpg, cafe-brick.jpg
-    s4: [{ src: videoHer.url, poster: women }, { src: videoHim.url, poster: men }] as VideoSlot[], // video-date-her.mp4, video-date-him.mp4
+    s4: [selfieHer.url, selfieHim.url], // selfie-her.png, selfie-him.png
     s5: wall.url, // phone-wall.jpg
   },
   what: {

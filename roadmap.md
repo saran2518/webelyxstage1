@@ -7,4 +7,4 @@
 - [x] Update early access copy without changing form behaviour.
 - [x] Verify page navigation, media, mobile fit and under-18 flow. Email delivery and OTP completion were not re-tested.
 - [x] Add the four wide home photos, crop hero and band at 70% horizontal, and add phone portrait versions so both faces stay in frame.
-- [ ] Hide the live Lovable badge. Blocked pending user approval.
+- [ ] Hide the live Lovable badge. Blocked pending user approval.[x] Replace Meet before you meet media with the two selfie photos (home card 3 + How it works 04 PiP with 10:00 pill); deleted video-date-her/him.mp4.

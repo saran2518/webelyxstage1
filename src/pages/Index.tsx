@@ -94,7 +94,7 @@ const Index = () =>
               <SlotMedia
             slot={f.image}
             alt={f.title}
-            className="w-full h-48 object-cover" />
+            className={`w-full h-48 object-cover ${f.image === media.home.card3 ? "object-[50%_45%]" : ""}`} />
 
               <div className="p-8 md:p-10">
                 <h3 className="text-xl font-serif font-semibold text-foreground mb-3">
