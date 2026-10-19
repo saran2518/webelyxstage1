@@ -37,6 +37,7 @@
     --bronze: 30 68% 36%;
     --bronze-foreground: 54 100% 98.4%;
     --gold-light: 43 68% 64%;
+    --hero-logo-shadow: 0 0% 0% / 0.45;
 
     --sidebar-background: 54 100% 98.4%;
     --sidebar-foreground: 30 10% 18%;
@@ -196,22 +197,8 @@
     transform: translateY(0);
   }
 
-  /* ===== Hero aurora glow ===== */
-  .hero-logo-shade {
-    background: linear-gradient(to bottom, hsl(var(--foreground) / 0.55), transparent);
-  }
-
-  .aurora {
-    position: absolute;
-    inset: -20%;
-    pointer-events: none;
-    background:
-      radial-gradient(40% 40% at 20% 30%, hsl(var(--primary) / 0.28), transparent 60%),
-      radial-gradient(35% 35% at 75% 60%, hsl(var(--gold-light) / 0.22), transparent 65%),
-      radial-gradient(30% 30% at 50% 85%, hsl(var(--primary) / 0.18), transparent 70%);
-    filter: blur(40px);
-    mix-blend-mode: screen;
-    animation: aurora-drift 18s ease-in-out infinite alternate;
+  .hero-logo-shadow {
+    filter: drop-shadow(0 1px 6px hsl(var(--hero-logo-shadow)));
   }
 
   /* ===== Parallax hero background ===== */
@@ -228,7 +215,6 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .aurora,
     .parallax-slow {
       animation: none;
     }
@@ -249,21 +235,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes aurora-drift {
-  0% {
-    transform: translate3d(-3%, -2%, 0) scale(1);
-    opacity: 0.85;
-  }
-  50% {
-    transform: translate3d(2%, 1%, 0) scale(1.08);
-    opacity: 1;
-  }
-  100% {
-    transform: translate3d(3%, 3%, 0) scale(1.04);
-    opacity: 0.9;
   }
 }
 
