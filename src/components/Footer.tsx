@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="container mx-auto px-6 py-16">
       <div className="flex flex-col md:flex-row items-start justify-between gap-10">
         <div>
-          <div className="flex items-center gap-3 mb-3"><img src={media.brand.wordmarkDark} alt="Elyxer" className={media.brand.usesLogoFallback ? "h-12 w-12 rounded-lg" : "h-12 w-auto max-w-[200px] object-contain"} />{media.brand.usesLogoFallback && <span className="font-serif text-2xl">Elyxer</span>}</div>
+          <div className="mb-3"><img src={media.brand.wordmarkDark} alt="Elyxer" className="h-12 w-auto max-w-[200px] object-contain" /></div>
           <p className="font-sans text-sm opacity-80 max-w-xs leading-relaxed">
             Chosen for who you are.<br />Built to get you on real dates.
           </p>
