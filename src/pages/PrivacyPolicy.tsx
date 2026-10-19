@@ -124,7 +124,7 @@ const PrivacyPolicy = () => (
             <li><strong className="text-foreground">Registered Name:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED</li>
             <li><strong className="text-foreground">Application Name:</strong> Elyxer</li>
             <li><strong className="text-foreground">Registered Address:</strong> Unit 101, Oxford Towers, 139, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka - 560008, India</li>
-            <li><strong className="text-foreground">Email:</strong> support@elyxer.co</li>
+            <li><strong className="text-foreground">Email:</strong> support@elyxer.com</li>
             <li><strong className="text-foreground">Website:</strong> www.elyxer.co</li>
           </ul>
           <p>
@@ -331,7 +331,7 @@ const PrivacyPolicy = () => (
             </ul>
             <p>
               To deactivate or delete your account, go to Account Settings &gt; Privacy Controls, or contact our
-              support team at support@elyxer.co.
+              support team at support@elyxer.com.
             </p>
           </SubSection>
         </Section>
@@ -410,7 +410,7 @@ const PrivacyPolicy = () => (
           </SubSection>
           <SubSection title="12.2 Magic Search">
             <p>Our Magic Search feature uses AI algorithms to identify and suggest users with similar interests and compatible traits. This involves automated analysis of your profile data and preferences. This feature does not produce legally binding decisions and is intended purely to facilitate connections between users.</p>
-            <p>You have the right to opt out of AI-based profiling features by contacting us at support@elyxer.co or through your privacy settings. Opting out may limit certain features of the application.</p>
+            <p>You have the right to opt out of AI-based profiling features by contacting us at support@elyxer.com or through your privacy settings. Opting out may limit certain features of the application.</p>
           </SubSection>
           <SubSection title="12.3 Profile Photo and Content Moderation">
             <p>All profile photos and bio content uploaded by users are subject to moderation to ensure the safety and integrity of the Elyxer community. Our moderation process uses a combination of:</p>
@@ -558,7 +558,7 @@ const PrivacyPolicy = () => (
         <Section title="20. Contact Us">
           <p>For any questions, requests, or concerns regarding this Privacy Policy or the processing of your personal data, please contact us at:</p>
           <ul className="list-none space-y-1">
-            <li><strong className="text-foreground">Email:</strong> support@elyxer.co</li>
+            <li><strong className="text-foreground">Email:</strong> support@elyxer.com</li>
             <li><strong className="text-foreground">Grievance Email:</strong> grievance@elyxer.co</li>
             <li><strong className="text-foreground">Postal Address:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED, Unit 101, Oxford Towers, 139, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka - 560008, India</li>
           </ul>
