@@ -9,6 +9,20 @@ const features = [
   { title: "Meet before you meet.", description: "Start with a ten-minute video date inside the app. Add a live selfie to earn your Selfie Badge. Report and block are always one tap away.", image: media.home.card3 },
 ];
 
+const ClosingWords = ({ className = "" }: { className?: string }) => (
+  <div className={className}>
+    <h2 className="text-3xl md:text-4xl font-serif font-semibold text-primary-foreground">
+      In Elyxer, you are the chosen.
+    </h2>
+    <p className="mt-5 text-base font-sans text-primary-foreground/80">
+      Early access is open in Bengaluru. The first 10,000 members get one week of Plus, free, when discovery opens.
+    </p>
+    <div className="mt-10">
+      <EarlyAccessButton />
+    </div>
+  </div>
+);
+
 const Index = () =>
 <Layout>
     {/* Hero */}
@@ -109,17 +123,25 @@ const Index = () =>
     </section>
 
     {/* Final CTA */}
-    <section className="relative overflow-hidden flex items-end py-20 md:py-24 max-md:min-h-[80vh] md:min-h-[min(56.25vw,80vh)]">
-      <div className="absolute inset-0"><SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full h-full object-cover" /><div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(var(--foreground) / 0.8) 0%, hsl(var(--foreground) / 0.45) 45%, hsl(var(--foreground) / 0.3) 100%)" }} /></div>
-      <div className="relative container mx-auto px-6 text-center max-w-2xl">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-primary-foreground">
-          In Elyxer, you are the chosen.
-        </h2>
-        <p className="mt-5 text-base font-sans text-primary-foreground/80">
-          Early access is open in Bengaluru. The first 10,000 members get one week of Plus, free, when discovery opens.
-        </p>
-        <div className="mt-10">
-          <EarlyAccessButton />
+    <section className="relative overflow-hidden">
+      {/* Phone: photo on top, words on a dark panel below so faces stay clear */}
+      <div className="md:hidden">
+        <div className="relative">
+          <SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full aspect-[2/3] object-cover object-[60%_35%]" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-foreground/70" />
+        </div>
+        <div className="bg-foreground px-6 py-14">
+          <ClosingWords className="text-center" />
+        </div>
+      </div>
+      {/* Desktop: full-bleed photo with the words on the empty left side */}
+      <div className="relative hidden md:flex md:items-center md:min-h-[min(56.25vw,80vh)] md:py-24">
+        <div className="absolute inset-0">
+          <SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--foreground) / 0.9) 0%, hsl(var(--foreground) / 0.75) 30%, hsl(var(--foreground) / 0.35) 55%, hsl(var(--foreground) / 0.2) 100%)" }} />
+        </div>
+        <div className="relative container mx-auto px-6">
+          <ClosingWords className="max-w-md text-left" />
         </div>
       </div>
     </section>
