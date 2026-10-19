@@ -11,7 +11,7 @@ const features = [
 
 const ClosingWords = ({ className = "" }: { className?: string }) => (
   <div className={className}>
-    <h2 className="text-3xl md:text-4xl font-serif font-semibold text-primary-foreground">
+    <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-primary-foreground">
       In Elyxer, you are the chosen.
     </h2>
     <p className="mt-5 text-base font-sans text-primary-foreground/80">
@@ -38,12 +38,12 @@ const Index = () =>
         <div className="absolute inset-0 bg-foreground/50" />
       </div>
       <div className="relative container mx-auto px-6 pb-2 md:pb-3 pt-32">
-        <div className="max-w-2xl">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-normal leading-[1.15] tracking-normal text-primary-foreground animate-fade-up">
+        <div className="max-w-4xl">
+          <h1 className="text-[40px] md:text-[56px] lg:text-[72px] lg:whitespace-nowrap font-display font-normal leading-[1.05] tracking-[0.01em] text-primary-foreground animate-fade-up">
             Chosen for who you are.
           </h1>
-          <p className="mt-5 text-xl md:text-2xl font-serif text-accent animate-fade-up-delay-1">Built to get you on real dates.</p>
-          <p className="mt-6 text-lg font-sans text-primary-foreground/80 leading-relaxed animate-fade-up-delay-1">
+          <p className="mt-5 text-[22px] md:text-[30px] font-display font-normal tracking-[0.01em] text-accent animate-fade-up-delay-1">Built to get you on real dates.</p>
+          <p className="mt-6 max-w-2xl text-lg font-sans text-primary-foreground/80 leading-relaxed animate-fade-up-delay-1">
             A dating app where you are seen for your interests, your life and your character, never your religion, ethnicity or income.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
@@ -60,7 +60,7 @@ const Index = () =>
     {/* Principles intro */}
     <section className="py-16 md:py-20" data-reveal>
       <div className="container mx-auto px-6 max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
+        <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-foreground">
           What we stand for.
         </h2>
         <p className="mt-5 text-lg md:text-xl font-sans text-muted-foreground leading-relaxed">
@@ -83,7 +83,7 @@ const Index = () =>
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30 max-md:bg-gradient-to-b max-md:from-foreground/70 max-md:to-foreground/30" />
       </div>
       <div className="relative container mx-auto px-6 max-w-3xl text-center max-md:pt-14" data-reveal>
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-primary-foreground">
+        <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-primary-foreground">
           Built to get you on real dates.
         </h2>
         <p className="mt-6 text-base md:text-lg font-sans text-primary-foreground/80 leading-relaxed">
@@ -109,7 +109,7 @@ const Index = () =>
             className="w-full aspect-[4/5] max-h-[420px] object-cover" />
 
               <div className="p-8 md:p-10">
-                <h3 className="text-xl font-serif font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-display font-normal tracking-[0.01em] text-foreground mb-3">
                   {f.title}
                 </h3>
                 <p className="font-sans text-sm text-muted-foreground leading-relaxed">

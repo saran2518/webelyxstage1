@@ -1,4 +1,5 @@
 # Project rules
+- Use the shared Tailwind display family for all titles and the global heading rule for normal weight and tracking, so typography changes never affect body text or controls.
 - Keep all page media and brand asset references in `src/content/media.ts`, with future filenames beside fallback slots, so uploads need one update.
 - Render brand wordmarks through `Wordmark` using the original asset SVG geometry and colours, with per-instance `useId` gradient identifiers to prevent navbar/footer collisions.
 - Render image/video slots through `SlotMedia` so absent videos show posters without broken playback.
