@@ -36,9 +36,10 @@ const WorldOfDating = () => {
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="rounded-xl border border-border bg-card overflow-hidden shadow-soft animate-fade-up">
             <img
-              src={featuredArticle.image}
+              src={featuredArticle.image.src}
               alt="Featured article"
-              className="w-full h-56 md:h-72 object-cover"
+              className="w-full aspect-[4/3] object-cover"
+              style={featuredArticle.image.focus ? { objectPosition: featuredArticle.image.focus } : undefined}
               loading="lazy"
             />
             <div className="p-8 md:p-12">
@@ -67,9 +68,10 @@ const WorldOfDating = () => {
                 className="rounded-xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-soft-lg transition-shadow duration-300"
               >
                 <img
-                  src={a.image}
+                  src={a.image.src}
                   alt={a.title}
-                  className="w-full h-44 object-cover"
+                  className="w-full aspect-[4/3] object-cover"
+                  style={a.image.focus ? { objectPosition: a.image.focus } : undefined}
                   loading="lazy"
                 />
                 <div className="p-7">

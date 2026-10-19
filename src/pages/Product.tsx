@@ -37,18 +37,18 @@ const Product = () => (
               {i === 3 ? (
                 <div className="relative mx-auto max-w-sm">
                   <div className="relative aspect-[3/4] overflow-hidden rounded-xl shadow-soft">
-                    <img src={s.slots[0]} alt={`${s.title} 1`} className="h-full w-full object-cover object-[50%_30%]" loading="lazy" />
+                    <SlotMedia slot={s.slots[0]} alt={`${s.title} 1`} className="h-full w-full object-cover" />
                     <span className="absolute top-3 left-1/2 -translate-x-1/2 rounded-full bg-foreground/70 px-3 py-1 text-xs font-sans font-medium text-primary-foreground">
                       10:00
                     </span>
                   </div>
                   <div className="absolute bottom-3 right-3 w-24 md:w-28 aspect-[3/4] overflow-hidden rounded-lg border-2 border-background shadow-soft">
-                    <img src={s.slots[1]} alt={`${s.title} 2`} className="h-full w-full object-cover object-[50%_30%]" loading="lazy" />
+                    <SlotMedia slot={s.slots[1]} alt={`${s.title} 2`} className="h-full w-full object-cover" />
                   </div>
                 </div>
               ) : (
-              <div className={s.slots.length > 1 ? "grid grid-cols-2 gap-3" : "grid grid-cols-1"}>
-                {s.slots.map((slot, n) => <SlotMedia key={n} slot={slot} alt={`${s.title} ${n + 1}`} className={`w-full object-cover rounded-xl shadow-soft ${s.slots.length === 4 ? "h-32 md:h-36" : "h-56 md:h-72"}`} />)}
+              <div className={`mx-auto w-full max-w-[440px] ${s.slots.length > 1 ? "grid grid-cols-2 gap-3" : ""}`}>
+                {s.slots.map((slot, n) => <SlotMedia key={n} slot={slot} alt={`${s.title} ${n + 1}`} className="w-full aspect-[4/5] object-cover rounded-xl shadow-soft" />)}
               </div>
               )}
             </div>
