@@ -58,19 +58,19 @@ const Index = () =>
     </section>
 
     {/* Architecture section */}
-    <section className="relative overflow-hidden flex items-center py-32 md:py-24 md:min-h-[min(56.25vw,85vh)]">
+    <section className="relative overflow-hidden flex items-center py-32 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
       <div className="absolute inset-0">
         <picture className="block h-full w-full">
           <source media="(max-width: 767px)" srcSet={media.home.bandMobile} />
           <img
             src={media.home.band}
             alt="Couple laughing together at a cafe table in the rain"
-            className="h-full w-full object-cover object-[70%_30%] max-md:object-[50%_50%]"
+            className="h-full w-full object-cover object-[70%_30%] max-md:object-[60%_50%]"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30 max-md:bg-gradient-to-b max-md:from-foreground/70 max-md:to-foreground/30" />
       </div>
-      <div className="relative container mx-auto px-6 max-w-3xl text-center" data-reveal>
+      <div className="relative container mx-auto px-6 max-w-3xl text-center max-md:pt-14" data-reveal>
         <h2 className="text-3xl md:text-4xl font-serif font-semibold text-primary-foreground">
           Built to get you on real dates.
         </h2>
