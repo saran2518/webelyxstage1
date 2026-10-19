@@ -16,8 +16,8 @@ const Index = () =>
       <div className="absolute inset-0">
         <img
         src={media.home.hero}
-        alt="Couple laughing together at sunrise in the hills"
-        className="parallax-slow w-full h-full object-cover" />
+        alt="Couple sitting together on a hilltop at sunset"
+        className="parallax-slow w-full h-full object-cover object-[70%_50%]" />
 
         <div className="absolute inset-0 bg-foreground/50" />
         <div className="aurora" />
@@ -59,8 +59,8 @@ const Index = () =>
       <div className="absolute inset-0">
         <img
           src={media.home.band}
-          alt="People sharing an evening together"
-          className="parallax-slow w-full h-full object-cover"
+          alt="Couple laughing together at a cafe table in the rain"
+          className="parallax-slow w-full h-full object-cover object-[70%_50%]"
         />
         <div className="absolute inset-0 bg-foreground/55" />
       </div>

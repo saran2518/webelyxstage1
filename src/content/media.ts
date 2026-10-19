@@ -1,10 +1,11 @@
-import hills from "@/assets/site/mountain-sunrise-wide.jpg.asset.json";
-import camden from "@/assets/site/street-food-night.jpg.asset.json";
+import heroHilltop from "@/assets/site/home-hero-hilltop.jpg.asset.json";
+import bandCafeRain from "@/assets/site/home-band-cafe-rain.jpg.asset.json";
 import painter from "@/assets/site/painter.jpg.asset.json";
 import laughing from "@/assets/site/phone-laughing.jpg.asset.json";
-import kitchen from "@/assets/site/kitchen-spoon.jpg.asset.json";
+import ctaKitchen from "@/assets/site/home-cta-kitchen.jpg.asset.json";
 import pottery from "@/assets/site/pottery-wheel.jpg.asset.json";
 import park from "@/assets/site/park-coffee.jpg.asset.json";
+import cubbonPark from "@/assets/site/blog-cubbon-park.jpg.asset.json";
 import reading from "@/assets/site/cafe-reading.jpg.asset.json";
 import bookstore from "@/assets/site/bookstore.jpg.asset.json";
 import surfing from "@/assets/site/surfing.jpg.asset.json";
@@ -30,14 +31,16 @@ import appIcon from "@/assets/elyxer-logo.png";
 export type VideoSlot = { src?: string; poster: string };
 
 // Uploaded site assets. Keep image posters available if a video is unavailable.
+// home.hero and home.band hold couples on the right of the frame: those two
+// slots are cropped at 70% horizontal in Index.tsx so faces stay in frame.
 export const media = {
   home: {
-    hero: hills.url, // mountain-sunrise-wide.jpg
-    band: camden.url, // street-food-night.jpg
+    hero: heroHilltop.url, // home-hero-hilltop.jpg
+    band: bandCafeRain.url, // home-band-cafe-rain.jpg
     card1: painter.url, // painter.jpg
     card2: laughing.url, // phone-laughing.jpg
     card3: { src: videoHer.url, poster: women } as VideoSlot, // video-date-her.mp4
-    cta: kitchen.url, // kitchen-spoon.jpg
+    cta: ctaKitchen.url, // home-cta-kitchen.jpg
   },
   how: {
     s1: pottery.url, // pottery-wheel.jpg
@@ -54,7 +57,7 @@ export const media = {
   blog: {
     featured: vinyl.url, // vinyl-store-curly.jpg
     a1: sweater.url, // cafe-sweater.jpg
-    a2: park.url, // park-coffee.jpg
+    a2: cubbonPark.url, // blog-cubbon-park.jpg
     a3: bench.url, // pickleball-bench.jpg
     a4: gameNight.url, // game-night-home.jpg
   },
