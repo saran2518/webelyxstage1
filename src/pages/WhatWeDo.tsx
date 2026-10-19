@@ -36,11 +36,12 @@ const WhatWeDo = () => (
               </p>
             </div>
             <div className="flex-1 w-full">
-              <div className="rounded-xl overflow-hidden shadow-soft-lg">
+              <div className="rounded-xl overflow-hidden shadow-soft-lg aspect-[4/5] max-w-[460px] mx-auto w-full">
                 <img
-                  src={s.image}
+                  src={s.image.src}
                   alt={s.imageAlt}
-                  className="w-full h-64 md:h-80 object-cover"
+                  className="w-full h-full object-cover"
+                  style={s.image.focus ? { objectPosition: s.image.focus } : undefined}
                   loading="lazy"
                 />
               </div>

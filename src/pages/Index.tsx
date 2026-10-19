@@ -84,17 +84,17 @@ const Index = () =>
     {/* Feature cards with images */}
     <section className="py-24 md:py-32 mt-8 md:mt-12">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-6" data-reveal-stagger>
+        <div className="grid md:grid-cols-3 gap-8" data-reveal-stagger>
           {features.map((f) =>
         <div
           key={f.title}
           data-reveal-child
-          className="glass-light lift rounded-xl overflow-hidden">
+          className="glass-light lift rounded-xl overflow-hidden h-full flex flex-col">
 
               <SlotMedia
             slot={f.image}
             alt={f.title}
-            className={`w-full h-48 object-cover ${f.image === media.home.card3 ? "object-[50%_45%]" : ""}`} />
+            className="w-full aspect-[4/5] max-h-[420px] object-cover" />
 
               <div className="p-8 md:p-10">
                 <h3 className="text-xl font-serif font-semibold text-foreground mb-3">
