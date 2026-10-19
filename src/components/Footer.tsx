@@ -7,9 +7,9 @@ const Footer = () => (
     <div className="container mx-auto px-6 py-16">
       <div className="flex flex-col md:flex-row items-start justify-between gap-10">
         <div>
-          <Link to="/" aria-label="Elyxer home" className="mb-3 flex w-fit items-center gap-[10px]">
-            <img src={media.brand.icon} alt="" className="h-[34px] w-[34px] md:h-10 md:w-10 object-contain" />
-            <Wordmark variant="dark" className="h-[26px] w-auto md:h-8" />
+          <Link to="/" aria-label="Elyxer home" className="mb-3 flex w-fit items-center gap-3">
+            <img src={media.brand.icon} alt="" className="h-[52px] w-[52px] object-contain" />
+            <Wordmark variant="dark" className="h-11 w-auto" />
           </Link>
           <p className="font-sans text-sm opacity-80 max-w-xs leading-relaxed">
             Chosen for who you are.<br />Built to get you on real dates.
@@ -18,7 +18,7 @@ const Footer = () => (
         </div>
         <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
           <div className="flex flex-col gap-3">
-            <span className="font-sans text-xs font-semibold uppercase tracking-widest opacity-60 mb-1">Navigate</span>
+            <h3 className="font-display text-xs font-normal uppercase tracking-[0.01em] opacity-60 mb-1">Navigate</h3>
             <Link to="/" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Home</Link>
             <Link to="/what-we-do" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">What we do</Link>
             <Link to="/product" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">How it works</Link>
@@ -27,7 +27,7 @@ const Footer = () => (
             <a href="mailto:support@elyxer.com" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Contact us</a>
           </div>
           <div className="flex flex-col gap-3">
-            <span className="font-sans text-xs font-semibold uppercase tracking-widest opacity-60 mb-1">Legal</span>
+            <h3 className="font-display text-xs font-normal uppercase tracking-[0.01em] opacity-60 mb-1">Legal</h3>
             <Link to="/privacy" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Privacy Policy</Link>
             <Link to="/terms" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Terms & Conditions</Link>
             <Link to="/cookie-policy" className="font-sans text-sm opacity-80 hover:opacity-100 transition-opacity">Cookie Policy</Link>

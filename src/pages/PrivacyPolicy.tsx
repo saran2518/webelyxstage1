@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 
 const Section = ({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) => (
   <section id={id} className="py-10 md:py-20 border-b border-border last:border-b-0 scroll-mt-24">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-foreground mb-6 md:mb-8 tracking-tight">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-normal text-foreground mb-6 md:mb-8 tracking-[0.01em]">
       {title}
     </h2>
     <div className="space-y-4 md:space-y-5 font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -13,7 +13,7 @@ const Section = ({ id, title, children }: { id?: string; title: string; children
 
 const SubSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="mt-8 md:mt-10">
-    <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-normal text-foreground mb-3 md:mb-4 tracking-tight">
+    <h3 className="text-lg sm:text-xl md:text-2xl font-display font-normal text-foreground mb-3 md:mb-4 tracking-[0.01em]">
       {title}
     </h3>
     <div className="space-y-3 md:space-y-4">{children}</div>
@@ -75,7 +75,7 @@ const Table = ({ headers, rows }: { headers: string[]; rows: string[][] }) => (
 const Callout = ({ title, children }: { title?: string; children: React.ReactNode }) => (
   <div className="my-5 md:my-6 rounded-2xl border-l-2 border-primary bg-secondary/50 p-5 sm:p-6 md:p-7">
     {title && (
-      <p className="font-sans text-xs font-semibold uppercase tracking-widest text-primary mb-2 md:mb-3">
+      <p className="font-display text-xs font-normal uppercase tracking-[0.01em] text-primary mb-2 md:mb-3">
         {title}
       </p>
     )}
@@ -90,7 +90,7 @@ const PrivacyPolicy = () => (
         <p className="font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-primary mb-4 md:mb-6 animate-fade-up">
           Legal · Privacy
         </p>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-normal text-foreground tracking-tight animate-fade-up-delay-1 leading-[1.05]">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-normal text-foreground tracking-[0.01em] animate-fade-up-delay-1 leading-[1.05]">
           Privacy Policy
         </h1>
         <p className="mt-6 md:mt-8 max-w-2xl font-sans text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed animate-fade-up-delay-2">

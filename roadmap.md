@@ -1,4 +1,5 @@
 # Tasks
+- [x] Apply Marcellus to all titles and enlarge the hero text and logo lockups; verified home and What we do at 390, 1280 and 1920 widths. Desktop hero text sits above the faces with a single-line title. Existing phone hero framing still needs approval to avoid faces behind the text.
 - [x] Use the shared window-hug hero, restore the café band and remove hero gradients; verify logo and desktop faces at 1280 and 1920 widths.
 - [ ] Show both complete faces at 390px. Blocked: the requested cover crop at 72% 40% in the tall hero clips the man's right side; needs approval for a different mobile framing or photo.
 - [x] Update the selected home photos, remove only the rooftop background figure, preserve copy and heights, and verify complete faces and readable logo at 390, 1280 and 1920 widths. Phone photos use uncropped framing.
