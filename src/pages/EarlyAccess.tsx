@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { z } from "zod";
 import { media } from "@/content/media";
 
-const calculateAge = (dob: Date): number => {
+export const calculateAge = (dob: Date): number => {
   const today = new Date();
   let age = today.getFullYear() - dob.getFullYear();
   const m = today.getMonth() - dob.getMonth();

@@ -21,14 +21,15 @@ const Navbar = () => {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
-    const onDark = location.pathname === "/" && !scrolled;
-
-  return () => window.removeEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     setMobileOpen(false);
   }, [location]);
+
+  const onDark = location.pathname === "/" && !scrolled;
 
   return (
     <nav
