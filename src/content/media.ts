@@ -1,6 +1,6 @@
-import heroRooftop from "@/assets/site/home-hero-rooftop-clean.png";
 import bandWindowHug from "@/assets/site/home-band-window-hug.webp.asset.json";
-import heroWindow from "@/assets/site/home-hero-rain-window.webp.asset.json";
+import bandCafeRain from "@/assets/site/home-band-cafe-rain.jpg.asset.json";
+import bandPortrait from "@/assets/site/home-band-cafe-rain-portrait.jpg";
 import painter from "@/assets/site/painter.jpg.asset.json";
 import laughing from "@/assets/site/phone-laughing.jpg.asset.json";
 import ctaKitchen from "@/assets/site/home-cta-kitchen.jpg.asset.json";
@@ -36,10 +36,9 @@ export type PhotoSlot = { src: string; focus?: string };
 // slots are cropped at 70% horizontal in Index.tsx so faces stay in frame.
 export const media = {
   home: {
-    hero: heroRooftop, // home-hero-rooftop-clean.png (background figure removed)
-    heroMobile: heroWindow.url, // home-hero-rain-window.webp (square phone close-up)
-    band: bandWindowHug.url, // home-band-window-hug.webp
-    bandMobile: bandWindowHug.url, // home-band-window-hug.webp (same uploaded couple)
+    hero: bandWindowHug.url, // home-band-window-hug.webp (desktop and mobile)
+    band: bandCafeRain.url, // home-band-cafe-rain.jpg
+    bandMobile: bandPortrait, // home-band-cafe-rain-portrait.jpg
     card1: { src: painter.url, focus: "70% 30%" }, // painter.jpg
     card2: { src: laughing.url, focus: "50% 30%" }, // phone-laughing.jpg
     card3: { src: selfieHer.url, focus: "50% 28%" }, // selfie-her.png
