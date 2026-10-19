@@ -1,46 +1,14 @@
 import Layout from "@/components/Layout";
-import coupleHero from "@/assets/couple-hero.jpg";
-import coupleLgbtqMen from "@/assets/couple-lgbtq-men.jpg";
-import coupleCafe from "@/assets/couple-cafe.jpg";
-import coupleGarden from "@/assets/couple-garden.jpg";
-import coupleParkVideo from "@/assets/couple-park.mp4";
+import { media } from "@/content/media";
+import SlotMedia from "@/components/SlotMedia";
+import EarlyAccessButton from "@/components/EarlyAccessButton";
 
 const productSections = [
-  {
-    title: "Profiles constructed with purpose",
-    text: "Every profile on Elyxer is designed to reveal character, values, and emotional depth — not just appearance. Our structured profile framework invites authenticity and discourages performative self-presentation.",
-    image: coupleHero,
-    video: undefined,
-    imageAlt: "Elegant couple in an art gallery",
-  },
-  {
-    title: "Sophistication beneath the surface",
-    text: "Behind every interaction lies a thoughtful architecture of compatibility analysis, behavioral modeling, and emotional intelligence mapping. The technology is invisible — the experience is intuitive.",
-    image: coupleLgbtqMen,
-    video: undefined,
-    imageAlt: "Two men sharing an intimate moment on a rooftop at sunset",
-  },
-  {
-    title: "Interaction that advances with intention",
-    text: "Conversations on Elyxer follow a deliberate arc. Each stage of interaction is designed to build trust progressively, ensuring both participants feel safe, respected, and genuinely curious about each other.",
-    image: coupleCafe,
-    video: undefined,
-    imageAlt: "Couple at a sunlit cafe",
-  },
-  {
-    title: "Curated Spaces",
-    text: "Beyond one-on-one connections, Elyxer offers intimate group experiences — curated spaces for shared interests, guided conversations, and communal reflection. Connection isn't always one-to-one; sometimes it begins in community.",
-    image: coupleGarden,
-    video: undefined,
-    imageAlt: "Couple walking through a beautiful garden",
-  },
-  {
-    title: "Trust as infrastructure",
-    text: "Trust isn't a feature — it's the foundation. Identity verification, behavioral accountability, and transparent moderation ensure that every participant can engage with confidence and peace of mind.",
-    image: undefined,
-    video: coupleParkVideo,
-    imageAlt: "Couple sharing a moment",
-  },
+  { title: "Profiles that tell your story.", text: "Your profile reads like a story about your life, not a list of answers to forced prompts. Your photos, your interests, the way you spend a Sunday.", slots: [media.how.s1] },
+  { title: "Connect with life's moments.", text: 'Share a moment from your day. It stays live for 48 hours. When someone sees it and thinks "I like this too", they can send you a Vibe or an Invite.', slots: media.how.s2 },
+  { title: "Where someone actually asks.", text: "An Invite carries one plan: coffee, a long walk or dinner. Accept it, and the two of you take it from there.", slots: media.how.s3 },
+  { title: "Meet before you meet.", text: "A ten-minute video date inside the app, with icebreakers to get you started. See if the spark is real before you meet in person.", slots: media.how.s4 },
+  { title: "Safety, built in.", text: "Add a live selfie to earn your Selfie Badge. Other members see your city, never your exact location. Every photo is reviewed, and every report is read by our team.", slots: [media.how.s5] },
 ];
 
 const Product = () => (
@@ -48,10 +16,10 @@ const Product = () => (
     <section className="pt-32 md:pt-44 pb-16">
       <div className="container mx-auto px-6 max-w-3xl text-center">
         <h1 className="text-4xl md:text-5xl font-serif font-semibold text-foreground animate-fade-up">
-          The Architecture of Intentional Dating.
+          How Elyxer works.
         </h1>
         <p className="mt-6 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-          Every layer of Elyxer is built to support depth, trust, and genuine human connection.
+          Everything in Elyxer is built to take you from a profile to a real date.
         </p>
       </div>
     </section>
@@ -66,24 +34,8 @@ const Product = () => (
             }`}
           >
             <div className="flex-1 w-full">
-              <div className="rounded-xl overflow-hidden shadow-soft">
-                {s.video ? (
-                  <video
-                    src={s.video}
-                    className="w-full h-56 md:h-72 object-cover"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  />
-                ) : (
-                  <img
-                    src={s.image}
-                    alt={s.imageAlt}
-                    className="w-full h-56 md:h-72 object-cover"
-                    loading="lazy"
-                  />
-                )}
+              <div className={s.slots.length > 1 ? "grid grid-cols-2 gap-3" : "grid grid-cols-1"}>
+                {s.slots.map((slot, n) => <SlotMedia key={n} slot={slot} alt={`${s.title} ${n + 1}`} className={`w-full object-cover rounded-xl shadow-soft ${s.slots.length === 4 ? "h-32 md:h-36" : "h-56 md:h-72"}`} />)}
               </div>
             </div>
             <div className="flex-1">
@@ -101,6 +53,7 @@ const Product = () => (
             </div>
           </div>
         ))}
+        <div className="mt-12 text-center"><EarlyAccessButton /></div>
       </div>
     </section>
   </Layout>
