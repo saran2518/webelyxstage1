@@ -197,6 +197,10 @@
   }
 
   /* ===== Hero aurora glow ===== */
+  .hero-logo-shade {
+    background: linear-gradient(to bottom, hsl(var(--foreground) / 0.55), transparent);
+  }
+
   .aurora {
     position: absolute;
     inset: -20%;
