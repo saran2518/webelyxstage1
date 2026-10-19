@@ -109,8 +109,8 @@ const Index = () =>
     </section>
 
     {/* Final CTA */}
-    <section className="relative overflow-hidden flex items-center py-20 md:py-24 md:min-h-[min(42.6vw,80vh)]">
-      <div className="absolute inset-0"><SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full h-full object-cover" /><div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, hsl(var(--foreground) / 0.55) 0%, hsl(var(--foreground) / 0.35) 100%)" }} /></div>
+    <section className="relative overflow-hidden flex items-end py-20 md:py-24 max-md:min-h-[80vh] md:min-h-[min(56.25vw,80vh)]">
+      <div className="absolute inset-0"><SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full h-full object-cover" /><div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(var(--foreground) / 0.8) 0%, hsl(var(--foreground) / 0.45) 45%, hsl(var(--foreground) / 0.3) 100%)" }} /></div>
       <div className="relative container mx-auto px-6 text-center max-w-2xl">
         <h2 className="text-3xl md:text-4xl font-serif font-semibold text-primary-foreground">
           In Elyxer, you are the chosen.

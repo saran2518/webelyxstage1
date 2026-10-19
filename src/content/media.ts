@@ -42,7 +42,7 @@ export const media = {
     card1: { src: painter.url, focus: "70% 30%" }, // painter.jpg
     card2: { src: laughing.url, focus: "50% 30%" }, // phone-laughing.jpg
     card3: { src: selfieHer.url, focus: "50% 28%" }, // selfie-her.png
-    cta: { src: ctaRooftop.url, focus: "50% 30%" }, // home-cta-rooftop.png (rooftop night photo, background figure removed)
+    cta: { src: ctaRooftop.url, focus: "55% 25%" }, // home-cta-rooftop.png (rooftop night photo, background figure removed)
   },
   how: {
     s1: { src: pottery.url, focus: "65% 20%" }, // pottery-wheel.jpg
