@@ -58,17 +58,17 @@ const Index = () =>
     </section>
 
     {/* Architecture section */}
-    <section className="relative py-32 md:py-44 overflow-hidden">
+    <section className="relative overflow-hidden flex items-center py-32 md:py-24 md:min-h-[min(56.25vw,85vh)]">
       <div className="absolute inset-0">
         <picture className="block h-full w-full">
           <source media="(max-width: 767px)" srcSet={media.home.bandMobile} />
           <img
             src={media.home.band}
             alt="Couple laughing together at a cafe table in the rain"
-            className="parallax-slow h-full w-full object-cover object-[70%_50%] max-md:object-[50%_50%]"
+            className="h-full w-full object-cover object-[70%_30%] max-md:object-[50%_50%]"
           />
         </picture>
-        <div className="absolute inset-0 bg-foreground/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30" />
       </div>
       <div className="relative container mx-auto px-6 max-w-3xl text-center" data-reveal>
         <h2 className="text-3xl md:text-4xl font-serif font-semibold text-primary-foreground">
@@ -111,8 +111,8 @@ const Index = () =>
     </section>
 
     {/* Final CTA */}
-    <section className="relative py-20 md:py-28 overflow-hidden">
-      <div className="absolute inset-0"><SlotMedia slot={media.home.cta} alt="Couple sharing a moment in the kitchen" className="w-full h-full object-cover" /><div className="absolute inset-0 bg-foreground/60" /></div>
+    <section className="relative overflow-hidden flex items-center py-20 md:py-24 md:min-h-[min(42.6vw,80vh)]">
+      <div className="absolute inset-0"><SlotMedia slot={media.home.cta} alt="Couple sharing a moment in the kitchen" className="w-full h-full object-cover" /><div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, hsl(var(--foreground) / 0.55) 0%, hsl(var(--foreground) / 0.35) 100%)" }} /></div>
       <div className="relative container mx-auto px-6 text-center max-w-2xl">
         <h2 className="text-3xl md:text-4xl font-serif font-semibold text-primary-foreground">
           In Elyxer, you are the chosen.
