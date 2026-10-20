@@ -34,7 +34,7 @@ export type VideoSlot = { src?: string; poster: string };
 export type PhotoSlot = { src: string; focus?: string };
 
 // Uploaded site assets. Keep image posters available if a video is unavailable.
-// home.hero keeps the couple on the right of the frame: about 68% horizontal on
+// home.hero keeps the couple on the right of the frame: 58% horizontal on
 // desktop, and a portrait variant (heroMobile) so phones show both heads whole.
 export const media = {
   home: {
