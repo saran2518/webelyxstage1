@@ -33,7 +33,7 @@ const Index = () =>
           <img
             src={media.home.hero}
             alt="Couple close together beside a rain-streaked cafe window"
-            className="parallax-slow h-full w-full object-cover object-[58%_32%] max-md:object-[60%_45%] max-md:hero-mobile-photo" />
+            className="parallax-slow h-full w-full object-cover object-[58%_32%] max-md:object-[50%_45%] max-md:hero-mobile-photo" />
         </picture>
 
         <div className="absolute inset-0 bg-foreground/50" />
