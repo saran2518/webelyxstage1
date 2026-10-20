@@ -35,8 +35,6 @@ const Index = () =>
             alt="Couple close together beside a rain-streaked cafe window"
             className="parallax-slow h-full w-full object-cover object-[58%_32%] max-md:object-[50%_45%] max-md:hero-mobile-photo" />
         </picture>
-
-        <div className="absolute inset-0 bg-foreground/50" />
       </div>
       <div className="relative container mx-auto px-6 pb-10 md:pb-16 pt-32">
         <div className="max-w-[640px]">
@@ -81,7 +79,6 @@ const Index = () =>
              className="h-full w-full object-cover object-[70%_30%] max-md:object-[60%_50%]"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 to-foreground/30 max-md:bg-gradient-to-b max-md:from-foreground/70 max-md:to-foreground/30" />
       </div>
       <div className="relative container mx-auto px-6 max-w-3xl text-center max-md:pt-14" data-reveal>
         <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-primary-foreground">
@@ -158,7 +155,6 @@ const Index = () =>
       <div className="md:hidden">
         <div className="relative">
           <SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full aspect-[2/3] object-cover object-[60%_35%]" />
-          <div className="absolute inset-x-0 bottom-0 h-48" style={{ background: "linear-gradient(to bottom, hsl(var(--foreground) / 0) 0%, hsl(var(--foreground) / 0.7) 45%, hsl(var(--foreground) / 1) 82%, hsl(var(--foreground) / 1) 100%)" }} />
         </div>
         <div className="bg-foreground px-6 py-14">
           <ClosingWords className="text-center" />
@@ -168,7 +164,6 @@ const Index = () =>
       <div className="relative hidden md:flex md:items-center md:min-h-[min(56.25vw,80vh)] md:py-24">
         <div className="absolute inset-0">
           <SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(var(--foreground) / 0.9) 0%, hsl(var(--foreground) / 0.75) 30%, hsl(var(--foreground) / 0.35) 55%, hsl(var(--foreground) / 0.2) 100%)" }} />
         </div>
         <div className="relative container mx-auto px-6">
           <ClosingWords className="max-w-md text-left" />
