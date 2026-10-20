@@ -38,11 +38,11 @@ const Index = () =>
       </div>
       <div className="relative container mx-auto px-6 pb-10 md:pb-16 pt-32">
         <div className="max-w-[640px]">
-          <h1 className="text-[clamp(2.25rem,3.6vw,3.25rem)] font-display font-normal leading-[1.1] tracking-[0.01em] text-primary-foreground animate-fade-up">
+          <h1 className="text-[clamp(2.25rem,3.6vw,3.25rem)] font-display font-normal leading-[1.1] tracking-[0.01em] text-primary-foreground animate-fade-up [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
             Chosen for who you are.
           </h1>
-          <p className="mt-5 text-[clamp(1.125rem,1.6vw,1.5rem)] font-display font-normal tracking-[0.01em] text-accent animate-fade-up-delay-1">Built to get you on real dates.</p>
-          <p className="mt-6 max-w-2xl text-lg font-sans text-primary-foreground/80 leading-relaxed animate-fade-up-delay-1">
+          <p className="mt-5 text-[clamp(1.125rem,1.6vw,1.5rem)] font-display font-normal tracking-[0.01em] text-accent animate-fade-up-delay-1 [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]">Built to get you on real dates.</p>
+          <p className="mt-6 max-w-2xl text-lg font-sans text-primary-foreground/80 leading-relaxed animate-fade-up-delay-1 [text-shadow:0_1px_10px_rgba(0,0,0,0.55)]">
             For everyone who has ever hoped to be truly seen. Here, you are loved for the life you live and the heart you bring.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
@@ -81,10 +81,10 @@ const Index = () =>
         </picture>
       </div>
       <div className="relative container mx-auto px-6 max-w-3xl text-center max-md:pt-14" data-reveal>
-        <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-primary-foreground">
+        <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-primary-foreground [text-shadow:0_2px_18px_rgba(0,0,0,0.6)]">
           Built to get you on real dates.
         </h2>
-        <p className="mt-6 text-base md:text-lg font-sans text-primary-foreground/80 leading-relaxed">
+        <p className="mt-6 text-base md:text-lg font-sans text-primary-foreground/90 leading-relaxed [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]">
           Love was never meant to live on a screen. Elyxer is made for the moment two people decide to meet: the first coffee, the long walk, the evening that becomes a story.
         </p>
       </div>
@@ -166,7 +166,7 @@ const Index = () =>
           <SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full h-full object-cover" />
         </div>
         <div className="relative container mx-auto px-6">
-          <ClosingWords className="max-w-md text-left" />
+          <ClosingWords className="max-w-md text-left [text-shadow:0_2px_16px_rgba(0,0,0,0.65)]" />
         </div>
       </div>
     </section>
