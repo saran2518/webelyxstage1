@@ -292,7 +292,22 @@
 .light-shadow .ls-hairline-sm { width: 24px; margin-top: 10px; border-top: 0.5px solid hsl(var(--ls-gold)); }
 .light-shadow .ls-pillar-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
 .light-shadow .ls-pillar { text-align: center; display: flex; flex-direction: column; align-items: center; }
-.light-shadow .ls-pillar-num { font-size: 1.5rem; color: hsl(var(--ls-deep-gold)); line-height: 1; }
+.light-shadow .ls-pillar-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 0.5px solid hsl(var(--ls-deep-gold) / 0.3);
+  color: hsl(var(--ls-deep-gold));
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.light-shadow .ls-pillar-icon svg { width: 28px; height: 28px; }
+.light-shadow .ls-pillar:hover .ls-pillar-icon {
+  border-color: hsl(var(--ls-gold));
+  box-shadow: 0 0 0 1px hsl(var(--ls-gold) / 0.12);
+}
 .light-shadow main p.ls-pillar-body { font-size: 1.0625rem; line-height: 1.55; max-width: 260px; }
 @media (min-width: 768px) {
   .light-shadow .ls-pillar-grid { grid-template-columns: repeat(6, 1fr); gap: 56px 32px; }
