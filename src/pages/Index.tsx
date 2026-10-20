@@ -69,7 +69,7 @@ const Index = () =>
     </section>
 
     {/* Middle band */}
-    <section className="ls-photo-band relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
+    <section className="ls-photo-band relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-end max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
           <source media="(max-width: 767px)" srcSet={media.home.bandMobile} />
@@ -80,7 +80,7 @@ const Index = () =>
           />
         </picture>
       </div>
-      <div className="relative container mx-auto px-6 max-w-3xl text-center max-md:pt-14" data-reveal>
+      <div className="relative container mx-auto px-6 max-w-3xl text-center max-md:pb-14" data-reveal>
         <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-primary-foreground [text-shadow:0_2px_18px_rgba(0,0,0,0.6)]">
           Built to get you on real dates.
         </h2>
