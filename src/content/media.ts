@@ -1,8 +1,9 @@
 import bandWindowHug from "@/assets/site/home-band-window-hug.webp.asset.json";
 import bandCafeRain from "@/assets/site/home-band-cafe-rain.jpg.asset.json";
 import bandPortrait from "@/assets/site/home-band-cafe-rain-portrait.jpg";
-import painter from "@/assets/site/painter.jpg.asset.json";
-import laughing from "@/assets/site/phone-laughing.jpg.asset.json";
+import card1Gallery from "@/assets/site/card1-seen-for-who-you-are-gallery.jpg.asset.json";
+import card2Umbrella from "@/assets/site/card2-someone-actually-asks-umbrella.jpg.asset.json";
+import card3Phone from "@/assets/site/card3-meet-before-you-meet-phone.jpg.asset.json";
 import ctaRooftop from "@/assets/site/home-cta-rooftop.png.asset.json";
 import pottery from "@/assets/site/pottery-wheel.jpg.asset.json";
 import park from "@/assets/site/park-coffee.jpg.asset.json";
@@ -39,9 +40,9 @@ export const media = {
     hero: bandWindowHug.url, // home-band-window-hug.webp (desktop and mobile)
     band: bandCafeRain.url, // home-band-cafe-rain.jpg
     bandMobile: bandPortrait, // home-band-cafe-rain-portrait.jpg
-    card1: { src: painter.url, focus: "70% 30%" }, // painter.jpg
-    card2: { src: laughing.url, focus: "50% 30%" }, // phone-laughing.jpg
-    card3: { src: selfieHer.url, focus: "50% 28%" }, // selfie-her.png
+    card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
+    card2: { src: card2Umbrella.url, focus: "50% 35%" }, // card2-someone-actually-asks-umbrella.jpg
+    card3: { src: card3Phone.url, focus: "45% 40%" }, // card3-meet-before-you-meet-phone.jpg
     cta: { src: ctaRooftop.url, focus: "55% 25%" }, // home-cta-rooftop.png (rooftop night photo, background figure removed)
   },
   how: {
