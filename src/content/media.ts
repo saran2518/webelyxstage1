@@ -1,5 +1,5 @@
-import heroCafeWindow from "@/assets/site/home-hero-cafe-window.jpg.asset.json";
-import heroPortrait from "@/assets/site/home-hero-cafe-window-portrait.jpg";
+import heroCafeClose from "@/assets/site/home-hero-cafe-close.jpg.asset.json";
+import heroPortrait from "@/assets/site/home-hero-cafe-close-portrait.jpg";
 import bandCafeRain from "@/assets/site/home-band-cafe-rain.jpg.asset.json";
 import bandPortrait from "@/assets/site/home-band-cafe-rain-portrait.jpg";
 import card1Gallery from "@/assets/site/card1-seen-for-who-you-are-gallery.jpg.asset.json";
@@ -34,12 +34,12 @@ export type VideoSlot = { src?: string; poster: string };
 export type PhotoSlot = { src: string; focus?: string };
 
 // Uploaded site assets. Keep image posters available if a video is unavailable.
-// home.hero keeps the couple on the right of the frame: about 58% horizontal on
+// home.hero keeps the couple on the right of the frame: about 68% horizontal on
 // desktop, and a portrait variant (heroMobile) so phones show both heads whole.
 export const media = {
   home: {
-    hero: heroCafeWindow.url, // home-hero-cafe-window.jpg (desktop, 2560px sharpened)
-    heroMobile: heroPortrait, // home-hero-cafe-window-portrait.jpg (phone portrait variant)
+    hero: heroCafeClose.url, // home-hero-cafe-close.jpg (desktop, 2560px sharpened)
+    heroMobile: heroPortrait, // home-hero-cafe-close-portrait.jpg (phone portrait variant)
     band: bandCafeRain.url, // home-band-cafe-rain.jpg
     bandMobile: bandPortrait, // home-band-cafe-rain-portrait.jpg
     card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
