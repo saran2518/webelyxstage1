@@ -4,15 +4,15 @@ import { media } from "@/content/media";
 import { Button } from "@/components/ui/button";
 
 const featuredArticle = {
-  title: "Chosen for who you are: why we left the filters out.",
-  excerpt: "Religion, caste, income. The filters most apps offer, and the reasons we decided to leave every one of them out.",
+  title: "Chosen for who you are.",
+  excerpt: "What it truly means to be seen, and why we built a dating app around that feeling.",
   image: media.blog.featured,
 };
 const articles = [
-  { title: "Why one plan beats a hundred hellos.", excerpt: "Coffee, a long walk, dinner. Why a simple invite does more than weeks of small talk.", image: media.blog.a1 },
-  { title: "Who else thinks Sunday mornings belong to Cubbon Park?", excerpt: "The small, ordinary moments that say more about you than any bio.", image: media.blog.a2 },
-  { title: "Meet before you meet: the case for a first video date.", excerpt: "Ten minutes on video, from your own space, before you decide to meet in person.", image: media.blog.a3 },
-  { title: "What a Selfie Badge means, and what it does not.", excerpt: "A live selfie, taken in the app, shown on your profile. Here is exactly what it tells people.", image: media.blog.a4 },
+  { title: "Why one plan beats a hundred hellos.", excerpt: "Coffee, a long walk, dinner. How a simple invitation can say more than weeks of small talk.", image: media.blog.a1 },
+  { title: "The quiet romance of ordinary moments.", excerpt: "Sunday mornings in the park, the first coffee of the day. Why the smallest things reveal the most about us.", image: media.blog.a2 },
+  { title: "Meet before you meet.", excerpt: "Ten minutes on video, from your own space, before the first date.", image: media.blog.a3 },
+  { title: "Being yourself, beautifully.", excerpt: "Why the most attractive profile is always the most honest one.", image: media.blog.a4 },
 ];
 
 const WorldOfDating = () => {
@@ -26,7 +26,7 @@ const WorldOfDating = () => {
             The world of dating, reconsidered.
           </h1>
           <p className="mt-6 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-            Stories, ideas and honest thoughts on modern dating in India, from the Elyxer team.
+            Stories, reflections and gentle truths about love and modern connection, from the Elyxer team.
           </p>
         </div>
       </section>
@@ -96,7 +96,7 @@ const WorldOfDating = () => {
             Be the first to read.
           </h2>
           <p className="font-sans text-sm text-muted-foreground mb-8">
-            New stories on dating, delivered when they are ready.
+            Stories on love and connection, delivered when they are ready.
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}

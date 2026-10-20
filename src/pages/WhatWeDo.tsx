@@ -2,9 +2,9 @@ import Layout from "@/components/Layout";
 import { media } from "@/content/media";
 
 const sections = [
-  { label: "Vision", title: "Dating without judgement.", content: "We picture a world where people meet for who they are, not for their religion, caste, income or the colour of their skin. Elyxer is built for that world.", image: media.what.vision, imageAlt: "Couple sharing a quiet moment on a beach" },
-  { label: "Mission", title: "Built to get you on real dates.", content: "Fewer endless chats, more real dates. Every feature in Elyxer, from Moments to Invites to the Virtual Date Room, exists to help two people actually meet.", image: media.what.mission, imageAlt: "Couple spending time together at a café" },
-  { label: "Our story", title: "Why Elyxer exists.", content: "Elyxer began with a simple question: why do dating apps sort people like products? Filters for religion, income and background decide who you never get to meet. We built Elyxer so people are chosen for their lives, their interests and their character. The name comes from elixir, and it is said the same way: eh-LIX-er.", image: media.what.story, imageAlt: "Couple enjoying time outdoors" },
+  { label: "Our vision.", title: "A kinder way to love.", content: "We imagine a world where people are cherished for their warmth, their curiosity and the way they live, not reduced to a list of preferences. Elyxer is our first step towards that world.", image: media.what.vision, imageAlt: "Couple sharing a quiet moment on a beach" },
+  { label: "Our mission.", title: "Built to get you on real dates.", content: "Fewer endless conversations, more evenings worth remembering. Every part of Elyxer, from Moments to Invites to the Virtual Date Room, exists to bring two people face to face.", image: media.what.mission, imageAlt: "Couple spending time together at a café" },
+  { label: "Our story.", title: "Why Elyxer exists.", content: 'Elyxer began with a simple feeling: modern dating had forgotten the romance of being introduced. We wanted to bring back the magic of someone saying, "I think you two would love each other." The name comes from elixir, a little magic for the way we meet, and it is said the same way: eh-LIX-er.', image: media.what.story, imageAlt: "Couple enjoying time outdoors" },
 ];
 
 const WhatWeDo = () => (
@@ -15,7 +15,7 @@ const WhatWeDo = () => (
           What we do
         </h1>
         <p className="mt-6 text-center text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-          We are building a new world of meeting people, where you are chosen for who you are.
+          We are creating a new world of meeting people, where everyone is chosen for who they are.
         </p>
       </div>
     </section>
@@ -53,6 +53,17 @@ const WhatWeDo = () => (
         </div>
       </section>
     ))}
+    <section className="py-16 md:py-20 border-t border-border">
+      <div className="container mx-auto px-6 max-w-5xl">
+        <h2 className="text-2xl md:text-3xl font-display font-normal tracking-[0.01em] text-foreground mb-6">What we believe</h2>
+        <ul className="list-disc pl-5 space-y-3 font-sans text-base text-muted-foreground leading-relaxed">
+          <li>Everyone deserves to feel chosen.</li>
+          <li>One real date is worth a thousand messages.</li>
+          <li>Kindness is the most beautiful thing about a person.</li>
+          <li>Safety should be felt, not just promised.</li>
+        </ul>
+      </div>
+    </section>
   </Layout>
 );
 

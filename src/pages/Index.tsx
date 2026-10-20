@@ -4,9 +4,9 @@ import SlotMedia from "@/components/SlotMedia";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
 
 const features = [
-  { title: "No filters on who you are.", description: "We left out the filters that judge people: religion, ethnicity, income, smoking and drinking. You are seen for what you love and how you live.", image: media.home.card1 },
-  { title: "Someone actually asks.", description: "An Invite carries one simple plan: coffee, a long walk or dinner. No endless small talk.", image: media.home.card2 },
-  { title: "Meet before you meet.", description: "Start with a ten-minute video date inside the app. Add a live selfie to earn your Selfie Badge. Report and block are always one tap away.", image: media.home.card3 },
+  { title: "Seen for who you are.", description: "Your profile reads like a story, written in the places you love, the passions you keep and the little rituals that make you, you.", image: media.home.card1 },
+  { title: "Someone actually asks.", description: "An Invite is a simple, heartfelt plan: coffee, a long walk or dinner. No endless small talk, just a chance to meet.", image: media.home.card2 },
+  { title: "Meet before you meet.", description: "A ten-minute video date inside the app, with gentle icebreakers to ease you in. Add a live selfie to earn your Selfie Badge.", image: media.home.card3 },
 ];
 
 const ClosingWords = ({ className = "" }: { className?: string }) => (
@@ -15,7 +15,7 @@ const ClosingWords = ({ className = "" }: { className?: string }) => (
       In Elyxer, you are the chosen.
     </h2>
     <p className="mt-5 text-base font-sans text-primary-foreground/80">
-      Early access is open in Bengaluru. The first 10,000 members get one week of Plus, free, when discovery opens.
+      Early access is now open in Bengaluru. Be among the first to arrive, and enjoy one week of Plus, on us, when discovery opens.
     </p>
     <div className="mt-10">
       <EarlyAccessButton />
@@ -44,7 +44,7 @@ const Index = () =>
           </h1>
           <p className="mt-5 text-[clamp(1.125rem,1.6vw,1.5rem)] font-display font-normal tracking-[0.01em] text-accent animate-fade-up-delay-1">Built to get you on real dates.</p>
           <p className="mt-6 max-w-2xl text-lg font-sans text-primary-foreground/80 leading-relaxed animate-fade-up-delay-1">
-            A dating app where you are seen for your interests, your life and your character, never your religion, ethnicity or income.
+            For everyone who has ever hoped to be truly seen. Here, you are loved for the life you live and the heart you bring.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
             <EarlyAccessButton />
@@ -64,12 +64,12 @@ const Index = () =>
           What we stand for.
         </h2>
         <p className="mt-5 text-lg md:text-xl font-sans text-muted-foreground leading-relaxed">
-          No judgement filters · Real people · Real dates
+          Seen for who you are · Real people · Real dates
         </p>
       </div>
     </section>
 
-    {/* Architecture section */}
+    {/* Middle band */}
     <section className="relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
@@ -87,11 +87,31 @@ const Index = () =>
           Built to get you on real dates.
         </h2>
         <p className="mt-6 text-base md:text-lg font-sans text-primary-foreground/80 leading-relaxed">
-          Most apps keep you swiping. Elyxer is built around the moment someone actually asks. Share a moment from your day, see who lives life like you, and send an invite for coffee, a long walk or dinner.
+          Love was never meant to live on a screen. Elyxer is made for the moment two people decide to meet: the first coffee, the long walk, the evening that becomes a story.
         </p>
       </div>
     </section>
 
+
+    <section className="py-16 md:py-20 border-b border-border" data-reveal>
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-foreground text-center mb-12">From hello to a real date</h2>
+        <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { title: "Share a moment.", body: "The light through your window, the song on repeat, the coffee you never skip. A small piece of your day, live for 48 hours." },
+            { title: "Be recognised.", body: "When someone sees themselves in your moment, they reach out with a Vibe or an Invite." },
+            { title: "Meet before you meet.", body: "Ten minutes on video, from the comfort of your own space, to feel the spark before the first date." },
+            { title: "Go on the date.", body: "Coffee, a long walk or dinner. The beginning every love story deserves." },
+          ].map((step, i) => (
+            <li key={step.title}>
+              <span className="font-sans text-sm text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="mt-4 mb-3 text-xl font-display font-normal tracking-[0.01em] text-foreground">{step.title}</h3>
+              <p className="font-sans text-sm text-muted-foreground leading-relaxed">{step.body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
 
     {/* Feature cards with images */}
     <section className="py-24 md:py-32 mt-8 md:mt-12">
@@ -119,6 +139,14 @@ const Index = () =>
             </div>
         )}
         </div>
+      </div>
+    </section>
+
+    <section className="py-16 md:py-20 border-t border-border" data-reveal>
+      <div className="container mx-auto px-6 max-w-4xl text-center">
+        <blockquote className="text-2xl md:text-3xl font-display font-normal tracking-[0.01em] text-foreground leading-relaxed">
+          “Somewhere, someone is hoping to meet a person exactly like you. We make it happen.”
+        </blockquote>
       </div>
     </section>
 

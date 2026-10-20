@@ -137,18 +137,19 @@ const EarlyAccess = () => {
             <h1 className="font-display text-3xl md:text-4xl font-normal tracking-[0.01em] text-foreground">
               {step === "success" && "Your spot is saved."}
               {step === "underage" && "Almost there, just not yet."}
-              {(step === "details" || step === "verify") && "Save your spot"}
+              {(step === "details" || step === "verify") && "Your place in Elyxer awaits."}
             </h1>
             <p className="mt-4 font-sans text-sm text-muted-foreground leading-relaxed">
-              {step === "details" && "Early access is open in Bengaluru. Share a few details and we will verify your email with a one-time code."}
-              {step === "verify" && `Enter the 6-digit code sent to ${email}.`}
-              {step === "success" && "We will let you know the moment Elyxer is ready for you."}
-              {step === "underage" && "Elyxer is for adults aged 18 and over."}
+              {step === "details" && "We are growing a healthy community of wonderful people. Join now and you will be among the first to meet them when discovery opens."}
+              {step === "verify" && "We are growing a healthy community of wonderful people. Join now and you will be among the first to meet them when discovery opens."}
+              {step === "success" && "You are now an early member. When discovery opens, enjoy one week of Plus, on us."}
+              {step === "underage" && "Elyxer is for adults aged 18 and over. Come back when you have blown out a few more candles."}
             </p>
           </div>
 
           {step === "details" && (
             <form onSubmit={handleSendOtp} className="space-y-6">
+              <p className="font-sans text-sm text-muted-foreground leading-relaxed">Share a few details and we will confirm your email with a one-time code.</p>
               <div className="space-y-2">
                 <label className="font-sans text-xs uppercase tracking-widest text-muted-foreground">Name</label>
                 <input
@@ -218,6 +219,7 @@ const EarlyAccess = () => {
 
           {step === "verify" && (
             <form onSubmit={handleVerifyAndRegister} className="space-y-8">
+              <p className="text-center font-sans text-sm text-muted-foreground leading-relaxed">Enter the 6-digit code sent to {email}.</p>
               <div className="flex justify-center">
                 <InputOTP maxLength={6} value={otp} onChange={setOtp}>
                   <InputOTPGroup>
@@ -273,12 +275,6 @@ const EarlyAccess = () => {
                 loading="lazy"
                 className="mx-auto w-56 h-56 object-contain"
               />
-              <p className="font-serif text-lg text-foreground">
-                Thank you for your curiosity, but this one will have to wait.
-              </p>
-              <p className="font-sans text-sm text-muted-foreground">
-                Come back when you have blown out a few more candles.
-              </p>
             </div>
           )}
         </div>

@@ -4,11 +4,11 @@ import SlotMedia from "@/components/SlotMedia";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
 
 const productSections = [
-  { title: "Profiles that tell your story.", text: "Your profile reads like a story about your life, not a list of answers to forced prompts. Your photos, your interests, the way you spend a Sunday.", slots: [media.how.s1] },
-  { title: "Connect with life's moments.", text: 'Share a moment from your day. It stays live for 48 hours. When someone sees it and thinks "I like this too", they can send you a Vibe or an Invite.', slots: media.how.s2 },
-  { title: "Where someone actually asks.", text: "An Invite carries one plan: coffee, a long walk or dinner. Accept it, and the two of you take it from there.", slots: media.how.s3 },
-  { title: "Meet before you meet.", text: "A ten-minute video date inside the app, with icebreakers to get you started. See if the spark is real before you meet in person.", slots: media.how.s4 },
-  { title: "Safety, built in.", text: "Add a live selfie to earn your Selfie Badge. Other members see your city, never your exact location. Every photo is reviewed, and every report is read by our team.", slots: [media.how.s5] },
+  { title: "Profiles that tell your story.", text: "No forced prompts, no boxes to tick. Your profile unfolds like a short story about your life: your photographs, your passions, your favourite corners of the city and the quiet rituals that make you who you are.", slots: [media.how.s1] },
+  { title: "Connect with life's moments.", text: 'Share a photograph or a short video from your day. It lives for 48 hours, then gently fades away. When someone sees it and feels "that is me too", they can send you a Vibe or an Invite.', slots: media.how.s2 },
+  { title: "Where someone actually asks.", text: "An Invite holds one simple plan: coffee, a long walk or dinner. No schedules, no pressure, just the courage to ask. Accept, and the rest is yours to write.", slots: media.how.s3 },
+  { title: "Meet before you meet.", text: "Step into the Virtual Date Room for ten minutes together on video, with icebreakers to make the first words easy. See the smile, hear the laugh, and decide together whether to meet.", slots: media.how.s4 },
+  { title: "Safety, built in.", text: "Add a live selfie, taken in the app, to earn your Selfie Badge. Members see your city, never your exact location. Every photograph is reviewed, and every report is read by a real person who cares.", slots: [media.how.s5] },
 ];
 
 const Product = () => (
@@ -19,7 +19,7 @@ const Product = () => (
           How Elyxer works.
         </h1>
         <p className="mt-6 text-base md:text-lg font-sans text-muted-foreground leading-relaxed animate-fade-up-delay-1">
-          Everything in Elyxer is built to take you from a profile to a real date.
+          Every part of Elyxer is made with one hope: that you meet someone worth remembering.
         </p>
       </div>
     </section>
