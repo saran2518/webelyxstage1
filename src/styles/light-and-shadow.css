@@ -193,25 +193,58 @@
   border-top: 0.5px solid hsl(var(--ls-gold));
 }
 .light-shadow-shell footer > .container { padding-top: 72px; padding-bottom: 40px; }
-.light-shadow-shell footer > .container > div:first-child {
+.light-shadow-shell footer .footer-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 48px 24px;
+}
+.light-shadow-shell footer .footer-centre {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
   text-align: center;
+  gap: 16px;
 }
-.light-shadow-shell footer a[aria-label="Elyxer home"] { margin: 0 auto 24px; }
-.light-shadow-shell footer p:first-of-type:not(.text-center) {
+.light-shadow-shell footer .footer-col-left { grid-row: 2; justify-self: start; }
+.light-shadow-shell footer .footer-col-right { grid-row: 2; justify-self: end; text-align: right; }
+.light-shadow-shell footer .footer-heading {
   font-family: var(--ls-body-font);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 4px;
+  color: hsl(var(--ls-light-gold));
+  opacity: 1;
+}
+.light-shadow-shell footer .footer-links { display: flex; flex-direction: column; gap: 12px; }
+.light-shadow-shell footer .footer-col-right .footer-links { align-items: flex-end; }
+.light-shadow-shell footer .footer-lockup { display: flex; align-items: center; gap: 12px; }
+.light-shadow-shell footer .footer-taglines {
+  font-family: "EB Garamond", Georgia, serif;
   font-style: italic;
   font-size: 22px;
   line-height: 1.65;
   opacity: 1;
-  max-width: none;
 }
-.light-shadow-shell footer a:not([aria-label]),
-.light-shadow-shell footer .text-center { letter-spacing: 0.06em; opacity: 0.9; }
-.light-shadow-shell footer h3 { color: hsl(var(--ls-light-gold)); opacity: 1; }
-.light-shadow-shell footer > .container > div:last-child { border-color: hsl(var(--ls-gold) / 0.35); }
+.light-shadow-shell footer .footer-link,
+.light-shadow-shell footer .footer-email {
+  font-family: var(--ls-body-font);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+  transition: opacity 200ms ease;
+}
+.light-shadow-shell footer .footer-link:hover,
+.light-shadow-shell footer .footer-email:hover { opacity: 1; }
+.light-shadow-shell footer .footer-bottom {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 0.5px solid hsl(var(--ls-gold) / 0.35);
+}
 .light-shadow nav .text-primary { color: hsl(var(--ls-brown)); }
 .light-shadow:has(.ls-hero) nav:not(.glass-nav) .text-primary { color: hsl(var(--ls-light-gold)); }
 @media (min-width: 768px) {
