@@ -1,4 +1,4 @@
-import heroCafeWindow from "@/assets/site/home-hero-cafe-window.png.asset.json";
+import heroCafeWindow from "@/assets/site/home-hero-cafe-window.jpg.asset.json";
 import heroPortrait from "@/assets/site/home-hero-cafe-window-portrait.jpg";
 import bandCafeRain from "@/assets/site/home-band-cafe-rain.jpg.asset.json";
 import bandPortrait from "@/assets/site/home-band-cafe-rain-portrait.jpg";
@@ -38,7 +38,7 @@ export type PhotoSlot = { src: string; focus?: string };
 // desktop, and a portrait variant (heroMobile) so phones show both heads whole.
 export const media = {
   home: {
-    hero: heroCafeWindow.url, // home-hero-cafe-window.png (desktop)
+    hero: heroCafeWindow.url, // home-hero-cafe-window.jpg (desktop, 2560px sharpened)
     heroMobile: heroPortrait, // home-hero-cafe-window-portrait.jpg (phone portrait variant)
     band: bandCafeRain.url, // home-band-cafe-rain.jpg
     bandMobile: bandPortrait, // home-band-cafe-rain-portrait.jpg
