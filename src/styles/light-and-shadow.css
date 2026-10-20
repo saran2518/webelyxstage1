@@ -346,6 +346,7 @@
     transform: none;
     transition: none;
   }
+  .light-shadow .ls-pillar-icon { transition: none; }
   .light-shadow main img, .light-shadow main .early-access-action {
     transition: none;
     transform: none;
