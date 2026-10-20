@@ -4,6 +4,7 @@ import bandPortrait from "@/assets/site/home-band-cafe-rain-portrait.jpg";
 import card1Gallery from "@/assets/site/card1-seen-for-who-you-are-gallery.jpg.asset.json";
 import card2Umbrella from "@/assets/site/card2-someone-actually-asks-umbrella.jpg.asset.json";
 import card3Phone from "@/assets/site/card3-meet-before-you-meet-phone.jpg.asset.json";
+import ctaRooftop from "@/assets/site/home-cta-rooftop.png.asset.json";
 import pottery from "@/assets/site/pottery-wheel.jpg.asset.json";
 import park from "@/assets/site/park-coffee.jpg.asset.json";
 import cubbonPark from "@/assets/site/blog-cubbon-park.jpg.asset.json";
