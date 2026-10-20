@@ -2,11 +2,11 @@
    Copy, media, focus positions and form behaviour are deliberately untouched. */
 .light-shadow-shell {
   --ls-ink: 24 33.33% 2.94%;
-  --ls-gold: 44.64 53.68% 54.31%;
+  --ls-gold: 44.16 53.64807% 54.31373%;
   --ls-deep-gold: 38.26 60% 45.1%;
   --ls-light-gold: 44.68 67.14% 72.55%;
   --ls-cream: 42 27.78% 92.94%;
-  --ls-brown: 35.68 25.87% 28.04%;
+  --ls-brown: 34.05405 25.87413% 28.03922%;
   --ls-body-font: "EB Garamond", Georgia, serif;
   --ls-title-font: "Marcellus", Georgia, serif;
 }
@@ -33,7 +33,7 @@
   color: hsl(var(--foreground));
 }
 .light-shadow main p,
-.light-shadow main [role="region"] {
+.light-shadow main [data-state][id^="radix-"] > div.font-sans {
   font-family: var(--ls-body-font);
   font-weight: 400;
   font-size: 1.25rem;
@@ -119,7 +119,8 @@
   font-family: var(--ls-title-font);
   font-size: 3.5rem;
   line-height: 1.15;
-  color: hsl(var(--ls-brown));
+  color: hsl(var(--ls-deep-gold));
+  text-shadow: 0.4px 0 hsl(var(--ls-brown)), -0.4px 0 hsl(var(--ls-brown));
 }
 .light-shadow .ls-steps li > span::after {
   content: "";
