@@ -69,7 +69,7 @@ const Index = () =>
     </section>
 
     {/* Middle band */}
-    <section className="ls-photo-band relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-end max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
+    <section className="ls-photo-band relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
           <source media="(max-width: 767px)" srcSet={media.home.bandMobile} />
@@ -80,11 +80,11 @@ const Index = () =>
           />
         </picture>
       </div>
-      <div className="relative container mx-auto px-6 max-w-3xl text-center max-md:pb-14" data-reveal>
-        <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-primary-foreground [text-shadow:0_2px_18px_rgba(0,0,0,0.6)]">
+      <div className="relative container mx-auto px-6 max-w-3xl text-center max-md:pt-14" data-reveal>
+        <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-primary-foreground [text-shadow:0_2px_4px_rgba(0,0,0,0.75),0_4px_20px_rgba(0,0,0,0.55)]">
           Built to get you on real dates.
         </h2>
-        <p className="mt-6 text-base md:text-lg font-sans text-primary-foreground/90 leading-relaxed [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]">
+        <p className="mt-6 text-base md:text-lg font-sans text-primary-foreground leading-relaxed [text-shadow:0_1px_3px_rgba(0,0,0,0.75),0_3px_16px_rgba(0,0,0,0.55)]">
           Love was never meant to live on a screen. Elyxer is made for the moment two people decide to meet: the first coffee, the long walk, the evening that becomes a story.
         </p>
       </div>
