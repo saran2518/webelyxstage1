@@ -34,8 +34,8 @@ export type VideoSlot = { src?: string; poster: string };
 export type PhotoSlot = { src: string; focus?: string };
 
 // Uploaded site assets. Keep image posters available if a video is unavailable.
-// home.hero and home.band hold couples on the right of the frame: those two
-// slots are cropped at 70% horizontal in Index.tsx so faces stay in frame.
+// home.hero keeps the couple on the right of the frame: about 58% horizontal on
+// desktop, and a portrait variant (heroMobile) so phones show both heads whole.
 export const media = {
   home: {
     hero: heroCafeWindow.url, // home-hero-cafe-window.png (desktop)
