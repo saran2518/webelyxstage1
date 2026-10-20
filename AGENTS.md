@@ -4,7 +4,7 @@
 - Render brand wordmarks through `Wordmark` using the original asset SVG geometry and colours, with per-instance `useId` gradient identifiers to prevent navbar/footer collisions.
 - Render image/video slots through `SlotMedia` so absent videos show posters without broken playback.
 - Photo slots in media.ts are `{ src, focus }` objects; focus is the object-position that keeps faces in the crop. Containers use aspect ratios matched to the photo orientation (aspect-[4/5] for portraits, aspect-[4/3] for cards), never fixed short heights.
-- Use a shared cover image for the home hero and `<picture>` for the band's phone-specific portrait; keep crop positions device-specific so faces remain visible without changing section heights.
+- Use a shared cover image for the home hero and the middle band, with `<picture>` phone-specific portrait variants wherever a tall crop would clip faces; keep crop positions device-specific so faces remain visible without changing section heights.
 - Use `EarlyAccessButton` for the shared marketing action so its destination stays consistent.
 - Preserve early access validation, email verification and registration behaviour during copy-only changes.
 - Keep legal document text unchanged during marketing rewrites because those pages contain supplied legal documents.

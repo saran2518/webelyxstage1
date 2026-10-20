@@ -29,10 +29,11 @@ const Index = () =>
     <section className="ls-hero relative h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
+          <source media="(max-width: 767px)" srcSet={media.home.heroMobile} />
           <img
             src={media.home.hero}
-             alt="Couple hugging by a rain-streaked window"
-             className="parallax-slow h-full w-full object-cover object-[70%_35%] max-md:object-[72%_40%] max-md:hero-mobile-photo" />
+            alt="Couple close together beside a rain-streaked cafe window"
+            className="parallax-slow h-full w-full object-cover object-[58%_32%] max-md:object-[50%_45%] max-md:hero-mobile-photo" />
         </picture>
 
         <div className="absolute inset-0 bg-foreground/50" />

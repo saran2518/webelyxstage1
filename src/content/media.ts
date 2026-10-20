@@ -1,4 +1,5 @@
-import bandWindowHug from "@/assets/site/home-band-window-hug.webp.asset.json";
+import heroCafeWindow from "@/assets/site/home-hero-cafe-window.png.asset.json";
+import heroPortrait from "@/assets/site/home-hero-cafe-window-portrait.jpg";
 import bandCafeRain from "@/assets/site/home-band-cafe-rain.jpg.asset.json";
 import bandPortrait from "@/assets/site/home-band-cafe-rain-portrait.jpg";
 import card1Gallery from "@/assets/site/card1-seen-for-who-you-are-gallery.jpg.asset.json";
@@ -33,11 +34,12 @@ export type VideoSlot = { src?: string; poster: string };
 export type PhotoSlot = { src: string; focus?: string };
 
 // Uploaded site assets. Keep image posters available if a video is unavailable.
-// home.hero and home.band hold couples on the right of the frame: those two
-// slots are cropped at 70% horizontal in Index.tsx so faces stay in frame.
+// home.hero keeps the couple on the right of the frame: about 58% horizontal on
+// desktop, and a portrait variant (heroMobile) so phones show both heads whole.
 export const media = {
   home: {
-    hero: bandWindowHug.url, // home-band-window-hug.webp (desktop and mobile)
+    hero: heroCafeWindow.url, // home-hero-cafe-window.png (desktop)
+    heroMobile: heroPortrait, // home-hero-cafe-window-portrait.jpg (phone portrait variant)
     band: bandCafeRain.url, // home-band-cafe-rain.jpg
     bandMobile: bandPortrait, // home-band-cafe-rain-portrait.jpg
     card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
