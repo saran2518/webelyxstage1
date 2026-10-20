@@ -29,11 +29,10 @@ const Index = () =>
     <section className="ls-hero relative h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
-          <source media="(max-width: 767px)" srcSet={media.home.heroMobile} />
           <img
             src={media.home.hero}
-            alt="Couple close together beside a rain-streaked cafe window"
-            className="parallax-slow h-full w-full object-cover object-[58%_32%] max-md:object-[50%_45%] max-md:hero-mobile-photo" />
+            alt="Couple hugging beside a rain-streaked cafe window"
+            className="h-full w-full object-cover object-[70%_35%]" />
         </picture>
       </div>
       <div className="relative container mx-auto px-6 pb-10 md:pb-16 pt-32">
@@ -72,11 +71,10 @@ const Index = () =>
     <section className="ls-photo-band relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
-          <source media="(max-width: 767px)" srcSet={media.home.bandMobile} />
           <img
             src={media.home.band}
-            alt="Couple laughing together at a cafe table in the rain"
-            className="h-full w-full object-cover object-[70%_30%] max-md:object-[50%_45%]"
+            alt="Couple cycling together on a misty road"
+            className="h-full w-full object-cover object-[70%_40%]"
           />
         </picture>
       </div>
@@ -156,7 +154,7 @@ const Index = () =>
       {/* Phone: photo on top, words on a dark panel below so faces stay clear */}
       <div className="md:hidden">
         <div className="relative">
-          <SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full aspect-[2/3] object-cover object-[60%_35%]" />
+          <SlotMedia slot={media.home.cta} alt="Couple talking together on a park bench" className="w-full aspect-[2/3] object-cover" />
         </div>
         <div className="bg-foreground px-6 py-14">
           <ClosingWords className="text-center" />
@@ -165,7 +163,7 @@ const Index = () =>
       {/* Desktop: full-bleed photo with the words on the empty left side */}
       <div className="relative hidden md:flex md:items-center md:min-h-[min(56.25vw,80vh)] md:py-24">
         <div className="absolute inset-0">
-          <SlotMedia slot={media.home.cta} alt="Couple sharing a quiet moment on a rainy rooftop at night" className="w-full h-full object-cover" />
+          <SlotMedia slot={media.home.cta} alt="Couple talking together on a park bench" className="w-full h-full object-cover" />
         </div>
         <div className="relative container mx-auto px-6">
           <ClosingWords className="max-w-md text-left [text-shadow:0_2px_16px_rgba(0,0,0,0.65)]" />
