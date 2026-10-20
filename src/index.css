@@ -241,9 +241,9 @@
 
 @keyframes parallax-float {
   from {
-    transform: scale(1.08) translate3d(0, 0, 0);
+    transform: scale(1.03) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.12) translate3d(0, -2%, 0);
+    transform: scale(1.06) translate3d(0, -2%, 0);
   }
 }
