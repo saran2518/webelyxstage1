@@ -7,7 +7,7 @@
   --ls-light-gold: 44.68 67.14% 72.55%;
   --ls-cream: 42 27.78% 92.94%;
   --ls-brown: 34.05405 25.87413% 28.03922%;
-  --ls-body-font: "EB Garamond", Georgia, serif;
+  --ls-body-font: "DM Sans", system-ui, sans-serif;
   --ls-title-font: "Marcellus", Georgia, serif;
 }
 .light-shadow {
@@ -49,7 +49,9 @@
 .light-shadow main > section:first-child:not(.ls-hero) { padding-top: 148px; }
 .light-shadow main > section.ls-section { margin-top: 0; }
 .light-shadow .ls-hero p:first-of-type {
-  font-style: italic;
+  font-family: var(--ls-title-font);
+  font-weight: 400;
+  letter-spacing: 0.01em;
   color: hsl(var(--ls-light-gold));
   font-size: clamp(1.125rem, 1.6vw, 1.5rem);
   line-height: 1.5;
