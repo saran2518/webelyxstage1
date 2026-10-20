@@ -1,4 +1,5 @@
-import bandWindowHug from "@/assets/site/home-band-window-hug.webp.asset.json";
+import heroCafeWindow from "@/assets/site/home-hero-cafe-window.png.asset.json";
+import heroPortrait from "@/assets/site/home-hero-cafe-window-portrait.jpg";
 import bandCafeRain from "@/assets/site/home-band-cafe-rain.jpg.asset.json";
 import bandPortrait from "@/assets/site/home-band-cafe-rain-portrait.jpg";
 import card1Gallery from "@/assets/site/card1-seen-for-who-you-are-gallery.jpg.asset.json";
@@ -37,7 +38,8 @@ export type PhotoSlot = { src: string; focus?: string };
 // slots are cropped at 70% horizontal in Index.tsx so faces stay in frame.
 export const media = {
   home: {
-    hero: bandWindowHug.url, // home-band-window-hug.webp (desktop and mobile)
+    hero: heroCafeWindow.url, // home-hero-cafe-window.png (desktop)
+    heroMobile: heroPortrait, // home-hero-cafe-window-portrait.jpg (phone portrait variant)
     band: bandCafeRain.url, // home-band-cafe-rain.jpg
     bandMobile: bandPortrait, // home-band-cafe-rain-portrait.jpg
     card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
