@@ -115,22 +115,17 @@
   opacity: 0.9;
   box-shadow: none;
 }
-.light-shadow .ls-steps ol { grid-template-columns: 1fr; gap: 40px; position: relative; }
-.light-shadow .ls-steps li { position: relative; }
-.light-shadow .ls-steps li > span {
-  display: inline-block;
-  font-family: var(--ls-title-font);
-  font-size: 3.5rem;
-  line-height: 1.15;
-  color: hsl(var(--ls-deep-gold));
-  text-shadow: 0.4px 0 hsl(var(--ls-brown)), -0.4px 0 hsl(var(--ls-brown));
+.light-shadow .ls-steps ol { display: grid; grid-template-columns: 1fr; gap: 40px; position: relative; }
+.light-shadow .ls-steps li { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.light-shadow .ls-step-icon { background: hsl(var(--ls-cream)); }
+.light-shadow main p.ls-step-body {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 1.1875rem;
+  line-height: 1.5;
+  max-width: 240px;
 }
-.light-shadow .ls-steps li > span::after {
-  content: "";
-  display: block;
-  width: 30px;
-  margin-top: 12px;
-  border-top: 0.5px solid hsl(var(--ls-deep-gold));
+@media (min-width: 768px) {
+  .light-shadow .ls-steps ol { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 32px; }
 }
 .light-shadow .ls-features [data-reveal-child] {
   background: transparent;
@@ -268,17 +263,6 @@
     padding-bottom: 120px;
   }
   .light-shadow main > section:first-child:not(.ls-hero) { padding-top: 176px; }
-  .light-shadow .ls-steps ol { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
-  .light-shadow .ls-steps ol::before {
-    content: "";
-    position: absolute;
-    top: 83px;
-    left: 0;
-    right: 0;
-    border-top: 0.5px solid hsl(var(--ls-gold));
-  }
-  .light-shadow .ls-steps li > span { font-size: 4rem; }
-  .light-shadow .ls-steps li > span::after { visibility: hidden; margin-top: 12px; }
   .light-shadow main > section.ls-manifesto { padding-top: 140px; padding-bottom: 140px; }
   .light-shadow .ls-manifesto blockquote { font-size: 32px; }
   .light-shadow-shell footer > .container { padding-top: 100px; }
@@ -292,7 +276,8 @@
 .light-shadow .ls-hairline-sm { width: 24px; margin-top: 10px; border-top: 0.5px solid hsl(var(--ls-gold)); }
 .light-shadow .ls-pillar-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
 .light-shadow .ls-pillar { text-align: center; display: flex; flex-direction: column; align-items: center; }
-.light-shadow .ls-pillar-icon {
+.light-shadow .ls-pillar-icon,
+.light-shadow .ls-step-icon {
   width: 56px;
   height: 56px;
   display: flex;
@@ -303,8 +288,10 @@
   color: hsl(var(--ls-deep-gold));
   transition: border-color 0.35s ease, box-shadow 0.35s ease;
 }
-.light-shadow .ls-pillar-icon svg { width: 28px; height: 28px; }
-.light-shadow .ls-pillar:hover .ls-pillar-icon {
+.light-shadow .ls-pillar-icon svg,
+.light-shadow .ls-step-icon svg { width: 28px; height: 28px; }
+.light-shadow .ls-pillar:hover .ls-pillar-icon,
+.light-shadow .ls-step:hover .ls-step-icon {
   border-color: hsl(var(--ls-gold));
   box-shadow: 0 0 0 1px hsl(var(--ls-gold) / 0.12);
 }
@@ -313,12 +300,22 @@
   .light-shadow .ls-pillar-grid { grid-template-columns: repeat(6, 1fr); gap: 56px 32px; }
   .light-shadow .ls-pillar { grid-column: span 2; }
   .light-shadow .ls-pillar:nth-child(4) { grid-column: 2 / span 2; }
-  .light-shadow .ls-pillar-icon svg { width: 32px; height: 32px; }
+  .light-shadow .ls-pillar-icon svg,
+  .light-shadow .ls-step-icon svg { width: 32px; height: 32px; }
 }
 @media (min-width: 1200px) {
   .light-shadow .ls-pillar-grid { grid-template-columns: repeat(5, 1fr); gap: 0; }
   .light-shadow .ls-pillar, .light-shadow .ls-pillar:nth-child(4) { grid-column: auto; padding: 0 24px; }
   .light-shadow .ls-pillar + .ls-pillar { border-left: 0.5px solid hsl(var(--ls-gold) / 0.4); }
+  .light-shadow .ls-steps ol { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+  .light-shadow .ls-steps ol::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: calc(12.5% - 12px);
+    right: calc(12.5% - 12px);
+    border-top: 0.5px solid hsl(var(--ls-gold));
+  }
 }
 /* What we do: vision and mission band */
 .light-shadow main > section.ls-vm-strip { padding-top: 0; padding-bottom: 48px; }
@@ -347,7 +344,7 @@
     transform: none;
     transition: none;
   }
-  .light-shadow .ls-pillar-icon { transition: none; }
+  .light-shadow .ls-pillar-icon, .light-shadow .ls-step-icon { transition: none; }
   .light-shadow main img, .light-shadow main .early-access-action {
     transition: none;
     transform: none;
