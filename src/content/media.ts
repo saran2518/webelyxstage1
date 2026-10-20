@@ -1,11 +1,9 @@
-import heroCafeClose from "@/assets/site/home-hero-cafe-close.jpg.asset.json";
-import heroPortrait from "@/assets/site/home-hero-cafe-close-portrait.jpg";
-import bandWalk from "@/assets/site/home-band-woodland-walk.jpg.asset.json";
-import bandWalkPortrait from "@/assets/site/home-band-woodland-walk-portrait.jpg.asset.json";
+import heroWindowHug from "@/assets/site/home-hero-window-hug.webp.asset.json";
+import bandCyclingMist from "@/assets/site/home-band-cycling-mist.webp.asset.json";
 import card1Gallery from "@/assets/site/card1-seen-for-who-you-are-gallery.jpg.asset.json";
 import card2Umbrella from "@/assets/site/card2-someone-actually-asks-umbrella.jpg.asset.json";
 import card3Phone from "@/assets/site/card3-meet-before-you-meet-phone.jpg.asset.json";
-import ctaRooftop from "@/assets/site/home-cta-rooftop.png.asset.json";
+import ctaParkBench from "@/assets/site/home-cta-park-bench.webp.asset.json";
 import pottery from "@/assets/site/pottery-wheel.jpg.asset.json";
 import park from "@/assets/site/park-coffee.jpg.asset.json";
 import cubbonPark from "@/assets/site/blog-cubbon-park.jpg.asset.json";
@@ -34,18 +32,16 @@ export type VideoSlot = { src?: string; poster: string };
 export type PhotoSlot = { src: string; focus?: string };
 
 // Uploaded site assets. Keep image posters available if a video is unavailable.
-// home.hero keeps the couple on the right of the frame: 58% horizontal on
-// desktop, and a portrait variant (heroMobile) so phones show both heads whole.
+// The three wide home photos are the original uploads, used exactly as
+// supplied (no resize, recompression or conversion) on desktop and mobile.
 export const media = {
   home: {
-    hero: heroCafeClose.url, // home-hero-cafe-close.jpg (desktop, 2560px sharpened)
-    heroMobile: heroPortrait, // home-hero-cafe-close-portrait.jpg (phone portrait variant)
-    band: bandWalk.url, // home-band-woodland-walk.jpg (desktop, 2560px sharpened)
-    bandMobile: bandWalkPortrait.url, // home-band-woodland-walk-portrait.jpg (phone portrait variant)
+    hero: heroWindowHug.url, // home-hero-window-hug.webp (couple hugging by the rain-streaked window)
+    band: bandCyclingMist.url, // home-band-cycling-mist.webp (couple cycling on the misty road)
     card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
     card2: { src: card2Umbrella.url, focus: "50% 35%" }, // card2-someone-actually-asks-umbrella.jpg
     card3: { src: card3Phone.url, focus: "45% 40%" }, // card3-meet-before-you-meet-phone.jpg
-    cta: { src: ctaRooftop.url, focus: "55% 25%" }, // home-cta-rooftop.png (rooftop night photo, background figure removed)
+    cta: { src: ctaParkBench.url, focus: "70% 45%" }, // home-cta-park-bench.webp (couple talking on a park bench)
   },
   how: {
     s1: { src: pottery.url, focus: "65% 20%" }, // pottery-wheel.jpg
