@@ -53,7 +53,7 @@ const WhatWeDo = () => (
         </div>
       </section>
     ))}
-    <section className="py-16 md:py-20 border-t border-border">
+    <section className="ls-beliefs py-16 md:py-20 border-t border-border" data-reveal>
       <div className="container mx-auto px-6 max-w-5xl">
         <h2 className="text-2xl md:text-3xl font-display font-normal tracking-[0.01em] text-foreground mb-6">What we believe</h2>
         <ul className="list-disc pl-5 space-y-3 font-sans text-base text-muted-foreground leading-relaxed">
