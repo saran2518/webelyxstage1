@@ -267,7 +267,10 @@
   .light-shadow main > section.ls-manifesto { padding-top: 140px; padding-bottom: 140px; }
   .light-shadow .ls-manifesto blockquote { font-size: 32px; }
   .light-shadow-shell footer > .container { padding-top: 100px; }
-  .light-shadow-shell footer > .container > div:first-child > div:last-child { gap: 100px; }
+  .light-shadow-shell footer .footer-cols { grid-template-columns: 1fr auto 1fr; gap: 24px; }
+  .light-shadow-shell footer .footer-centre { grid-column: 2; grid-row: 1; }
+  .light-shadow-shell footer .footer-col-left { grid-column: 1; grid-row: 1; }
+  .light-shadow-shell footer .footer-col-right { grid-column: 3; grid-row: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
   .light-shadow [data-reveal], .light-shadow [data-reveal-child],
