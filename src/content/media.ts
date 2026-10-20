@@ -1,7 +1,7 @@
 import heroCafeClose from "@/assets/site/home-hero-cafe-close.jpg.asset.json";
 import heroPortrait from "@/assets/site/home-hero-cafe-close-portrait.jpg";
-import bandWalk from "@/assets/site/home-band-woodland-walk.jpg.asset.json";
-import bandWalkPortrait from "@/assets/site/home-band-woodland-walk-portrait.jpg.asset.json";
+import bandWalk from "@/assets/site/_tmp-band-desktop.jpg";
+import bandWalkPortrait from "@/assets/site/_tmp-band-portrait.jpg";
 import card1Gallery from "@/assets/site/card1-seen-for-who-you-are-gallery.jpg.asset.json";
 import card2Umbrella from "@/assets/site/card2-someone-actually-asks-umbrella.jpg.asset.json";
 import card3Phone from "@/assets/site/card3-meet-before-you-meet-phone.jpg.asset.json";
@@ -40,8 +40,8 @@ export const media = {
   home: {
     hero: heroCafeClose.url, // home-hero-cafe-close.jpg (desktop, 2560px sharpened)
     heroMobile: heroPortrait, // home-hero-cafe-close-portrait.jpg (phone portrait variant)
-    band: bandWalk.url, // home-band-woodland-walk.jpg (desktop, 2560px sharpened)
-    bandMobile: bandWalkPortrait.url, // home-band-woodland-walk-portrait.jpg (phone portrait variant)
+    band: bandWalk as unknown as string, // home-band-woodland-walk.jpg (desktop, 2560px sharpened)
+    bandMobile: bandWalkPortrait as unknown as string, // home-band-woodland-walk-portrait.jpg (phone portrait variant)
     card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
     card2: { src: card2Umbrella.url, focus: "50% 35%" }, // card2-someone-actually-asks-umbrella.jpg
     card3: { src: card3Phone.url, focus: "45% 40%" }, // card3-meet-before-you-meet-phone.jpg
