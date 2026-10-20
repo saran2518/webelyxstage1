@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { media } from "@/content/media";
 import SlotMedia from "@/components/SlotMedia";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
+import { Coffee, Eye, ShieldCheck, Sparkles, Users } from "lucide-react";
 
 const features = [
   { title: "Seen for who you are.", description: "Your profile reads like a story, written in the places you love, the passions you keep and the little rituals that make you, you.", image: media.home.card1 },
@@ -67,17 +68,19 @@ const Index = () =>
         </div>
         <ol className="ls-pillar-grid mt-16" data-reveal-stagger>
           {[
-            ["A healthy community.", "Kind, genuine people, here for the right reasons."],
-            ["Safety you can feel.", "Live selfies, reviewed photos, every report read."],
-            ["An exceptional experience.", "Calm, beautiful and effortless."],
-            ["Real, not artificial.", "No swiping, no games, just real connections."],
-            ["Seen as a person.", "No filters, just who you truly are."],
-          ].map(([t, b], i) => (
-            <li key={t} data-reveal-child className="ls-pillar">
-              <div className="ls-pillar-num font-display">{String(i + 1).padStart(2, "0")}</div>
+            { icon: Users, title: "A healthy community.", body: "Kind, genuine people, here for the right reasons." },
+            { icon: ShieldCheck, title: "Safety you can feel.", body: "Live selfies, reviewed photos, every report read." },
+            { icon: Sparkles, title: "An exceptional experience.", body: "Calm, beautiful and effortless." },
+            { icon: Coffee, title: "Real, not artificial.", body: "No swiping, no games, just real connections." },
+            { icon: Eye, title: "Seen as a person.", body: "No filters, just who you truly are." },
+          ].map(({ icon: Icon, title, body }) => (
+            <li key={title} data-reveal-child className="ls-pillar">
+              <div className="ls-pillar-icon">
+                <Icon size={32} strokeWidth={1.25} aria-hidden="true" />
+              </div>
               <div className="ls-hairline-sm" />
-              <h3 className="mt-5 text-xl font-display font-normal tracking-[0.01em] text-foreground">{t}</h3>
-              <p className="ls-pillar-body mt-3 font-sans text-muted-foreground">{b}</p>
+              <h3 className="mt-5 text-xl font-display font-normal tracking-[0.01em] text-foreground">{title}</h3>
+              <p className="ls-pillar-body mt-3 font-sans text-muted-foreground">{body}</p>
             </li>
           ))}
         </ol>
