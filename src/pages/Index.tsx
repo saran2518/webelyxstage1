@@ -76,17 +76,19 @@ const Index = () =>
           <img
             src={media.home.band}
             alt="Couple laughing together at a cafe table in the rain"
-             className="h-full w-full object-cover object-[70%_30%] max-md:object-[60%_50%]"
+            className="h-full w-full object-cover object-[70%_30%] max-md:object-[50%_45%]"
           />
         </picture>
       </div>
-      <div className="relative container mx-auto px-6 max-w-3xl text-center max-md:pt-14" data-reveal>
-        <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-primary-foreground [text-shadow:0_2px_4px_rgba(0,0,0,0.75),0_4px_20px_rgba(0,0,0,0.55)]">
-          Built to get you on real dates.
-        </h2>
-        <p className="mt-6 text-base md:text-lg font-sans text-primary-foreground leading-relaxed [text-shadow:0_1px_3px_rgba(0,0,0,0.75),0_3px_16px_rgba(0,0,0,0.55)]">
-          Love was never meant to live on a screen. Elyxer is made for the moment two people decide to meet: the first coffee, the long walk, the evening that becomes a story.
-        </p>
+      <div className="relative container mx-auto px-6 max-md:pt-14" data-reveal>
+        <div className="max-w-[420px] text-left max-md:mx-auto max-md:max-w-none max-md:text-center">
+          <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-primary-foreground [text-shadow:0_2px_4px_rgba(0,0,0,0.75),0_4px_20px_rgba(0,0,0,0.55)]">
+            Built to get you on real dates.
+          </h2>
+          <p className="mt-6 text-base md:text-lg font-sans text-primary-foreground leading-relaxed [text-shadow:0_1px_3px_rgba(0,0,0,0.75),0_3px_16px_rgba(0,0,0,0.55)]">
+            Love was never meant to live on a screen. Elyxer is made for the moment two people decide to meet: the first coffee, the long walk, the evening that becomes a story.
+          </p>
+        </div>
       </div>
     </section>
 
