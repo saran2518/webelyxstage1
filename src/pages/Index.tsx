@@ -55,15 +55,32 @@ const Index = () =>
     {/* Divider */}
     <div className="w-full h-px bg-border" />
 
-    {/* Principles intro */}
-    <section className="ls-section ls-principles py-16 md:py-20" data-reveal>
-      <div className="container mx-auto px-6 max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-foreground">
-          What we stand for.
-        </h2>
-        <p className="mt-5 text-lg md:text-xl font-sans text-muted-foreground leading-relaxed">
-          Seen for who you are · Real people · Real dates
-        </p>
+    {/* Principles */}
+    <section className="ls-section ls-pillars py-16 md:py-20">
+      <div className="container mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto" data-reveal>
+          <span className="font-sans uppercase">What we stand for</span>
+          <h2 className="mt-6 text-[28px] md:text-[40px] leading-[1.2] font-display font-normal tracking-[0.01em] text-foreground">
+            We believe dating should feel natural, safe and real.
+          </h2>
+          <div className="ls-hairline mx-auto mt-8" />
+        </div>
+        <ol className="ls-pillar-grid mt-16" data-reveal-stagger>
+          {[
+            ["A healthy community.", "Kind, genuine people, here for the right reasons."],
+            ["Safety you can feel.", "Live selfies, reviewed photos, every report read."],
+            ["An exceptional experience.", "Calm, beautiful and effortless."],
+            ["Real, not artificial.", "No swiping, no games, just real connections."],
+            ["Seen as a person.", "No filters, just who you truly are."],
+          ].map(([t, b], i) => (
+            <li key={t} data-reveal-child className="ls-pillar">
+              <div className="ls-pillar-num font-display">{String(i + 1).padStart(2, "0")}</div>
+              <div className="ls-hairline-sm" />
+              <h3 className="mt-5 text-xl font-display font-normal tracking-[0.01em] text-foreground">{t}</h3>
+              <p className="ls-pillar-body mt-3 font-sans text-muted-foreground">{b}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
 

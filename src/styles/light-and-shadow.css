@@ -287,6 +287,42 @@
   .light-shadow-shell footer .footer-col-left { grid-column: 1; grid-row: 1; }
   .light-shadow-shell footer .footer-col-right { grid-column: 3; grid-row: 1; }
 }
+/* Home pillars */
+.light-shadow .ls-hairline { width: 48px; border-top: 0.5px solid hsl(var(--ls-gold)); }
+.light-shadow .ls-hairline-sm { width: 24px; margin-top: 10px; border-top: 0.5px solid hsl(var(--ls-gold)); }
+.light-shadow .ls-pillar-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+.light-shadow .ls-pillar { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.light-shadow .ls-pillar-num { font-size: 1.5rem; color: hsl(var(--ls-deep-gold)); line-height: 1; }
+.light-shadow main p.ls-pillar-body { font-size: 1.0625rem; line-height: 1.55; max-width: 260px; }
+@media (min-width: 768px) {
+  .light-shadow .ls-pillar-grid { grid-template-columns: repeat(6, 1fr); gap: 56px 32px; }
+  .light-shadow .ls-pillar { grid-column: span 2; }
+  .light-shadow .ls-pillar:nth-child(4) { grid-column: 2 / span 2; }
+}
+@media (min-width: 1200px) {
+  .light-shadow .ls-pillar-grid { grid-template-columns: repeat(5, 1fr); gap: 0; }
+  .light-shadow .ls-pillar, .light-shadow .ls-pillar:nth-child(4) { grid-column: auto; padding: 0 24px; }
+  .light-shadow .ls-pillar + .ls-pillar { border-left: 0.5px solid hsl(var(--ls-gold) / 0.4); }
+}
+/* What we do: vision and mission band */
+.light-shadow main > section.ls-vm-strip { padding-top: 0; padding-bottom: 48px; }
+.light-shadow main > section.ls-vm { background: hsl(var(--ls-ink)); color: hsl(var(--ls-cream)); }
+.light-shadow .ls-vm h2 { color: hsl(var(--ls-cream)); }
+.light-shadow .ls-vm-grid { display: grid; grid-template-columns: 1fr; gap: 72px; }
+.light-shadow .ls-vm-eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: hsl(var(--ls-gold)); }
+.light-shadow main p.ls-vm-intro { font-size: 1.1875rem; color: hsl(var(--ls-cream) / 0.85); }
+.light-shadow .ls-vm-point { display: flex; gap: 14px; }
+.light-shadow .ls-vm-star { color: hsl(var(--ls-gold)); font-size: 12px; line-height: 2.1; }
+.light-shadow main .ls-vm-point p { font-size: 1.0625rem; color: hsl(var(--ls-cream) / 0.8); }
+.light-shadow .ls-vm-point strong { color: hsl(var(--ls-cream)); }
+.light-shadow .ls-vm-rule { width: 32px; border-top: 0.5px solid hsl(var(--ls-gold)); }
+.light-shadow main p.ls-vm-closing { font-style: italic; color: hsl(var(--ls-light-gold)); font-size: 1.125rem; }
+@media (min-width: 768px) {
+  .light-shadow main > section.ls-vm-strip { padding-bottom: 72px; }
+  .light-shadow .ls-vm-grid { grid-template-columns: 1fr 1fr; gap: 0; }
+  .light-shadow .ls-vm-panel:first-child { padding-right: 56px; }
+  .light-shadow .ls-vm-panel + .ls-vm-panel { padding-left: 56px; border-left: 0.5px solid hsl(var(--ls-gold) / 0.5); }
+}
 @media (prefers-reduced-motion: reduce) {
   .light-shadow [data-reveal], .light-shadow [data-reveal-child],
   .light-shadow [class*="animate-fade-up"] {
