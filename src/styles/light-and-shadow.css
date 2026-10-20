@@ -263,15 +263,6 @@
     padding-bottom: 120px;
   }
   .light-shadow main > section:first-child:not(.ls-hero) { padding-top: 176px; }
-  .light-shadow .ls-steps ol { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
-  .light-shadow .ls-steps ol::before {
-    content: "";
-    position: absolute;
-    top: 28px;
-    left: calc(12.5% - 12px);
-    right: calc(12.5% - 12px);
-    border-top: 0.5px solid hsl(var(--ls-gold));
-  }
   .light-shadow main > section.ls-manifesto { padding-top: 140px; padding-bottom: 140px; }
   .light-shadow .ls-manifesto blockquote { font-size: 32px; }
   .light-shadow-shell footer > .container { padding-top: 100px; }
@@ -316,6 +307,15 @@
   .light-shadow .ls-pillar-grid { grid-template-columns: repeat(5, 1fr); gap: 0; }
   .light-shadow .ls-pillar, .light-shadow .ls-pillar:nth-child(4) { grid-column: auto; padding: 0 24px; }
   .light-shadow .ls-pillar + .ls-pillar { border-left: 0.5px solid hsl(var(--ls-gold) / 0.4); }
+  .light-shadow .ls-steps ol { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+  .light-shadow .ls-steps ol::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: calc(12.5% - 12px);
+    right: calc(12.5% - 12px);
+    border-top: 0.5px solid hsl(var(--ls-gold));
+  }
 }
 /* What we do: vision and mission band */
 .light-shadow main > section.ls-vm-strip { padding-top: 0; padding-bottom: 48px; }
