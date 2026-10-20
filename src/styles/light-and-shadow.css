@@ -1,0 +1,250 @@
+/* Self-contained Light and shadow treatment. Remove the Layout import and hooks to revert.
+   Copy, media, focus positions and form behaviour are deliberately untouched. */
+.light-shadow-shell {
+  --ls-ink: 24 33.33% 2.94%;
+  --ls-gold: 44.16 53.64807% 54.31373%;
+  --ls-deep-gold: 38.26 60% 45.1%;
+  --ls-light-gold: 44.68 67.14% 72.55%;
+  --ls-cream: 42 27.78% 92.94%;
+  --ls-brown: 34.05405 25.87413% 28.03922%;
+  --ls-body-font: "EB Garamond", Georgia, serif;
+  --ls-title-font: "Marcellus", Georgia, serif;
+}
+.light-shadow {
+  --background: var(--ls-cream);
+  --foreground: var(--ls-ink);
+  --card: var(--ls-cream);
+  --card-foreground: var(--ls-ink);
+  --popover: var(--ls-cream);
+  --popover-foreground: var(--ls-ink);
+  --primary: var(--ls-gold);
+  --primary-foreground: var(--ls-cream);
+  --secondary: var(--ls-cream);
+  --secondary-foreground: var(--ls-ink);
+  --muted: var(--ls-cream);
+  --muted-foreground: var(--ls-brown);
+  --accent: var(--ls-light-gold);
+  --accent-foreground: var(--ls-ink);
+  --gold-light: var(--ls-light-gold);
+  --border: 38 22% 78%;
+  --input: 36 23% 58%;
+  --ring: var(--ls-brown);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+.light-shadow main p,
+.light-shadow main [data-state][id^="radix-"] > div.font-sans {
+  font-family: var(--ls-body-font);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+.light-shadow main h1,
+.light-shadow main h2,
+.light-shadow main h3 { font-family: var(--ls-title-font); font-weight: 400; }
+.light-shadow main > section:not(.ls-hero):not(.ls-photo-band):not(.ls-closing) {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+.light-shadow main > section:first-child:not(.ls-hero) { padding-top: 148px; }
+.light-shadow main > section.ls-section { margin-top: 0; }
+.light-shadow .ls-hero p:first-of-type {
+  font-style: italic;
+  color: hsl(var(--ls-light-gold));
+  font-size: clamp(1.125rem, 1.6vw, 1.5rem);
+  line-height: 1.5;
+}
+.light-shadow .ls-hero p:nth-of-type(2) { font-size: 1.125rem; }
+.light-shadow main .text-primary:not(svg),
+.light-shadow main label,
+.light-shadow main span.uppercase,
+.light-shadow main p.uppercase {
+  color: hsl(var(--ls-brown));
+}
+.light-shadow main label,
+.light-shadow main span.uppercase,
+.light-shadow main p.uppercase {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.light-shadow main span.uppercase::before,
+.light-shadow main p.uppercase::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  margin-right: 10px;
+  border-top: 0.5px solid hsl(var(--ls-deep-gold));
+  vertical-align: middle;
+}
+.light-shadow-shell nav .early-access-action,
+.light-shadow .ls-hero .early-access-action {
+  background: hsl(var(--ls-gold));
+  color: hsl(var(--ls-ink));
+  border: 1px solid hsl(var(--ls-gold));
+  border-radius: 999px;
+  box-shadow: none;
+}
+.light-shadow main .early-access-action,
+.light-shadow main button[type="submit"],
+.light-shadow main a[href^="mailto:"] {
+  background: hsl(var(--ls-ink));
+  color: hsl(var(--ls-cream));
+  border: 1px solid hsl(var(--ls-ink));
+  border-radius: 999px;
+  box-shadow: none;
+}
+.light-shadow main .ls-hero .early-access-action {
+  background: hsl(var(--ls-gold));
+  color: hsl(var(--ls-ink));
+  border-color: hsl(var(--ls-gold));
+}
+.light-shadow main .ls-closing .early-access-action {
+  background: transparent;
+  color: hsl(var(--ls-cream));
+  border-color: hsl(var(--ls-cream));
+}
+.light-shadow main .early-access-action:hover,
+.light-shadow main button[type="submit"]:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  box-shadow: none;
+}
+.light-shadow .ls-steps ol { grid-template-columns: 1fr; gap: 40px; position: relative; }
+.light-shadow .ls-steps li { position: relative; }
+.light-shadow .ls-steps li > span {
+  display: inline-block;
+  font-family: var(--ls-title-font);
+  font-size: 3.5rem;
+  line-height: 1.15;
+  color: hsl(var(--ls-deep-gold));
+  text-shadow: 0.4px 0 hsl(var(--ls-brown)), -0.4px 0 hsl(var(--ls-brown));
+}
+.light-shadow .ls-steps li > span::after {
+  content: "";
+  display: block;
+  width: 30px;
+  margin-top: 12px;
+  border-top: 0.5px solid hsl(var(--ls-deep-gold));
+}
+.light-shadow .ls-features [data-reveal-child] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  border-radius: 0;
+  overflow: visible;
+}
+.light-shadow .ls-features [data-reveal-child]:hover { transform: none; box-shadow: none; }
+.light-shadow .ls-features [data-reveal-child] > div { padding: 32px 0 0; }
+.light-shadow .ls-features img { border-radius: 14px; }
+.light-shadow main img { transition: transform 450ms ease, filter 450ms ease; }
+@media (hover: hover) {
+  .light-shadow main img:not(.parallax-slow):hover { transform: translateY(-3px); }
+}
+.light-shadow main > section.ls-manifesto,
+.light-shadow main > section.ls-beliefs {
+  background: hsl(var(--ls-ink));
+  color: hsl(var(--ls-cream));
+  border: 0;
+}
+.light-shadow .ls-manifesto .container { max-width: 850px; }
+.light-shadow .ls-manifesto blockquote {
+  color: hsl(var(--ls-cream));
+  font-size: 24px;
+  line-height: 1.55;
+  padding: 32px 0;
+  border-top: 0.5px solid hsl(var(--ls-gold));
+  border-bottom: 0.5px solid hsl(var(--ls-gold));
+}
+.light-shadow .ls-sparkle {
+  display: block;
+  margin-bottom: 28px;
+  font-size: 24px;
+  color: hsl(var(--ls-gold));
+}
+.light-shadow .ls-beliefs h2 { color: hsl(var(--ls-cream)); }
+.light-shadow .ls-beliefs ul {
+  padding-left: 0;
+  list-style: none;
+  font-family: var(--ls-title-font);
+  font-size: 1.375rem;
+  color: hsl(var(--ls-cream));
+}
+.light-shadow .ls-beliefs li { position: relative; padding-left: 32px; margin-top: 24px; }
+.light-shadow .ls-beliefs li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: hsl(var(--ls-gold));
+  font-size: 16px;
+}
+.light-shadow [data-reveal], .light-shadow [data-reveal-child] {
+  transition-duration: 1s;
+}
+.light-shadow .ls-manifesto[data-reveal] { transition-duration: 1.6s; }
+.light-shadow-shell footer {
+  background: hsl(var(--ls-ink));
+  color: hsl(var(--ls-cream));
+  border-top: 0.5px solid hsl(var(--ls-gold));
+}
+.light-shadow-shell footer > .container { padding-top: 72px; padding-bottom: 40px; }
+.light-shadow-shell footer > .container > div:first-child {
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  text-align: center;
+}
+.light-shadow-shell footer a[aria-label="Elyxer home"] { margin: 0 auto 24px; }
+.light-shadow-shell footer p:first-of-type:not(.text-center) {
+  font-family: var(--ls-body-font);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.65;
+  opacity: 1;
+  max-width: none;
+}
+.light-shadow-shell footer a:not([aria-label]),
+.light-shadow-shell footer .text-center { letter-spacing: 0.06em; opacity: 0.9; }
+.light-shadow-shell footer h3 { color: hsl(var(--ls-light-gold)); opacity: 1; }
+.light-shadow-shell footer > .container > div:last-child { border-color: hsl(var(--ls-gold) / 0.35); }
+.light-shadow nav .text-primary { color: hsl(var(--ls-brown)); }
+.light-shadow:has(.ls-hero) nav:not(.glass-nav) .text-primary { color: hsl(var(--ls-light-gold)); }
+@media (min-width: 768px) {
+  .light-shadow main > section:not(.ls-hero):not(.ls-photo-band):not(.ls-closing) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .light-shadow main > section:first-child:not(.ls-hero) { padding-top: 176px; }
+  .light-shadow .ls-steps ol { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+  .light-shadow .ls-steps ol::before {
+    content: "";
+    position: absolute;
+    top: 83px;
+    left: 0;
+    right: 0;
+    border-top: 0.5px solid hsl(var(--ls-gold));
+  }
+  .light-shadow .ls-steps li > span { font-size: 4rem; }
+  .light-shadow .ls-steps li > span::after { visibility: hidden; margin-top: 12px; }
+  .light-shadow main > section.ls-manifesto { padding-top: 140px; padding-bottom: 140px; }
+  .light-shadow .ls-manifesto blockquote { font-size: 32px; }
+  .light-shadow-shell footer > .container { padding-top: 100px; }
+  .light-shadow-shell footer > .container > div:first-child > div:last-child { gap: 100px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .light-shadow [data-reveal], .light-shadow [data-reveal-child],
+  .light-shadow [class*="animate-fade-up"] {
+    opacity: 1;
+    animation: none;
+    transform: none;
+    transition: none;
+  }
+  .light-shadow main img, .light-shadow main .early-access-action {
+    transition: none;
+    transform: none;
+  }
+  .light-shadow main img:hover { transform: none; }
+}

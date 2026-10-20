@@ -26,7 +26,7 @@ const ClosingWords = ({ className = "" }: { className?: string }) => (
 const Index = () =>
 <Layout>
     {/* Hero */}
-    <section className="relative h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden">
+    <section className="ls-hero relative h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
           <img
@@ -58,7 +58,7 @@ const Index = () =>
     <div className="w-full h-px bg-border" />
 
     {/* Principles intro */}
-    <section className="py-16 md:py-20" data-reveal>
+    <section className="ls-section ls-principles py-16 md:py-20" data-reveal>
       <div className="container mx-auto px-6 max-w-3xl text-center">
         <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-foreground">
           What we stand for.
@@ -70,7 +70,7 @@ const Index = () =>
     </section>
 
     {/* Middle band */}
-    <section className="relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
+    <section className="ls-photo-band relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
           <source media="(max-width: 767px)" srcSet={media.home.bandMobile} />
@@ -93,7 +93,7 @@ const Index = () =>
     </section>
 
 
-    <section className="py-16 md:py-20 border-b border-border" data-reveal>
+    <section className="ls-section ls-steps py-16 md:py-20 border-b border-border" data-reveal>
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-foreground text-center mb-12">From hello to a real date</h2>
         <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -114,7 +114,7 @@ const Index = () =>
     </section>
 
     {/* Feature cards with images */}
-    <section className="py-24 md:py-32 mt-8 md:mt-12">
+    <section className="ls-section ls-features py-24 md:py-32 mt-8 md:mt-12">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8" data-reveal-stagger>
           {features.map((f) =>
@@ -142,8 +142,9 @@ const Index = () =>
       </div>
     </section>
 
-    <section className="py-16 md:py-20 border-t border-border" data-reveal>
+    <section className="ls-section ls-manifesto py-16 md:py-20 border-t border-border" data-reveal>
       <div className="container mx-auto px-6 max-w-4xl text-center">
+        <span className="ls-sparkle" aria-hidden="true">✦</span>
         <blockquote className="text-2xl md:text-3xl font-display font-normal tracking-[0.01em] text-foreground leading-relaxed">
           “Somewhere, someone is hoping to meet a person exactly like you. We make it happen.”
         </blockquote>
@@ -151,7 +152,7 @@ const Index = () =>
     </section>
 
     {/* Final CTA */}
-    <section className="relative overflow-hidden">
+    <section className="ls-closing relative overflow-hidden">
       {/* Phone: photo on top, words on a dark panel below so faces stay clear */}
       <div className="md:hidden">
         <div className="relative">

@@ -21,7 +21,7 @@ const WhatWeDo = () => (
     </section>
 
     {sections.map((s, i) => (
-      <section key={s.label} className="py-16 md:py-20">
+      <section key={s.label} className="py-16 md:py-20" data-reveal>
         <div className="container mx-auto px-6 max-w-5xl">
           <div className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-10 md:gap-16`}>
             <div className="flex-1">
@@ -53,7 +53,7 @@ const WhatWeDo = () => (
         </div>
       </section>
     ))}
-    <section className="py-16 md:py-20 border-t border-border">
+    <section className="ls-beliefs py-16 md:py-20 border-t border-border" data-reveal>
       <div className="container mx-auto px-6 max-w-5xl">
         <h2 className="text-2xl md:text-3xl font-display font-normal tracking-[0.01em] text-foreground mb-6">What we believe</h2>
         <ul className="list-disc pl-5 space-y-3 font-sans text-base text-muted-foreground leading-relaxed">

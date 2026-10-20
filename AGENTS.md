@@ -8,3 +8,4 @@
 - Use `EarlyAccessButton` for the shared marketing action so its destination stays consistent.
 - Preserve early access validation, email verification and registration behaviour during copy-only changes.
 - Keep legal document text unchanged during marketing rewrites because those pages contain supplied legal documents.
+- Keep the Light and shadow visual treatment in `src/styles/light-and-shadow.css`, activated by Layout and presentation-only hooks; content, media mappings and form logic stay independent so the design can be reverted separately.

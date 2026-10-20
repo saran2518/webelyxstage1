@@ -1,3 +1,5 @@
+import "@/styles/light-and-shadow.css";
+import { useLocation } from "react-router-dom";
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -5,8 +7,10 @@ import { useReveal } from "@/hooks/use-reveal";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   useReveal();
+  const { pathname } = useLocation();
+  const designPage = ["/", "/product", "/what-we-do", "/world-of-dating", "/help", "/early-access"].includes(pathname);
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={`min-h-screen flex flex-col light-shadow-shell ${designPage ? "light-shadow" : ""}`}>
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
