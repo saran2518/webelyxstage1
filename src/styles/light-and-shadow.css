@@ -115,7 +115,7 @@
   opacity: 0.9;
   box-shadow: none;
 }
-.light-shadow .ls-steps ol { grid-template-columns: 1fr; gap: 40px; position: relative; }
+.light-shadow .ls-steps ol { display: grid; grid-template-columns: 1fr; gap: 40px; position: relative; }
 .light-shadow .ls-steps li { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
 .light-shadow .ls-step-icon { background: hsl(var(--ls-cream)); }
 .light-shadow main p.ls-step-body {
