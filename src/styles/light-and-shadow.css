@@ -5,6 +5,7 @@
   --ls-gold: 44.16 53.64807% 54.31373%;
   --ls-deep-gold: 38.26 60% 45.1%;
   --ls-light-gold: 44.68 67.14% 72.55%;
+  --ls-eyebrow-gold: 43 56% 62%;
   --ls-cream: 42 27.78% 92.94%;
   --ls-brown: 34.05405 25.87413% 28.03922%;
   --ls-body-font: "DM Sans", system-ui, sans-serif;
@@ -223,6 +224,17 @@
 .light-shadow-shell footer .footer-links { display: flex; flex-direction: column; gap: 12px; }
 .light-shadow-shell footer .footer-col-right .footer-links { align-items: flex-end; }
 .light-shadow-shell footer .footer-lockup { display: flex; align-items: center; gap: 12px; }
+.light-shadow-shell footer .footer-eyebrow {
+  font-family: var(--ls-title-font);
+  font-weight: 400;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em; /* offsets the trailing letter-space so the label stays optically centred */
+  text-align: center;
+  color: hsl(var(--ls-eyebrow-gold));
+  margin-bottom: -2px; /* container gap is 16px, so the gap above the logo is 14px */
+}
 .light-shadow-shell footer .footer-taglines {
   font-family: "EB Garamond", Georgia, serif;
   font-style: italic;

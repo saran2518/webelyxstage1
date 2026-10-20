@@ -281,7 +281,7 @@ const CookiePolicy = () => (
         <Section title="12. Contact Us">
           <p>If you have any questions about this Cookie &amp; Tracking Policy or how we use tracking technologies, please contact us:</p>
           <ul className="list-none space-y-1">
-            <li><strong className="text-foreground">Email:</strong> support@elyxer.com</li>
+            <li><strong className="text-foreground">Email:</strong> support@elyxer.co</li>
             <li><strong className="text-foreground">Grievance Officer:</strong> grievance@elyxer.co</li>
             <li><strong className="text-foreground">Postal Address:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED, Unit 101, Oxford Towers, 139, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka - 560008, India</li>
           </ul>
