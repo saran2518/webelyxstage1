@@ -19,3 +19,4 @@
 - [x] Fix face cropping site-wide: per-slot focus values in media.ts, aspect-ratio containers matched to photo orientation, verified on desktop and mobile.
 - [x] Fix wide home sections: band and closing sections given aspect-matched min-heights, gradient overlays, parallax removed (hero only); mobile band text top-aligned so faces stay clear. Verified at 1280, 1440, 1920 and 390 widths.
 - [ ] Hide the live Lovable badge. Blocked pending user approval.
+- [x] Correct the support email to support@elyxer.co everywhere (footer, Help & FAQ, all three legal pages) and move "Built to get you on real dates" above the footer logo as a gold Marcellus uppercase eyebrow, leaving "Chosen for who you are." alone below. Verified centring, 14px gap, computed font and colour at 1280 and 390.
