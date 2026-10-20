@@ -10,25 +10,25 @@ import { Button } from "@/components/ui/button";
 
 const faqSections = [
   { category: "General", items: [
-    { q: "What is Elyxer?", a: "A dating app built to get you on real dates. You are chosen for who you are, never for your religion, ethnicity or income." },
-    { q: "How is Elyxer different?", a: "We left out the filters that judge people. Instead of endless swiping, you connect through Moments and Invites, and you can meet first in a ten-minute Virtual Date Room." },
-    { q: "When does Elyxer launch?", a: "Early access is open in Bengaluru, and sign-ups are open across India. Discovery opens in each city once the community is ready. The first 10,000 members get one week of Plus, free, when discovery opens." },
+    { q: "What is Elyxer?", a: "A dating app built to get you on real dates, where you are chosen for who you are." },
+    { q: "When does it launch?", a: "Early access is open now. Discovery opens city by city, starting with Bengaluru." },
   ] },
-  { category: "Account and profile", items: [
-    { q: "How do I create my profile?", a: "You build it during sign-up. It reads like a story about your life: your photos, your interests and the things you love doing." },
-    { q: "Can I edit my profile later?", a: "Yes, at any time. Your name and date of birth are the only details that cannot be changed once your account is created." },
+  { category: "Profile", items: [
+    { q: "How do I create my profile?", a: "During sign-up. It reads like a short story about your life." },
+    { q: "Can I edit it later?", a: "Yes, anytime. Only your name and date of birth stay fixed." },
   ] },
-  { category: "Safety and trust", items: [
-    { q: "How does Elyxer keep me safe?", a: "Add a live selfie in the app to earn the Selfie Badge. Other members see your city, never your exact location. Every photo is reviewed before it goes live." },
-    { q: "Can I report or block someone?", a: "Yes, from any profile or chat. Our team reviews every report, and urgent reports are handled first." },
+  { category: "Safety", items: [
+    { q: "How does Elyxer keep me safe?", a: "Live selfies, reviewed photos, and your city shown, never your exact location." },
+    { q: "Can I report or block someone?", a: "Yes, from any profile or chat. Every report is read by our team." },
   ] },
   { category: "Moments and Invites", items: [
-    { q: "What are Moments?", a: "A photo or video from your day that stays live for 48 hours. When someone recognises themselves in it, they can send you a Vibe or an Invite." },
-    { q: "How do Invites work?", a: "An Invite asks you out with one simple plan, such as coffee, a long walk or dinner. Accept it, and the two of you take it from there." },
+    { q: "What are Moments?", a: "Glimpses of your day, live for 48 hours." },
+    { q: "How do Invites work?", a: "One simple plan, such as coffee, a long walk or dinner. Accept, and take it from there." },
+    { q: "When can I start using them?", a: "Discovery and core features open soon. As an early member, you will be among the first." },
   ] },
   { category: "Privacy", items: [
-    { q: "How is my data handled?", a: "We collect only what we need and never sell your data. Our Privacy Policy explains what we collect and why." },
-    { q: "Can I delete my account?", a: "Yes, from Settings. Your account is deactivated for 30 days in case you change your mind, then permanently deleted." },
+    { q: "Is my data safe?", a: "We collect only what we need and never sell it." },
+    { q: "Can I delete my account?", a: "Yes, from Settings, at any time." },
   ] },
 ];
 
@@ -73,7 +73,7 @@ const HelpFAQ = () => (
 
         <div className="text-center mt-16">
           <p className="font-sans text-sm text-muted-foreground mb-5">
-            Cannot find what you are looking for?
+            Still curious?
           </p>
           <Button asChild className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
             <a href="mailto:support@elyxer.com">Write to us</a>
