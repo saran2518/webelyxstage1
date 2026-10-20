@@ -21,7 +21,7 @@ const WhatWeDo = () => (
     </section>
 
     {sections.map((s, i) => (
-      <section key={s.label} className="py-16 md:py-20">
+      <section key={s.label} className="py-16 md:py-20" data-reveal>
         <div className="container mx-auto px-6 max-w-5xl">
           <div className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-10 md:gap-16`}>
             <div className="flex-1">

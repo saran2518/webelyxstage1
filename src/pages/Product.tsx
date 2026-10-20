@@ -29,6 +29,7 @@ const Product = () => (
         {productSections.map((s, i) => (
           <div
             key={s.title}
+            data-reveal
             className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-10 md:gap-14 py-14 ${
               i < productSections.length - 1 ? "border-b border-border" : ""
             }`}

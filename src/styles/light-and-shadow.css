@@ -33,7 +33,7 @@
   color: hsl(var(--foreground));
 }
 .light-shadow main p,
-.light-shadow main [data-radix-accordion-content] {
+.light-shadow main [role="region"] {
   font-family: var(--ls-body-font);
   font-weight: 400;
   font-size: 1.25rem;
