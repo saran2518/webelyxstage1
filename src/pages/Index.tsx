@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { media } from "@/content/media";
 import SlotMedia from "@/components/SlotMedia";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
-import { Coffee, Eye, ShieldCheck, Sparkles, Users } from "lucide-react";
+import { Camera, Coffee, Eye, Heart, Leaf, ShieldCheck, Sparkles, Users, Video } from "lucide-react";
 
 const features = [
   { title: "Seen for who you are.", description: "Your profile reads like a story, written in the places you love, the passions you keep and the little rituals that make you, you.", image: media.home.card1 },
@@ -71,7 +71,7 @@ const Index = () =>
             { icon: Users, title: "A healthy community.", body: "Kind, genuine people, here for the right reasons." },
             { icon: ShieldCheck, title: "Safety you can feel.", body: "Live selfies, reviewed photos, every report read." },
             { icon: Sparkles, title: "An exceptional experience.", body: "Calm, beautiful and effortless." },
-            { icon: Coffee, title: "Real, not artificial.", body: "No swiping, no games, just real connections." },
+            { icon: Leaf, title: "Real, not artificial.", body: "No swiping, no games, just real connections." },
             { icon: Eye, title: "Seen as a person.", body: "No filters, just who you truly are." },
           ].map(({ icon: Icon, title, body }) => (
             <li key={title} data-reveal-child className="ls-pillar">
@@ -111,20 +111,25 @@ const Index = () =>
     </section>
 
 
-    <section className="ls-section ls-steps py-16 md:py-20 border-b border-border" data-reveal>
+    <section className="ls-section ls-steps py-16 md:py-20 border-b border-border">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-foreground text-center mb-12">From hello to a real date</h2>
-        <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="text-center" data-reveal>
+          <span className="font-sans uppercase">How it works</span>
+          <h2 className="mt-6 text-3xl md:text-4xl font-display font-normal tracking-[0.01em] text-foreground mb-12">From hello to a real date</h2>
+        </div>
+        <ol className="mt-4" data-reveal-stagger>
           {[
-            { title: "Share a moment.", body: "The light through your window, the song on repeat, the coffee you never skip. A small piece of your day, live for 48 hours." },
-            { title: "Be recognised.", body: "When someone sees themselves in your moment, they reach out with a Vibe or an Invite." },
-            { title: "Meet before you meet.", body: "Ten minutes on video, from the comfort of your own space, to feel the spark before the first date." },
-            { title: "Go on the date.", body: "Coffee, a long walk or dinner. The beginning every love story deserves." },
-          ].map((step, i) => (
-            <li key={step.title}>
-              <span className="font-sans text-sm text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-4 mb-3 text-xl font-display font-normal tracking-[0.01em] text-foreground">{step.title}</h3>
-              <p className="font-sans text-sm text-muted-foreground leading-relaxed">{step.body}</p>
+            { icon: Camera, title: "Share a moment.", body: "A glimpse of your day, live for 48 hours." },
+            { icon: Heart, title: "Be recognised.", body: "Someone sees themselves in it and reaches out." },
+            { icon: Video, title: "Meet before you meet.", body: "Ten minutes on video to feel the spark." },
+            { icon: Coffee, title: "Go on the date.", body: "Coffee, a walk or dinner. The real beginning." },
+          ].map(({ icon: Icon, title, body }) => (
+            <li key={title} data-reveal-child className="ls-step">
+              <div className="ls-step-icon">
+                <Icon size={32} strokeWidth={1.25} aria-hidden="true" />
+              </div>
+              <h3 className="mt-5 text-xl font-display font-normal tracking-[0.01em] text-foreground">{title}</h3>
+              <p className="ls-step-body mt-3 text-muted-foreground">{body}</p>
             </li>
           ))}
         </ol>
