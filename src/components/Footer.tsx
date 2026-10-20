@@ -18,11 +18,12 @@ const Footer = () => (
           </ul>
         </nav>
         <div className="footer-centre">
+          <p className="footer-eyebrow">Built to get you on real dates</p>
           <Link to="/" aria-label="Elyxer home" className="footer-lockup">
             <img src={media.brand.icon} alt="" className="h-[52px] w-[52px] object-contain" />
             <Wordmark variant="dark" className="h-11 w-auto" />
           </Link>
-          <p className="footer-taglines">Chosen for who you are.<br />Built to get you on real dates.</p>
+          <p className="footer-taglines">Chosen for who you are.</p>
           <a href="mailto:support@elyxer.co" className="footer-email">support@elyxer.co</a>
         </div>
         <nav className="footer-col footer-col-right" aria-label="Legal">
