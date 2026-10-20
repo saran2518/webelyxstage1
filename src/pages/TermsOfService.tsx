@@ -34,7 +34,7 @@ const TermsOfService = () => (
             <li><strong className="text-foreground">Registered Name:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED</li>
             <li><strong className="text-foreground">Application Name:</strong> Elyxer</li>
             <li><strong className="text-foreground">Registered Address:</strong> Unit 101, Oxford Towers, 139, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka - 560008, India</li>
-            <li><strong className="text-foreground">Email:</strong> support@elyxer.com</li>
+            <li><strong className="text-foreground">Email:</strong> support@elyxer.co</li>
             <li><strong className="text-foreground">Website:</strong> www.elyxer.co</li>
           </ul>
         </Section>
@@ -110,7 +110,7 @@ const TermsOfService = () => (
             <ul className="list-disc pl-6 space-y-1">
               <li>You are solely responsible for maintaining the confidentiality of your account credentials;</li>
               <li>You are responsible for all activities that occur under your account;</li>
-              <li>You must notify us immediately at support@elyxer.com if you suspect any unauthorised access to your account;</li>
+              <li>You must notify us immediately at support@elyxer.co if you suspect any unauthorised access to your account;</li>
               <li>You may not share your account with any other person or create accounts on behalf of others;</li>
               <li>You may not create more than one active account on Elyxer.</li>
             </ul>
@@ -118,7 +118,7 @@ const TermsOfService = () => (
           <SubSection title="4.3 Account Deactivation and Deletion">
             <p>
               You may choose to either deactivate (pause) or permanently delete your account at any time through Account
-              Settings &gt; Privacy Controls or by contacting support@elyxer.com.
+              Settings &gt; Privacy Controls or by contacting support@elyxer.co.
             </p>
             <ul className="list-disc pl-6 space-y-1">
               <li><strong className="text-foreground">Deactivation:</strong> Your profile is hidden from other users but your data is retained. You may reactivate at any time;</li>
@@ -350,7 +350,7 @@ const TermsOfService = () => (
           </SubSection>
           <SubSection title="9.3 Cancellation">
             <ul className="list-disc pl-6 space-y-1">
-              <li>You may cancel your subscription at any time through Account Settings &gt; Subscription or by contacting support@elyxer.com;</li>
+              <li>You may cancel your subscription at any time through Account Settings &gt; Subscription or by contacting support@elyxer.co;</li>
               <li>Cancellation takes effect at the end of the current billing period;</li>
               <li>Upon cancellation, you will retain access to premium features until the end of your paid period;</li>
               <li>After the paid period ends, your account will revert to the free tier.</li>
@@ -358,7 +358,7 @@ const TermsOfService = () => (
           </SubSection>
           <SubSection title="9.4 Refund Policy">
             <ul className="list-disc pl-6 space-y-1">
-              <li><strong className="text-foreground">Technical payment failures:</strong> If a payment is processed but the corresponding premium service is not activated on your account due to a technical error on our part, you are entitled to a full refund. Please contact support@elyxer.com within 7 days;</li>
+              <li><strong className="text-foreground">Technical payment failures:</strong> If a payment is processed but the corresponding premium service is not activated on your account due to a technical error on our part, you are entitled to a full refund. Please contact support@elyxer.co within 7 days;</li>
               <li><strong className="text-foreground">Voluntary cancellation:</strong> Cancellation of a subscription does not entitle you to a refund for any unused portion of your current billing period. Your premium access continues until the end of the paid period;</li>
               <li>All refund requests are reviewed on a case-by-case basis. Approved refunds will be processed to the original payment method within 7-10 business days;</li>
               <li>Elyxer reserves the right to refuse refund requests where there is evidence of abuse of the refund policy.</li>
@@ -552,7 +552,7 @@ const TermsOfService = () => (
           </SubSection>
           <SubSection title="16.3 Informal Resolution">
             <p>
-              Before initiating any formal legal proceedings, we encourage you to contact us at support@elyxer.com to
+              Before initiating any formal legal proceedings, we encourage you to contact us at support@elyxer.co to
               attempt to resolve the dispute informally. We will make reasonable efforts to resolve your concern within
               30 days of receipt.
             </p>
@@ -617,7 +617,7 @@ const TermsOfService = () => (
         <Section title="19. Contact Us">
           <p>For any questions, concerns, or feedback regarding these Terms of Service, please contact us at:</p>
           <ul className="list-none space-y-1">
-            <li><strong className="text-foreground">General Support:</strong> support@elyxer.com</li>
+            <li><strong className="text-foreground">General Support:</strong> support@elyxer.co</li>
             <li><strong className="text-foreground">Grievance Officer:</strong> grievance@elyxer.co</li>
             <li><strong className="text-foreground">Postal Address:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED, Unit 101, Oxford Towers, 139, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka - 560008, India</li>
           </ul>

@@ -76,7 +76,7 @@ const HelpFAQ = () => (
             Still curious?
           </p>
           <Button asChild className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
-            <a href="mailto:support@elyxer.com">Write to us</a>
+            <a href="mailto:support@elyxer.co">Write to us</a>
           </Button>
         </div>
       </div>
