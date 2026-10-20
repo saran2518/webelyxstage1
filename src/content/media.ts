@@ -39,9 +39,9 @@ export const media = {
     hero: bandWindowHug.url, // home-band-window-hug.webp (desktop and mobile)
     band: bandCafeRain.url, // home-band-cafe-rain.jpg
     bandMobile: bandPortrait, // home-band-cafe-rain-portrait.jpg
-    card1: { src: painter.url, focus: "70% 30%" }, // painter.jpg
-    card2: { src: laughing.url, focus: "50% 30%" }, // phone-laughing.jpg
-    card3: { src: selfieHer.url, focus: "50% 28%" }, // selfie-her.png
+    card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
+    card2: { src: card2Umbrella.url, focus: "50% 35%" }, // card2-someone-actually-asks-umbrella.jpg
+    card3: { src: card3Phone.url, focus: "45% 40%" }, // card3-meet-before-you-meet-phone.jpg
     cta: { src: ctaRooftop.url, focus: "55% 25%" }, // home-cta-rooftop.png (rooftop night photo, background figure removed)
   },
   how: {
