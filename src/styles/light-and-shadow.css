@@ -145,7 +145,10 @@
 .light-shadow .ls-features img { border-radius: 14px; }
 .light-shadow main img { transition: transform 450ms ease, filter 450ms ease; }
 @media (hover: hover) {
-  .light-shadow main img:not(.parallax-slow):hover { transform: translateY(-3px); }
+  .light-shadow main img:hover { transform: translateY(-3px); }
+  .light-shadow .ls-hero img:hover,
+  .light-shadow .ls-photo-band img:hover,
+  .light-shadow .ls-closing img:hover { transform: none; }
 }
 .light-shadow main > section.ls-manifesto,
 .light-shadow main > section.ls-beliefs {
