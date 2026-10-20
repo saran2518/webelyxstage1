@@ -222,12 +222,3 @@
     transform: translateY(0);
   }
 }
-
-@keyframes parallax-float {
-  from {
-    transform: scale(1.03) translate3d(0, 0, 0);
-  }
-  to {
-    transform: scale(1.06) translate3d(0, -2%, 0);
-  }
-}
