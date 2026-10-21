@@ -11,7 +11,6 @@ import HelpFAQ from "./pages/HelpFAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
-import EarlyAccess from "./pages/EarlyAccess";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,7 +30,6 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
-          <Route path="/early-access" element={<EarlyAccess />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

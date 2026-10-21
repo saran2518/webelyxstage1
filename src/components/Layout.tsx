@@ -8,7 +8,7 @@ import { useReveal } from "@/hooks/use-reveal";
 const Layout = ({ children }: { children: ReactNode }) => {
   useReveal();
   const { pathname } = useLocation();
-  const designPage = ["/", "/product", "/what-we-do", "/world-of-dating", "/help", "/early-access"].includes(pathname);
+  const designPage = ["/", "/product", "/what-we-do", "/world-of-dating", "/help"].includes(pathname);
   return (
     <div className={`min-h-screen flex flex-col light-shadow-shell ${designPage ? "light-shadow" : ""}`}>
       <Navbar />
