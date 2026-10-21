@@ -324,8 +324,24 @@
 .light-shadow .ls-vm-grid { display: grid; grid-template-columns: 1fr; gap: 72px; }
 .light-shadow .ls-vm-eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: hsl(var(--ls-gold)); }
 .light-shadow main p.ls-vm-intro { font-size: 1.1875rem; color: hsl(var(--ls-cream) / 0.85); }
-.light-shadow .ls-vm-point { display: flex; gap: 14px; }
-.light-shadow .ls-vm-star { color: hsl(var(--ls-gold)); font-size: 12px; line-height: 2.1; }
+.light-shadow .ls-vm-point { display: flex; gap: 16px; align-items: flex-start; }
+.light-shadow .ls-vm-icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 0.5px solid hsl(var(--ls-gold) / 0.35);
+  color: hsl(var(--ls-gold));
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.light-shadow .ls-vm-icon svg { width: 22px; height: 22px; }
+.light-shadow .ls-vm-point:hover .ls-vm-icon {
+  border-color: hsl(var(--ls-gold));
+  box-shadow: 0 0 0 1px hsl(var(--ls-gold) / 0.12);
+}
 .light-shadow main .ls-vm-point p { font-size: 1.0625rem; color: hsl(var(--ls-cream) / 0.8); }
 .light-shadow .ls-vm-point strong { color: hsl(var(--ls-cream)); }
 .light-shadow .ls-vm-rule { width: 32px; border-top: 0.5px solid hsl(var(--ls-gold)); }
@@ -344,7 +360,8 @@
     transform: none;
     transition: none;
   }
-  .light-shadow .ls-pillar-icon, .light-shadow .ls-step-icon { transition: none; }
+  .light-shadow .ls-pillar-icon, .light-shadow .ls-step-icon,
+  .light-shadow .ls-vm-icon { transition: none; }
   .light-shadow main img, .light-shadow main .early-access-action {
     transition: none;
     transform: none;
