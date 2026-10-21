@@ -1,8 +1,8 @@
 import Layout from "@/components/Layout";
-import { media } from "@/content/media";
+import { media, social } from "@/content/media";
 import SlotMedia from "@/components/SlotMedia";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
-import { Camera, Coffee, Eye, Heart, Leaf, ShieldCheck, Sparkles, Users, Video } from "lucide-react";
+import { Camera, Coffee, Eye, Heart, Instagram, Leaf, ShieldCheck, Sparkles, Users, Video } from "lucide-react";
 
 const features = [
   { title: "Seen for who you are.", description: "Your profile reads like a story, written in the places you love, the passions you keep and the little rituals that make you, you.", image: media.home.card1 },
@@ -196,6 +196,20 @@ const Index = () =>
       </div>
     </section>
 
+    {/* Follow our story */}
+    <section className="ls-follow">
+      <div className="container mx-auto px-6 text-center">
+        <span className="ls-follow-hairline" aria-hidden="true" />
+        <p className="ls-follow-eyebrow">Follow our story</p>
+        <p className="ls-follow-line">Glimpses, stories and early news from Elyxer.</p>
+        <a href={social.instagram} target="_blank" rel="noopener noreferrer" className="ls-follow-link">
+          <span className="ls-follow-icon" aria-hidden="true">
+            <Instagram size={20} strokeWidth={1.25} />
+          </span>
+          <span className="ls-follow-handle">@elyxer.dating</span>
+        </a>
+      </div>
+    </section>
   </Layout>;
 
 
