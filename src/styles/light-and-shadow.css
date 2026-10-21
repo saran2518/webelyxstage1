@@ -290,6 +290,7 @@
 .light-shadow-shell .navbar-social:hover { opacity: 1; }
 .light-shadow-shell .navbar-social-on-dark { color: hsl(var(--ls-cream)); }
 .light-shadow-shell .navbar-social-on-light { color: hsl(var(--ls-ink)); }
+.light-shadow-shell .navbar-mobile-menu { background: hsl(var(--ls-cream) / 0.98); }
 .light-shadow-shell footer .footer-bottom {
   margin-top: 56px;
   padding-top: 24px;

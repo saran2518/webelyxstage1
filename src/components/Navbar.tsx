@@ -84,7 +84,7 @@ const Navbar = () => {
 
       {/* Mobile nav */}
       {mobileOpen &&
-      <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border px-6 pb-6 animate-fade-up">
+       <div className="navbar-mobile-menu md:hidden bg-background/98 backdrop-blur-md border-t border-border px-6 pb-6 animate-fade-up">
           <div className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) =>
           <Link
