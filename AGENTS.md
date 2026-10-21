@@ -1,6 +1,6 @@
 # Project rules
 - Use the shared Tailwind display family for all titles and the global heading rule for normal weight and tracking, so typography changes never affect body text or controls.
-- Keep all page media and brand asset references in `src/content/media.ts`, with future filenames beside fallback slots, so uploads need one update.
+- Keep all page media, brand asset and social profile link references in `src/content/media.ts` (the media map plus the `social` export), with future filenames beside fallback slots, so uploads and profile links need one update.
 - Render brand wordmarks through `Wordmark` using the original asset SVG geometry and colours, with per-instance `useId` gradient identifiers to prevent navbar/footer collisions.
 - Render image/video slots through `SlotMedia` so absent videos show posters without broken playback.
 - Photo slots in media.ts are `{ src, focus }` objects; focus is the object-position that keeps faces in the crop. Containers use aspect ratios matched to the photo orientation (aspect-[4/5] for portraits, aspect-[4/3] for cards), never fixed short heights.
