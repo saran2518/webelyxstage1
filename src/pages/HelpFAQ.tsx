@@ -75,7 +75,7 @@ const HelpFAQ = () => (
           </p>
           <a
             href="mailto:support@elyxer.co"
-            className="font-display text-2xl font-normal tracking-[0.01em] text-primary transition-opacity duration-300 hover:opacity-75"
+            className="font-display text-2xl font-normal tracking-[0.01em] text-primary ls-plain-email transition-opacity duration-300 hover:opacity-75"
           >
             support@elyxer.co
           </a>
