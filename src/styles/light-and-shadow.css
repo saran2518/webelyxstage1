@@ -291,7 +291,6 @@
     padding-bottom: 120px;
   }
   .light-shadow main > section:first-child:not(.ls-hero) { padding-top: 176px; }
-  .light-shadow main > section.ls-follow { padding-top: 72px; padding-bottom: 72px; }
   .light-shadow main > section.ls-manifesto { padding-top: 140px; padding-bottom: 140px; }
   .light-shadow .ls-manifesto blockquote { font-size: 32px; }
   .light-shadow-shell footer > .container { padding-top: 100px; }
@@ -386,6 +385,9 @@
 }
 /* Home: follow our story band */
 .light-shadow main > section.ls-follow { padding-top: 56px; padding-bottom: 56px; }
+@media (min-width: 768px) {
+  .light-shadow main > section.ls-follow { padding-top: 72px; padding-bottom: 72px; }
+}
 .light-shadow .ls-follow-hairline {
   display: block;
   width: 48px;
