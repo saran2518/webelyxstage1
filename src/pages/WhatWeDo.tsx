@@ -1,17 +1,20 @@
 import Layout from "@/components/Layout";
+import { FilterX, Gem, HeartHandshake, ShieldCheck, Sparkles, UserRound } from "lucide-react";
 import { media } from "@/content/media";
 
 const story = { label: "Our story.", title: "Why Elyxer exists.", content: 'Elyxer began with a simple feeling: modern dating had forgotten the romance of being introduced. We wanted to bring back the magic of someone saying, "I think you two would love each other." The name comes from elixir, a little magic for the way we meet, and it is said the same way: eh-LIX-er.', image: media.what.story, imageAlt: "Couple enjoying time outdoors" };
 
-const panels = [
+type PanelPoint = [label: string, text: string, icon: typeof FilterX];
+
+const panels: { label: string; title: string; intro: string; points: PanelPoint[]; closing: string }[] = [
   {
     label: "Our vision",
     title: "A world where everyone is chosen.",
     intro: "We imagine a world where dating feels wholesome again.",
     points: [
-      ["Seen, not sorted.", "People are cherished for their warmth, curiosity and the way they live."],
-      ["No artificial filters.", "No one is reduced to categories or checklists."],
-      ["Truly seen.", "Finding someone special begins with being known for who you are."],
+      ["Seen, not sorted.", "People are cherished for their warmth, curiosity and the way they live.", UserRound],
+      ["No artificial filters.", "No one is reduced to categories or checklists.", FilterX],
+      ["Truly seen.", "Finding someone special begins with being known for who you are.", Gem],
     ],
     closing: "Elyxer is our first step towards that world.",
   },
@@ -20,9 +23,9 @@ const panels = [
     title: "Built to get you on real dates.",
     intro: "We are building a dating experience that takes you from a first hello to a real date, with ease.",
     points: [
-      ["A safe, healthy community.", "Kind, genuine people, protected at every step."],
-      ["An exceptional experience.", "Calm, beautiful and effortless to use."],
-      ["Real connections.", "Moments, Invites and the Virtual Date Room, made to bring two people face to face."],
+      ["A safe, healthy community.", "Kind, genuine people, protected at every step.", ShieldCheck],
+      ["An exceptional experience.", "Calm, beautiful and effortless to use.", Sparkles],
+      ["Real connections.", "Moments, Invites and the Virtual Date Room, made to bring two people face to face.", HeartHandshake],
     ],
     closing: "Less time on screens. More time on real dates.",
   },
@@ -64,9 +67,11 @@ const WhatWeDo = () => (
               <h2 className="mt-5 text-[28px] md:text-[34px] leading-[1.2] font-display font-normal tracking-[0.01em]">{p.title}</h2>
               <p className="ls-vm-intro mt-5 font-sans">{p.intro}</p>
               <ul className="mt-8 space-y-5">
-                {p.points.map(([l, t]) => (
+                {p.points.map(([l, t, Icon]) => (
                   <li key={l} className="ls-vm-point">
-                    <span className="ls-vm-star" aria-hidden="true">✦</span>
+                    <span className="ls-vm-icon" aria-hidden="true">
+                      <Icon size={22} strokeWidth={1.25} />
+                    </span>
                     <p className="font-sans"><strong className="font-display font-normal">{l}</strong> {t}</p>
                   </li>
                 ))}
