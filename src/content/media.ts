@@ -25,6 +25,9 @@ import wordmarkLight from "@/assets/site/Elyxer_wordmark_gold_for_light_bg.svg.a
 import selfieHer from "@/assets/site/selfie-her.png.asset.json";
 import selfieHim from "@/assets/site/selfie-him.png.asset.json";
 import appIcon from "@/assets/elyxer-logo.png";
+import { siInstagram } from "simple-icons";
+
+export const instagramGlyph = siInstagram.path;
 
 export type VideoSlot = { src?: string; poster: string };
 // focus is the object-position that keeps faces in the crop (usually upper third).

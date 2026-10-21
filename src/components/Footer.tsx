@@ -1,7 +1,7 @@
 import { media, social } from "@/content/media";
 import { Link } from "react-router-dom";
 import Wordmark from "@/components/Wordmark";
-import { Instagram } from "lucide-react";
+import InstagramGlyph from "@/components/InstagramGlyph";
 
 const Footer = () => (
   <footer className="bg-bronze text-bronze-foreground">
@@ -33,7 +33,7 @@ const Footer = () => (
             aria-label="Elyxer on Instagram"
             className="footer-social"
           >
-            <Instagram size={18} strokeWidth={1.25} />
+            <InstagramGlyph size={24} gradient />
           </a>
         </div>
         <nav className="footer-col footer-col-right" aria-label="Legal">

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { media } from "@/content/media";
+import { media, social } from "@/content/media";
+import InstagramGlyph from "@/components/InstagramGlyph";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
 import { Button } from "@/components/ui/button";
 import Wordmark from "@/components/Wordmark";
@@ -60,7 +61,14 @@ const Navbar = () => {
               {link.label}
             </Link>
           )}
-          <EarlyAccessButton className="ml-2 px-5 py-2.5" />
+          <div className="flex shrink-0 items-center gap-5">
+            <a href={social.instagram} target="_blank" rel="noopener noreferrer"
+              aria-label="Elyxer on Instagram"
+              className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
+              <InstagramGlyph size={20} />
+            </a>
+            <EarlyAccessButton className="px-5 py-2.5" />
+          </div>
 
         </div>
 
@@ -91,6 +99,11 @@ const Navbar = () => {
                 {link.label}
               </Link>
           )}
+            <a href={social.instagram} target="_blank" rel="noopener noreferrer"
+              className="navbar-social navbar-social-on-light flex items-center gap-3 py-2 font-sans text-base font-medium">
+              <InstagramGlyph size={20} />
+              <span>Instagram @elyxer.dating</span>
+            </a>
             <EarlyAccessButton className="mt-2" />
           </div>
         </div>

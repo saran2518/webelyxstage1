@@ -8,6 +8,11 @@
   --ls-eyebrow-gold: 43 56% 62%;
   --ls-cream: 42 27.78% 92.94%;
   --ls-brown: 34.05405 25.87413% 28.03922%;
+  --instagram-sun: #FEDA75;
+  --instagram-orange: #FA7E1E;
+  --instagram-pink: #D62976;
+  --instagram-purple: #962FBF;
+  --instagram-blue: #4F5BD5;
   --ls-body-font: "DM Sans", system-ui, sans-serif;
   --ls-title-font: "Marcellus", Georgia, serif;
 }
@@ -264,20 +269,27 @@
 .light-shadow-shell footer .footer-link:hover,
 .light-shadow-shell footer .footer-email:hover { opacity: 1; }
 .light-shadow-shell footer .footer-social {
-  width: 36px;
-  height: 36px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  border: 0.5px solid hsl(var(--ls-gold) / 0.35);
-  color: hsl(var(--ls-cream) / 0.8);
-  transition: border-color 0.35s ease, color 0.35s ease;
+  opacity: 0.9;
+  transition: opacity 0.35s ease;
 }
 .light-shadow-shell footer .footer-social:hover {
-  border-color: hsl(var(--ls-gold));
-  color: hsl(var(--ls-cream));
+  opacity: 1;
 }
+.instagram-glyph { display: block; flex: none; }
+.instagram-stop-sun { stop-color: var(--instagram-sun); }
+.instagram-stop-orange { stop-color: var(--instagram-orange); }
+.instagram-stop-pink { stop-color: var(--instagram-pink); }
+.instagram-stop-purple { stop-color: var(--instagram-purple); }
+.instagram-stop-blue { stop-color: var(--instagram-blue); }
+.light-shadow-shell .navbar-social { opacity: 0.9; transition: opacity 0.2s ease; }
+.light-shadow-shell .navbar-social:hover { opacity: 1; }
+.light-shadow-shell .navbar-social-on-dark { color: hsl(var(--ls-cream)); }
+.light-shadow-shell .navbar-social-on-light { color: hsl(var(--ls-ink)); }
 .light-shadow-shell footer .footer-bottom {
   margin-top: 56px;
   padding-top: 24px;
@@ -418,27 +430,18 @@
 }
 .light-shadow .ls-follow-icon {
   flex: none;
-  width: 44px;
-  height: 44px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  border: 0.5px solid hsl(var(--ls-deep-gold) / 0.3);
-  color: hsl(var(--ls-deep-gold));
-  transition: border-color 0.35s ease, box-shadow 0.35s ease;
 }
-.light-shadow .ls-follow-icon svg { width: 20px; height: 20px; }
 .light-shadow .ls-follow-handle {
   font-family: var(--ls-title-font);
   font-weight: 400;
   font-size: 20px;
   letter-spacing: 0.01em;
   color: hsl(var(--ls-ink));
-}
-.light-shadow .ls-follow-link:hover .ls-follow-icon {
-  border-color: hsl(var(--ls-gold));
-  box-shadow: 0 0 0 1px hsl(var(--ls-gold) / 0.12);
 }
 .light-shadow .ls-follow-link:hover .ls-follow-handle {
   text-decoration: underline;
@@ -456,6 +459,7 @@
   }
   .light-shadow .ls-pillar-icon, .light-shadow .ls-step-icon,
   .light-shadow .ls-vm-icon, .light-shadow .ls-follow-icon { transition: none; }
+  .light-shadow-shell .navbar-social, .light-shadow-shell footer .footer-social { transition: none; }
   .light-shadow main img, .light-shadow main .early-access-action {
     transition: none;
     transform: none;
