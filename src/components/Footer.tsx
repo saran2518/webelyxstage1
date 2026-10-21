@@ -1,6 +1,7 @@
-import { media } from "@/content/media";
+import { media, social } from "@/content/media";
 import { Link } from "react-router-dom";
 import Wordmark from "@/components/Wordmark";
+import { Instagram } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-bronze text-bronze-foreground">
@@ -25,6 +26,15 @@ const Footer = () => (
           </Link>
           <p className="footer-taglines">Chosen for who you are.</p>
           <a href="mailto:support@elyxer.co" className="footer-email">support@elyxer.co</a>
+          <a
+            href={social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Elyxer on Instagram"
+            className="footer-social"
+          >
+            <Instagram size={18} strokeWidth={1.25} />
+          </a>
         </div>
         <nav className="footer-col footer-col-right" aria-label="Legal">
           <h3 className="footer-heading">Legal</h3>
