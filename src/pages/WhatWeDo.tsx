@@ -1,10 +1,13 @@
+import type { ComponentType } from "react";
 import Layout from "@/components/Layout";
 import { FilterX, Gem, HeartHandshake, ShieldCheck, Sparkles, UserRound } from "lucide-react";
 import { media } from "@/content/media";
 
 const story = { label: "Our story.", title: "Why Elyxer exists.", content: 'Elyxer began with a simple feeling: modern dating had forgotten the romance of being introduced. We wanted to bring back the magic of someone saying, "I think you two would love each other." The name comes from elixir, a little magic for the way we meet, and it is said the same way: eh-LIX-er.', image: media.what.story, imageAlt: "Couple enjoying time outdoors" };
 
-const panels = [
+type PanelPoint = [label: string, text: string, icon: ComponentType<{ size?: number; strokeWidth?: number }>];
+
+const panels: { label: string; title: string; intro: string; points: PanelPoint[]; closing: string }[] = [
   {
     label: "Our vision",
     title: "A world where everyone is chosen.",
