@@ -55,7 +55,7 @@ const Product = () => (
             </div>
             <div className="flex-1">
               <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
-                <span className="font-serif text-lg font-semibold text-primary">
+                <span className="font-sans text-lg font-semibold text-primary">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
