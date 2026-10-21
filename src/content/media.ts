@@ -24,7 +24,6 @@ import wordmarkDark from "@/assets/site/Elyxer_wordmark_gold_for_dark_bg.svg.ass
 import wordmarkLight from "@/assets/site/Elyxer_wordmark_gold_for_light_bg.svg.asset.json";
 import selfieHer from "@/assets/site/selfie-her.png.asset.json";
 import selfieHim from "@/assets/site/selfie-him.png.asset.json";
-import cartoon from "@/assets/under-age-cartoon.png";
 import appIcon from "@/assets/elyxer-logo.png";
 
 export type VideoSlot = { src?: string; poster: string };
@@ -79,5 +78,4 @@ export const media = {
     wordmarkLight: wordmarkLight.url, // Elyxer_wordmark_gold_for_light_bg.svg
     usesLogoFallback: false,
   },
-  earlyAccess: { underage: cartoon },
 };
