@@ -16,7 +16,7 @@ import wall from "@/assets/site/phone-wall.jpg.asset.json";
 import beach from "@/assets/site/beach-hug.jpg.asset.json";
 import boardGame from "@/assets/site/cafe-board-game.jpg.asset.json";
 import cycling from "@/assets/site/cycling.jpg.asset.json";
-import vinyl from "@/assets/site/vinyl-store-curly.jpg.asset.json";
+import kitchenCooking from "@/assets/site/blog-featured-couple-cooking.webp.asset.json";
 import sweater from "@/assets/site/cafe-sweater.jpg.asset.json";
 import bench from "@/assets/site/pickleball-bench.jpg.asset.json";
 import gameNight from "@/assets/site/game-night-home.jpg.asset.json";
@@ -67,7 +67,7 @@ export const media = {
     story: { src: cycling.url, focus: "60% 45%" }, // cycling.jpg
   },
   blog: {
-    featured: { src: vinyl.url, focus: "45% 40%" }, // vinyl-store-curly.jpg
+    featured: { src: kitchenCooking.url, focus: "48% 35%" }, // blog-featured-couple-cooking.webp (couple cooking in the kitchen)
     a1: { src: sweater.url, focus: "45% 45%" }, // cafe-sweater.jpg
     a2: { src: cubbonPark.url, focus: "70% 50%" }, // blog-cubbon-park.jpg
     a3: { src: bench.url, focus: "55% 40%" }, // pickleball-bench.jpg

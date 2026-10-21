@@ -38,7 +38,7 @@ const WorldOfDating = () => {
             <img
               src={featuredArticle.image.src}
               alt="Featured article"
-              className="w-full aspect-[4/3] object-cover"
+              className="w-full aspect-[4/3] md:aspect-[16/9] object-cover"
               style={featuredArticle.image.focus ? { objectPosition: featuredArticle.image.focus } : undefined}
               loading="lazy"
             />
