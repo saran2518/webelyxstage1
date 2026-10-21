@@ -23,7 +23,7 @@ const panels: { label: string; title: ReactNode; intro: string; points: PanelPoi
     label: "Our mission",
     title: (
       <>
-        Built to get you on real
+        Built to get you on real{" "}
         <br className="hidden md:block" />
         dates.
       </>
