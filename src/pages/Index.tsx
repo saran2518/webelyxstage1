@@ -31,6 +31,7 @@ const Index = () =>
     <section className="ls-hero relative h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
+          <source media="(max-width: 767px)" srcSet={media.home.heroMobile || media.home.hero} />
           <img
             src={media.home.hero}
             alt="Couple hugging beside a rain-streaked cafe window"
@@ -89,7 +90,14 @@ const Index = () =>
     </section>
 
     {/* Middle band */}
-    <section className="ls-photo-band relative overflow-hidden flex items-center py-32 max-md:py-0 md:py-24 max-md:items-start max-md:min-h-[80vh] md:min-h-[min(56.25vw,85vh)]">
+    <section className="ls-photo-band ls-photo-band-mobile md:hidden">
+      <SlotMedia slot={media.home.band} alt="Couple cycling together on a misty road" className="ls-band-photo w-full aspect-[4/3] object-cover" />
+      <div className="ls-band-words">
+        <h2 className="font-display">Built to get you on real dates.</h2>
+        <p className="mt-6">Love was never meant to live on a screen. Elyxer is made for the moment two people decide to meet: the first coffee, the long walk, the evening that becomes a story.</p>
+      </div>
+    </section>
+    <section className="ls-photo-band relative overflow-hidden hidden md:flex items-center py-32 md:py-24 md:min-h-[min(56.25vw,85vh)]">
       <div className="absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
           <img

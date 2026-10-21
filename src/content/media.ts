@@ -39,6 +39,7 @@ export type PhotoSlot = { src: string; focus?: string };
 export const media = {
   home: {
     hero: heroWindowHug.url, // home-hero-window-hug.webp (couple hugging by the rain-streaked window)
+    heroMobile: heroWindowHug.url, // Future home-hero-portrait upload; current original is the fallback.
     band: bandCyclingMist.url, // home-band-cycling-mist.webp (couple cycling on the misty road)
     card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
     card2: { src: card2Umbrella.url, focus: "50% 35%" }, // card2-someone-actually-asks-umbrella.jpg

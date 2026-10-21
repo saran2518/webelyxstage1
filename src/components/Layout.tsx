@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
   const designPage = ["/", "/product", "/what-we-do", "/world-of-dating", "/help"].includes(pathname);
   return (
-    <div className={`min-h-screen flex flex-col light-shadow-shell ${designPage ? "light-shadow" : ""}`}>
+    <div className={`min-h-screen flex flex-col light-shadow-shell ${designPage ? "light-shadow" : ""} ${pathname === "/" ? "ls-home" : ""}`}>
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
