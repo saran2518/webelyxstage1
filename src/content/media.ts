@@ -79,3 +79,8 @@ export const media = {
     usesLogoFallback: false,
   },
 };
+
+// Social profiles. Single source of truth for every brand link on the site.
+export const social = {
+  instagram: "https://www.instagram.com/elyxer.dating/",
+};

@@ -43,7 +43,7 @@
 .light-shadow main h1,
 .light-shadow main h2,
 .light-shadow main h3 { font-family: var(--ls-title-font); font-weight: 400; }
-.light-shadow main > section:not(.ls-hero):not(.ls-photo-band):not(.ls-closing) {
+.light-shadow main > section:not(.ls-hero):not(.ls-photo-band):not(.ls-closing):not(.ls-follow) {
   padding-top: 72px;
   padding-bottom: 72px;
 }
@@ -263,6 +263,21 @@
 }
 .light-shadow-shell footer .footer-link:hover,
 .light-shadow-shell footer .footer-email:hover { opacity: 1; }
+.light-shadow-shell footer .footer-social {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 0.5px solid hsl(var(--ls-gold) / 0.35);
+  color: hsl(var(--ls-cream) / 0.8);
+  transition: border-color 0.35s ease, color 0.35s ease;
+}
+.light-shadow-shell footer .footer-social:hover {
+  border-color: hsl(var(--ls-gold));
+  color: hsl(var(--ls-cream));
+}
 .light-shadow-shell footer .footer-bottom {
   margin-top: 56px;
   padding-top: 24px;
@@ -271,11 +286,12 @@
 .light-shadow nav .text-primary { color: hsl(var(--ls-brown)); }
 .light-shadow:has(.ls-hero) nav:not(.glass-nav) .text-primary { color: hsl(var(--ls-light-gold)); }
 @media (min-width: 768px) {
-  .light-shadow main > section:not(.ls-hero):not(.ls-photo-band):not(.ls-closing) {
+  .light-shadow main > section:not(.ls-hero):not(.ls-photo-band):not(.ls-closing):not(.ls-follow) {
     padding-top: 120px;
     padding-bottom: 120px;
   }
   .light-shadow main > section:first-child:not(.ls-hero) { padding-top: 176px; }
+  .light-shadow main > section.ls-follow { padding-top: 72px; padding-bottom: 72px; }
   .light-shadow main > section.ls-manifesto { padding-top: 140px; padding-bottom: 140px; }
   .light-shadow .ls-manifesto blockquote { font-size: 32px; }
   .light-shadow-shell footer > .container { padding-top: 100px; }
@@ -368,6 +384,66 @@
   .light-shadow .ls-vm-panel:first-child { padding-right: 56px; }
   .light-shadow .ls-vm-panel + .ls-vm-panel { padding-left: 56px; border-left: 0.5px solid hsl(var(--ls-gold) / 0.5); }
 }
+/* Home: follow our story band */
+.light-shadow main > section.ls-follow { padding-top: 56px; padding-bottom: 56px; }
+.light-shadow .ls-follow-hairline {
+  display: block;
+  width: 48px;
+  margin: 0 auto 20px;
+  border-top: 0.5px solid hsl(var(--ls-gold));
+}
+.light-shadow main p.ls-follow-eyebrow {
+  font-family: var(--ls-body-font);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-indent: 0.2em; /* offsets the trailing letter-space so the label stays optically centred */
+  text-transform: uppercase;
+  color: hsl(var(--ls-deep-gold));
+}
+.light-shadow main p.ls-follow-line {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.5;
+  color: hsl(var(--ls-brown));
+  margin-top: 10px;
+}
+.light-shadow .ls-follow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  text-decoration: none;
+}
+.light-shadow .ls-follow-icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 0.5px solid hsl(var(--ls-deep-gold) / 0.3);
+  color: hsl(var(--ls-deep-gold));
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.light-shadow .ls-follow-icon svg { width: 20px; height: 20px; }
+.light-shadow .ls-follow-handle {
+  font-family: var(--ls-title-font);
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.01em;
+  color: hsl(var(--ls-ink));
+}
+.light-shadow .ls-follow-link:hover .ls-follow-icon {
+  border-color: hsl(var(--ls-gold));
+  box-shadow: 0 0 0 1px hsl(var(--ls-gold) / 0.12);
+}
+.light-shadow .ls-follow-link:hover .ls-follow-handle {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-decoration-color: hsl(var(--ls-gold));
+  text-underline-offset: 6px;
+}
 @media (prefers-reduced-motion: reduce) {
   .light-shadow [data-reveal], .light-shadow [data-reveal-child],
   .light-shadow [class*="animate-fade-up"] {
@@ -377,7 +453,7 @@
     transition: none;
   }
   .light-shadow .ls-pillar-icon, .light-shadow .ls-step-icon,
-  .light-shadow .ls-vm-icon { transition: none; }
+  .light-shadow .ls-vm-icon, .light-shadow .ls-follow-icon { transition: none; }
   .light-shadow main img, .light-shadow main .early-access-action {
     transition: none;
     transform: none;
