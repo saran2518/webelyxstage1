@@ -15,8 +15,7 @@ export default {
     extend: {
       fontFamily: {
         display: ['"Marcellus"', 'Georgia', 'serif'],
-        editorial: ['"EB Garamond"', 'Georgia', 'serif'],
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        serif: ['"DM Sans"', 'system-ui', 'sans-serif'],
         sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
       },
       colors: {

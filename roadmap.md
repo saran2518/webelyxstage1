@@ -1,4 +1,5 @@
 # Tasks
+- [x] Restore site-wide DM Sans supporting text and Marcellus headings/taglines, remove EB Garamond loading, and verify mobile title sizes on Home, How it works and What we do at 390 and 1440.
 - [x] Apply the home-only mobile pass below 768px; verified 390x844 and 360x780 with no horizontal overflow, full-page stitched screenshots, and identical desktop measurements and styling. Existing photos unchanged.
 - [ ] Finish mobile hero face-clearance verification. Blocked: the current landscape photo at the requested 68% 30% full-screen cover crop clips the right-hand face and puts the headline over faces; needs the user's portrait photo for heroMobile or permission to change the requested framing.
 - [x] Replace Instagram icons with official gradient glyphs, add desktop/mobile navigation links, and verify colours, sizes and new-tab profile links at 1440 and 390.

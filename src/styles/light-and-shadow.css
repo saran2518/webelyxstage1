@@ -137,7 +137,7 @@
 .light-shadow .ls-steps li { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
 .light-shadow .ls-step-icon { background: hsl(var(--ls-cream)); }
 .light-shadow main p.ls-step-body {
-  font-family: "EB Garamond", Georgia, serif;
+  font-family: var(--ls-body-font);
   font-size: 1.1875rem;
   line-height: 1.5;
   max-width: 240px;
@@ -188,7 +188,7 @@
 .light-shadow .ls-beliefs ul {
   padding-left: 0;
   list-style: none;
-  font-family: var(--ls-title-font);
+  font-family: var(--ls-body-font);
   font-size: 1.375rem;
   color: hsl(var(--ls-cream));
 }
@@ -252,8 +252,8 @@
   margin-bottom: -2px; /* container gap is 16px, so the gap above the logo is 14px */
 }
 .light-shadow-shell footer .footer-taglines {
-  font-family: "EB Garamond", Georgia, serif;
-  font-style: italic;
+  font-family: var(--ls-title-font);
+  font-style: normal;
   font-size: 22px;
   line-height: 1.65;
   opacity: 1;
@@ -386,7 +386,7 @@
 .light-shadow main .ls-vm-point p { font-size: 1.0625rem; color: hsl(var(--ls-cream) / 0.8); }
 .light-shadow .ls-vm-point strong { color: hsl(var(--ls-cream)); }
 .light-shadow .ls-vm-rule { width: 32px; border-top: 0.5px solid hsl(var(--ls-gold)); }
-.light-shadow main p.ls-vm-closing { font-style: italic; color: hsl(var(--ls-light-gold)); font-size: 1.125rem; }
+.light-shadow main p.ls-vm-closing { font-style: normal; color: hsl(var(--ls-light-gold)); font-size: 1.125rem; }
 @media (min-width: 768px) {
   .light-shadow main > section.ls-vm-strip { padding-bottom: 72px; }
   .light-shadow .ls-vm-grid { grid-template-columns: 1fr 1fr; gap: 0; }
@@ -416,7 +416,7 @@
   color: hsl(var(--ls-deep-gold));
 }
 .light-shadow main p.ls-follow-line {
-  font-family: "EB Garamond", Georgia, serif;
+  font-family: var(--ls-body-font);
   font-size: 19px;
   line-height: 1.5;
   color: hsl(var(--ls-brown));
@@ -438,7 +438,7 @@
   justify-content: center;
 }
 .light-shadow .ls-follow-handle {
-  font-family: var(--ls-title-font);
+  font-family: var(--ls-body-font);
   font-weight: 400;
   font-size: 20px;
   letter-spacing: 0.01em;
@@ -470,9 +470,9 @@
 
 /* Home phone presentation only. Desktop rules above are intentionally unchanged. */
 @media (max-width: 767px) {
-  .ls-home main p { @apply font-editorial; font-size: 16px; line-height: 1.6; }
-  .ls-home main h2 { font-size: 28px; line-height: 1.2; }
-  .ls-home main h3 { font-size: 26px; line-height: 1.2; }
+  .ls-home main p { @apply font-sans; font-size: 16px; line-height: 1.6; }
+  .ls-home main h2 { font-size: 24px; line-height: 1.2; }
+  .ls-home main h3 { font-size: 18px; line-height: 1.2; }
   .ls-home main h1, .ls-home main h2, .ls-home main h3 { letter-spacing: 0; }
   .ls-home main > section.ls-section,
   .ls-home main > section.ls-follow { padding: 64px 0; }
@@ -484,9 +484,9 @@
     background: linear-gradient(to bottom, hsl(var(--ls-ink) / 0), hsl(var(--ls-ink) / 0.7));
   }
   .ls-home .ls-hero > .container { z-index: 1; padding-bottom: 40px; }
-  .ls-home .ls-hero h1 { font-size: 34px; line-height: 1.1; }
-  .ls-home .ls-hero p:first-of-type { @apply font-editorial; font-size: 19px; font-style: italic; letter-spacing: 0; }
-  .ls-home .ls-hero p:nth-of-type(2) { font-size: 16px; line-height: 1.55; max-height: calc(3 * 1.55 * 16px); }
+  .ls-home .ls-hero h1 { font-size: 30px; line-height: 1.12; }
+  .ls-home .ls-hero p:first-of-type { @apply font-display; font-size: 17px; font-style: normal; letter-spacing: 0; }
+  .ls-home .ls-hero p:nth-of-type(2) { font-size: 16px; line-height: 1.6; max-height: none; }
   .ls-home .ls-hero .early-access-action,
   .ls-home .ls-closing .early-access-action { width: 100%; min-height: 52px; height: 52px; }
   .ls-home .ls-hero .early-access-action { flex: 1; }
@@ -504,7 +504,7 @@
   }
   .ls-home .ls-pillar-icon, .ls-home .ls-step-icon { grid-column: 1; grid-row: 1 / span 2; position: relative; z-index: 1; }
   .ls-home .ls-pillar .ls-hairline-sm { display: none; }
-  .ls-home .ls-pillar h3, .ls-home .ls-step h3 { grid-column: 2; margin-top: 0; font-size: 26px; }
+  .ls-home .ls-pillar h3, .ls-home .ls-step h3 { grid-column: 2; margin-top: 0; font-size: 18px; }
   .ls-home main p.ls-pillar-body, .ls-home main p.ls-step-body { grid-column: 2; max-width: none; font-size: 16px; line-height: 1.6; margin-top: 8px; }
   .ls-home .ls-steps ol { gap: 32px; }
   .ls-home .ls-steps ol::before {
@@ -515,7 +515,7 @@
   .ls-home .ls-features .grid { gap: 32px; }
   .ls-home .ls-features img { aspect-ratio: 4 / 5; max-height: 460px; }
   .ls-home main > section.ls-manifesto { padding: 56px 0; }
-  .ls-home .ls-manifesto blockquote { font-size: 22px; }
+  .ls-home .ls-manifesto blockquote { font-size: 20px; }
   .ls-home main p.ls-follow-eyebrow { @apply font-sans; font-size: 11px; }
   .ls-home .ls-follow-link { min-height: 44px; }
   .ls-home > nav > .container { padding-left: 20px; padding-right: 20px; }
@@ -530,4 +530,26 @@
   .ls-home footer .footer-links { gap: 0; }
   .ls-home footer .footer-link, .ls-home footer .footer-email, .ls-home footer .footer-social { min-height: 44px; display: flex; align-items: center; justify-content: center; }
   .ls-home footer .footer-social { width: 44px; }
+}
+
+/* Supporting text never inherits a title font, including legal-page labels. */
+.light-shadow-shell main p.font-display,
+.light-shadow-shell main a.font-display,
+.light-shadow-shell main strong.font-display,
+.light-shadow-shell main span.font-display { font-family: var(--ls-body-font); }
+.light-shadow-shell main .ls-hero p:first-of-type { font-family: var(--ls-title-font); }
+.light-shadow-shell main p.italic { font-style: normal; }
+@media (max-width: 767px) {
+  .light-shadow-shell main h1 { font-size: 28px; }
+  .light-shadow-shell main .ls-hero h1 { font-size: 30px; line-height: 1.12; }
+  .light-shadow-shell main h2 { font-size: 24px; line-height: 1.2; }
+  .light-shadow-shell main h3 { font-size: 18px; line-height: 1.2; }
+  .light-shadow-shell main p:not(.ls-follow-eyebrow):not(.uppercase):not(.font-display),
+  .light-shadow-shell main .ls-beliefs ul,
+  .light-shadow-shell main [data-state][id^="radix-"] > div.font-sans { font-size: 16px; line-height: 1.6; }
+  .light-shadow-shell main .ls-hero p:first-of-type { font-size: 17px; }
+  .light-shadow-shell main p.uppercase,
+  .light-shadow-shell main p.ls-follow-eyebrow,
+  .light-shadow-shell main span.uppercase,
+  .light-shadow-shell main .ls-vm-eyebrow { font-size: 11px; }
 }

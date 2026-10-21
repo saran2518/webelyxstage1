@@ -79,7 +79,7 @@ const WhatWeDo = () => (
                     <span className="ls-vm-icon" aria-hidden="true">
                       <Icon size={22} strokeWidth={1.25} />
                     </span>
-                    <p className="font-sans"><strong className="font-display font-normal">{l}</strong> {t}</p>
+                    <p className="font-sans"><strong className="font-sans font-normal">{l}</strong> {t}</p>
                   </li>
                 ))}
               </ul>
