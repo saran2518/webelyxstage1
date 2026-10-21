@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Layout from "@/components/Layout";
 import { FilterX, Gem, HeartHandshake, ShieldCheck, Sparkles, UserRound } from "lucide-react";
 import { media } from "@/content/media";
@@ -6,7 +7,7 @@ const story = { label: "Our story.", title: "Why Elyxer exists.", content: 'Elyx
 
 type PanelPoint = [label: string, text: string, icon: typeof FilterX];
 
-const panels: { label: string; title: string; intro: string; points: PanelPoint[]; closing: string }[] = [
+const panels: { label: string; title: ReactNode; intro: string; points: PanelPoint[]; closing: string }[] = [
   {
     label: "Our vision",
     title: "A world where everyone is chosen.",
@@ -20,7 +21,13 @@ const panels: { label: string; title: string; intro: string; points: PanelPoint[
   },
   {
     label: "Our mission",
-    title: "Built to get you on real dates.",
+    title: (
+      <>
+        Built to get you on real
+        <br className="hidden md:block" />
+        dates.
+      </>
+    ),
     intro: "We are building a dating experience that takes you from a first hello to a real date, with ease.",
     points: [
       ["A safe, healthy community.", "Kind, genuine people, protected at every step.", ShieldCheck],

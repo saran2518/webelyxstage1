@@ -349,6 +349,9 @@
 @media (min-width: 768px) {
   .light-shadow main > section.ls-vm-strip { padding-bottom: 72px; }
   .light-shadow .ls-vm-grid { grid-template-columns: 1fr 1fr; gap: 0; }
+  /* Shared rows across both panels so Vision and Mission align line for line */
+  .light-shadow .ls-vm-panel { display: grid; grid-row: span 8; grid-template-rows: subgrid; }
+  .light-shadow .ls-vm-panel ul { display: grid; grid-row: span 3; grid-template-rows: subgrid; }
   .light-shadow .ls-vm-panel:first-child { padding-right: 56px; }
   .light-shadow .ls-vm-panel + .ls-vm-panel { padding-left: 56px; border-left: 0.5px solid hsl(var(--ls-gold) / 0.5); }
 }
