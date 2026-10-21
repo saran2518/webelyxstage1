@@ -99,6 +99,19 @@
   border-radius: 999px;
   box-shadow: none;
 }
+/* Plain support email line: not treated as a pill CTA */
+.light-shadow main a.ls-plain-email {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: hsl(var(--ls-deep-gold));
+}
+.light-shadow main a.ls-plain-email:hover {
+  transform: none;
+  opacity: 0.8;
+}
+
 .light-shadow main .ls-hero .early-access-action {
   background: hsl(var(--ls-gold));
   color: hsl(var(--ls-ink));

@@ -6,8 +6,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { Button } from "@/components/ui/button";
-
 const faqSections = [
   { category: "General", items: [
     { q: "What is Elyxer?", a: "A dating app built to get you on real dates, where you are chosen for who you are." },
@@ -72,13 +70,17 @@ const HelpFAQ = () => (
         ))}
 
         <div className="text-center mt-16">
-          <p className="font-sans text-sm text-muted-foreground mb-5">
+          <p className="font-sans text-sm text-muted-foreground mb-3">
             Still curious?
           </p>
-          <Button asChild className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3 text-sm font-sans font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 shadow-soft">
-            <a href="mailto:support@elyxer.co">Write to us</a>
-          </Button>
+          <a
+            href="mailto:support@elyxer.co"
+            className="font-display text-2xl font-normal tracking-[0.01em] text-primary ls-plain-email transition-opacity duration-300 hover:opacity-75"
+          >
+            support@elyxer.co
+          </a>
         </div>
+
       </div>
     </section>
   </Layout>
