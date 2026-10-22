@@ -1,5 +1,5 @@
 import heroWindowHug from "@/assets/site/home-hero-window-hug.webp.asset.json";
-import heroMobileWaistupWalk from "@/assets/site/home-hero-mobile-waistup-walk.png.asset.json";
+import heroMobileWaistupGlance from "@/assets/site/home-hero-mobile-waistup-glance.png.asset.json";
 import bandCyclingMist from "@/assets/site/home-band-cycling-mist.webp.asset.json";
 import card1Gallery from "@/assets/site/card1-seen-for-who-you-are-gallery.jpg.asset.json";
 import card2Umbrella from "@/assets/site/card2-someone-actually-asks-umbrella.jpg.asset.json";
@@ -40,7 +40,7 @@ export type PhotoSlot = { src: string; focus?: string };
 export const media = {
   home: {
     hero: heroWindowHug.url, // home-hero-window-hug.webp (couple hugging by the rain-streaked window)
-    heroMobile: heroMobileWaistupWalk.url, // Exact uploaded portrait waist-up rain walk photo, unmodified; hero remains the fallback.
+    heroMobile: heroMobileWaistupGlance.url, // Exact uploaded portrait waist-up rain walk photo (couple glancing at each other), unmodified; hero remains the fallback.
     band: bandCyclingMist.url, // home-band-cycling-mist.webp (couple cycling on the misty road)
     card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
     card2: { src: card2Umbrella.url, focus: "50% 35%" }, // card2-someone-actually-asks-umbrella.jpg
