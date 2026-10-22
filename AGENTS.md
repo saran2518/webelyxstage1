@@ -5,7 +5,7 @@
 - Render Instagram through the shared `InstagramGlyph` with the official Simple Icons path sourced in the media map and per-instance gradient identifiers, so all placements retain identical geometry without gradient collisions.
 - Render image/video slots through `SlotMedia` so absent videos show posters without broken playback.
 - Photo slots in media.ts are `{ src, focus }` objects; focus is the object-position that keeps faces in the crop. Containers use aspect ratios matched to the photo orientation (aspect-[4/5] for portraits, aspect-[4/3] for cards), never fixed short heights.
-- Keep home desktop imagery unchanged; the hero picture selects the centralised heroMobile fallback slot below 768px, while mobile band and closing photos sit above separate text panels to keep faces clear.
+- Keep home desktop imagery unchanged; the hero picture selects the centralised heroMobile fallback slot below 768px, with mobile hero, band and closing photos above separate text panels to keep faces clear. Keep hero split styling scoped to the mobile presentation sheet so desktop and shared controls remain independent.
 - Use `EarlyAccessButton` for the shared marketing action so its destination stays consistent.
 - Preserve early access validation, email verification and registration behaviour during copy-only changes.
 - Keep legal document text unchanged during marketing rewrites because those pages contain supplied legal documents.
