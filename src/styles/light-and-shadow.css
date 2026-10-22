@@ -509,7 +509,7 @@
     display: block; position: relative; z-index: 1; margin-top: 24px; flex-shrink: 0;
     padding: 0 22px 32px;
   }
-  .ls-home .ls-hero h1 { font-size: 30px; line-height: 1.12; max-width: 240px; text-wrap: balance; }
+  .ls-home .ls-hero h1 { font-size: clamp(24px, 7.6vw, 30px); line-height: 1.12; max-width: none; white-space: nowrap; }
   .ls-home .ls-hero p:first-of-type { @apply font-display; font-size: 17px; font-style: normal; letter-spacing: 0; }
   .ls-home .ls-hero .early-access-action,
   .ls-home .ls-closing .early-access-action { width: 100%; min-height: 52px; height: 52px; }
@@ -658,7 +658,7 @@
 .light-shadow-shell main p.italic { font-style: normal; }
 @media (max-width: 767px) {
   .light-shadow-shell main h1 { font-size: 28px; }
-  .light-shadow-shell main .ls-hero h1 { font-size: 30px; line-height: 1.12; }
+  .light-shadow-shell main .ls-hero h1 { font-size: clamp(24px, 7.6vw, 30px); line-height: 1.12; max-width: none; white-space: nowrap; }
   .light-shadow-shell main h2 { font-size: 24px; line-height: 1.2; }
   .light-shadow-shell main h3 { font-size: 18px; line-height: 1.2; }
   .light-shadow-shell main p:not(.ls-follow-eyebrow):not(.uppercase):not(.font-display),
