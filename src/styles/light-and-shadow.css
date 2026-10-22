@@ -478,11 +478,11 @@
   .ls-home main > section.ls-follow { padding: 64px 0; }
   .ls-home main .container { padding-left: 20px; padding-right: 20px; }
   .ls-home .ls-hero {
-    height: 100svh; min-height: 0; display: flex; flex-direction: column;
+    height: auto; min-height: 0; display: flex; flex-direction: column;
     justify-content: flex-start; align-items: stretch; background: hsl(var(--ls-ink));
   }
   .ls-home .ls-hero .ls-hero-photo {
-    position: absolute; inset: 0 0 auto; width: 100%; height: auto; aspect-ratio: 1 / 1;
+    position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 1 / 1; flex-shrink: 0;
   }
   .ls-home .ls-hero .ls-hero-photo picture {
     height: auto; aspect-ratio: 1 / 1;
@@ -492,11 +492,11 @@
     object-fit: contain; object-position: center; transform: none; transition: none;
   }
   .ls-home .ls-hero .ls-hero-photo::after {
-    content: ""; position: absolute; inset: 70% 0 0; pointer-events: none;
+    content: ""; position: absolute; inset: 75% 0 0; pointer-events: none;
     background: linear-gradient(to bottom, hsl(var(--ls-ink) / 0), hsl(var(--ls-ink)));
   }
   .ls-home .ls-hero > .container {
-    margin-top: calc(100vw - 24px); padding: 0 22px 22px; flex: none; z-index: 1;
+    margin-top: -60px; padding: 0 20px; flex: none; z-index: 1;
   }
   .ls-home .ls-hero .ls-hero-mobile-label {
     display: none;
@@ -505,12 +505,13 @@
   .ls-home .ls-hero p:first-of-type { margin-top: 8px; }
   .ls-home .ls-hero p:nth-of-type(2) { display: none; }
   .ls-home .ls-hero .ls-hero-desktop-action { display: none; }
-  .ls-home .ls-hero-bottom-bar {
-    display: block; position: relative; z-index: 1; margin-top: auto; flex-shrink: 0;
-    padding: 16px 18px calc(26px + env(safe-area-inset-bottom));
-    background: hsl(var(--ls-ink) / 0.92); border-top: 0.5px solid hsl(var(--ls-gold));
+  .ls-home .ls-hero-mobile-action {
+    display: block; position: relative; z-index: 1; margin-top: 24px; flex-shrink: 0;
+    padding: 0 20px 32px;
   }
-  .ls-home .ls-hero h1 { font-size: 30px; line-height: 1.12; }
+  .ls-home .ls-hero h1 { font-size: 30px; line-height: 1.12; max-width: 240px; text-wrap: balance; }
+  .ls-home .ls-hero-intro { padding: 20px; background: hsl(var(--ls-ink)); text-align: center; }
+  .ls-home main .ls-hero-intro p { margin: 0; color: hsl(var(--ls-cream) / 0.7); font-size: 15px; line-height: 1.6; }
   .ls-home .ls-hero p:first-of-type { @apply font-display; font-size: 17px; font-style: normal; letter-spacing: 0; }
   .ls-home .ls-hero p:nth-of-type(2) { font-size: 16px; line-height: 1.6; max-height: none; }
   .ls-home .ls-hero .early-access-action,
@@ -575,9 +576,6 @@
   .ls-home footer .footer-link, .ls-home footer .footer-email, .ls-home footer .footer-social { min-height: 44px; display: flex; align-items: center; justify-content: center; }
   .ls-home footer .footer-social { width: 44px; }
 }
-@media (max-width: 767px) and (max-height: 699px) {
-  .ls-home .ls-hero > .container { margin-top: calc(100vw - 40px); padding-bottom: 12px; }
-}
 
 .mobile-sticky-cta { display: none; }
 @media (max-width: 767px) {
@@ -592,6 +590,11 @@
     transform: translateY(100%); visibility: hidden; transition: transform 200ms ease, visibility 200ms;
   }
   .light-shadow-shell .mobile-sticky-cta.is-visible { transform: translateY(0); visibility: visible; }
+  .ls-home .ls-hero-mobile-action .early-access-action,
+  .light-shadow-shell .mobile-sticky-cta .early-access-action {
+    opacity: 1; filter: none; backdrop-filter: none;
+    background: hsl(var(--ls-gold)); color: hsl(var(--ls-ink));
+  }
   .light-shadow-shell .mobile-sticky-cta .early-access-action,
   .light-shadow-shell .navbar-mobile-menu .early-access-action {
     width: 100%; height: 48px; border-radius: 999px; background: hsl(var(--ls-gold));

@@ -1,2 +1,2 @@
-export const shouldShowMobileCta = (heroVisible: boolean, footerVisible: boolean, menuOpen: boolean) =>
-  !heroVisible && !footerVisible && !menuOpen;
+export const shouldShowMobileCta = (heroActionVisible: boolean, footerVisible: boolean, menuOpen: boolean) =>
+  !heroActionVisible && !footerVisible && !menuOpen;
