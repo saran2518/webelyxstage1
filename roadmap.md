@@ -1,4 +1,5 @@
 # Tasks
+- [x] Show the mobile hero photo uncropped at screen-width square size with final 30% fade into near-black, text clear of faces and pinned CTA. Verified screenshots and natural 1920×1920 photo rendered at 360×360, 390×390 and 430×430, first-screen fit at 360×780, 390×844, 430×932, 360×640 and 430×650, no horizontal overflow or runtime errors, and identical desktop at 1440. Build OK.
 - [x] Apply mobile immersive hero, sticky CTA, full-screen menu, carousel and section/page polish. Verified 320, 360, 390 and 430 widths, sticky visibility tests, menu scroll lock, carousel snapping, and identical desktop pages at 1440. Early-access form remains deleted.
 - [x] Restore site-wide DM Sans supporting text and Marcellus headings/taglines, remove EB Garamond loading, and verify mobile title sizes on Home, How it works and What we do at 390 and 1440.
 - [x] Apply the home-only mobile pass below 768px; verified 390x844 and 360x780 with no horizontal overflow, full-page stitched screenshots, and identical desktop measurements and styling. Existing photos unchanged.
