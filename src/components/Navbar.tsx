@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { media, social } from "@/content/media";
@@ -19,6 +19,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -31,10 +33,30 @@ const Navbar = () => {
     setMobileOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnDesktop = () => { if (window.innerWidth >= 768) setMobileOpen(false); };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { setMobileOpen(false); toggleRef.current?.focus(); }
+      if (event.key !== "Tab") return;
+      const controls = [toggleRef.current, ...Array.from(menuRef.current?.querySelectorAll<HTMLElement>('a[href],button:not([disabled])') ?? [])].filter((item): item is HTMLElement => item !== null);
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    window.addEventListener("resize", closeOnDesktop);
+    window.addEventListener("keydown", onKey);
+    return () => { document.body.style.overflow = previousOverflow; window.removeEventListener("resize", closeOnDesktop); window.removeEventListener("keydown", onKey); };
+  }, [mobileOpen]);
+
   const onDark = location.pathname === "/" && !scrolled;
 
   return (
     <nav
+      data-menu-open={mobileOpen}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled ? "glass-nav" : "bg-transparent"}`
       }>
@@ -43,7 +65,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-6 px-6">
         <Link to="/" aria-label="Elyxer home" className={`flex shrink-0 items-center gap-3 ${onDark ? "hero-logo-shadow" : ""}`}>
           <img src={media.brand.icon} alt="" className="h-10 w-10 md:h-12 md:w-12 object-contain" />
-          <Wordmark variant={onDark ? "dark" : "light"} className="h-8 w-auto md:h-10" />
+          <Wordmark variant={onDark || mobileOpen ? "dark" : "light"} className="h-8 w-auto md:h-10" />
         </Link>
 
         {/* Desktop nav */}
@@ -73,10 +95,10 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <Button variant="ghost" size="icon"
+        <Button ref={toggleRef} variant="ghost" size="icon"
           onClick={() => setMobileOpen(!mobileOpen)}
           className={`md:hidden ${onDark ? "text-primary-foreground" : "text-foreground"}`}
-          aria-label="Toggle menu" aria-expanded={mobileOpen}>
+          aria-label={mobileOpen ? "Close menu" : "Toggle menu"} aria-expanded={mobileOpen} aria-controls="mobile-navigation">
 
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </Button>
@@ -84,12 +106,13 @@ const Navbar = () => {
 
       {/* Mobile nav */}
       {mobileOpen &&
-       <div className="navbar-mobile-menu md:hidden bg-background/98 backdrop-blur-md border-t border-border px-6 pb-6 animate-fade-up">
+       <div ref={menuRef} id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Navigation" className="navbar-mobile-menu md:hidden bg-background/98 backdrop-blur-md border-t border-border px-6 pb-6 animate-fade-up">
           <div className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) =>
           <Link
             key={link.to}
             to={link.to}
+             aria-current={location.pathname === link.to ? "page" : undefined}
             className={`text-base font-sans font-medium py-2 ${
             location.pathname === link.to ?
             "text-primary" :

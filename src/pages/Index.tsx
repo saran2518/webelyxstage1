@@ -4,6 +4,8 @@ import SlotMedia from "@/components/SlotMedia";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
 import { Camera, Coffee, Eye, Heart, Leaf, ShieldCheck, Sparkles, Users, Video } from "lucide-react";
 import InstagramGlyph from "@/components/InstagramGlyph";
+import { useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const features = [
   { title: "Seen for who you are.", description: "Your profile reads like a story, written in the places you love, the passions you keep and the little rituals that make you, you.", image: media.home.card1 },
@@ -25,8 +27,23 @@ const ClosingWords = ({ className = "" }: { className?: string }) => (
   </div>
 );
 
-const Index = () =>
-<Layout>
+const Index = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [activeCard, setActiveCard] = useState(0);
+  const updateActiveCard = () => {
+    const track = carouselRef.current;
+    if (!track) return;
+    const card = track.firstElementChild;
+    if (!(card instanceof HTMLElement)) return;
+    setActiveCard(Math.min(features.length - 1, Math.max(0, Math.round(track.scrollLeft / (card.offsetWidth + 14)))));
+  };
+  const goToCard = (index: number) => {
+    const track = carouselRef.current;
+    const card = track?.children[index];
+    if (!track || !(card instanceof HTMLElement)) return;
+    track.scrollTo({ left: card.offsetLeft - track.offsetLeft - 20, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  };
+  return <Layout>
     {/* Hero */}
     <section className="ls-hero relative h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden">
       <div className="ls-hero-photo absolute inset-0">
@@ -35,6 +52,8 @@ const Index = () =>
           <img
             src={media.home.hero}
             alt="Couple embracing on a rainy evening"
+            loading="eager"
+            fetchPriority="high"
             className="h-full w-full object-cover object-[70%_35%]" />
         </picture>
       </div>
@@ -48,11 +67,12 @@ const Index = () =>
           <p className="mt-6 max-w-2xl text-lg font-sans text-primary-foreground/80 leading-relaxed animate-fade-up-delay-1 [text-shadow:0_1px_10px_rgba(0,0,0,0.55)]">
             For everyone who has ever hoped to be truly seen. Here, you are loved for the life you live and the heart you bring.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
+          <div className="ls-hero-desktop-action mt-10 flex flex-wrap gap-4 animate-fade-up-delay-2">
             <EarlyAccessButton />
           </div>
         </div>
       </div>
+      <div className="ls-hero-bottom-bar hidden"><EarlyAccessButton /></div>
     </section>
 
 
@@ -149,7 +169,7 @@ const Index = () =>
     {/* Feature cards with images */}
     <section className="ls-section ls-features py-24 md:py-32 mt-8 md:mt-12">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8" data-reveal-stagger>
+        <div ref={carouselRef} onScroll={updateActiveCard} className="ls-feature-track grid md:grid-cols-3 gap-8" data-reveal-stagger>
           {features.map((f) =>
         <div
           key={f.title}
@@ -171,6 +191,9 @@ const Index = () =>
               </div>
             </div>
         )}
+        </div>
+        <div className="ls-carousel-dots hidden" aria-label="Feature photos">
+          {features.map((feature, index) => <Button key={feature.title} variant="ghost" size="icon" aria-label={`Show ${feature.title}`} aria-pressed={activeCard === index} onClick={() => goToCard(index)}><span className={activeCard === index ? "is-active" : ""} /></Button>)}
         </div>
       </div>
     </section>
@@ -221,6 +244,7 @@ const Index = () =>
       </div>
     </section>
   </Layout>;
+};
 
 
 export default Index;

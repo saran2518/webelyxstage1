@@ -30,13 +30,13 @@ const Product = () => (
           <div
             key={s.title}
             data-reveal
-            className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-10 md:gap-14 py-14 ${
+            className={`ls-product-step flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-10 md:gap-14 py-14 ${
               i < productSections.length - 1 ? "border-b border-border" : ""
             }`}
           >
             <div className="flex-1 w-full">
               {i === 3 ? (
-                <div className="relative mx-auto max-w-sm">
+                <div className="ls-video-frame relative mx-auto max-w-sm">
                   <div className="relative aspect-[3/4] overflow-hidden rounded-xl shadow-soft">
                     <SlotMedia slot={s.slots[0]} alt={`${s.title} 1`} className="h-full w-full object-cover" />
                     <span className="absolute top-3 left-1/2 -translate-x-1/2 rounded-full bg-foreground/70 px-3 py-1 text-xs font-sans font-medium text-primary-foreground">
@@ -48,7 +48,7 @@ const Product = () => (
                   </div>
                 </div>
               ) : (
-              <div className={`mx-auto w-full max-w-[440px] ${s.slots.length > 1 ? "grid grid-cols-2 gap-3" : ""}`}>
+              <div className={`ls-product-photos mx-auto w-full max-w-[440px] ${s.slots.length > 1 ? "grid grid-cols-2 gap-3" : ""}`}>
                 {s.slots.map((slot, n) => <SlotMedia key={n} slot={slot} alt={`${s.title} ${n + 1}`} className="w-full aspect-[4/5] object-cover rounded-xl shadow-soft" />)}
               </div>
               )}
