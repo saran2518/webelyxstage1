@@ -74,9 +74,6 @@ const Index = () => {
       </div>
       <div className="ls-hero-mobile-action hidden"><EarlyAccessButton /></div>
     </section>
-    <div className="ls-hero-intro hidden max-md:block">
-      <p>For everyone who has ever hoped to be truly seen.</p>
-    </div>
 
     {/* Divider */}
     <div className="w-full h-px bg-border" />

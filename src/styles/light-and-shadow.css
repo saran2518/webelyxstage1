@@ -482,24 +482,24 @@
     justify-content: flex-start; align-items: stretch; background: hsl(var(--ls-ink));
   }
   .ls-home .ls-hero .ls-hero-photo {
-    position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 1 / 1; flex-shrink: 0;
+    position: relative; inset: auto; width: 100%; height: 66svh; min-height: 480px; max-height: 620px; flex-shrink: 0;
   }
-  .ls-home .ls-hero .ls-hero-photo picture {
-    height: auto; aspect-ratio: 1 / 1;
-  }
+  .ls-home .ls-hero .ls-hero-photo picture { height: 100%; }
   .ls-home .ls-hero img {
-    display: block; width: 100%; height: auto; aspect-ratio: 1 / 1;
-    object-fit: contain; object-position: center; transform: none; transition: none;
+    display: block; width: 100%; height: 100%;
+    object-fit: cover; object-position: 50% 45%; transform: none; transition: none;
   }
   .ls-home .ls-hero .ls-hero-photo::after {
-    content: ""; position: absolute; inset: 75% 0 0; pointer-events: none;
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 72px; pointer-events: none;
     background: linear-gradient(to bottom, hsl(var(--ls-ink) / 0), hsl(var(--ls-ink)));
   }
   .ls-home .ls-hero > .container {
-    margin-top: -60px; padding: 0 20px; flex: none; z-index: 1;
+    margin-top: 0; padding: 18px 22px 0; flex: none; z-index: 1;
   }
+  .ls-home .ls-hero > .container > div { max-width: none; }
   .ls-home .ls-hero .ls-hero-mobile-label {
-    display: none;
+    display: block; margin-bottom: 10px; color: hsl(var(--ls-gold)); font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--ls-body-font, inherit);
   }
   .ls-home .ls-hero h1, .ls-home .ls-hero p { text-shadow: none; }
   .ls-home .ls-hero p:first-of-type { margin-top: 8px; }
@@ -507,13 +507,10 @@
   .ls-home .ls-hero .ls-hero-desktop-action { display: none; }
   .ls-home .ls-hero-mobile-action {
     display: block; position: relative; z-index: 1; margin-top: 24px; flex-shrink: 0;
-    padding: 0 20px 32px;
+    padding: 0 22px 32px;
   }
   .ls-home .ls-hero h1 { font-size: 30px; line-height: 1.12; max-width: 240px; text-wrap: balance; }
-  .ls-home .ls-hero-intro { padding: 20px; background: hsl(var(--ls-ink)); text-align: center; }
-  .ls-home main .ls-hero-intro p { margin: 0; color: hsl(var(--ls-cream) / 0.7); font-size: 15px; line-height: 1.6; }
   .ls-home .ls-hero p:first-of-type { @apply font-display; font-size: 17px; font-style: normal; letter-spacing: 0; }
-  .ls-home .ls-hero p:nth-of-type(2) { font-size: 16px; line-height: 1.6; max-height: none; }
   .ls-home .ls-hero .early-access-action,
   .ls-home .ls-closing .early-access-action { width: 100%; min-height: 52px; height: 52px; }
   .ls-home .ls-hero .early-access-action { flex: 1; }
