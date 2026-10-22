@@ -29,17 +29,18 @@ const Index = () =>
 <Layout>
     {/* Hero */}
     <section className="ls-hero relative h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden">
-      <div className="absolute inset-0">
+      <div className="ls-hero-photo absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
           <source media="(max-width: 767px)" srcSet={media.home.heroMobile || media.home.hero} />
           <img
             src={media.home.hero}
-            alt="Couple hugging beside a rain-streaked cafe window"
+            alt="Couple embracing on a rainy evening"
             className="h-full w-full object-cover object-[70%_35%]" />
         </picture>
       </div>
       <div className="relative container mx-auto px-6 pb-10 md:pb-16 pt-32">
         <div className="max-w-[640px]">
+          <span className="ls-hero-mobile-label hidden">Early access · Bengaluru</span>
           <h1 className="text-[clamp(2.25rem,3.6vw,3.25rem)] font-display font-normal leading-[1.1] tracking-[0.01em] text-primary-foreground animate-fade-up [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
             Chosen for who you are.
           </h1>
