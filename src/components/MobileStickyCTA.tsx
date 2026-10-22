@@ -8,20 +8,20 @@ const MobileStickyCTA = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const hero = document.querySelector(".ls-hero");
+    const heroAction = document.querySelector(".ls-hero-mobile-action .early-access-action");
     const footer = document.querySelector(".light-shadow-shell > footer");
     const nav = document.querySelector(".light-shadow-shell > nav");
-    let heroVisible = Boolean(hero);
+    let heroActionVisible = Boolean(heroAction);
     let footerVisible = false;
-    const update = () => setVisible(shouldShowMobileCta(heroVisible, footerVisible, nav?.getAttribute("data-menu-open") === "true"));
+    const update = () => setVisible(shouldShowMobileCta(heroActionVisible, footerVisible, nav?.getAttribute("data-menu-open") === "true"));
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
-        if (entry.target === hero) heroVisible = entry.isIntersecting;
+        if (entry.target === heroAction) heroActionVisible = entry.isIntersecting || entry.boundingClientRect.bottom > 0;
         if (entry.target === footer) footerVisible = entry.isIntersecting;
       }
       update();
     });
-    if (hero) observer.observe(hero);
+    if (heroAction) observer.observe(heroAction);
     if (footer) observer.observe(footer);
     const menuObserver = new MutationObserver(update);
     if (nav) menuObserver.observe(nav, { attributes: true, attributeFilter: ["data-menu-open"] });
