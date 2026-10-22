@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Apply mobile immersive hero, sticky CTA, full-screen menu, carousel and section/page polish; verify phone sizes and unchanged desktop. Early-access form remains deleted.
 - [x] Restore site-wide DM Sans supporting text and Marcellus headings/taglines, remove EB Garamond loading, and verify mobile title sizes on Home, How it works and What we do at 390 and 1440.
 - [x] Apply the home-only mobile pass below 768px; verified 390x844 and 360x780 with no horizontal overflow, full-page stitched screenshots, and identical desktop measurements and styling. Existing photos unchanged.
 - [x] Replace only the mobile home hero with the byte-identical rain umbrella upload and split photo/text layout. Verified complete faces, no text/photo overlap, 52px button and first-screen fit at 390×844, 360×780 and 430×932; desktop visible element measurements and styles identical. Existing disabled button appearance preserved.
