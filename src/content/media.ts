@@ -1,5 +1,5 @@
 import heroWindowHug from "@/assets/site/home-hero-window-hug.webp.asset.json";
-import heroMobileUmbrella from "@/assets/site/home-hero-mobile-rain-umbrella.webp.asset.json";
+import heroMobileUmbrellaWalk from "@/assets/site/home-hero-mobile-umbrella-walk.png.asset.json";
 import bandCyclingMist from "@/assets/site/home-band-cycling-mist.webp.asset.json";
 import card1Gallery from "@/assets/site/card1-seen-for-who-you-are-gallery.jpg.asset.json";
 import card2Umbrella from "@/assets/site/card2-someone-actually-asks-umbrella.jpg.asset.json";
