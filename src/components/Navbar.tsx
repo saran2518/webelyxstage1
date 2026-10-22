@@ -94,14 +94,22 @@ const Navbar = () => {
 
         </div>
 
-        {/* Mobile toggle */}
-        <Button ref={toggleRef} variant="ghost" size="icon"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden ${onDark ? "text-primary-foreground" : "text-foreground"}`}
-          aria-label={mobileOpen ? "Close menu" : "Toggle menu"} aria-expanded={mobileOpen} aria-controls="mobile-navigation">
-
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </Button>
+        {/* Mobile controls: Instagram then menu button, together on the right */}
+        <div className="navbar-mobile-controls md:hidden flex items-center gap-1">
+          {!mobileOpen &&
+           <a href={social.instagram} target="_blank" rel="noopener noreferrer"
+             aria-label="Elyxer on Instagram"
+             className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
+             <InstagramGlyph size={20} />
+           </a>
+          }
+          <Button ref={toggleRef} variant="ghost" size="icon"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className={`${onDark ? "text-primary-foreground" : "text-foreground"}`}
+            aria-label={mobileOpen ? "Close menu" : "Toggle menu"} aria-expanded={mobileOpen} aria-controls="mobile-navigation">
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </Button>
+        </div>
       </div>
 
       {/* Mobile nav */}
