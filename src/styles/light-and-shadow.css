@@ -291,6 +291,8 @@
 .light-shadow-shell .navbar-social-on-dark { color: hsl(var(--ls-cream)); }
 .light-shadow-shell .navbar-social-on-light { color: hsl(var(--ls-ink)); }
 .light-shadow-shell .navbar-mobile-menu { background: hsl(var(--ls-cream) / 0.98); }
+/* Instagram link in the mobile bar: 44px tap target, glyph centred beside the menu button. */
+.light-shadow-shell .navbar-mobile-controls .navbar-social { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; }
 .light-shadow-shell footer .footer-bottom {
   margin-top: 56px;
   padding-top: 24px;
