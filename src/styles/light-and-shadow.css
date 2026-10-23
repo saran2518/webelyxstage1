@@ -562,8 +562,7 @@
   .ls-home main p.ls-follow-eyebrow { @apply font-sans; font-size: 11px; }
   .ls-home .ls-follow-link { min-height: 44px; }
   .ls-home > nav > .container { padding-left: 20px; padding-right: 20px; }
-  .ls-home > nav > .container > a img { width: 34px; height: 34px; }
-  .ls-home > nav > .container > a svg { height: 26px; }
+  .ls-home > nav > .container > a { column-gap: 12px; }
   .ls-home > nav > .container .navbar-mobile-controls > button { width: 44px; height: 44px; }
   .ls-home .navbar-mobile-menu a { min-height: 44px; display: flex; align-items: center; }
   .ls-home footer > .container { padding-left: 20px; padding-right: 20px; }
