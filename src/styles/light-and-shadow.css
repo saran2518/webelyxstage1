@@ -688,3 +688,10 @@
   .light-shadow-shell main span.uppercase,
   .light-shadow-shell main .ls-vm-eyebrow { font-size: 11px; }
 }
+
+/* Mobile sub pages: lift the first image into the first screen */
+@media (max-width: 767px) {
+  .light-shadow-shell.light-shadow:not(.ls-home) main > section:first-child:not(.ls-hero):not(.ls-photo-band):not(.ls-closing):not(.ls-follow):not(.ls-manifesto):not(.ls-vm-strip) { padding-top: 116px; padding-bottom: 28px; }
+  .light-shadow-shell.light-shadow:not(.ls-home) main .ls-product-step:first-child { padding-top: 0; }
+  .light-shadow-shell.light-shadow:not(.ls-home) main > section:first-child:not(.ls-hero) + section:not(.ls-hero):not(.ls-photo-band):not(.ls-closing):not(.ls-follow):not(.ls-manifesto) { padding-top: 0; }
+}
