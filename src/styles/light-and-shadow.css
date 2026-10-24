@@ -13,6 +13,7 @@
   --instagram-pink: #D62976;
   --instagram-purple: #962FBF;
   --instagram-blue: #4F5BD5;
+  --facebook-blue: #1877F2;
   --ls-body-font: "DM Sans", system-ui, sans-serif;
   --ls-title-font: "Marcellus", Georgia, serif;
 }
@@ -286,6 +287,17 @@
 .instagram-stop-pink { stop-color: var(--instagram-pink); }
 .instagram-stop-purple { stop-color: var(--instagram-purple); }
 .instagram-stop-blue { stop-color: var(--instagram-blue); }
+/* Facebook mark: official f-in-circle path in Facebook blue with a cream f. */
+.facebook-glyph { display: block; flex: none; }
+.facebook-glyph-ink { fill: hsl(var(--ls-cream)); }
+.facebook-glyph-mark { fill: var(--facebook-blue); }
+.facebook-glyph-mono-mark { fill: currentColor; }
+.light-shadow-shell footer .footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
 .light-shadow-shell .navbar-social { opacity: 0.9; transition: opacity 0.2s ease; }
 .light-shadow-shell .navbar-social:hover { opacity: 1; }
 .light-shadow-shell .navbar-social-on-dark { color: hsl(var(--ls-cream)); }

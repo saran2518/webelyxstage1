@@ -2,6 +2,7 @@ import { media, social } from "@/content/media";
 import { Link } from "react-router-dom";
 import Wordmark from "@/components/Wordmark";
 import InstagramGlyph from "@/components/InstagramGlyph";
+import FacebookGlyph from "@/components/FacebookGlyph";
 
 const Footer = () => (
   <footer className="bg-bronze text-bronze-foreground">
@@ -26,15 +27,26 @@ const Footer = () => (
           </Link>
           <p className="footer-taglines">Chosen for who you are.</p>
           <a href="mailto:support@elyxer.co" className="footer-email">support@elyxer.co</a>
-          <a
-            href={social.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Elyxer on Instagram"
-            className="footer-social"
-          >
-            <InstagramGlyph size={24} gradient />
-          </a>
+          <div className="footer-socials">
+            <a
+              href={social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Elyxer on Facebook"
+              className="footer-social"
+            >
+              <FacebookGlyph size={24} />
+            </a>
+            <a
+              href={social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Elyxer on Instagram"
+              className="footer-social"
+            >
+              <InstagramGlyph size={24} gradient />
+            </a>
+          </div>
         </div>
         <nav className="footer-col footer-col-right" aria-label="Legal">
           <h3 className="footer-heading">Legal</h3>
