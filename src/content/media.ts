@@ -89,5 +89,5 @@ export const media = {
 // Social profiles. Single source of truth for every brand link on the site.
 export const social = {
   instagram: "https://www.instagram.com/elyxer.dating/",
-  facebook: "https://www.facebook.com/profile.php?id=61595435786553",
+  facebook: "https://www.facebook.com/profile.php?id=61594659215797",
 };
