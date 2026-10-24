@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { media, social } from "@/content/media";
 import SlotMedia from "@/components/SlotMedia";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
+import MobileHeroRain from "@/components/MobileHeroRain";
 import { Camera, Coffee, Eye, Heart, Leaf, ShieldCheck, Sparkles, Users, Video } from "lucide-react";
 import InstagramGlyph from "@/components/InstagramGlyph";
 import { useRef, useState } from "react";
@@ -56,10 +57,11 @@ const Index = () => {
             fetchPriority="high"
             className="h-full w-full object-cover object-[70%_35%]" />
         </picture>
+        <MobileHeroRain />
       </div>
       <div className="relative container mx-auto px-6 pb-10 md:pb-16 pt-32">
         <div className="max-w-[640px]">
-          <span className="ls-hero-mobile-label hidden">Early access · Bengaluru</span>
+          <span className="ls-hero-mobile-label hidden">Showering rain and love in Bengaluru</span>
           <h1 className="text-[clamp(2.25rem,3.6vw,3.25rem)] font-display font-normal leading-[1.1] tracking-[0.01em] text-primary-foreground animate-fade-up [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
             Chosen for who you are.
           </h1>

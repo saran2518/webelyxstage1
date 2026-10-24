@@ -16,6 +16,8 @@
   --facebook-blue: #1877F2;
   --ls-body-font: "DM Sans", system-ui, sans-serif;
   --ls-title-font: "Marcellus", Georgia, serif;
+  --ls-rain-colour: rgb(235, 230, 220);
+  --ls-mobile-hero-top-shade: linear-gradient(to bottom, hsl(var(--ls-ink) / 0.55), hsl(var(--ls-ink) / 0));
 }
 .light-shadow {
   --background: var(--ls-cream);
@@ -499,6 +501,13 @@
     position: relative; inset: auto; width: 100%; height: auto; flex: 1 1 auto; min-height: 300px; max-height: none;
   }
   .ls-home .ls-hero .ls-hero-photo picture { position: absolute; inset: 0; height: 100%; }
+  .ls-home .ls-hero .ls-hero-rain {
+    display: block; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
+  }
+  .ls-home .ls-hero .ls-hero-photo::before {
+    content: ""; position: absolute; inset: 0 0 auto; height: 130px; z-index: 1;
+    background: var(--ls-mobile-hero-top-shade); pointer-events: none;
+  }
   .ls-home .ls-hero img {
     display: block; width: 100%; height: 100%;
     object-fit: cover; object-position: 50% 45%; transform: none; transition: none;
@@ -513,7 +522,7 @@
   .ls-home .ls-hero > .container > div { max-width: none; }
   .ls-home .ls-hero .ls-hero-mobile-label {
     display: block; margin-bottom: 8px; color: hsl(var(--ls-gold)); font-size: 11px;
-    letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--ls-body-font, inherit);
+    letter-spacing: 0.14em; white-space: nowrap; font-weight: 500; text-transform: uppercase; font-family: var(--ls-body-font, inherit);
   }
   .ls-home .ls-hero h1, .ls-home .ls-hero p { text-shadow: none; }
   .ls-home .ls-hero p:first-of-type { margin-top: 6px; }

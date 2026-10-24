@@ -7,6 +7,7 @@
 - Render image/video slots through `SlotMedia` so absent videos show posters without broken playback.
 - Photo slots in media.ts are `{ src, focus }` objects; focus is the object-position that keeps faces in the crop. Containers use aspect ratios matched to the photo orientation (aspect-[4/5] for portraits, aspect-[4/3] for cards), never fixed short heights.
 - Keep home desktop imagery unchanged; the hero picture selects the centralised heroMobile slot below 768px. The mobile hero is a split layout (cover photo block with bottom fade, solid text panel below with its own CTA) styled in the presentation sheet so desktop and shared controls remain independent.
+- Confine decorative mobile hero rain to MobileHeroRain inside the photo box, with colour tokens in the presentation stylesheet, hidden-tab pause, reduced-motion still frame and effect cleanup, so desktop and hero controls remain independent.
 - MobileStickyCTA observes the home hero button exiting above the viewport, footer visibility and menu state, using the shared EarlyAccessButton and a separately tested visibility rule so the sticky CTA never duplicates a visible hero action.
 - Home feature navigation uses native scrolling and scroll-snap with mobile-only indicators, keeping the existing desktop grid unchanged.
 - Use `EarlyAccessButton` for the shared marketing action so its destination stays consistent.
