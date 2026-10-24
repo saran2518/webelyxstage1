@@ -25,6 +25,8 @@ import wordmarkDark from "@/assets/site/Elyxer_wordmark_gold_for_dark_bg.svg.ass
 import wordmarkLight from "@/assets/site/Elyxer_wordmark_gold_for_light_bg.svg.asset.json";
 import selfieHer from "@/assets/site/selfie-her.png.asset.json";
 import selfieHim from "@/assets/site/selfie-him.png.asset.json";
+import card4SelfieWindowRain from "@/assets/site/card4-selfie-window-rain.png.asset.json";
+import selfieBadgeShield from "@/assets/site/selfie-badge-shield.png.asset.json";
 import appIcon from "@/assets/elyxer-logo.png";
 import { siFacebook, siInstagram } from "simple-icons";
 
@@ -46,7 +48,8 @@ export const media = {
     card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
     card2: { src: card2Umbrella.url, focus: "50% 35%" }, // card2-someone-actually-asks-umbrella.jpg
     card3: { src: card3Phone.url, focus: "45% 40%" }, // card3-meet-before-you-meet-phone.jpg
-    card4: { src: selfieHim.url, focus: "45% 22%" }, // selfie-him.png (the guy taking the selfie, used as is)
+    card4: { src: card4SelfieWindowRain.url, focus: "50% 35%" }, // card4-selfie-window-rain.png (selfie by the rainy window)
+    card4Badge: selfieBadgeShield.url, // selfie-badge-shield.png (gold shield Selfie Badge icon)
     cta: { src: ctaParkBench.url, focus: "70% 45%" }, // home-cta-park-bench.webp (couple talking on a park bench)
   },
   how: {
