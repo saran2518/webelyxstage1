@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Fix site-wide new-page scroll position without changing hash links or browser history restoration; test all requested footer links at phone and desktop sizes.
 - [x] Make every Facebook and Instagram mark monochrome: footer, home follow band and Contact follow row now use the currentColor glyphs (white #FFFFFF on the near-black footer, near-black #0A0705 on cream), with sizes, links, labels and hover unchanged and the navbar already monochrome. Verified computed fills and sampled pixels at 390x844 and 1440x900; build OK.
 - [x] Remove the mobile hero rain animation completely: deleted the MobileHeroRain component and its usage, the .ls-hero-rain CSS rule and the --ls-rain-colour token, plus the rain notes in AGENTS.md and the mobile-hero memory. Eyebrow, navbar top shade, photo and desktop hero unchanged.
 - [x] Update only the mobile hero eyebrow, photo-only drizzle and top shade. Verified screenshots at 390×844 and 360×740 (also 430px): one-line eyebrow, canvas confined to photo, fully visible button, no overflow or runtime errors; animation and reduced-motion still frame confirmed, desktop additions hidden, build OK.
