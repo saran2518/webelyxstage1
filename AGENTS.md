@@ -14,3 +14,4 @@
 - Keep legal document text unchanged during marketing rewrites because those pages contain supplied legal documents.
 - Keep the Light and shadow visual treatment in `src/styles/light-and-shadow.css`, activated by Layout and presentation-only hooks; content, media mappings and form logic stay independent so the design can be reverted separately.
 - Scope home mobile layout to ls-home and mobile typography sizes to the shared below-768px rules; supporting text uses the sans family and headings/brand taglines use display, with only these two font families loaded to prevent unintended reading-font overrides.
+- The compact navbar, full-screen menu and sticky CTA apply below the Tailwind `nav` screen (1200px), so tablet widths never wrap the inline desktop links.
