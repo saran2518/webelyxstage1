@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { media, social } from "@/content/media";
 import InstagramGlyph from "@/components/InstagramGlyph";
+import FacebookGlyph from "@/components/FacebookGlyph";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
 import { Button } from "@/components/ui/button";
 import Wordmark from "@/components/Wordmark";
@@ -84,6 +85,11 @@ const Navbar = () => {
             </Link>
           )}
           <div className="flex shrink-0 items-center gap-5">
+            <a href={social.facebook} target="_blank" rel="noopener noreferrer"
+              aria-label="Elyxer on Facebook"
+              className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
+              <FacebookGlyph size={20} />
+            </a>
             <a href={social.instagram} target="_blank" rel="noopener noreferrer"
               aria-label="Elyxer on Instagram"
               className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
@@ -94,8 +100,15 @@ const Navbar = () => {
 
         </div>
 
-        {/* Mobile controls: Instagram then menu button, together on the right */}
+        {/* Mobile controls: Facebook, Instagram then menu button, together on the right */}
         <div className="navbar-mobile-controls md:hidden flex items-center gap-1">
+          {!mobileOpen &&
+           <a href={social.facebook} target="_blank" rel="noopener noreferrer"
+             aria-label="Elyxer on Facebook"
+             className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
+               <FacebookGlyph size={20} />
+           </a>
+          }
           {!mobileOpen &&
            <a href={social.instagram} target="_blank" rel="noopener noreferrer"
              aria-label="Elyxer on Instagram"
