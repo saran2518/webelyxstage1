@@ -2,7 +2,6 @@ import Layout from "@/components/Layout";
 import { media, social } from "@/content/media";
 import SlotMedia from "@/components/SlotMedia";
 import EarlyAccessButton from "@/components/EarlyAccessButton";
-import MobileHeroRain from "@/components/MobileHeroRain";
 import { Camera, Coffee, Eye, Heart, Leaf, ShieldCheck, Sparkles, Users, Video } from "lucide-react";
 import InstagramGlyph from "@/components/InstagramGlyph";
 import { useRef, useState } from "react";
@@ -57,7 +56,6 @@ const Index = () => {
             fetchPriority="high"
             className="h-full w-full object-cover object-[70%_35%]" />
         </picture>
-        <MobileHeroRain />
       </div>
       <div className="relative container mx-auto px-6 pb-10 md:pb-16 pt-32">
         <div className="max-w-[640px]">
