@@ -87,18 +87,18 @@ const Contact = () => (
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Elyxer on Instagram"
-            className="transition-opacity duration-300 hover:opacity-75"
+            className="ls-contact-social transition-opacity duration-300 hover:opacity-75"
           >
-            <InstagramGlyph size={28} gradient />
+            <InstagramGlyph size={28} />
           </a>
           <a
             href={social.facebook}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Elyxer on Facebook"
-            className="transition-opacity duration-300 hover:opacity-75"
+            className="ls-contact-social transition-opacity duration-300 hover:opacity-75"
           >
-            <FacebookGlyph size={28} />
+            <FacebookGlyph size={28} brand={false} />
           </a>
         </div>
       </div>

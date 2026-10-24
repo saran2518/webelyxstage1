@@ -236,7 +236,7 @@ const Index = () => {
         <p className="ls-follow-line">Glimpses, stories and early news from Elyxer.</p>
         <a href={social.instagram} target="_blank" rel="noopener noreferrer" className="ls-follow-link">
           <span className="ls-follow-icon" aria-hidden="true">
-            <InstagramGlyph size={28} gradient />
+            <InstagramGlyph size={28} />
           </span>
           <span className="ls-follow-handle">@elyxer.dating</span>
         </a>
