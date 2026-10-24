@@ -58,7 +58,7 @@ const Contact = () => (
               </p>
               <a
                 href={card.href}
-                className="mt-6 font-sans text-sm font-medium text-primary break-all transition-opacity duration-300 hover:opacity-75"
+                className="ls-plain-email mt-6 font-sans text-sm font-medium text-primary break-all transition-opacity duration-300 hover:opacity-75"
               >
                 {card.email}
               </a>
