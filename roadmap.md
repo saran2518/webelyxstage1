@@ -1,5 +1,5 @@
 # Tasks
-- [ ] Fix repeat same-page link scrolling; verify Contact from all seven requested pages at both sizes after at least one second.
+- [x] Fix repeat same-page link scrolling by watching navigation entry keys: all 14 Contact checks settle at scrollY 0 after 1.3 seconds at 390×844 and 1440×900; repeated Home and Contact clicks also pass, 12 tests pass, build clean. No design or content changes.
 - [x] Fix site-wide new-page scroll position: all 18 requested footer navigations start at scrollY 0 at 390×844 and 1440×900; hash tests pass, browser back restores 500px and forward restores 0px, 10 tests pass and build is clean. Design and content unchanged.
 - [x] Make every Facebook and Instagram mark monochrome: footer, home follow band and Contact follow row now use the currentColor glyphs (white #FFFFFF on the near-black footer, near-black #0A0705 on cream), with sizes, links, labels and hover unchanged and the navbar already monochrome. Verified computed fills and sampled pixels at 390x844 and 1440x900; build OK.
 - [x] Remove the mobile hero rain animation completely: deleted the MobileHeroRain component and its usage, the .ls-hero-rain CSS rule and the --ls-rain-colour token, plus the rain notes in AGENTS.md and the mobile-hero memory. Eyebrow, navbar top shade, photo and desktop hero unchanged.
