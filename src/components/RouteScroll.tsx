@@ -1,9 +1,9 @@
 import { useLayoutEffect, useRef } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
 
-/** Leave history traversal to the browser; only reset new page navigations. */
+/** Leave history traversal to the browser; handle every new navigation entry. */
 const RouteScroll = () => {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key } = useLocation();
   const navigationType = useNavigationType();
   const previousPathname = useRef(pathname);
 
@@ -19,8 +19,10 @@ const RouteScroll = () => {
       target?.scrollIntoView({ behavior: "instant", block: "start" });
     } else if (pathnameChanged) {
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     }
-  }, [pathname, hash, navigationType]);
+  }, [pathname, hash, key, navigationType]);
 
   return null;
 };
