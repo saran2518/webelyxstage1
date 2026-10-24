@@ -1,5 +1,5 @@
 # Project rules
-- Keep route scrolling in a single component inside BrowserRouter: new pathname navigations reset instantly, hash links target anchors, and POP navigation leaves native browser restoration untouched.
+- Keep route scrolling in a single component inside BrowserRouter keyed by navigation entry: new pathname navigations reset instantly, repeat same-page navigations scroll smoothly, hash links target anchors, and POP navigation leaves native browser restoration untouched.
 - Use the shared Tailwind display family for all titles and the global heading rule for normal weight and tracking, so typography changes never affect body text or controls.
 - Keep all page media, brand asset and social profile link references in `src/content/media.ts` (the media map plus the `social` export), with future filenames beside fallback slots, so uploads and profile links need one update.
 - Render brand wordmarks through `Wordmark` using the original asset SVG geometry and colours, with per-instance `useId` gradient identifiers to prevent navbar/footer collisions.

@@ -6,6 +6,7 @@ import RouteScroll from "@/components/RouteScroll";
 const Controls = () => {
   const navigate = useNavigate();
   return <>
+    <Link to="/">Home</Link>
     <Link to="/contact">Contact</Link>
     <Link to="/privacy">Privacy</Link>
     <Link to="/terms">Terms</Link>
@@ -39,6 +40,18 @@ describe("route scrolling", () => {
     fireEvent.click(view.getByText(label));
     expect(anchorScroll).toHaveBeenCalledWith({ behavior: "instant", block: "start" });
     expect(scroll).not.toHaveBeenCalled();
+  });
+
+  it.each(["Contact", "Home"])("smoothly scrolls to the top on repeated %s clicks", (label) => {
+    const scroll = vi.spyOn(window, "scrollTo").mockImplementation(() => {});
+    const view = setup();
+    fireEvent.click(view.getByText(label));
+    scroll.mockClear();
+    fireEvent.click(view.getByText(label));
+    expect(scroll).toHaveBeenCalledExactlyOnceWith({ top: 0, left: 0, behavior: "smooth" });
+    scroll.mockClear();
+    fireEvent.click(view.getByText(label));
+    expect(scroll).toHaveBeenCalledExactlyOnceWith({ top: 0, left: 0, behavior: "smooth" });
   });
 
   it("does not override initial load or browser back and forward restoration", () => {
