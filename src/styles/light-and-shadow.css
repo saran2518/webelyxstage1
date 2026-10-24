@@ -695,3 +695,14 @@
   .light-shadow-shell.light-shadow:not(.ls-home) main .ls-product-step:first-child { padding-top: 0; }
   .light-shadow-shell.light-shadow:not(.ls-home) main > section:first-child:not(.ls-hero) + section:not(.ls-hero):not(.ls-photo-band):not(.ls-closing):not(.ls-follow):not(.ls-manifesto) { padding-top: 0; }
 }
+/* Tablet and desktop sub pages: lift the first image into the first screen */
+@media (min-width: 768px) {
+  .light-shadow-shell.light-shadow:not(.ls-home) main > section:first-child:not(.ls-hero):not(.ls-photo-band):not(.ls-closing):not(.ls-follow):not(.ls-manifesto):not(.ls-vm-strip) { padding-top: 128px; padding-bottom: 32px; }
+  .light-shadow-shell:not(.light-shadow):not(.ls-home) main > section:first-child { padding-top: 128px; }
+  .light-shadow-shell.light-shadow:not(.ls-home) main .ls-product-step:first-child { padding-top: 0; }
+  .light-shadow-shell.light-shadow:not(.ls-home) main > section:first-child:not(.ls-hero) + section:not(.ls-hero):not(.ls-photo-band):not(.ls-closing):not(.ls-follow):not(.ls-manifesto) { padding-top: 0; }
+}
+@media (min-width: 1024px) {
+  .light-shadow-shell.light-shadow:not(.ls-home) main > section:first-child:not(.ls-hero):not(.ls-photo-band):not(.ls-closing):not(.ls-follow):not(.ls-manifesto):not(.ls-vm-strip) { padding-top: 136px; padding-bottom: 40px; }
+  .light-shadow-shell:not(.light-shadow):not(.ls-home) main > section:first-child { padding-top: 136px; }
+}
