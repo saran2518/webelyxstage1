@@ -176,7 +176,8 @@ const Index = () => {
           data-reveal-child
           className="glass-light lift rounded-xl overflow-hidden h-full flex flex-col">
 
-              <div className="relative">
+              <div className="ls-feature-photo relative">
+
                 <SlotMedia
             slot={f.image}
             alt={f.title}

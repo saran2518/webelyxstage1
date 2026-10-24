@@ -159,6 +159,7 @@
 }
 .light-shadow .ls-features [data-reveal-child]:hover { transform: none; box-shadow: none; }
 .light-shadow .ls-features [data-reveal-child] > div { padding: 32px 0 0; }
+.light-shadow .ls-features [data-reveal-child] > div.ls-feature-photo { padding: 0; }
 .light-shadow .ls-features img { border-radius: 14px; }
 .light-shadow main img { transition: transform 450ms ease, filter 450ms ease; }
 @media (hover: hover) {
