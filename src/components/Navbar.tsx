@@ -38,7 +38,7 @@ const Navbar = () => {
     if (!mobileOpen) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const closeOnDesktop = () => { if (window.innerWidth >= 768) setMobileOpen(false); };
+    const closeOnDesktop = () => { if (window.innerWidth >= 1200) setMobileOpen(false); };
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") { setMobileOpen(false); toggleRef.current?.focus(); }
       if (event.key !== "Tab") return;
@@ -70,7 +70,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="nav-links hidden nav:flex items-center gap-8">
           {navLinks.map((link) =>
           <Link
             key={link.to}
@@ -101,7 +101,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile controls: Facebook, Instagram then menu button, together on the right */}
-        <div className="navbar-mobile-controls md:hidden flex items-center gap-1">
+        <div className="navbar-mobile-controls nav:hidden flex items-center gap-1">
           {!mobileOpen &&
            <a href={social.facebook} target="_blank" rel="noopener noreferrer"
              aria-label="Elyxer on Facebook"
@@ -127,7 +127,7 @@ const Navbar = () => {
 
       {/* Mobile nav */}
       {mobileOpen &&
-       <div ref={menuRef} id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Navigation" className="navbar-mobile-menu md:hidden bg-background/98 backdrop-blur-md border-t border-border px-6 pb-6 animate-fade-up">
+       <div ref={menuRef} id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Navigation" className="navbar-mobile-menu nav:hidden bg-background/98 backdrop-blur-md border-t border-border px-6 pb-6 animate-fade-up">
           <div className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) =>
           <Link
