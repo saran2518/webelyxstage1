@@ -13,6 +13,7 @@ export default {
       },
     },
     extend: {
+      screens: { nav: "1200px" },
       fontFamily: {
         display: ['"Marcellus"', 'Georgia', 'serif'],
         serif: ['"DM Sans"', 'system-ui', 'sans-serif'],
