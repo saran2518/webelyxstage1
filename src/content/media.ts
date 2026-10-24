@@ -46,6 +46,7 @@ export const media = {
     card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
     card2: { src: card2Umbrella.url, focus: "50% 35%" }, // card2-someone-actually-asks-umbrella.jpg
     card3: { src: card3Phone.url, focus: "45% 40%" }, // card3-meet-before-you-meet-phone.jpg
+    card4: { src: selfieHim.url, focus: "45% 22%" }, // selfie-him.png (the guy taking the selfie, used as is)
     cta: { src: ctaParkBench.url, focus: "70% 45%" }, // home-cta-park-bench.webp (couple talking on a park bench)
   },
   how: {

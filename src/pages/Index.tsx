@@ -10,7 +10,8 @@ import { Button } from "@/components/ui/button";
 const features = [
   { title: "Seen for who you are.", description: "Your profile reads like a story, written in the places you love, the passions you keep and the little rituals that make you, you.", image: media.home.card1 },
   { title: "Someone actually asks.", description: "An Invite is a simple, heartfelt plan: coffee, a long walk or dinner. No endless small talk, just a chance to meet.", image: media.home.card2 },
-  { title: "Meet before you meet.", description: "A ten-minute video date inside the app, with gentle icebreakers to ease you in. Add a live selfie to earn your Selfie Badge.", image: media.home.card3 },
+  { title: "Meet before you meet.", description: "A ten-minute video date inside the app, with gentle icebreakers to ease you in.", image: media.home.card3 },
+  { title: "A face that's really you.", description: "Add a live selfie, taken right in the app, to earn your Selfie Badge. It sits on your profile so people see the real you.", image: media.home.card4 },
 ];
 
 const ClosingWords = ({ className = "" }: { className?: string }) => (
@@ -168,7 +169,7 @@ const Index = () => {
     {/* Feature cards with images */}
     <section className="ls-section ls-features py-24 md:py-32 mt-8 md:mt-12">
       <div className="container mx-auto px-6">
-        <div ref={carouselRef} onScroll={updateActiveCard} className="ls-feature-track grid md:grid-cols-3 gap-8" data-reveal-stagger>
+        <div ref={carouselRef} onScroll={updateActiveCard} className="ls-feature-track grid md:grid-cols-2 nav:grid-cols-4 gap-8" data-reveal-stagger>
           {features.map((f) =>
         <div
           key={f.title}
