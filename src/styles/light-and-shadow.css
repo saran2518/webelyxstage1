@@ -688,3 +688,9 @@
   .light-shadow-shell main span.uppercase,
   .light-shadow-shell main .ls-vm-eyebrow { font-size: 11px; }
 }
+
+/* Mobile sub pages: lift the first image into the first screen */
+@media (max-width: 767px) {
+  .light-shadow-shell:not(.ls-home) main > section:first-child:not(.ls-hero) { padding-top: 112px; padding-bottom: 28px; }
+  .light-shadow-shell:not(.ls-home) main > section:first-child:not(.ls-hero) + section { padding-top: 0; }
+}
