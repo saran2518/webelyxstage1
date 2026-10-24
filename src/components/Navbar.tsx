@@ -87,7 +87,7 @@ const Navbar = () => {
             <a href={social.instagram} target="_blank" rel="noopener noreferrer"
               aria-label="Elyxer on Instagram"
               className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
-              <InstagramGlyph size={20} />
+              <InstagramGlyph size={20} gradient />
             </a>
             <EarlyAccessButton className="px-5 py-2.5" />
           </div>
@@ -100,7 +100,7 @@ const Navbar = () => {
            <a href={social.instagram} target="_blank" rel="noopener noreferrer"
              aria-label="Elyxer on Instagram"
              className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
-             <InstagramGlyph size={20} />
+               <InstagramGlyph size={20} gradient />
            </a>
           }
           <Button ref={toggleRef} variant="ghost" size="icon"
