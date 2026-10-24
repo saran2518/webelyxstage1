@@ -88,12 +88,12 @@ const Navbar = () => {
             <a href={social.facebook} target="_blank" rel="noopener noreferrer"
               aria-label="Elyxer on Facebook"
               className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
-              <FacebookGlyph size={20} />
+<FacebookGlyph size={20} brand={false} />
             </a>
             <a href={social.instagram} target="_blank" rel="noopener noreferrer"
               aria-label="Elyxer on Instagram"
               className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
-              <InstagramGlyph size={20} gradient />
+<InstagramGlyph size={20} />
             </a>
             <EarlyAccessButton className="px-5 py-2.5" />
           </div>
@@ -106,14 +106,14 @@ const Navbar = () => {
            <a href={social.facebook} target="_blank" rel="noopener noreferrer"
              aria-label="Elyxer on Facebook"
              className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
-               <FacebookGlyph size={20} />
+               <FacebookGlyph size={20} brand={false} />
            </a>
           }
           {!mobileOpen &&
            <a href={social.instagram} target="_blank" rel="noopener noreferrer"
              aria-label="Elyxer on Instagram"
              className={`navbar-social ${onDark ? "navbar-social-on-dark" : "navbar-social-on-light"}`}>
-               <InstagramGlyph size={20} gradient />
+               <InstagramGlyph size={20} />
            </a>
           }
           <Button ref={toggleRef} variant="ghost" size="icon"
