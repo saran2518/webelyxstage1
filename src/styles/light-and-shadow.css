@@ -287,9 +287,11 @@
 .instagram-stop-pink { stop-color: var(--instagram-pink); }
 .instagram-stop-purple { stop-color: var(--instagram-purple); }
 .instagram-stop-blue { stop-color: var(--instagram-blue); }
-/* Facebook mark: official f-in-circle path in Facebook blue. */
-.facebook-glyph { display: block; flex: none; fill: var(--facebook-blue); }
-.facebook-glyph-mono { fill: currentColor; }
+/* Facebook mark: official f-in-circle path in Facebook blue with a cream f. */
+.facebook-glyph { display: block; flex: none; }
+.facebook-glyph-ink { fill: hsl(var(--ls-cream)); }
+.facebook-glyph-mark { fill: var(--facebook-blue); }
+.facebook-glyph-mono-mark { fill: currentColor; }
 .light-shadow-shell footer .footer-socials {
   display: flex;
   align-items: center;
