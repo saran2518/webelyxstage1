@@ -18,12 +18,6 @@ const contactCards = [
     email: "support@elyxer.co",
     href: "mailto:support@elyxer.co?subject=Feedback",
   },
-  {
-    title: "Grievances",
-    text: "Grievance Officer: Sarankumar Kothandakumar. For complaints under the IT Rules, 2021 and the DPDP Act, 2023.",
-    email: "grievance@proapexinnovations.com",
-    href: "mailto:grievance@proapexinnovations.com",
-  },
 ];
 
 const Contact = () => (
@@ -43,8 +37,8 @@ const Contact = () => (
     </section>
 
     <section className="pb-16 md:pb-20" data-reveal>
-      <div className="container mx-auto px-6 max-w-6xl">
-        <div className="grid gap-6 md:gap-8 lg:grid-cols-3">
+      <div className="container mx-auto px-6 max-w-4xl">
+        <div className="grid gap-6 md:gap-8 md:grid-cols-2">
           {contactCards.map((card) => (
             <div
               key={card.title}
