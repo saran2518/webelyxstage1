@@ -14,6 +14,8 @@
   --instagram-purple: #962FBF;
   --instagram-blue: #4F5BD5;
   --facebook-blue: #1877F2;
+  --ls-icon-on-dark: #FFFFFF;
+  --ls-icon-on-light: #0A0705;
   --ls-body-font: "DM Sans", system-ui, sans-serif;
   --ls-title-font: "Marcellus", Georgia, serif;
   --ls-mobile-hero-top-shade: linear-gradient(to bottom, hsl(var(--ls-ink) / 0.55), hsl(var(--ls-ink) / 0));
@@ -278,6 +280,7 @@
   justify-content: center;
   opacity: 0.9;
   transition: opacity 0.35s ease;
+  color: var(--ls-icon-on-dark);
 }
 .light-shadow-shell footer .footer-social:hover {
   opacity: 1;
@@ -293,6 +296,8 @@
 .facebook-glyph-ink { fill: hsl(var(--ls-cream)); }
 .facebook-glyph-mark { fill: var(--facebook-blue); }
 .facebook-glyph-mono-mark { fill: currentColor; }
+/* Social marks render in currentColor: white on dark bands, near-black on cream. */
+.light-shadow-shell .ls-contact-social { color: var(--ls-icon-on-light); }
 .light-shadow-shell footer .footer-socials {
   display: flex;
   align-items: center;
@@ -451,6 +456,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--ls-icon-on-light);
+  opacity: 0.9;
+  transition: opacity 0.35s ease;
 }
 .light-shadow .ls-follow-handle {
   font-family: var(--ls-body-font);
@@ -465,6 +473,7 @@
   text-decoration-color: hsl(var(--ls-gold));
   text-underline-offset: 6px;
 }
+.light-shadow .ls-follow-link:hover .ls-follow-icon { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .light-shadow [data-reveal], .light-shadow [data-reveal-child],
   .light-shadow [class*="animate-fade-up"] {

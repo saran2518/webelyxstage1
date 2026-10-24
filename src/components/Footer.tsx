@@ -35,7 +35,7 @@ const Footer = () => (
               aria-label="Elyxer on Facebook"
               className="footer-social"
             >
-              <FacebookGlyph size={24} />
+              <FacebookGlyph size={24} brand={false} />
             </a>
             <a
               href={social.instagram}
@@ -44,7 +44,7 @@ const Footer = () => (
               aria-label="Elyxer on Instagram"
               className="footer-social"
             >
-              <InstagramGlyph size={24} gradient />
+              <InstagramGlyph size={24} />
             </a>
           </div>
         </div>
