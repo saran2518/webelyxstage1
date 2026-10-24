@@ -11,7 +11,7 @@ const features = [
   { title: "Seen for who you are.", description: "Your profile reads like a story, written in the places you love, the passions you keep and the little rituals that make you, you.", image: media.home.card1 },
   { title: "Someone actually asks.", description: "An Invite is a simple, heartfelt plan: coffee, a long walk or dinner. No endless small talk, just a chance to meet.", image: media.home.card2 },
   { title: "Meet before you meet.", description: "A ten-minute video date inside the app, with gentle icebreakers to ease you in.", image: media.home.card3 },
-  { title: "A face that's really you.", description: "Add a live selfie, taken right in the app, to earn your Selfie Badge. It sits on your profile so people see the real you.", image: media.home.card4 },
+  { title: "What you see is what you get.", description: "Trust shouldn't be a guess. The Selfie Badge comes from a live selfie taken in the app, so the person you meet is the person you saw.", image: media.home.card4, badge: media.home.card4Badge },
 ];
 
 const ClosingWords = ({ className = "" }: { className?: string }) => (
