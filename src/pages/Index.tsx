@@ -176,10 +176,20 @@ const Index = () => {
           data-reveal-child
           className="glass-light lift rounded-xl overflow-hidden h-full flex flex-col">
 
-              <SlotMedia
+              <div className="relative">
+                <SlotMedia
             slot={f.image}
             alt={f.title}
             className="w-full aspect-[4/5] max-h-[420px] object-cover" />
+                {f.badge && (
+                  <img
+                    src={f.badge}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute top-[14px] left-[14px] h-10 w-10 md:h-12 md:w-12 drop-shadow-[0_3px_8px_rgba(10,7,5,0.45)]"
+                  />
+                )}
+              </div>
 
               <div className="p-8 md:p-10">
                 <h3 className="text-xl font-display font-normal tracking-[0.01em] text-foreground mb-3">
