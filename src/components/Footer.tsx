@@ -16,7 +16,7 @@ const Footer = () => (
             <li><Link to="/product" className="footer-link">How it works</Link></li>
             <li><Link to="/world-of-dating" className="footer-link">World of dating</Link></li>
             <li><Link to="/help" className="footer-link">Help &amp; FAQ</Link></li>
-            <li><a href="mailto:support@elyxer.co" className="footer-link">Contact us</a></li>
+            <li><Link to="/contact" className="footer-link">Contact</Link></li>
           </ul>
         </nav>
         <div className="footer-centre">
