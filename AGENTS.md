@@ -3,6 +3,7 @@
 - Keep all page media, brand asset and social profile link references in `src/content/media.ts` (the media map plus the `social` export), with future filenames beside fallback slots, so uploads and profile links need one update.
 - Render brand wordmarks through `Wordmark` using the original asset SVG geometry and colours, with per-instance `useId` gradient identifiers to prevent navbar/footer collisions.
 - Render Instagram through the shared `InstagramGlyph` with the official Simple Icons path sourced in the media map and per-instance gradient identifiers, so all placements retain identical geometry without gradient collisions.
+- Render Facebook through the shared `FacebookGlyph` with the official Simple Icons path sourced in the media map, drawn as a brand disc over an ink layer so the mark keeps a solid fill on both dark and cream bands.
 - Render image/video slots through `SlotMedia` so absent videos show posters without broken playback.
 - Photo slots in media.ts are `{ src, focus }` objects; focus is the object-position that keeps faces in the crop. Containers use aspect ratios matched to the photo orientation (aspect-[4/5] for portraits, aspect-[4/3] for cards), never fixed short heights.
 - Keep home desktop imagery unchanged; the hero picture selects the centralised heroMobile slot below 768px. The mobile hero is a split layout (cover photo block with bottom fade, solid text panel below with its own CTA) styled in the presentation sheet so desktop and shared controls remain independent.
