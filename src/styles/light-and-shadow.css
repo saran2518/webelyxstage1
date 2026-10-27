@@ -720,3 +720,32 @@
   .light-shadow-shell.light-shadow:not(.ls-home) main > section:first-child:not(.ls-hero):not(.ls-photo-band):not(.ls-closing):not(.ls-follow):not(.ls-manifesto):not(.ls-vm-strip) { padding-top: 136px; padding-bottom: 40px; }
   .light-shadow-shell:not(.light-shadow):not(.ls-home) main > section:first-child { padding-top: 136px; }
 }
+
+/* Desktop hero (1200px+): photo band on top, words on a near-black panel below,
+   so the close-up faces stay clear and the navbar reads over the bright sky. */
+@media (min-width: 1200px) {
+  .ls-home .ls-hero {
+    display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch;
+    background: hsl(var(--ls-ink));
+  }
+  .ls-home .ls-hero .ls-hero-photo {
+    position: relative; inset: auto; width: 100%; height: auto; flex: 1 1 auto; min-height: 280px; max-height: none;
+  }
+  .ls-home .ls-hero .ls-hero-photo picture { position: absolute; inset: 0; height: 100%; }
+  .ls-home .ls-hero .ls-hero-photo img {
+    display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; transform: none; transition: none;
+  }
+  .ls-home .ls-hero .ls-hero-photo::before {
+    content: ""; position: absolute; inset: 0 0 auto; height: 190px; z-index: 1; pointer-events: none;
+    background: linear-gradient(to bottom, hsl(var(--ls-ink) / 0.78), hsl(var(--ls-ink) / 0));
+  }
+  .ls-home .ls-hero .ls-hero-photo::after {
+    content: ""; position: absolute; inset: auto 0 0; height: 90px; pointer-events: none;
+    background: linear-gradient(to bottom, hsl(var(--ls-ink) / 0), hsl(var(--ls-ink)));
+  }
+  .ls-home .ls-hero > .container { margin-top: 0; padding: 30px 24px max(34px, calc(env(safe-area-inset-bottom) + 24px)); flex: 0 0 auto; }
+  .ls-home .ls-hero > .container > div { max-width: 900px; margin-inline: auto; text-align: center; }
+  .ls-home .ls-hero > .container > div p { margin-inline: auto; }
+  .ls-home .ls-hero .ls-hero-desktop-action { justify-content: center; margin-top: 26px; }
+  .ls-home .ls-hero .ls-hero-mobile-action { display: none; }
+}
