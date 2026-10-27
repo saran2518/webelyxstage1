@@ -49,6 +49,7 @@ const Index = () => {
     <section className="ls-hero relative h-screen supports-[height:100svh]:h-[100svh] min-h-[600px] flex items-end overflow-hidden">
       <div className="ls-hero-photo absolute inset-0">
         <picture className="block h-full w-full bg-foreground">
+          <source media="(min-width: 1200px)" srcSet={media.home.heroWide} />
           <source media="(max-width: 767px)" srcSet={media.home.heroMobile || media.home.hero} />
           <img
             src={media.home.hero}
