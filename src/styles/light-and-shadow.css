@@ -746,7 +746,6 @@
   .ls-home .ls-hero > .container { margin-top: 0; padding: 30px 24px max(34px, calc(env(safe-area-inset-bottom) + 24px)); flex: 0 0 auto; }
   .ls-home .ls-hero > .container > div { max-width: 900px; margin-inline: auto; text-align: center; }
   .ls-home .ls-hero > .container > div p { margin-inline: auto; }
-  .ls-home .ls-hero .ls-hero-desktop-action { justify-content: center; }
-  .ls-home .ls-hero .ls-hero-desktop-action { margin-top: 26px; }
+  .ls-home .ls-hero .ls-hero-desktop-action { justify-content: center; margin-top: 26px; }
   .ls-home .ls-hero .ls-hero-mobile-action { display: none; }
 }
