@@ -736,8 +736,8 @@
     display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; transform: none; transition: none;
   }
   .ls-home .ls-hero .ls-hero-photo::before {
-    content: ""; position: absolute; inset: 0 0 auto; height: 160px; pointer-events: none;
-    background: linear-gradient(to bottom, hsl(var(--ls-ink) / 0.7), hsl(var(--ls-ink) / 0));
+    content: ""; position: absolute; inset: 0 0 auto; height: 190px; z-index: 1; pointer-events: none;
+    background: linear-gradient(to bottom, hsl(var(--ls-ink) / 0.78), hsl(var(--ls-ink) / 0));
   }
   .ls-home .ls-hero > .container { margin-top: 0; padding: 30px 24px max(34px, calc(env(safe-area-inset-bottom) + 24px)); flex: 0 0 auto; }
   .ls-home .ls-hero > .container > div { max-width: 720px; }
