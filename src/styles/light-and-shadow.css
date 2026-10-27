@@ -720,3 +720,14 @@
   .light-shadow-shell.light-shadow:not(.ls-home) main > section:first-child:not(.ls-hero):not(.ls-photo-band):not(.ls-closing):not(.ls-follow):not(.ls-manifesto):not(.ls-vm-strip) { padding-top: 136px; padding-bottom: 40px; }
   .light-shadow-shell:not(.light-shadow):not(.ls-home) main > section:first-child { padding-top: 136px; }
 }
+
+/* Desktop hero (1200px+): soft shade so the words read over the close-up photo */
+@media (min-width: 1200px) {
+  .ls-home .ls-hero .ls-hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to top, hsl(var(--ls-ink) / 0.88) 0%, hsl(var(--ls-ink) / 0.55) 22%, hsl(var(--ls-ink) / 0.12) 42%, hsl(var(--ls-ink) / 0) 58%);
+  }
+}
