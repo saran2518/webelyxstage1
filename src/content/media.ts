@@ -1,4 +1,4 @@
-import heroWindowHug from "@/assets/site/home-hero-window-hug.webp.asset.json";
+import heroLaughWide from "@/assets/site/home-hero-laugh-bw-wide.webp.asset.json";
 import heroMobileLaughCloseup from "@/assets/site/home-hero-mobile-laugh-closeup-bw.webp.asset.json";
 import bandCyclingMist from "@/assets/site/home-band-cycling-mist.webp.asset.json";
 import card1Gallery from "@/assets/site/card1-seen-for-who-you-are-gallery.jpg.asset.json";
@@ -42,7 +42,7 @@ export type PhotoSlot = { src: string; focus?: string };
 // supplied (no resize, recompression or conversion) on desktop and mobile.
 export const media = {
   home: {
-    hero: heroWindowHug.url, // home-hero-window-hug.webp (couple hugging by the rain-streaked window)
+    hero: heroLaughWide.url, // home-hero-laugh-bw-wide.webp (16:9 black-and-white close-up of the couple laughing, windblown hair, bright sky) — tablet and desktop hero
     heroMobile: heroMobileLaughCloseup.url, // Exact uploaded portrait photo (black-and-white close-up of the couple laughing with faces pressed together, windblown hair, bright out-of-focus sky), unmodified; hero remains the fallback.
     band: bandCyclingMist.url, // home-band-cycling-mist.webp (couple cycling on the misty road)
     card1: { src: card1Gallery.url, focus: "55% 40%" }, // card1-seen-for-who-you-are-gallery.jpg
