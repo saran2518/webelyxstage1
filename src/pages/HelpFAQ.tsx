@@ -29,6 +29,14 @@ const faqSections: FaqSection[] = [
         </Link>
       </>
     ) },
+    { q: "Can I change my name later?", a: (
+      <>
+        No. Your name can&apos;t be changed once your profile is set up.{" "}
+        <Link to="/help/change-name" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+          Read more
+        </Link>
+      </>
+    ) },
   ] },
   { category: "Safety", items: [
     { q: "How does Elyxer keep me safe?", a: "Live selfies, reviewed photos, and your city shown, never your exact location." },
