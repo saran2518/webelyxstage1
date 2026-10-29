@@ -22,8 +22,8 @@ const ChangeName = () => (
       <div className="container mx-auto px-6 max-w-3xl">
         <div className="space-y-6 font-sans text-base text-muted-foreground leading-relaxed animate-fade-up-delay-2">
           <p>
-            Your name can&apos;t be changed once your profile is set up, so
-            please check it carefully during sign-up.
+            For safety reasons, your name can&apos;t be changed once your
+            profile is set up, so please check it carefully during sign-up.
           </p>
 
           <h2 className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4">
@@ -31,8 +31,9 @@ const ChangeName = () => (
           </h2>
           <p>
             A name that stays the same helps everyone know who they&apos;re
-            talking to. It keeps conversations honest and makes Elyxer a safer
-            place to meet people.
+            talking to. It stops anyone from taking on a new identity to get
+            around a report or a block, keeps conversations honest and makes
+            Elyxer a safer place to meet people.
           </p>
 
           <h2 className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4">
