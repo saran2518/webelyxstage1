@@ -12,6 +12,7 @@ import ChangePhoneNumber from "./pages/help/ChangePhoneNumber";
 import Identity from "./pages/help/Identity";
 import NameAndAge from "./pages/help/NameAndAge";
 import DatingGoals from "./pages/help/DatingGoals";
+import InterestedIn from "./pages/help/InterestedIn";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/help/identity" element={<Identity />} />
           <Route path="/help/name-and-age" element={<NameAndAge />} />
           <Route path="/help/dating-goals" element={<DatingGoals />} />
+          <Route path="/help/interested-in" element={<InterestedIn />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />

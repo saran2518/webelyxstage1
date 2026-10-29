@@ -43,6 +43,14 @@ const faqSections: FaqSection[] = [
         </Link>
       </>
     ) },
+    { q: "How do I choose who I&apos;d like to meet?", a: (
+      <>
+        Select all that apply, or choose Open to all. You can change it anytime.{" "}
+        <Link to="/help/interested-in" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+          Read more
+        </Link>
+      </>
+    ) },
     { q: "What are dating goals?", a: (
       <>
         Up to two goals that show what you&apos;re looking for right now.{" "}
