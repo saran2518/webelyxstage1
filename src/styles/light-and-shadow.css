@@ -721,24 +721,52 @@
   .light-shadow-shell:not(.light-shadow):not(.ls-home) main > section:first-child { padding-top: 136px; }
 }
 
-/* Desktop hero (1200px+): words sit over the black-and-white photo, bottom left,
-   in cream and light gold with a soft shade behind the navbar and beneath the words
-   so they stay readable over the bright sky. */
+/* Desktop hero (1200px+): split screen. Copy sits on the near-black field on the
+   left, aligned with the navbar's left edge; the photo fills the right side below
+   the navbar, left-anchored so the faces stay clear. No scrim or text over the photo. */
 @media (min-width: 1200px) {
-  .ls-home .ls-hero .ls-hero-photo img { object-position: 50% 42%; }
-  .ls-home .ls-hero .ls-hero-photo::before {
-    content: ""; position: absolute; inset: 0 0 auto; height: 190px; z-index: 1; pointer-events: none;
-    background: linear-gradient(to bottom, hsl(var(--ls-ink) / 0.78), hsl(var(--ls-ink) / 0));
+  .ls-home .ls-hero {
+    display: grid;
+    /* Column 1 mirrors the centred container's side space (container max 1400px),
+       column 2 is the words panel, column 3 the photo. Row 1 clears the navbar. */
+    grid-template-columns:
+      minmax(0px, calc((100% - 1400px) / 2))
+      clamp(480px, 40%, 600px)
+      minmax(0px, 1fr);
+    grid-template-rows: 96px minmax(0px, 1fr);
+    align-items: stretch;
+    background: hsl(var(--ls-ink));
+    height: min(100vh, 920px);
+    height: min(100svh, 920px);
+    min-height: 640px;
   }
-  .ls-home .ls-hero .ls-hero-photo::after {
-    content: ""; position: absolute; inset: auto 0 0; height: 58%; pointer-events: none;
-    background: linear-gradient(to top, hsl(var(--ls-ink) / 0.88) 0%, hsl(var(--ls-ink) / 0.55) 40%, hsl(var(--ls-ink) / 0) 100%);
+  /* Photo panel: right column, starting below the navbar */
+  .ls-home .ls-hero .ls-hero-photo {
+    position: relative;
+    inset: auto;
+    grid-column: 3;
+    grid-row: 2;
+    min-width: 0;
+    min-height: 0;
   }
-  .ls-home .ls-hero > .container { padding-bottom: 76px; }
-  .ls-home .ls-hero > .container > div { max-width: 640px; text-align: left; }
-  .ls-home .ls-hero h1 { color: hsl(var(--ls-cream)); text-shadow: 0 2px 20px hsl(var(--ls-ink) / 0.8); }
-  .ls-home .ls-hero p:first-of-type { color: hsl(var(--ls-light-gold)); text-shadow: 0 1px 14px hsl(var(--ls-ink) / 0.8); }
-  .ls-home .ls-hero p:nth-of-type(2) { color: hsl(var(--ls-cream) / 0.92); text-shadow: 0 1px 12px hsl(var(--ls-ink) / 0.8); }
+  .ls-home .ls-hero .ls-hero-photo picture { position: absolute; inset: 0; height: 100%; }
+  .ls-home .ls-hero .ls-hero-photo::before,
+  .ls-home .ls-hero .ls-hero-photo::after { content: none; }
+  .ls-home .ls-hero .ls-hero-photo img { object-position: 0% 50%; }
+  /* Words panel: left column, vertically centred, aligned to the navbar's left edge */
+  .ls-home .ls-hero > .container {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: none;
+    margin: 0;
+    padding: 0 40px 0 24px;
+    display: flex;
+    align-items: center;
+  }
+  .ls-home .ls-hero > .container > div { max-width: none; width: 100%; text-align: left; }
+  .ls-home .ls-hero h1 { color: hsl(var(--ls-cream)); text-shadow: none; }
+  .ls-home .ls-hero p:first-of-type { color: hsl(var(--ls-light-gold)); text-shadow: none; }
+  .ls-home .ls-hero p:nth-of-type(2) { color: hsl(var(--ls-cream) / 0.92); text-shadow: none; }
   .ls-home .ls-hero .ls-hero-desktop-action { justify-content: flex-start; }
   .ls-home .ls-hero .ls-hero-mobile-action { display: none; }
 }
