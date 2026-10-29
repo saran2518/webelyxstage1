@@ -20,6 +20,16 @@ const faqSections: FaqSection[] = [
     { q: "How do I create my profile?", a: "During sign-up. It reads like a short story about your life." },
     { q: "Can I edit it later?", a: "Yes, anytime. Only your name and date of birth stay fixed." },
   ] },
+  { category: "Account", items: [
+    { q: "How do I change my phone number?", a: (
+      <>
+        For your security, the number linked to your account cannot be changed.{" "}
+        <Link to="/help/change-phone-number" className="text-primary hover:underline">
+          Read more
+        </Link>
+      </>
+    ) },
+  ] },
   { category: "Safety", items: [
     { q: "How does Elyxer keep me safe?", a: "Live selfies, reviewed photos, and your city shown, never your exact location." },
     { q: "Can I report or block someone?", a: "Yes, from any profile or chat. Every report is read by our team." },
