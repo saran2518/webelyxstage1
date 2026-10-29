@@ -721,6 +721,43 @@
   .light-shadow-shell:not(.light-shadow):not(.ls-home) main > section:first-child { padding-top: 136px; }
 }
 
+/* Tablet hero (768px to 1199px): the wide photo sits directly below the navbar,
+   full width, and the copy follows on the near-black field. Desktop split screen
+   (1200px+) and the mobile immersive hero (<768px) are unchanged. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .ls-home .ls-hero {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    display: block;
+    background: hsl(var(--ls-ink));
+    /* Row 1 clears the fixed navbar so it rests on the near-black, not the photo */
+    padding-top: 96px;
+  }
+  .ls-home .ls-hero .ls-hero-photo {
+    position: relative;
+    inset: auto;
+    width: 100%;
+  }
+  .ls-home .ls-hero .ls-hero-photo picture { height: auto; }
+  .ls-home .ls-hero .ls-hero-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: 15% 50%;
+  }
+  .ls-home .ls-hero > .container {
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 48px 24px 56px;
+  }
+  .ls-home .ls-hero > .container > div { max-width: none; }
+  .ls-home .ls-hero h1,
+  .ls-home .ls-hero p { text-shadow: none; }
+  .ls-home .ls-hero .ls-hero-desktop-action { justify-content: flex-start; }
+}
+
 /* Desktop hero (1200px+): split screen. Copy sits on the near-black field on the
    left, aligned with the navbar's left edge; the photo fills the right side below
    the navbar, left-anchored so the faces stay clear. No scrim or text over the photo. */
