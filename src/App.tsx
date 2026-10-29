@@ -2,18 +2,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import WhatWeDo from "./pages/WhatWeDo";
 import Product from "./pages/Product";
 import WorldOfDating from "./pages/WorldOfDating";
 import HelpFAQ from "./pages/HelpFAQ";
 import ChangePhoneNumber from "./pages/help/ChangePhoneNumber";
-import ChangeName from "./pages/help/ChangeName";
-import ChangeAge from "./pages/help/ChangeAge";
-import GenderIdentity from "./pages/help/GenderIdentity";
-import Pronouns from "./pages/help/Pronouns";
-import SexualOrientation from "./pages/help/SexualOrientation";
+import Identity from "./pages/help/Identity";
+import NameAndAge from "./pages/help/NameAndAge";
 import DatingGoals from "./pages/help/DatingGoals";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -38,11 +35,13 @@ const App = () => (
           <Route path="/world-of-dating" element={<WorldOfDating />} />
           <Route path="/help" element={<HelpFAQ />} />
           <Route path="/help/change-phone-number" element={<ChangePhoneNumber />} />
-          <Route path="/help/change-name" element={<ChangeName />} />
-          <Route path="/help/change-age" element={<ChangeAge />} />
-          <Route path="/help/gender-identity" element={<GenderIdentity />} />
-          <Route path="/help/pronouns" element={<Pronouns />} />
-          <Route path="/help/sexual-orientation" element={<SexualOrientation />} />
+          <Route path="/help/change-name" element={<Navigate to="/help/name-and-age#name" replace />} />
+          <Route path="/help/change-age" element={<Navigate to="/help/name-and-age#age" replace />} />
+          <Route path="/help/gender-identity" element={<Navigate to="/help/identity#gender" replace />} />
+          <Route path="/help/pronouns" element={<Navigate to="/help/identity#pronouns" replace />} />
+          <Route path="/help/sexual-orientation" element={<Navigate to="/help/identity#sexual-orientation" replace />} />
+          <Route path="/help/identity" element={<Identity />} />
+          <Route path="/help/name-and-age" element={<NameAndAge />} />
           <Route path="/help/dating-goals" element={<DatingGoals />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
