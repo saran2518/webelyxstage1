@@ -24,13 +24,13 @@ const NameAndAge = () => (
           <p>
             For safety reasons, your name and date of birth can&apos;t be changed once your profile is set up, so please check them carefully during sign-up. We&apos;re building an authentic community, where people show up as who they really are.
           </p>
-          <h2 id="name" className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4 scroll-mt-28 md:scroll-mt-32">
+          <h2 id="name" className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4 scroll-mt-32 md:scroll-mt-36">
             Your name
           </h2>
           <p>
             A name that stays the same helps everyone know who they&apos;re talking to. It also stops anyone from taking on a new identity to get around a report or a block.
           </p>
-          <h2 id="age" className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4 scroll-mt-28 md:scroll-mt-32">
+          <h2 id="age" className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4 scroll-mt-32 md:scroll-mt-36">
             Your date of birth
           </h2>
           <p>

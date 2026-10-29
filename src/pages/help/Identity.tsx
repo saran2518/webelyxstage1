@@ -31,7 +31,7 @@ const Identity = () => (
             <span aria-hidden="true" className="text-muted-foreground">{" · "}</span>
             <Link to="#sexual-orientation" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">Sexual orientation</Link>
           </p>
-          <h2 id="gender" className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4 scroll-mt-28 md:scroll-mt-32">
+          <h2 id="gender" className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4 scroll-mt-32 md:scroll-mt-36">
             Gender
           </h2>
           <p>
@@ -40,13 +40,13 @@ const Identity = () => (
           <p>
             Your selection helps us choose the profiles you see and who sees you. Who you&apos;d like to meet is a separate choice that you make yourself.
           </p>
-          <h2 id="pronouns" className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4 scroll-mt-28 md:scroll-mt-32">
+          <h2 id="pronouns" className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4 scroll-mt-32 md:scroll-mt-36">
             Pronouns
           </h2>
           <p>
             Pronouns are the words people use when they talk about you, such as she/her, he/him or they/them. Sharing yours helps others refer to you correctly. Select up to two. If yours aren&apos;t listed, choose Other (self-describe) and add them in your own words.
           </p>
-          <h2 id="sexual-orientation" className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4 scroll-mt-28 md:scroll-mt-32">
+          <h2 id="sexual-orientation" className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4 scroll-mt-32 md:scroll-mt-36">
             Sexual orientation
           </h2>
           <p>
