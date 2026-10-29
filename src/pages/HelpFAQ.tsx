@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -6,7 +8,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqSections = [
+type FaqItem = { q: string; a: ReactNode };
+type FaqSection = { category: string; items: FaqItem[] };
+
+const faqSections: FaqSection[] = [
   { category: "General", items: [
     { q: "What is Elyxer?", a: "A dating app built to get you on real dates, where you are chosen for who you are." },
     { q: "When does it launch?", a: "Early access is open now. Discovery opens city by city, starting with Bengaluru." },
@@ -14,6 +19,16 @@ const faqSections = [
   { category: "Profile", items: [
     { q: "How do I create my profile?", a: "During sign-up. It reads like a short story about your life." },
     { q: "Can I edit it later?", a: "Yes, anytime. Only your name and date of birth stay fixed." },
+  ] },
+  { category: "Account", items: [
+    { q: "How do I change my phone number?", a: (
+      <>
+        For your security, the number linked to your account can&apos;t be changed.{" "}
+        <Link to="/help/change-phone-number" className="text-primary hover:underline">
+          Read more
+        </Link>
+      </>
+    ) },
   ] },
   { category: "Safety", items: [
     { q: "How does Elyxer keep me safe?", a: "Live selfies, reviewed photos, and your city shown, never your exact location." },
