@@ -24,7 +24,7 @@ const faqSections: FaqSection[] = [
     { q: "How do I change my phone number?", a: (
       <>
         For your security, the number linked to your account can&apos;t be changed.{" "}
-        <Link to="/help/change-phone-number" className="text-primary hover:underline">
+        <Link to="/help/change-phone-number" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
           Read more
         </Link>
       </>
