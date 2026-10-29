@@ -9,6 +9,7 @@ import Product from "./pages/Product";
 import WorldOfDating from "./pages/WorldOfDating";
 import HelpFAQ from "./pages/HelpFAQ";
 import ChangePhoneNumber from "./pages/help/ChangePhoneNumber";
+import ChangeName from "./pages/help/ChangeName";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/world-of-dating" element={<WorldOfDating />} />
           <Route path="/help" element={<HelpFAQ />} />
           <Route path="/help/change-phone-number" element={<ChangePhoneNumber />} />
+          <Route path="/help/change-name" element={<ChangeName />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
