@@ -62,7 +62,7 @@ const Index = () => {
       <div className="relative container mx-auto px-6 pb-10 md:pb-16 pt-32">
         <div className="max-w-[640px]">
           <span className="ls-hero-mobile-label hidden">Showering rain and love in Bengaluru</span>
-          <h1 className="text-[clamp(2.25rem,3.6vw,3.25rem)] font-display font-normal leading-[1.1] tracking-[0.01em] text-primary-foreground animate-fade-up [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
+          <h1 className="text-[clamp(2rem,3vw,2.75rem)] font-display font-normal leading-[1.1] tracking-[0.01em] text-primary-foreground animate-fade-up [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
             Chosen for who you are.
           </h1>
           <p className="mt-5 text-[clamp(1.125rem,1.6vw,1.5rem)] font-display font-normal tracking-[0.01em] text-accent animate-fade-up-delay-1 [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]">Built to get you on real dates.</p>
