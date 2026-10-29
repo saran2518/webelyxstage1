@@ -38,7 +38,7 @@ describe("route scrolling", () => {
     if (!target) throw new Error("Missing anchor");
     target.scrollIntoView = anchorScroll;
     fireEvent.click(view.getByText(label));
-    expect(anchorScroll).toHaveBeenCalledWith({ behavior: "instant", block: "start" });
+    expect(anchorScroll).toHaveBeenCalledWith({ behavior: "smooth", block: "start" });
     expect(scroll).not.toHaveBeenCalled();
   });
 
