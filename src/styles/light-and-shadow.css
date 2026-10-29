@@ -734,6 +734,7 @@
       clamp(480px, 40%, 600px)
       minmax(0px, 1fr);
     grid-template-rows: 96px minmax(0px, 1fr);
+    align-items: stretch;
     background: hsl(var(--ls-ink));
     height: min(100vh, 920px);
     height: min(100svh, 920px);
