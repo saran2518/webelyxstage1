@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -6,7 +8,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqSections = [
+type FaqItem = { q: string; a: ReactNode };
+type FaqSection = { category: string; items: FaqItem[] };
+
+const faqSections: FaqSection[] = [
   { category: "General", items: [
     { q: "What is Elyxer?", a: "A dating app built to get you on real dates, where you are chosen for who you are." },
     { q: "When does it launch?", a: "Early access is open now. Discovery opens city by city, starting with Bengaluru." },
