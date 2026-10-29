@@ -30,10 +30,11 @@ const ChangeName = () => (
             Why your name stays fixed
           </h2>
           <p>
-            A name that stays the same helps everyone know who they&apos;re
-            talking to. It stops anyone from taking on a new identity to get
-            around a report or a block, keeps conversations honest and makes
-            Elyxer a safer place to meet people.
+            We&apos;re building an authentic community, where people show up as
+            who they really are. A name that stays the same helps everyone know
+            who they&apos;re talking to. It also stops anyone from taking on a
+            new identity to get around a report or a block, keeps conversations
+            honest and makes Elyxer a safer place to meet people.
           </p>
 
           <h2 className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4">
