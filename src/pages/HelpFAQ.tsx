@@ -19,6 +19,14 @@ const faqSections: FaqSection[] = [
   { category: "Profile", items: [
     { q: "How do I create my profile?", a: "During sign-up. It reads like a short story about your life." },
     { q: "Can I edit it later?", a: "Yes, anytime. Only your name and date of birth stay fixed." },
+    { q: "How does gender work on Elyxer?", a: (
+      <>
+        Elyxer is an open community. Choose how you identify, and decide whether it shows on your profile.{" "}
+        <Link to="/help/gender-identity" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+          Read more
+        </Link>
+      </>
+    ) },
   ] },
   { category: "Account", items: [
     { q: "How do I change my phone number?", a: (
