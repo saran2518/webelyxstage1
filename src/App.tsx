@@ -12,6 +12,9 @@ import ChangePhoneNumber from "./pages/help/ChangePhoneNumber";
 import ChangeName from "./pages/help/ChangeName";
 import ChangeAge from "./pages/help/ChangeAge";
 import GenderIdentity from "./pages/help/GenderIdentity";
+import Pronouns from "./pages/help/Pronouns";
+import SexualOrientation from "./pages/help/SexualOrientation";
+import DatingGoals from "./pages/help/DatingGoals";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -38,6 +41,9 @@ const App = () => (
           <Route path="/help/change-name" element={<ChangeName />} />
           <Route path="/help/change-age" element={<ChangeAge />} />
           <Route path="/help/gender-identity" element={<GenderIdentity />} />
+          <Route path="/help/pronouns" element={<Pronouns />} />
+          <Route path="/help/sexual-orientation" element={<SexualOrientation />} />
+          <Route path="/help/dating-goals" element={<DatingGoals />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />

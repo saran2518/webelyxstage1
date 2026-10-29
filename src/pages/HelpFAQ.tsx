@@ -27,6 +27,30 @@ const faqSections: FaqSection[] = [
         </Link>
       </>
     ) },
+    { q: "Why do you ask for my pronouns?", a: (
+      <>
+        So others can refer to you correctly. Sharing them on your profile is optional.{" "}
+        <Link to="/help/pronouns" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+          Read more
+        </Link>
+      </>
+    ) },
+    { q: "Why do you ask about sexual orientation?", a: (
+      <>
+        It helps us choose better recommendations for you. Showing it on your profile is optional.{" "}
+        <Link to="/help/sexual-orientation" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+          Read more
+        </Link>
+      </>
+    ) },
+    { q: "What are dating goals?", a: (
+      <>
+        Up to two goals that show what you&apos;re looking for right now.{" "}
+        <Link to="/help/dating-goals" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+          Read more
+        </Link>
+      </>
+    ) },
   ] },
   { category: "Account", items: [
     { q: "How do I change my phone number?", a: (
