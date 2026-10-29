@@ -22,7 +22,7 @@ const faqSections: FaqSection[] = [
     { q: "How does gender work on Elyxer?", a: (
       <>
         Elyxer is an open community. Choose how you identify, and decide whether it shows on your profile.{" "}
-        <Link to="/help/gender-identity" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+        <Link to="/help/identity#gender" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
           Read more
         </Link>
       </>
@@ -30,7 +30,7 @@ const faqSections: FaqSection[] = [
     { q: "Why do you ask for my pronouns?", a: (
       <>
         So others can refer to you correctly. Sharing them on your profile is optional.{" "}
-        <Link to="/help/pronouns" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+        <Link to="/help/identity#pronouns" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
           Read more
         </Link>
       </>
@@ -38,7 +38,7 @@ const faqSections: FaqSection[] = [
     { q: "Why do you ask about sexual orientation?", a: (
       <>
         It helps us choose better recommendations for you. Showing it on your profile is optional.{" "}
-        <Link to="/help/sexual-orientation" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+        <Link to="/help/identity#sexual-orientation" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
           Read more
         </Link>
       </>
@@ -64,7 +64,7 @@ const faqSections: FaqSection[] = [
     { q: "Can I change my name later?", a: (
       <>
         No. Your name can&apos;t be changed once your profile is set up.{" "}
-        <Link to="/help/change-name" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+        <Link to="/help/name-and-age#name" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
           Read more
         </Link>
       </>
@@ -72,7 +72,7 @@ const faqSections: FaqSection[] = [
     { q: "Can I change my age later?", a: (
       <>
         No. Your date of birth can&apos;t be changed once your profile is set up.{" "}
-        <Link to="/help/change-age" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+        <Link to="/help/name-and-age#age" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
           Read more
         </Link>
       </>
