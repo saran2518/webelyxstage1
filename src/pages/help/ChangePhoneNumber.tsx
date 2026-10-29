@@ -23,8 +23,8 @@ const ChangePhoneNumber = () => (
         <div className="space-y-6 font-sans text-base text-muted-foreground leading-relaxed animate-fade-up-delay-2">
           <p>
             For your security, the phone number linked to your Elyxer account
-            cannot be changed. Your number is how we confirm it is really you
-            each time you sign in.
+            cannot be changed. Your number is how we confirm it&apos;s really
+            you each time you sign in.
           </p>
 
           <h2 className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4">
@@ -35,17 +35,17 @@ const ChangePhoneNumber = () => (
             still sign in with that email.
           </p>
           <p>
-            If you cannot sign in at all, write to us and we will help. We
-            cannot move your account to a new number, but we can delete the
-            account linked to your old number. You can then create a fresh
+            If you can&apos;t sign in at all, write to us and we&apos;ll help.
+            We can&apos;t move your account to a new number, but we can delete
+            the account linked to your old number. You can then create a fresh
             account with your current number.
           </p>
 
           <div className="rounded-lg border border-border bg-card px-5 py-4 shadow-soft">
             <p className="font-sans text-sm text-muted-foreground leading-relaxed">
               Please note: deleting your old account permanently erases it,
-              including your profile, photos and conversations. This cannot be
-              undone.
+              including your profile, photos and conversations. This can&apos;t
+              be undone.
             </p>
           </div>
 

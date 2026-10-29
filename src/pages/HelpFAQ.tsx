@@ -23,7 +23,7 @@ const faqSections: FaqSection[] = [
   { category: "Account", items: [
     { q: "How do I change my phone number?", a: (
       <>
-        For your security, the number linked to your account cannot be changed.{" "}
+        For your security, the number linked to your account can&apos;t be changed.{" "}
         <Link to="/help/change-phone-number" className="text-primary hover:underline">
           Read more
         </Link>
