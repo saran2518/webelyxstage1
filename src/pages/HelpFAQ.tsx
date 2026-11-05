@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -148,6 +149,84 @@ const HelpFAQ = () => (
             </Accordion>
           </div>
         ))}
+
+        <section id="delete-account" aria-labelledby="delete-account-heading" className="scroll-mt-28 md:scroll-mt-32 mt-20 pt-16 border-t border-border">
+          <h2 id="delete-account-heading" className="tracking-[0.01em] text-2xl md:text-3xl font-display font-normal text-foreground mb-8">
+            Delete your account and data
+          </h2>
+          <div className="space-y-6 font-sans text-base text-muted-foreground leading-relaxed">
+            <p>
+              Elyxer is an app by ProApex Innovations Private Limited. You can delete your Elyxer account and its data at any time.
+            </p>
+
+            <h3 className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4">
+              Delete in the app
+            </h3>
+            <p>
+              Open Elyxer and go to Settings › Data and Privacy › Delete account.
+            </p>
+
+            <h3 className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4">
+              Delete without the app
+            </h3>
+            <p>
+              Don&apos;t have the app any more? Email{" "}
+              <a href="mailto:support@elyxer.co" className="ls-inline-email">support@elyxer.co</a>{" "}
+              from any email address, with the subject &quot;Delete my account&quot; and the phone number on your account. We will confirm by email when your account has been deleted.
+            </p>
+            <div className="pt-2">
+              <Button asChild className="btn-glow h-auto rounded-lg px-7 py-3.5 font-sans text-sm font-medium shadow-soft">
+                <a href="mailto:support@elyxer.co?subject=Delete%20my%20account">
+                  Email support@elyxer.co
+                </a>
+              </Button>
+            </div>
+
+            <h3 className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4">
+              What is deleted
+            </h3>
+            <p>
+              Your profile, photos, Moments, Vibes, Invites, connections and chats are removed from Elyxer straight away.
+            </p>
+
+            <h3 className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4">
+              What we keep, and for how long
+            </h3>
+            <p>
+              Some data must be kept by law. It is moved to a locked archive with restricted access, used only for legal and government requests, and then erased:
+            </p>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Sign-up details and content removed for breaking our rules: 180 days</li>
+              <li>Personal data, traffic data and processing logs: 1 year</li>
+              <li>Payment and tax records: for the period required by tax law</li>
+            </ul>
+            <p>
+              If you sign up again with the same phone number, you start completely fresh.
+            </p>
+
+            <h3 className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4">
+              Get a copy of your data
+            </h3>
+            <p>
+              Email{" "}
+              <a href="mailto:support@elyxer.co" className="ls-inline-email">support@elyxer.co</a>{" "}
+              with the subject &quot;Data request&quot;.
+            </p>
+
+            <h3 className="tracking-[0.01em] text-lg font-display font-normal text-foreground pt-4">
+              Questions or complaints
+            </h3>
+            <p>
+              Questions:{" "}
+              <a href="mailto:support@elyxer.co" className="ls-inline-email">support@elyxer.co</a>
+            </p>
+            <p>
+              Complaints:{" "}
+              <a href="mailto:grievance@elyxer.co" className="ls-inline-email">grievance@elyxer.co</a>{" "}
+              (Grievance Officer: Sarankumar Kothandakumar)
+            </p>
+          </div>
+        </section>
 
         <div className="text-center mt-16">
           <p className="font-sans text-sm text-muted-foreground mb-3">
