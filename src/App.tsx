@@ -14,6 +14,7 @@ import NameAndAge from "./pages/help/NameAndAge";
 import DatingGoals from "./pages/help/DatingGoals";
 import InterestedIn from "./pages/help/InterestedIn";
 import Contact from "./pages/Contact";
+import DeleteAccount from "./pages/DeleteAccount";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/help/dating-goals" element={<DatingGoals />} />
           <Route path="/help/interested-in" element={<InterestedIn />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
