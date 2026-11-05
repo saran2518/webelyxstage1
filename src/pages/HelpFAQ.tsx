@@ -101,7 +101,7 @@ const faqSections: FaqSection[] = [
     { q: "How do I get or delete my data?", a: (
       <>
         To delete your account, open Elyxer and go to Settings › Data and Privacy › Delete account, or visit our{" "}
-        <Link to="/delete-account" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
+        <Link to="/help#delete-account" className="text-primary underline underline-offset-4 decoration-1 hover:opacity-75 transition-opacity">
           Delete account page
         </Link>
         . For a copy of your data, email support@elyxer.co with the subject &quot;Data request&quot;.

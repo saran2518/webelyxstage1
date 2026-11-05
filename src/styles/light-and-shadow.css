@@ -108,6 +108,22 @@
   border-radius: 999px;
   box-shadow: none;
 }
+/* Inline email links inside copy: plain gold underlined text, not a pill */
+.light-shadow main a.ls-inline-email {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: hsl(var(--ls-deep-gold));
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  box-shadow: none;
+}
+.light-shadow main a.ls-inline-email:hover {
+  transform: none;
+  opacity: 0.75;
+}
 /* Plain support email line: not treated as a pill CTA */
 .light-shadow main a.ls-plain-email {
   background: none;
