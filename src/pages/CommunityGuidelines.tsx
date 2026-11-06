@@ -8,13 +8,16 @@ const CommunityGuidelines = () => (
     <section className="pt-28 sm:pt-32 md:pt-44 pb-12 md:pb-20 border-b border-border">
       <div className="container mx-auto px-5 sm:px-6 max-w-4xl">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-normal text-foreground tracking-[0.01em] animate-fade-up-delay-1 leading-[1.05]">Community Guidelines</h1>
+        <p className="mt-8 md:mt-10 font-sans text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground animate-fade-up-delay-2">
+          Last updated November 01, 2026 · Version 1
+        </p>
       </div>
     </section>
     <article className="pb-20 md:pb-32">
       <div className="container mx-auto px-5 sm:px-6 max-w-3xl">
         <Section id="purpose-and-scope" title="1. Purpose and scope">
           <p>Elyxer is an adults-only dating and social connection service. These Guidelines apply to all activity on Elyxer, including profiles, photos, Moments, Vibes, Invites, messages, virtual sessions and AI-assisted features.</p>
-          <p>Be truthful, respect boundaries and report harm. A match, payment, Vibe, Invite or accepted date does not entitle anyone to another person’s attention, information or consent.</p>
+          <p>Be truthful, respect boundaries and report harm. A connection, payment, Vibe, Invite or accepted date does not entitle anyone to another person’s attention, information or consent.</p>
         </Section>
         <Section id="adults-only-and-authentic-profiles" title="2. Adults only and authentic profiles">
           <ul className="list-disc pl-5 space-y-2">
@@ -45,7 +48,7 @@ const CommunityGuidelines = () => (
         </Section>
         <Section id="sexual-content-and-exploitation" title="5. Sexual content and exploitation">
           <p>Do not upload, request, send or link to pornography, sexually explicit images or videos, depictions of sexual acts, non-consensual intimate content, sexual extortion, trafficking or commercial sexual services. Do not send unsolicited sexual messages or intimate images, or pressure anyone to provide intimate material.</p>
-          <p>Profile and Moment content must be suitable for a non-explicit dating environment. Do not use nudity, underwear-focused or sexually suggestive primary profile images. Ordinary sports, beach or other activity photos are assessed in context.</p>
+          <p>Profile and Moment content must be suitable for a non-explicit dating environment. Do not use nudity, underwear-focused or sexually suggestive profile images. Ordinary sports, beach or other activity photos are assessed in context.</p>
         </Section>
         <Section id="scams-and-prohibited-commercial-activity" title="6. Scams and prohibited commercial activity">
           <p>Do not use Elyxer to solicit money, loans, gift cards, investments, cryptocurrency, financial credentials or payment-card security information. Romance scams, phishing, blackmail, fraudulent fundraising and deceptive links are prohibited.</p>
