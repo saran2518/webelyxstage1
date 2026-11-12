@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import { faqSchema } from "@/lib/faq-schema";
 import {
   Accordion,
   AccordionContent,
@@ -112,7 +113,7 @@ const faqSections: FaqSection[] = [
 ];
 
 const HelpFAQ = () => (
-  <Layout>
+  <Layout structuredData={[faqSchema(faqSections)]}>
     <section className="pt-32 md:pt-44 pb-16">
       <div className="container mx-auto px-6 max-w-3xl text-center">
         <h1 className="tracking-[0.01em] text-4xl md:text-5xl font-display font-normal text-foreground animate-fade-up">

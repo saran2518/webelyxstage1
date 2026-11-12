@@ -1,5 +1,9 @@
 {
   "name": "Elyxer",
+  "short_name": "Elyxer",
+  "start_url": "/",
+  "display": "standalone",
+  "description": "Elyxer is a dating app built to get you on real dates. Chosen for who you are.",
   "icons": [
     {
       "src": "/icon-192.png?v=2",
