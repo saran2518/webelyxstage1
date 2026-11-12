@@ -1,4 +1,5 @@
 # Project rules
+- Keep the animated share preview as public/og-video.mp4 with static og:video tags only in index.html, outside Helmet ownership, so non-JavaScript Apple crawlers can read it without changing page presentation.
 - Keep technical SEO in the shared Seo component mounted by Layout, with the route catalogue in content/seo.ts and FAQ JSON-LD derived from rendered answer nodes, so visible page copy stays independent and schemas cannot drift.
 - Keep the classic Vite hosting pipeline unchanged; per-route Helmet tags are client-rendered and the static head provides social-crawler fallbacks because build-time browser prerendering is not verified on Lovable hosting.
 - Use the shared legal Section primitive and existing legal hero classes for Community Guidelines, without supplementary copy or metadata, to preserve the supplied document and legal-page styling.

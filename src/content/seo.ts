@@ -3,7 +3,7 @@ export const shareImage = `${siteUrl}/og-image.jpg`;
 
 export const seoPages: Record<string, { title: string; description: string }> = {
   "/": {
-    "title": "Elyxer · Dating app in Bengaluru | Chosen for who you are",
+    "title": "Elyxer · Built to get you on real dates | Chosen for who you are",
     "description": "Discover Elyxer, a dating app bringing people together in Bengaluru. Share your story, feel seen for who you are and turn a first hello into a real date."
   },
   "/what-we-do": {

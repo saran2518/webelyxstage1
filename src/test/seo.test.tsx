@@ -10,7 +10,7 @@ describe("technical SEO rules", () => {
     expect(Object.keys(seoPages)).toHaveLength(15);
     expect(seoPages["/delete-account"]).toBeUndefined();
     expect(seoPages["/help/change-name"]).toBeUndefined();
-    expect(seoPages["/"].title).toBe("Elyxer · Dating app in Bengaluru | Chosen for who you are");
+    expect(seoPages["/"].title).toBe("Elyxer · Built to get you on real dates | Chosen for who you are");
     expect(new Set(Object.values(seoPages).map(page => page.title)).size).toBe(15);
   });
   it("keeps every description between 140 and 160 characters without forbidden words", () => {
