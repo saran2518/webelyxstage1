@@ -1,582 +1,238 @@
 import Layout from "@/components/Layout";
+import { LegalTable } from "@/components/legal/LegalPrimitives";
+import { LegalDocHero, LegalContents, DocSection, P, UL, OL, LI, A, H3 } from "@/components/legal/LegalDoc";
 
-const Section = ({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) => (
-  <section id={id} className="py-10 md:py-20 border-b border-border last:border-b-0 scroll-mt-24">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-normal text-foreground mb-6 md:mb-8 tracking-[0.01em]">
-      {title}
-    </h2>
-    <div className="space-y-4 md:space-y-5 font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
-      {children}
-    </div>
-  </section>
-);
-
-const SubSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="mt-8 md:mt-10">
-    <h3 className="text-lg sm:text-xl md:text-2xl font-display font-normal text-foreground mb-3 md:mb-4 tracking-[0.01em]">
-      {title}
-    </h3>
-    <div className="space-y-3 md:space-y-4">{children}</div>
-  </div>
-);
-
-const Table = ({ headers, rows }: { headers: string[]; rows: string[][] }) => (
-  <div className="my-5 md:my-6">
-    {/* Desktop / tablet: real table */}
-    <div className="hidden sm:block overflow-x-auto rounded-2xl border border-border bg-secondary/40 shadow-soft">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="border-b border-border">
-            {headers.map((h) => (
-              <th
-                key={h}
-                className="text-left font-sans text-xs font-semibold uppercase tracking-widest text-primary px-5 py-4"
-              >
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, i) => (
-            <tr key={i} className="border-t border-border/60">
-              {row.map((cell, j) => (
-                <td key={j} className="px-5 py-4 font-sans text-sm text-foreground/80 align-top leading-relaxed">
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-
-    {/* Mobile: stacked cards */}
-    <div className="sm:hidden space-y-4">
-      {rows.map((row, i) => (
-        <div
-          key={i}
-          className="rounded-2xl border border-border bg-secondary/40 p-5 shadow-soft space-y-3"
-        >
-          {row.map((cell, j) => (
-            <div key={j} className="space-y-1">
-              <p className="font-sans text-[10px] font-semibold uppercase tracking-widest text-primary">
-                {headers[j]}
-              </p>
-              <p className="font-sans text-sm text-foreground/80 leading-relaxed">{cell}</p>
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  </div>
-);
-
-const Callout = ({ title, children }: { title?: string; children: React.ReactNode }) => (
-  <div className="my-5 md:my-6 rounded-2xl border-l-2 border-primary bg-secondary/50 p-5 sm:p-6 md:p-7">
-    {title && (
-      <p className="font-display text-xs font-normal uppercase tracking-[0.01em] text-primary mb-2 md:mb-3">
-        {title}
-      </p>
-    )}
-    <div className="font-sans text-sm md:text-base text-foreground/80 leading-relaxed">{children}</div>
-  </div>
-);
+const contents = [{"id": "section-1", "title": "1. WHAT INFORMATION DO WE COLLECT?"}, {"id": "section-2", "title": "2. HOW DO WE PROCESS YOUR INFORMATION?"}, {"id": "section-3", "title": "3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?"}, {"id": "section-4", "title": "4. VISIBILITY AND INTERACTION INFORMATION"}, {"id": "section-5", "title": "5. REPORTS, INVESTIGATIONS AND ACCESS TO CONVERSATIONS"}, {"id": "section-6", "title": "6. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?"}, {"id": "section-7", "title": "7. DO WE OFFER ARTIFICIAL INTELLIGENCE-BASED PRODUCTS?"}, {"id": "section-8", "title": "8. HOW LONG DO WE KEEP YOUR INFORMATION?"}, {"id": "section-9", "title": "9. HOW DO WE KEEP YOUR INFORMATION SAFE?"}, {"id": "section-10", "title": "10. DO WE COLLECT INFORMATION FROM MINORS?"}, {"id": "section-11", "title": "11. WHAT ARE YOUR PRIVACY RIGHTS?"}, {"id": "section-12", "title": "12. CONTROLS FOR DO-NOT-TRACK FEATURES"}, {"id": "section-13", "title": "13. DO WE MAKE UPDATES TO THIS NOTICE?"}, {"id": "section-14", "title": "14. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?"}, {"id": "section-15", "title": "15. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?"}];
 
 const PrivacyPolicy = () => (
   <Layout>
-    <section className="pt-28 sm:pt-32 md:pt-44 pb-12 md:pb-20 border-b border-border">
-      <div className="container mx-auto px-5 sm:px-6 max-w-4xl">
-        <p className="font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-primary mb-4 md:mb-6 animate-fade-up">
-          Legal · Privacy
-        </p>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-normal text-foreground tracking-[0.01em] animate-fade-up-delay-1 leading-[1.05]">
-          Privacy Policy
-        </h1>
-        <p className="mt-6 md:mt-8 max-w-2xl font-sans text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed animate-fade-up-delay-2">
-          How PROAPEX INNOVATIONS PRIVATE LIMITED collects, processes and safeguards your personal data
-          across the Elyxer experience.
-        </p>
-        <div className="mt-8 md:mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-y-2 sm:gap-y-3 sm:gap-x-10 font-sans text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground animate-fade-up-delay-3">
-          <span><span className="text-foreground/60">Effective</span> · [INSERT DATE]</span>
-          <span><span className="text-foreground/60">Updated</span> · [INSERT DATE]</span>
-          <span><span className="text-foreground/60">Version</span> · 1.0</span>
-        </div>
-      </div>
-    </section>
-
+    <LegalDocHero eyebrow="Legal · Privacy" title="Privacy Policy" updated="November 18, 2026" />
     <article className="pb-20 md:pb-32">
       <div className="container mx-auto px-5 sm:px-6 max-w-3xl">
-        <Callout title="Important Notice">
-          This Privacy Policy applies to all users of the Elyxer application and related services operated by
-          PROAPEX INNOVATIONS PRIVATE LIMITED. By registering or using Elyxer, you acknowledge that you have read,
-          understood, and agreed to the collection and use of your personal data as described herein. This policy is
-          compliant with the Digital Personal Data Protection Act, 2023 (DPDP Act) and the Information Technology Act,
-          2000 and Rules thereunder.
-        </Callout>
-
-        <Section title="1. About Us">
-          <p>
-            Elyxer is a dating and social connection application owned and operated by PROAPEX INNOVATIONS PRIVATE
-            LIMITED, a company incorporated under the Companies Act, 2013 in India.
-          </p>
-          <ul className="list-none space-y-1">
-            <li><strong className="text-foreground">Registered Name:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED</li>
-            <li><strong className="text-foreground">Application Name:</strong> Elyxer</li>
-            <li><strong className="text-foreground">Registered Address:</strong> Unit 101, Oxford Towers, 139, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka - 560008, India</li>
-            <li><strong className="text-foreground">Email:</strong> support@elyxer.co</li>
-            <li><strong className="text-foreground">Website:</strong> www.elyxer.co</li>
-          </ul>
-          <p>
-            <strong className="text-foreground">Data Fiduciary:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED is the
-            Data Fiduciary under the Digital Personal Data Protection Act, 2023, and is responsible for all decisions
-            relating to the processing of your personal data.
-          </p>
-        </Section>
-
-        <Section title="2. Scope and Applicability">
-          <p>This Privacy Policy applies to:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>All users who download, install, register, or use the Elyxer mobile application;</li>
-            <li>All personal data collected through the app, our website, customer support channels, and any related services;</li>
-            <li>Users located in India. If you access Elyxer from outside India, please be aware that your data may be processed in India and in AWS data centres outside India.</li>
-          </ul>
-          <p>Elyxer is strictly intended for users who are 18 years of age or older. We enforce this as follows:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>During registration, users are required to enter their date of birth. Our system automatically calculates the user's age from this entry.</li>
-            <li>Users are then shown their calculated age and asked to explicitly confirm it before proceeding.</li>
-            <li>Accounts where the entered date of birth indicates the user is below 18 years of age are automatically placed on hold and access to the application is suspended.</li>
-            <li>A held account may only be reactivated by our support team upon the user providing valid proof of age (such as a government-issued ID). Until such proof is verified and approved, the account remains inaccessible.</li>
-            <li>We do not knowingly collect or process personal data of persons below the age of 18. If we discover that a minor has provided data without valid age verification, we will permanently delete such data.</li>
-          </ul>
-        </Section>
-
-        <Section title="3. Personal Data We Collect">
-          <p>
-            We collect the following categories of personal data during your use of Elyxer. Where data is classified as
-            Sensitive Personal Data under the DPDP Act 2023, explicit consent is obtained separately before collection.
-          </p>
-
-          <SubSection title="3.1 Onboarding & Identity Data">
-            <Table
-              headers={["Data Point", "Purpose", "Sensitivity"]}
-              rows={[
-                ["Mobile Number", "Account verification via OTP only; not stored post-verification", "Moderate"],
-                ["Full Name", "Display name on your profile", "Low"],
-                ["Email Address", "Account verification & service notifications", "Moderate"],
-                ["Date of Birth / Age", "Age verification (18+ gate); profile display", "Moderate"],
-              ]}
-            />
-          </SubSection>
-
-          <SubSection title="3.2 Sensitive Personal Data">
-            <Table
-              headers={["Data Point", "Purpose", "Legal Basis"]}
-              rows={[
-                ["Gender & Gender Identity", "Profile personalisation and matching", "Explicit Consent (DPDP Act, S.4)"],
-                ["Pronouns", "Profile display and user experience", "Explicit Consent (DPDP Act, S.4)"],
-                ["Sexual Orientation", "Matching preferences and dating goals", "Explicit Consent (DPDP Act, S.4)"],
-                ["Dating Gender Preference", "Core matching functionality", "Explicit Consent (DPDP Act, S.4)"],
-                ["Dating Goals", "Matching quality and compatibility", "Explicit Consent (DPDP Act, S.4)"],
-              ]}
-            />
-            <Callout>
-              <strong className="text-foreground">Important:</strong> The sensitive personal data listed above is
-              collected only after your explicit, informed, and separate consent. You may withdraw this consent at any
-              time through your account settings, though doing so may affect certain features of Elyxer.
-            </Callout>
-          </SubSection>
-
-          <SubSection title="3.3 Profile & Lifestyle Data">
-            <Table
-              headers={["Data Point", "Purpose", "Sensitivity"]}
-              rows={[
-                ["Education", "Profile display and matching", "Low"],
-                ["Profession / Occupation", "Profile display and matching", "Low"],
-                ["Location (City/Area)", "Proximity-based matching", "Moderate"],
-                ["Height", "Profile display preference", "Low"],
-                ["Languages Spoken", "Compatibility matching", "Low"],
-                ["Profile Photos", "Profile display; AI moderation for safety", "Moderate"],
-                ["Selfie Badge Photo", "Anti-catfishing trust signal; displayed on profile; real-time camera capture", "Moderate"],
-              ]}
-            />
-          </SubSection>
-
-          <SubSection title="3.3.1 Selfie Badge Feature">
-            <p>Elyxer offers an optional Selfie Badge feature. When you choose to participate:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>You take a real-time selfie using your device camera within the app;</li>
-              <li>The selfie is displayed on your public Elyxer profile alongside a Selfie Badge indicator visible to other users;</li>
-              <li>The Selfie Badge signals to other users that you have uploaded a real-time photo — it does not constitute identity verification or any guarantee of authenticity;</li>
-              <li>Your selfie is stored on our secure AWS servers for as long as it remains on your profile;</li>
-              <li>You may delete your selfie at any time through your profile settings. Upon deletion, the Selfie Badge is immediately removed from your profile;</li>
-              <li>Participation in the Selfie Badge feature is entirely voluntary. Choosing not to participate does not affect your access to any other Elyxer features.</li>
-            </ul>
-            <Callout title="Selfie Badge Disclaimer">
-              The Selfie Badge indicates that a user has uploaded a real-time selfie taken within the Elyxer app. It
-              does not mean that the user's identity has been verified, that they are who they claim to be, or that
-              their profile information is accurate. Elyxer does not perform identity verification. You should exercise
-              caution when interacting with all users regardless of whether they hold a Selfie Badge.
-            </Callout>
-          </SubSection>
-
-          <SubSection title="3.4 AI-Generated Profile Data">
-            <p>When you provide descriptive inputs during onboarding (such as your bio, interests, and narratives), Elyxer uses artificial intelligence to:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Process your free-text inputs and convert them into structured profile data;</li>
-              <li>Generate your Profile Studio components including My Story, Interests, Narratives, and Join Me For sections;</li>
-              <li>Power the Magic Search feature, which uses AI to identify users with similar interests and compatibility signals.</li>
-            </ul>
-            <p>
-              You retain the right to review, edit, or delete any AI-generated profile content through your account
-              settings. AI-generated data is derived from information you voluntarily provide and is not used to make
-              legally binding automated decisions about you.
-            </p>
-          </SubSection>
-
-          <SubSection title="3.5 Technical & Usage Data">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Device information (device type, OS version, unique device identifiers);</li>
-              <li>App usage data (features used, session duration, interaction logs);</li>
-              <li>Log data (IP address, timestamps, crash reports);</li>
-              <li>Push notification tokens (for service notifications).</li>
-            </ul>
-          </SubSection>
-
-          <SubSection title="3.6 Payment & Subscription Data">
-            <p>
-              For paid subscription features, payment processing is handled by our third-party payment gateway
-              partner(s). We do not store your full card numbers or CVV on our servers. We retain:
-            </p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Transaction reference IDs and subscription status;</li>
-              <li>Billing name and email for invoice generation;</li>
-              <li>Payment history for dispute resolution.</li>
-            </ul>
-          </SubSection>
-        </Section>
-
-        <Section title="4. How We Collect Your Data">
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Directly from you during account registration and onboarding;</li>
-            <li>Through your active use of app features (profile updates, searches, interactions);</li>
-            <li>Through your device camera when you voluntarily use the Selfie Badge feature — camera access is requested only at the moment you initiate this feature;</li>
-            <li>Automatically via device and usage tracking technologies;</li>
-            <li>From third-party services where you log in via Google or Apple Sign-In (limited to email and name);</li>
-            <li>From payment processors upon completion of a subscription transaction.</li>
-          </ul>
-        </Section>
-
-        <Section title="5. Purpose of Processing and Legal Basis">
-          <Table
-            headers={["Purpose", "Legal Basis", "Data Used"]}
-            rows={[
-              ["Account creation & verification", "Contractual necessity", "Mobile, Email, Name"],
-              ["Core matching & recommendations", "Explicit Consent", "Sensitive data, preferences"],
-              ["AI profile generation", "Explicit Consent + Legitimate Interest", "Profile inputs, photos"],
-              ["Magic Search feature", "Explicit Consent", "Interests, preferences"],
-              ["Service notifications & alerts", "Contractual necessity", "Email, Push token"],
-              ["Subscription & billing", "Contractual necessity", "Payment data"],
-              ["Selfie Badge feature", "Explicit Consent", "Real-time selfie photo"],
-              ["Safety & fraud prevention", "Legal obligation", "Usage logs, device data"],
-              ["Product improvement & analytics", "Legitimate Interest", "Anonymised usage data"],
-              ["Legal compliance", "Legal obligation", "As required by law"],
-            ]}
-          />
-        </Section>
-
-        <Section title="6. Data Storage and Infrastructure">
-          <p>
-            Elyxer uses Amazon Web Services (AWS) as its cloud infrastructure provider. Our primary data infrastructure
-            is hosted on AWS ap-south-1 (Mumbai, India). For operational requirements such as disaster recovery,
-            performance, and service reliability, certain data may also be processed on additional AWS regions globally
-            (including but not limited to Asia Pacific, US East, and EU regions).
-          </p>
-          <p>
-            We are committed to keeping your data stored in India as our primary location. Where data is transferred
-            outside India, we ensure such transfers are carried out in compliance with applicable Indian law, including
-            the DPDP Act 2023, and that AWS maintains equivalent data protection standards through internationally
-            recognised certifications including ISO 27001 and SOC 2 Type II.
-          </p>
-          <p>
-            As and when the Central Government of India notifies specific countries or frameworks for permissible
-            cross-border data transfers under the DPDP Act, we will ensure full compliance with such notifications and
-            update this policy accordingly.
-          </p>
-        </Section>
-
-        <Section title="7. Data Retention">
-          <Table
-            headers={["Data Category", "Retention Period", "Notes"]}
-            rows={[
-              ["Account & profile data", "Until account deletion + 90 days", "Retained for dispute resolution"],
-              ["Deactivated account data", "Until reactivation or deletion request", "Full data retained; profile hidden from other users"],
-              ["Sensitive personal data", "Until consent withdrawn or account deleted", "Deleted upon withdrawal of consent"],
-              ["AI-generated profile data", "Until account deletion", "User may edit/delete anytime"],
-              ["Payment transaction records", "7 years", "Required by Indian tax laws"],
-              ["Usage & log data", "12 months rolling", "Anonymised after 12 months"],
-              ["Verification data (OTP logs)", "30 days", "Deleted post-verification period"],
-            ]}
-          />
-          <p>
-            Upon deletion of your account, we will delete or anonymise your personal data within 90 days, except where
-            retention is required by applicable law.
-          </p>
-
-          <SubSection title="7.1 Account Deactivation vs Deletion">
-            <p>Elyxer offers two options for users who wish to stop using the app:</p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong className="text-foreground">Deactivation (Pause):</strong> Your account and profile are hidden from other users immediately. Your data is fully retained on our servers. You may reactivate your account at any time and your profile will be restored exactly as you left it. Deactivation does not trigger any data deletion.</li>
-              <li><strong className="text-foreground">Permanent Deletion:</strong> Your account and all associated personal data (except data we are legally required to retain) are permanently deleted within 90 days of your request. This action is irreversible. Deleted accounts cannot be recovered.</li>
-            </ul>
-            <p>
-              To deactivate or delete your account, go to Account Settings &gt; Privacy Controls, or contact our
-              support team at support@elyxer.co.
-            </p>
-          </SubSection>
-        </Section>
-
-        <Section title="8. Data Sharing and Disclosure">
-          <p>
-            We do not sell your personal data to any third party. We may share your data only in the following
-            circumstances:
-          </p>
-          <SubSection title="8.1 Service Providers">
-            <p>We share data with trusted third-party service providers who process data on our behalf under strict data processing agreements, including:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Cloud infrastructure: Amazon Web Services (AWS);</li>
-              <li>Payment processing: [INSERT PAYMENT GATEWAY NAME e.g. Razorpay / PayU];</li>
-              <li>Analytics: [e.g. Firebase Analytics / Mixpanel] — anonymised data only;</li>
-              <li>Customer support tools: [e.g. Freshdesk / Intercom];</li>
-              <li>SMS / OTP verification: [e.g. Exotel / MSG91].</li>
-            </ul>
-          </SubSection>
-          <SubSection title="8.2 Legal Obligations">
-            <p>We may disclose your data to law enforcement, government agencies, or courts when required by law, court order, or lawful governmental request, including under the Information Technology Act, 2000 and applicable Rules.</p>
-          </SubSection>
-          <SubSection title="8.3 Business Transfers">
-            <p>In the event of a merger, acquisition, or sale of all or part of our business, your personal data may be transferred to the successor entity. You will be notified of such transfer and any material changes to this policy.</p>
-          </SubSection>
-          <SubSection title="8.4 With Your Consent">
-            <p>We may share your data with other parties where you have given explicit consent to do so.</p>
-          </SubSection>
-        </Section>
-
-        <Section title="9. Your Rights Under the DPDP Act 2023">
-          <p>As a Data Principal under the Digital Personal Data Protection Act, 2023, you have the following rights with respect to your personal data:</p>
-          <Table
-            headers={["Right", "What It Means", "How to Exercise"]}
-            rows={[
-              ["Right to Access", "Know what data we hold about you", "Account Settings > My Data"],
-              ["Right to Correction", "Correct inaccurate or incomplete data", "Edit Profile or Contact Us"],
-              ["Right to Erasure", "Request deletion of your personal data", "Account Settings > Delete Account"],
-              ["Right to Grievance Redressal", "Raise complaints about data processing", "Contact Grievance Officer (see below)"],
-              ["Right to Withdraw Consent", "Withdraw consent for sensitive data processing", "Account Settings > Privacy Controls"],
-              ["Right to Nominate", "Nominate someone to exercise rights on your behalf in case of death/incapacity", "Contact Grievance Officer"],
-            ]}
-          />
-          <p>We will respond to all valid requests within 30 days of receipt. In complex cases, we may request an extension and will notify you accordingly.</p>
-        </Section>
-
-        <Section title="10. Grievance Redressal">
-          <p>
-            In accordance with the Information Technology Act, 2000, IT (Intermediary Guidelines and Digital Media
-            Ethics Code) Rules, 2021, and the DPDP Act 2023, we have appointed a Grievance Officer to address concerns
-            regarding the processing of your personal data.
-          </p>
-          <p>
-            If you are not satisfied with our response, you may escalate your complaint to the Data Protection Board of
-            India, once constituted under the DPDP Act 2023.
-          </p>
-        </Section>
-
-        <Section title="11. Data Security">
-          <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, loss, alteration, or disclosure. Our security measures include:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>End-to-end encryption for data in transit (TLS 1.2 or higher);</li>
-            <li>Encryption of data at rest for sensitive personal data categories;</li>
-            <li>Role-based access controls limiting internal access to personal data;</li>
-            <li>Regular security audits and vulnerability assessments;</li>
-            <li>AWS security controls including VPC, IAM, and CloudTrail logging;</li>
-            <li>Incident response and breach notification procedures.</li>
-          </ul>
-          <p>In the event of a personal data breach that is likely to result in a risk to your rights, we will notify you and the relevant authorities as required under the DPDP Act 2023.</p>
-        </Section>
-
-        <Section title="12. Artificial Intelligence and Automated Processing">
-          <p>Elyxer uses AI and machine learning in the following ways:</p>
-          <SubSection title="12.1 AI Profile Generation (Profile Studio)">
-            <p>Your free-text inputs during onboarding are processed by our AI to generate structured profile sections (My Story, Interests, Narratives, Join Me For). This processing helps create richer, more expressive profiles. You can edit or delete any AI-generated content at any time.</p>
-          </SubSection>
-          <SubSection title="12.2 Magic Search">
-            <p>Our Magic Search feature uses AI algorithms to identify and suggest users with similar interests and compatible traits. This involves automated analysis of your profile data and preferences. This feature does not produce legally binding decisions and is intended purely to facilitate connections between users.</p>
-            <p>You have the right to opt out of AI-based profiling features by contacting us at support@elyxer.co or through your privacy settings. Opting out may limit certain features of the application.</p>
-          </SubSection>
-          <SubSection title="12.3 Profile Photo and Content Moderation">
-            <p>All profile photos and bio content uploaded by users are subject to moderation to ensure the safety and integrity of the Elyxer community. Our moderation process uses a combination of:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Automated AI scanning — profile photos and text inputs are automatically reviewed for content that violates our Community Guidelines, including explicit, offensive, or inappropriate material;</li>
-              <li>Manual review by our trust and safety team — flagged content is escalated to human reviewers for a final determination.</li>
-            </ul>
-            <p>Photos or content found to be in violation of our guidelines may be removed without prior notice. Repeated violations may result in account suspension or permanent termination. Users may appeal any moderation decision by contacting grievance@elyxer.co.</p>
-            <p>Please note: our AI moderation systems process your photos solely for safety and policy compliance purposes. This processing does not constitute biometric identification and the results are not used for any purpose beyond content moderation.</p>
-          </SubSection>
-        </Section>
-
-        <Section title="13. Messaging, Chat and Virtual Date Rooms">
-          <p>Elyxer facilitates connections through a unique interaction system — users can send Invites, express interest through Vibes, and when both users Vibe Back, a chat conversation is unlocked. Users may also engage in Virtual Date Rooms for real-time interaction.</p>
-          <SubSection title="13.1 How Our Interaction System Works">
-            <p>The Elyxer connection flow works as follows:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li><strong className="text-foreground">Invite:</strong> A user sends an invite to another user expressing interest;</li>
-              <li><strong className="text-foreground">Vibe:</strong> A user expresses a positive reaction to another user's profile or Moment;</li>
-              <li><strong className="text-foreground">Vibe Back:</strong> When both users Vibe each other, a chat conversation is automatically unlocked;</li>
-              <li><strong className="text-foreground">Chat:</strong> Text-based messaging between two users who have mutually Vibed;</li>
-              <li><strong className="text-foreground">Virtual Date Room:</strong> A dedicated in-app space for real-time interaction between connected users.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="13.2 Data Collected Through Messaging">
-            <p>When you use Elyxer's messaging and interaction features, we collect and process the following data:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Content of text messages sent and received through the chat feature;</li>
-              <li>Invite and Vibe interaction logs (who sent, who received, timestamps);</li>
-              <li>Virtual Date Room session metadata (session duration, participants, timestamps);</li>
-              <li>Message delivery and read status;</li>
-              <li>Any media or content shared within chats (where applicable).</li>
-            </ul>
-          </SubSection>
-          <SubSection title="13.3 Message Storage and Encryption">
-            <p>Your chat messages and interaction data are stored on our secure AWS infrastructure. We implement the following protections:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>All messages and interaction data are encrypted at rest using industry-standard encryption;</li>
-              <li>All data in transit between your device and our servers is protected using TLS 1.2 or higher;</li>
-              <li>Access to message content is strictly limited to authorised personnel for safety investigation purposes only.</li>
-            </ul>
-            <p>Please note: Elyxer does not currently offer end-to-end encryption (E2E) for messages. This means message content is accessible to our systems for moderation, safety, and legal compliance purposes. We will update this policy if E2E encryption is implemented in future.</p>
-          </SubSection>
-          <SubSection title="13.4 Virtual Date Rooms">
-            <p>Virtual Date Rooms enable real-time interaction between connected users. We wish to clarify:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Virtual Date Room sessions are not recorded or stored by Elyxer;</li>
-              <li>Session metadata (duration, participants, timestamps) is retained for 90 days for safety and operational purposes;</li>
-              <li>Users are solely responsible for their conduct during Virtual Date sessions and must comply with our Community Guidelines at all times.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="13.5 Message Data Upon Account Deletion">
-            <p>When you permanently delete your Elyxer account:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Your chat messages and interaction data will be removed from active systems within 90 days;</li>
-              <li>For safety investigation purposes, message data may be retained beyond 90 days where a report or complaint has been filed involving your account, and for as long as is legally required to resolve such matters;</li>
-              <li>The other party in a conversation will no longer be able to see your profile, but may retain visibility of previously exchanged messages during the 90-day transition period;</li>
-              <li>Invite and Vibe interaction logs associated with your account will be anonymised or deleted within 90 days.</li>
-            </ul>
-          </SubSection>
-        </Section>
-
-        <Section title="14. Profile Visibility and Discovery">
-          <p>Understanding how your profile is visible to others is important on a social connection platform. This section explains Elyxer's profile visibility model.</p>
-          <SubSection title="14.1 Default Visibility">
-            <p>By default, your Elyxer profile — including your display name, photos, Profile Studio content (My Story, Interests, Narratives, Join Me For), age, and general location — is visible to all registered users on the Elyxer platform, subject to the following:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Your profile is shown to users based on the Magic Search algorithm, which considers interests, preferences, and compatibility signals;</li>
-              <li>Your precise location is never displayed — only a general area or approximate distance is shown to other users;</li>
-              <li>Sensitive profile data such as sexual orientation and gender identity is displayed only to the extent you choose to include it on your profile.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="14.2 Moments">
-            <p>Elyxer allows users to post Moments — short-form content visible to other users on the platform. Moments are subject to the same moderation standards as profile content. You may delete your Moments at any time through your profile settings. Moments posted by you are visible to all Elyxer users unless deleted.</p>
-          </SubSection>
-          <SubSection title="14.3 What You Should Know">
-            <p>As Elyxer is a discovery-based social connection platform, please be aware of the following:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Other users may screenshot or save your profile content or Moments outside of the Elyxer platform. We strongly advise discretion when sharing personal information;</li>
-              <li>Elyxer does not control how other users use information they see on your profile outside of the app;</li>
-              <li>We recommend not sharing sensitive personal information such as your home address, workplace, or financial details through the platform.</li>
-            </ul>
-          </SubSection>
-        </Section>
-
-        <Section title="15. Block, Report and Safety Controls">
-          <p>Elyxer is committed to maintaining a safe and respectful community. We provide users with the following safety controls:</p>
-          <SubSection title="15.1 Block">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>You may block any other user at any time through their profile or within a chat conversation;</li>
-              <li>When you block a user, they will no longer be able to view your profile, send you Invites, Vibes, or messages;</li>
-              <li>Blocking is mutual in effect — you will also no longer see the blocked user's profile or content;</li>
-              <li>Block actions are logged and retained by Elyxer for safety and platform integrity purposes.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="15.2 Report">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>You may report any user profile, chat message, or Moment that you believe violates our Community Guidelines;</li>
-              <li>Reports can be submitted through the relevant profile, message, or Moment using the in-app report function;</li>
-              <li>All reports are reviewed by our trust and safety team, using a combination of automated tools and manual review;</li>
-              <li>We will take appropriate action, which may include content removal, account suspension, or permanent termination of the reported user's account;</li>
-              <li>The outcome of a report investigation will not be disclosed to the reporting user except in limited circumstances.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="15.3 Data Retained for Safety Investigations">
-            <p>To ensure the integrity and safety of the Elyxer platform, we retain the following data even after an account is deleted, for as long as is legally required or necessary to resolve an active safety investigation:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Block and report logs including the nature of the report, content reported, and actions taken;</li>
-              <li>Chat messages, Invite/Vibe interaction data, and Moment content relevant to a reported incident;</li>
-              <li>Account and identity data of users who have been reported for serious violations (harassment, abuse, impersonation, etc.);</li>
-              <li>This data is stored securely and accessible only to authorised trust and safety personnel and, where required by law, to law enforcement authorities.</li>
-            </ul>
-          </SubSection>
-        </Section>
-
-        <Section title="16. Cookies and Tracking Technologies">
-          <p>The Elyxer mobile application does not use browser cookies. However, we use similar tracking technologies including:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Device identifiers and advertising IDs (for analytics and fraud prevention);</li>
-            <li>Session tokens (for maintaining your login state);</li>
-            <li>Firebase or equivalent SDKs for crash reporting and performance monitoring.</li>
-          </ul>
-          <p>For detailed information on tracking technologies used in our app, please refer to our Cookie and Tracking Policy available at [INSERT LINK].</p>
-        </Section>
-
-        <Section title="17. Paid Subscriptions">
-          <p>Elyxer offers paid subscription plans that unlock premium features. By subscribing, you authorise us to process your payment through our third-party payment gateway. Auto-renewal terms, cancellation procedures, and refund eligibility are governed by our Refund and Cancellation Policy, available separately.</p>
-          <p>Payment data is processed by PCI-DSS compliant payment gateway partners. We do not retain your full card details on our systems.</p>
-        </Section>
-
-        <Section title="18. Third-Party Links and Services">
-          <p>Elyxer may contain links to third-party websites or integrate with third-party services (such as social sign-in providers). This Privacy Policy does not apply to third-party services. We encourage you to review the privacy policies of any third-party services you access through Elyxer.</p>
-        </Section>
-
-        <Section title="19. Changes to This Privacy Policy">
-          <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>We will update the Effective Date at the top of this policy;</li>
-            <li>We will notify you via in-app notification and/or email at least 15 days before changes take effect;</li>
-            <li>For changes involving sensitive personal data or a new purpose of processing, we will seek your fresh explicit consent.</li>
-          </ul>
-          <p>Your continued use of Elyxer after the effective date of the revised policy constitutes your acceptance of the changes.</p>
-        </Section>
-
-        <Section title="20. Contact Us">
-          <p>For any questions, requests, or concerns regarding this Privacy Policy or the processing of your personal data, please contact us at:</p>
-          <ul className="list-none space-y-1">
-            <li><strong className="text-foreground">Email:</strong> support@elyxer.co</li>
-            <li><strong className="text-foreground">Grievance Email:</strong> grievance@elyxer.co</li>
-            <li><strong className="text-foreground">Postal Address:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED, Unit 101, Oxford Towers, 139, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka - 560008, India</li>
-          </ul>
-        </Section>
-
-        <div className="mt-20 pt-10 border-t border-border">
-          <p className="font-sans text-xs uppercase tracking-widest text-primary text-center mb-4">
-            Compliance
-          </p>
-          <p className="font-sans text-sm text-muted-foreground italic text-center max-w-2xl mx-auto leading-relaxed">
-            This Privacy Policy was drafted in compliance with the Digital Personal Data Protection Act, 2023 (India),
-            the Information Technology Act, 2000, and the IT (Intermediary Guidelines and Digital Media Ethics Code)
-            Rules, 2021.
-          </p>
-          <p className="mt-6 font-sans text-xs text-muted-foreground text-center">
-            © {new Date().getFullYear()} PROAPEX INNOVATIONS PRIVATE LIMITED. All rights reserved.
-          </p>
+        <div className="pt-10 md:pt-16 space-y-4 md:space-y-5 font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
+          <P>This Privacy Policy for PROAPEX INNOVATIONS PRIVATE LIMITED (doing business as Elyxer) (“<strong>we</strong>,” “<strong>us</strong>,” or “<strong>our</strong>”) describes how and why we access, collect, store, use, and share (“<strong>process</strong>”) your personal information when you use our services (“<strong>Services</strong>”). We process your personal information in accordance with the Information Technology Act, 2000, the applicable rules made thereunder, including the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, and the Digital Personal Data Protection Act, 2023, and the rules made thereunder, to the extent applicable and in force.</P>
+          <P>including when you:</P>
+          <UL>
+            <LI>Visit our website at <A href="https://elyxer.co" ext>https://elyxer.co</A> or any website of ours that links to this Privacy Policy</LI>
+            <LI>Download and use our mobile application (<strong>Elyxer</strong>), or any other application of ours that links to this Privacy Policy</LI>
+            <LI>Engage with us in other related ways, including any marketing or events</LI>
+          </UL>
+          <P><strong>Questions or concerns?</strong> Reading this Privacy Policy will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <A href="mailto:support@elyxer.co">support@elyxer.co</A>.</P>
+          <H3>SUMMARY OF KEY POINTS</H3>
+          <P><strong><em>This summary provides key points from our Privacy Policy, but you can find out more details about any of these topics by clicking the link following each key point or by using our table of contents below to find the section you are looking for.</em></strong></P>
+          <P><strong>What personal information do we process?</strong> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services, the choices you make, and the products and features you use. <A href="#section-1">Learn more about personal information you disclose to us</A>.</P>
+          <P><strong>Do we process any sensitive personal information?</strong> Some of the information may be considered 'special' or 'sensitive' in certain jurisdictions, for example, your sexual orientation. We may process sensitive personal information when necessary with your consent or as otherwise permitted by applicable law. <A href="#section-1">Learn more about sensitive information we process</A>.</P>
+          <P><strong>Do we collect any information from third parties?</strong> We receive limited information from others, such as reports made by other users and purchase confirmations from Apple or Google.</P>
+          <P><strong>How do we process your information?</strong> We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. <A href="#section-2">Learn more about how we process your information</A>.</P>
+          <P><strong>Can Elyxer read my messages?</strong> Not routinely. If a conversation is reported, or we suspect illegal activity or a serious safety risk, authorised staff may review it. <A href="#section-5">Learn more about reports, investigations and access to conversations</A>.</P>
+          <P><strong>In what situations and with which types of parties do we share personal information?</strong> We may share information in specific situations and with specific categories of third parties. <A href="#section-3">Learn more about when and with whom we share your personal information</A>.</P>
+          <P><strong>How do we keep your information safe?</strong> We have adequate organisational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorised third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. <A href="#section-9">Learn more about how we keep your information safe</A>.</P>
+          <P><strong>What are your rights?</strong> Under applicable Indian privacy laws, including the Digital Personal Data Protection Act, 2023, you may have rights regarding your personal information. <A href="#section-11">Learn more about your privacy rights</A>.</P>
+          <P><strong>How do you exercise your rights?</strong> The easiest way to exercise your rights is by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.</P>
+          <P>Want to learn more about what we do with any information we collect? Review the Privacy Policy in full below.</P>
         </div>
+        <LegalContents items={contents} />
+        <DocSection id="section-1" title={"1. WHAT INFORMATION DO WE COLLECT?"}>
+          <H3>Personal information you disclose to us</H3>
+          <P><strong>In Short:</strong> <em>We collect personal information that you provide to us.</em></P>
+          <P>We collect personal information that you voluntarily provide to us when you register on the Services, express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.</P>
+          <P><strong>Personal Information Provided by You.</strong> The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make, and the products and features you use. The personal information we collect may include the following:</P>
+          <LegalTable headers={["Category", "Information collected", "How it is used or handled"]} rows={[["Account information", "Name, phone number, email address, date of birth, authentication records and account identifiers.", "Registration requires a phone number verified by OTP. Email is optional and, once verified, may be used to sign in to an existing account. Phone numbers and authentication records may be retained for login, account recovery, security or legal obligations. They are not public profile information. Authentication, delivery and security providers process the information needed to send codes, secure sessions and prevent abuse. Never share an OTP with another user or support staff."], ["Profile information", "Photographs, city, profession, education, height, languages, interests, permitted habits, lifestyle, travel and food preferences, passions, hobbies and relationship intentions.", "These are details you choose to provide. We explain mandatory and optional fields when requesting them and seek consent where required."], ["Feature information", "AI writing requests and drafts, search queries and results, published profile text, Moments, Vibes, Invites, connection choices, messages, shared media, message delivery and read information, and virtual-session metadata.", "We process this information when you use the relevant features."], ["Device and service information", "IP address, device and operating-system details, app version, session and notification tokens, security events, error reports and feature-use events.", "The Cookie and Tracking Policy explains these categories and available controls. We do not treat an identifier-linked record as anonymous merely because your name has been removed."], ["Location information", "Your current city and an approximate location, determined from your device while the app is in use.", "Used to show your current city and to show members near you according to your distance settings. Other members never see your exact location."], ["Payment information", "Purchase receipts, transaction references, subscription status, invoices and records needed for refunds and accounts.", "Payment providers and app stores process payment credentials. Elyxer does not store full payment card numbers or CVV in its own application database."], ["Support and safety information", "Correspondence, reports, blocks, appeal records, evidence submitted to us and proportionate verification information.", "These records may concern people who do not have an Elyxer account."]]} />
+          <P><strong>Sensitive Information.</strong> When necessary, with your consent or as otherwise permitted by applicable law, we process the following categories of sensitive information:</P>
+          <LegalTable headers={["Category", "Information collected", "How it is handled"]} rows={[["Sensitive profile information", "Depending on the profile fields you use, this may include gender, pronouns, sexual orientation and dating preferences.", "Sexual orientation is optional and collected only with your express consent at that step. You can remove it from your profile or withdraw that consent at any time."], ["Sensitive information within feature, support or safety records", "Messages, shared media, reports, appeals, submitted evidence and verification information may contain sensitive personal details.", "We process these records when relevant to the feature, support request or safety matter involved, and handle them as described in this Privacy Policy."]]} />
+          <P><strong>Payment Data.</strong> The payment provider that processes your purchase is shown at checkout and depends on how you buy:</P>
+          <UL>
+            <LI><strong>Elyxer iOS app:</strong> Apple’s App Store.</LI>
+            <LI><strong>Elyxer Android app:</strong> Google Play, or, where Elyxer offers a direct payment option, a third-party payment gateway that you select at checkout.</LI>
+          </UL>
+          <P>These providers handle your payment credentials under their own privacy policies. Elyxer may receive and retain payment-related information such as purchase receipts, transaction references, subscription status and records needed to manage your account, confirm purchases, process refunds or meet legal obligations. We do not store full payment-card numbers or CVV in Elyxer’s own application database.</P>
+          <P><strong>Application Data.</strong> If you use the Elyxer application, we may collect the following information when you provide it or grant the relevant device permission:</P>
+          <UL>
+            <LI><strong>Location Information.</strong> With your device permission, we use your device’s location while the app is in use to determine your current city and to show members near you according to your distance settings. The location needed to identify your city is sent to a mapping service provider. We store an approximate location, updated while the app is in use, and do not track your location in the background. Your current city appears on your profile; other members never see your exact location. You can manage location permission in your device settings. A saved location is required to use Elyxer; if location access is turned off, the app will ask you to turn it on.</LI>
+            <LI><strong>Mobile Device Access.</strong> We may request access to device features, such as your camera, when needed for a feature you choose to use, for example, taking a selfie for the optional Selfie Badge. You can manage or revoke these permissions in your device settings. The Selfie Badge does not verify your identity, age or safety.</LI>
+            <LI><strong>Mobile Device and Service Data.</strong> We may collect information such as your IP address, device and operating-system details, app version, session and notification tokens, security events, error reports and feature-use events. We use this information to operate, secure and improve Elyxer and troubleshoot issues.</LI>
+            <LI><strong>Push Notifications.</strong> We may use notification tokens to send service-related notifications. You can manage or disable app notifications in your device settings.</LI>
+          </UL>
+          <H3>Information automatically collected</H3>
+          <P><strong>In Short:</strong> <em>Some information, such as your Internet Protocol (IP) address and/or browser and</em> <em>device characteristics, is collected automatically when you visit our Services.</em></P>
+          <P>We automatically collect certain information when you visit, use, or navigate the Services. This information may not directly reveal your name or contact details, but it is linked to your account and device and may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about how and when you use our Services, and other technical information. This information is primarily needed to maintain the security and operation of our Services, and for our internal analytics and reporting purposes.</P>
+          <P>Like many businesses, we also collect information through cookies and similar technologies.</P>
+          <P>The information we collect includes:</P>
+          <UL>
+            <LI><em>Log and Usage Data.</em> Log and usage data is service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our Services and which we record in log files. Depending on how you interact with us, this log data may include your IP address, device information, browser type, and settings and information about your activity in the Services (such as the date/time stamps associated with your usage, pages and files viewed, searches, and other actions you take such as which features you use), device event information (such as system activity, error reports (sometimes called 'crash dumps'), and hardware settings).</LI>
+          </UL>
+        </DocSection>
+        <DocSection id="section-2" title={"2. HOW DO WE PROCESS YOUR INFORMATION?"}>
+          <P><strong>In Short:</strong> <em>We process your information to provide, improve, and administer our Services,</em> <em>communicate with you, for security and fraud prevention, and to comply with law. We may also</em> <em>process your information for other purposes with your consent.</em></P>
+          <P><strong>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</strong></P>
+          <UL>
+            <LI><strong>To create, authenticate and manage your account.</strong> We process your information to register you, verify your phone number by OTP, enable sign-in and account recovery, and maintain account security.</LI>
+            <LI><strong>To provide Elyxer’s features and services.</strong> We process information needed to operate profiles, discovery, AI-assisted profile writing and search, Moments, Invites, Vibes, messaging and available virtual interactions.</LI>
+            <LI><strong>To provide support and respond to inquiries.</strong> We process your correspondence and relevant account or service information to respond to questions, investigate issues and handle support requests.</LI>
+            <LI><strong>To send service and administrative communications.</strong> We may send information about your account, service operation, and changes to our Terms, Privacy Policy or other applicable policies.</LI>
+            <LI><strong>To enable user interactions.</strong> We process the information needed to deliver Invites, Vibes, messages, shared media and other interactions to their intended participants.</LI>
+            <LI><strong>To request feedback.</strong> We may contact you about your use of Elyxer and process feedback you choose to provide.</LI>
+            <LI><strong>To send marketing communications, where offered.</strong> We process information for marketing communications only where the applicable choice or consent is obtained. You may opt out through the available method in the communication or contact us.</LI>
+            <LI><strong>To measure our own advertising.</strong> We use advertising measurement tools, a software development kit in the app and a pixel on our website, to measure our own advertising. We do not share profile content, photos, messages, search queries or sensitive information with advertising providers. We do not use dating profiles, search queries or private messages for third-party targeted advertising.</LI>
+            <LI><strong>To display testimonials.</strong> If we publish a testimonial containing your personal information, we do so with the permission or other lawful basis required for that use.</LI>
+            <LI><strong>To protect Elyxer and its users.</strong> We process relevant information to secure accounts and services, detect and investigate misuse, enforce our Community Guidelines, handle reports and appeals, and address safety concerns.</LI>
+            <LI><strong>To maintain and improve the service.</strong> We use service, device, error and feature-use information to troubleshoot problems, maintain reliability and understand how Elyxer’s features are used.</LI>
+            <LI><strong>To investigate reports and suspected unlawful activity.</strong> We may access and review reported conversations, content and account records, suspend accounts, preserve evidence and cooperate with lawful requests from authorities, as described in the section “<A href="#section-5">REPORTS, INVESTIGATIONS AND ACCESS TO CONVERSATIONS</A>”.</LI>
+            <LI><strong>To comply with legal obligations and protect legal rights.</strong> We may process information to comply with applicable law or lawful requests, preserve relevant evidence, and establish, exercise or defend legal claims.</LI>
+          </UL>
+        </DocSection>
+        <DocSection id="section-3" title={"3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?"}>
+          <P><strong>In Short:</strong> <em>We may share information in specific situations described in this section and/or with</em> <em>the following categories of third parties.</em></P>
+          <P><strong>Vendors, Consultants, and Other Third-Party Service Providers.</strong> We may share your data with third-party vendors, service providers, contractors, or agents ('<strong>third parties</strong>') who perform services for us or on our behalf and require access to such information to do that work. We have contracts in place with our third parties, which are designed to help safeguard your personal information. This means that they cannot do anything with your personal information unless we have instructed them to do it. They will also not share your personal information with any organisation apart from us. They also commit to protect the data they hold on our behalf and to retain it for the period we instruct.</P>
+          <P>The categories of third parties we may share personal information with are as follows:</P>
+          <LegalTable headers={["Category of service provider", "Purpose", "Information that may be processed"]} rows={[["Cloud hosting and authentication provider", "Hosting, database and file storage; sign-in, account sessions and security", "Account and profile information, user content, phone numbers, email addresses, and login and session records"], ["SMS delivery providers", "Sending OTPs by SMS", "Phone numbers and SMS delivery records"], ["Email delivery provider", "Sending verification and service emails", "Email addresses and email delivery records"], ["Messaging and video call provider", "In-app messaging and video calls", "User identifiers, messages, shared media, live audio and video, and call metadata. Calls are not routinely recorded."], ["AI service provider", "AI-assisted profile writing and search", "Text you provide for the relevant request and descriptive profile information you choose to share. Sensitive data, messages, photos, contact details, payment information and location are excluded. Your information is not used to train its models."], ["Image screening provider", "Photo safety screening: face detection, nudity and explicit content, and possible under-18 images", "Uploaded photos and image-analysis results. It performs face detection only, not identity matching."], ["Mapping service provider", "Converting device location into your current city", "Coordinates needed for the lookup. No background tracking."], ["Push notification services", "Delivering notifications you enable", "Device notification tokens and delivery records"], ["Error diagnostics provider", "App stability and error diagnostics", "Device and app details, technical identifiers and error events"], ["Advertising measurement provider", "Measuring installs and sign-ups from Elyxer’s own advertising campaigns", "Device and app identifiers, IP address, and install and sign-up events. On iOS, the advertising identifier is used only with your permission. Profile information, messages and sensitive data are not sent to this provider."], ["App stores (Google Play and Apple App Store)", "Processing purchases made through the Android and iOS apps", "Payment and transaction information. Payment-card details are held by the app store, not Elyxer."], ["Payment gateways, where direct payment is offered", "Processing purchases made through Elyxer’s direct payment option", "Payment and transaction information. Payment-card details are held by the provider, not Elyxer."]]} />
+          <P>We also may need to share your personal information in the following situations:</P>
+          <UL>
+            <LI><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</LI>
+            <LI><strong>Affiliates.</strong> We may share your information with our affiliates, in which case we will require those affiliates to honour this Privacy Policy. Affiliates include our parent company and any subsidiaries, joint venture partners, or other companies that we control or that are under common control with us.</LI>
+            <LI><strong>Other Users.</strong> When you use Elyxer, certain information you choose to include in your profile or share through its features may be visible to other users. This may include your profile details and photos, published profile text, Moments, Vibes, Invites, connection choices, messages and media you share with other users. Your current city appears on your profile, but your exact location is never shown to other users. Information shared with another user may be copied, saved or shared by that user outside Elyxer, and Elyxer cannot control how they use it. Avoid sharing information you do not want other users to see.</LI>
+          </UL>
+        </DocSection>
+        <DocSection id="section-4" title={"4. VISIBILITY AND INTERACTION INFORMATION"}>
+          <P><strong>In short:</strong> <em>We may display your profile and content to eligible users, process your location and</em> <em>selfie if you choose to provide them, and handle messages and calls to provide its features.</em></P>
+          <UL>
+            <LI><strong>Visibility of content.</strong> Your published profile information, photos, Moments, Vibes and Invites may be visible to eligible Elyxer users according to the relevant feature, discovery rules and visibility controls. Private communications are delivered to their intended participants and are not made public by the content licence in our Terms of Service. A paid feature does not override a block or privacy restriction.</LI>
+            <LI><strong>Moments.</strong> A Moment is a photo or text post. It appears in the feed for a limited live period, which is shown in the app when you post and may change from time to time. A change applies only to Moments posted after it takes effect. When the live period ends, the Moment is marked as ended and remains visible only to you in My Moments. It is scheduled for deletion 30 days after it ends, unless you delete it earlier or a lawful preservation requirement applies. Reposting a Moment starts a new live period. When you send a Vibe or Invite from someone’s Moment, the author receives it with your profile information. Related Vibes or Invites may remain in the relevant interaction area, subject to the retention provisions in this Notice.</LI>
+            <LI><strong>Location.</strong> Elyxer processes your device’s location while the app is in use to determine your current city and to show members near you according to your distance settings. The location information needed to identify your city is sent to a mapping service provider. We store an approximate location, updated while the app is in use. Your current city appears on your profile; other members never see your exact location. Elyxer does not track your location in the background. You may enter an optional hometown yourself. A saved location is required to use Elyxer.</LI>
+            <LI><strong>Selfie Badge.</strong> If you choose to add a selfie through Elyxer’s in-app camera, the selfie is displayed on your profile with a Selfie Badge, subject to your profile’s visibility settings. The badge indicates that you captured and added a selfie through the app. Elyxer does not compare that selfie with other profile photos for this badge. The badge does not establish your identity, age, liveness, background, intentions or safety. You may remove the selfie; doing so also removes the badge. The selfie is otherwise retained in accordance with the retention provisions in this Notice.</LI>
+            <LI><strong>Image screening.</strong> Elyxer automatically screens profile photos and Moments images when you upload them. Our image screening provider processes the image to detect whether a face appears, whether the image contains nudity or sexually explicit content, and whether a person in it may be under 18. This is face detection and image analysis, not identity matching. An image that is flagged cannot be uploaded. Automated screening may not catch every prohibited image, so we also rely on user reports and human moderation. Any evidence retained for review or legal purposes is handled under the retention provisions in this Notice.</LI>
+            <LI><strong>Messages and calls.</strong> Elyxer’s messaging and video-call functionality is provided by a specialist service provider, which processes the user identifiers, messages, shared media, participant information, live audio or video, and technical records needed to provide the feature you use. Do not assume that messages are end-to-end encrypted. Elyxer does not routinely record or transcribe calls. If recording or transcription is introduced, Elyxer will provide appropriate notice and obtain any consent required before using it.</LI>
+            <LI><strong>Copies outside Elyxer.</strong> Other users may retain screenshots or copies of content outside Elyxer’s control. Deleting your account does not necessarily delete a copy held by another participant or information lawfully preserved for a dispute. We handle in-service visibility and deletion in accordance with this Notice.</LI>
+          </UL>
+        </DocSection>
+        <DocSection id="section-5" title={"5. REPORTS, INVESTIGATIONS AND ACCESS TO CONVERSATIONS"}>
+          <P><strong>In Short:</strong> <em>Your conversations are private between the people in them. If a conversation or account is reported, or we have reason to suspect illegal activity or a serious safety risk, authorised Elyxer staff may access, review and preserve it.</em></P>
+          <P>Elyxer does not routinely read private messages. Messages are not end-to-end encrypted, so Elyxer is technically able to access them, and does so only as described in this section.</P>
+          <P>Authorised members of Elyxer’s trust and safety team, including moderators and the Grievance Officer, may access, review and preserve messages, shared media, Vibes, Invites, Moments, profile information, report evidence, call and session metadata, and related account and device records where:</P>
+          <UL>
+            <LI>you or another user reports an account, conversation or content;</LI>
+            <LI>we receive a grievance or complaint, including under the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021;</LI>
+            <LI>we reasonably suspect fraud, a scam, extortion, harassment, threats, sexual exploitation, non-consensual intimate imagery, child sexual abuse material, the involvement of a person under 18, or any other offence or serious breach of our Terms of Service or Community Guidelines;</LI>
+            <LI>a court, the police or another authorised government agency makes a lawful request, order or direction, including under the Information Technology Act, 2000, the Bharatiya Nagarik Suraksha Sanhita, 2023 or the Protection of Children from Sexual Offences Act, 2012; or</LI>
+            <LI>access is necessary to protect a person’s life, health or safety, to respond to a medical emergency, or to establish, exercise or defend legal claims.</LI>
+          </UL>
+          <P>When a conversation is reported, the review covers that conversation, including the messages of both participants, and the related records of the accounts involved. We limit review to what is reasonably necessary for the matter. Access is restricted to authorised staff who are bound by confidentiality.</P>
+          <P>After a review, we may remove content, warn a user, restrict features, suspend or permanently ban an account, preserve evidence, and share relevant information with the police, courts or other authorised agencies where required or permitted by law. Where the law requires it, for example for suspected child sexual abuse material, we report the matter to the appropriate authorities.</P>
+          <P>For the most serious report categories, an account may be suspended automatically when the report is received, before a moderator reviews it. A moderator then reviews the case and either lifts the suspension or confirms the action.</P>
+          <P>We may not tell you that your account or conversations have been reviewed, preserved or disclosed where telling you would be unlawful, would compromise an investigation or would put someone at risk.</P>
+          <P>We process information for these purposes to comply with law, to prevent, detect and investigate offences, and to protect users, as permitted under applicable law, including the Digital Personal Data Protection Act, 2023. Preserved records are kept as described in the section “<A href="#section-8">HOW LONG DO WE KEEP YOUR INFORMATION?</A>”.</P>
+        </DocSection>
+        <DocSection id="section-6" title={"6. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?"}>
+          <P><strong>In Short:</strong> <em>We may use cookies and other tracking technologies to collect and store your</em> <em>information.</em></P>
+          <P>Elyxer and its service providers may use cookies and similar technologies, such as pixels and SDKs, to support the operation, security and performance of our website and app, and to measure the effectiveness of Elyxer’s own advertising campaigns.</P>
+          <P>On our website, an advertising pixel may collect device and browsing information and events such as visits, installs or sign-ups for advertising measurement. In the app, an advertising software development kit may collect device and app identifiers, IP address, and install or sign-up events for the same purpose. On iOS, the advertising identifier is used only with your permission. We do not send profile information, messages or sensitive data to advertising providers for this measurement.</P>
+          <P>We do not use these technologies to enable third-party targeted advertising based on your dating profile, messages or sensitive information. Please refer to our Cookie Policy for further details and any available controls.</P>
+        </DocSection>
+        <DocSection id="section-7" title={"7. DO WE OFFER ARTIFICIAL INTELLIGENCE-BASED PRODUCTS?"}>
+          <P><strong>In Short:</strong> <em>Elyxer uses artificial intelligence to support profile writing and profile search.</em></P>
+          <P>Elyxer uses a third-party AI service provider to process text you provide for AI-assisted profile writing and search, including relevant descriptive profile information you choose to share. These features help generate profile content and identify users with similar interests.</P>
+          <P>For these features, we exclude sensitive data, messages, photos, contact details, payment information and location from processing by our AI service provider. Your information is not used to train its models. You can review, edit or delete AI-generated profile content through your account settings.</P>
+          <P>AI-assisted search is a discovery tool and does not make legally binding automated decisions about you. The terms of this Privacy Policy apply when you use these AI-assisted features.</P>
+          <H3>Use of AI Technologies</H3>
+          <P>We provide these AI-assisted features through a third-party AI service provider. As described in the “<A href="#section-3">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</A>” section of this Privacy Policy, the text and descriptive profile information you submit for these features may be processed by that provider to provide the requested functionality. We do not send sensitive data, messages, photos, contact details, payment information or location to that provider for these features. Your information is not used to train its models.</P>
+          <P>You must use Elyxer’s AI-assisted features in accordance with this Privacy Policy and our Terms of Service.</P>
+          <H3>Our AI Products</H3>
+          <P>Our AI-assisted features support the following functions:</P>
+          <UL>
+            <LI><strong>Natural language processing:</strong> helping generate profile text from information you provide.</LI>
+            <LI><strong>AI-assisted profile search:</strong> helping identify users with similar interests based on search text and descriptive profile information.</LI>
+          </UL>
+          <H3>How We Process Your Data Using AI</H3>
+          <P>We process information submitted for AI-assisted features in accordance with this Privacy Policy and our arrangements with our AI service provider. You can review, edit or delete AI-generated profile content through your account settings. AI-assisted search is a discovery tool and does not make legally binding automated decisions about you.</P>
+        </DocSection>
+        <DocSection id="section-8" title={"8. HOW LONG DO WE KEEP YOUR INFORMATION?"}>
+          <P><strong>In Short:</strong> <em>We keep your information for as long as necessary to fulfil the purposes outlined in</em> <em>this Privacy Policy unless otherwise required by law.</em></P>
+          <P>We retain personal information only for as long as necessary for the purposes described in this Privacy Policy, subject to applicable legal requirements. The retention period depends on the type of information, why it was collected, and whether we are required or permitted to keep it for a longer period.</P>
+          <P>Once we authenticate and accept an account-deletion request, we disable public profile and discovery access and begin deleting information that we no longer need for a lawful purpose. This may include selfies, relevant search data and copies held by our processors. We may retain certain information in restricted storage where required or permitted by law, including:</P>
+          <UL>
+            <LI><strong>Registration information:</strong> Information required to be retained under the applicable Information Technology Rules is retained for 180 days after cancellation or withdrawal of registration.</LI>
+            <LI><strong>Removed or disabled content:</strong> Content and associated records that must be preserved under applicable Information Technology Rules are retained for 180 days, or longer if lawfully required by a competent authority.</LI>
+            <LI><strong>Security logs and processing records:</strong> We retain relevant logs and records for the periods required by applicable CERT-In and data-protection requirements, including any applicable 180-day or one-year retention periods and storage requirements. These requirements apply only to the records and purposes covered by the relevant law.</LI>
+            <LI><strong>Financial records:</strong> Financial books and supporting vouchers are retained for the periods required by applicable law, including the applicable Companies Act requirements, and longer where a specific tax, investigation or legal requirement applies. This does not justify retaining unrelated dating information.</LI>
+            <LI><strong>Backups:</strong> Deleted information may remain temporarily in protected backups until the applicable backup cycle expires, or longer where lawful preservation is required. It is not used for ordinary discovery, recommendations or optional AI features. If a backup is restored, we reapply applicable deletion instructions and access restrictions.</LI>
+          </UL>
+          <H3>Retention after account deletion, reports, suspension or ban</H3>
+          <UL>
+            <LI><strong>Deleted accounts.</strong> When your account deletion is complete, your profile and content are removed from view immediately. We keep a restricted copy of your account information, content, communications and interaction records for one year, or any longer period required by law, so that reports, safety concerns, fraud and lawful requests can be investigated. After that, we delete it.</LI>
+            <LI><strong>Reported accounts and content.</strong> When we receive a report or complaint, we keep the information relevant to it until our review is complete. This may include information about the reported account, the person who made the report and any conversation or content involved. If we take no action, we keep the review record for one year after the review ends and then delete it.</LI>
+            <LI><strong>Suspended accounts.</strong> While an account is suspended, we keep its information so that the case can be reviewed. If the suspension is lifted, the account returns to our standard retention practices. If the suspension leads to a ban, the paragraph below applies.</LI>
+            <LI><strong>Banned accounts.</strong> If we ban an account, we keep a restricted record of the ban, the reasons for it, and the related reports, evidence and decisions for as long as the ban remains in effect and for three years after that, so that we can respond to appeals, disputes and legal claims. To prevent a banned person from registering again, we also keep limited identifiers, such as the phone number used for the account, stored in a protected form, for as long as the ban remains in effect.</LI>
+            <LI><strong>Legal requests and preserved records.</strong> Where information is relevant to a lawful request, an investigation by an authority or a legal claim, we keep it until the matter is resolved, or for longer where a competent authority directs.</LI>
+            <LI><strong>Your communications with us.</strong> We keep support requests, complaints and grievance correspondence for three years after the matter is closed.</LI>
+            <LI><strong>Activity and security records.</strong> We keep records of how our services are accessed and used, in restricted form, for at least one year or any longer period required by law, and then delete them.</LI>
+            <LI><strong>How retained information is protected.</strong> Information we keep under this section is stored separately, with access limited to authorised staff, and only for the purposes described above. It is not used for discovery, recommendations, marketing or any optional feature. When its retention period ends, we delete or anonymise it, unless another legal requirement applies.</LI>
+          </UL>
+          <P>We seek equivalent deletion or restricted retention from relevant processors. Information retained under an exception is kept with restricted access and is not used as an active public profile. When the applicable purpose and retention requirements end, we delete or anonymise the information unless another lawful requirement applies.</P>
+          <P>Removing an individual photo or profile field removes it from the relevant display first. Search representations are updated or removed when the underlying information is no longer permitted or available for use. You may contact us at <A href="mailto:support@elyxer.co">support@elyxer.co</A> to ask which retention exception applies to a particular record.</P>
+          <H3>Account Pause and Deletion</H3>
+          <UL>
+            <LI><strong>Pause:</strong> Pausing hides your profile from discovery while retaining your account. You may return by reactivating it. A pause does not trigger account deletion or guarantee indefinite retention of every record.</LI>
+            <LI><strong>Account deletion:</strong> After we authenticate and accept your request, we disable public profile and discovery access and begin deleting information that is no longer needed for a lawful purpose. Some records may remain in restricted storage for the periods described above. Deletion is irreversible once completed.</LI>
+          </UL>
+          <P>To pause your profile, go to <strong>Settings {'>'} Profile & Presence {'>'} Pause Profile</strong>. To delete your account, go to <strong>Settings {'>'} Data and Privacy {'>'} Delete account</strong> or contact <A href="mailto:support@elyxer.co">support@elyxer.co</A>.</P>
+        </DocSection>
+        <DocSection id="section-9" title={"9. HOW DO WE KEEP YOUR INFORMATION SAFE?"}>
+          <P><strong>In Short:</strong> <em>We aim to protect your personal information through a system of organisational and</em> <em>technical security measures.</em></P>
+          <P>We have implemented appropriate and reasonable technical and organisational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorised third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.</P>
+          <P><strong>Where your information is stored.</strong> Elyxer’s main systems, including account, profile and messaging data, are hosted on servers in India. Some service providers listed in the section “<A href="#section-3">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</A>”, such as mapping, notification, advertising measurement, app store and error-diagnostics providers, may process limited information outside India to provide their service. We transfer information outside India only as permitted by applicable law, including any restrictions notified under the Digital Personal Data Protection Act, 2023.</P>
+          <P><strong>If a breach occurs.</strong> If a personal data breach affects you, we will inform you without undue delay, describe what happened, the likely consequences and the steps we are taking, and report it to the Data Protection Board of India and CERT-In as applicable law requires.</P>
+        </DocSection>
+        <DocSection id="section-10" title={"10. DO WE COLLECT INFORMATION FROM MINORS?"}>
+          <P><strong>In Short:</strong> <em>We do not knowingly collect data from or market to children under 18 years of age.</em></P>
+          <P><strong>Elyxer is strictly intended for individuals who are 18 years of age or older.</strong> You must be at least 18 to register for, access or use the Services. Elyxer is not directed to children, and we do not knowingly collect, solicit, use or disclose personal information from anyone under 18, or knowingly market the Services to them.</P>
+          <H3>Age verification during registration</H3>
+          <P>During registration, you must enter your date of birth. Our system calculates your age and shows it to you for confirmation before you proceed. If the date of birth shows that you are under 18, you cannot create an account.</P>
+          <P>If an account is reported as belonging to a person under 18, or our checks indicate this, we may suspend it immediately. Our moderation team reviews the case and, where we conclude the user is under 18, permanently bans the account. We do not ask for identification documents as part of this process.</P>
+          <P>You must provide accurate registration information and must not misrepresent your age or attempt to bypass our age-verification process. You may not create or use an account on behalf of a person under 18.</P>
+          <H3>If we identify an account belonging to a person under 18</H3>
+          <P>If we learn that a person under 18 has provided personal information to Elyxer, or that an account was created or used in violation of this age restriction, we may suspend or deactivate the account and take reasonable steps to prevent further access. Where we determine that the person is under 18 and the information was collected without a valid basis, we will permanently delete the personal information, subject to any information we are required or permitted by law to preserve. Any information retained under a legal requirement will be restricted and handled in accordance with the applicable retention provisions of this Privacy Policy.</P>
+          <P>We do not knowingly sell the personal information of children under 18. If you believe that a person under 18 has provided personal information to Elyxer, or that we may have collected such information, please contact us at <A href="mailto:grievance@elyxer.co">grievance@elyxer.co</A>. We may ask for information reasonably necessary to investigate and respond to the report. Please do not send a child’s identification document or other sensitive information unless we specifically request it through an appropriate channel.</P>
+          <P>If you are a parent or legal guardian and believe a child under your care has provided personal information to Elyxer, you may contact us at the address above. We will review the report and take appropriate steps in accordance with this Privacy Policy and applicable law.</P>
+          <P>The age restriction applies to all Elyxer Services and is not waived merely because a parent or guardian consents to a minor’s use. A parent or guardian cannot authorise a person under 18 to register for or use Elyxer.</P>
+        </DocSection>
+        <DocSection id="section-11" title={"11. WHAT ARE YOUR PRIVACY RIGHTS?"}>
+          <P><strong>In Short:</strong> <em>You may review, change, or terminate your account at any time.</em></P>
+          <P>Elyxer handles personal data in accordance with applicable Indian law, including the Information Technology Act, 2000 and its applicable rules. The Digital Personal Data Protection Act, 2023 (“DPDP Act”) and the rules made under it will apply to the extent that their relevant provisions have come into force.</P>
+          <H3>Accessing and correcting your information</H3>
+          <P>You may review and update certain account information through your Elyxer account settings. Please keep your information accurate and up to date. If you cannot access or correct information through the app, contact us using the details in the “<A href="#section-14">HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</A>” section.</P>
+          <P>You may also make a request concerning your personal data where a right or procedure is available under applicable law. We may need to verify your identity before responding.</P>
+          <H3>Withdrawing consent</H3>
+          <P>Where we rely on your consent to process personal data, you may withdraw it at any time through any consent controls made available in the Services or by contacting us using the details in the “<A href="#section-14">HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</A>” section.</P>
+          <P>Withdrawal does not affect the lawfulness of processing carried out before withdrawal. It also does not prevent processing that is permitted or required on another lawful basis, where applicable law allows it. If withdrawal means we can no longer provide a feature or the Services, we will explain the relevant consequence where required.</P>
+          <H3>Requesting account deletion</H3>
+          <P>You may request deletion of your Elyxer account through <strong>Settings {'>'} Data and Privacy {'>'} Delete account</strong> or by contacting <A href="mailto:support@elyxer.co">support@elyxer.co</A>. You can request a copy of your data through <strong>Settings {'>'} Data and Privacy {'>'} Request your data</strong>. We will authenticate and review your request and, once accepted, disable public profile and discovery access and begin deleting information that we no longer need for a lawful purpose.</P>
+          <P>We may retain certain information where required or permitted by law, including for legal compliance, security, fraud prevention, investigations or the establishment, exercise or defence of legal claims. Any retained information will be handled in accordance with the retention provisions of this Privacy Policy.</P>
+          <H3>Marketing and promotional communications</H3>
+          <P>You may opt out of marketing and promotional emails by using the unsubscribe link in the message or contacting <A href="mailto:support@elyxer.co">support@elyxer.co</A>. You may also use any marketing preferences or controls available in the Services.</P>
+          <P>Opting out of marketing does not stop service-related or administrative communications, such as account, security or transaction messages, or responses to your support requests.</P>
+          <H3>Cookies and similar technologies</H3>
+          <P>You can manage cookies through your browser settings and use any cookie or tracking choices made available on our website. Blocking or deleting cookies may affect some website features or functionality. For more information, see our Cookie Policy.</P>
+          <H3>Making a privacy request or complaint</H3>
+          <P>To exercise a privacy right, ask a question about our handling of your personal data, or raise a privacy complaint, contact <A href="mailto:support@elyxer.co">support@elyxer.co</A>. You may also contact our grievance officer using the details in the “<A href="#section-14">HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</A>” section.</P>
+          <P>Please describe your request clearly and provide information reasonably necessary for us to verify your identity and locate the relevant data. We will respond within the period required by applicable law, and in any case within 90 days. You may also nominate another person to exercise your rights on your behalf in the event of your death or incapacity, as provided under the DPDP Act. If we cannot fulfil a request in whole or in part, we will explain the reason, subject to applicable legal restrictions.</P>
+          <P>When the relevant provisions of the DPDP Act are in force, you may exercise the rights and use the grievance-redressal mechanisms provided under that Act, including approaching the Data Protection Board of India where permitted by law. Nothing in this Privacy Policy limits any rights or remedies available to you under applicable law.</P>
+        </DocSection>
+        <DocSection id="section-12" title={"12. CONTROLS FOR DO-NOT-TRACK FEATURES"}>
+          <P>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ('DNT') feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognising and implementing DNT signals has been finalised. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Policy.</P>
+        </DocSection>
+        <DocSection id="section-13" title={"13. DO WE MAKE UPDATES TO THIS NOTICE?"}>
+          <P><strong>In Short:</strong> <em>Yes, we will update this notice as necessary to stay compliant with relevant laws.</em></P>
+          <P>We may update this Privacy Policy from time to time. The updated version will be indicated by an updated 'Last updated' date at the top of this Privacy Policy. If we make material changes to this Privacy Policy, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Policy frequently to be informed of how we are protecting your information.</P>
+        </DocSection>
+        <DocSection id="section-14" title={"14. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?"}>
+          <P>If you have questions or comments about this Privacy Policy, or wish to raise a grievance concerning the processing of your personal information, you may contact our Grievance Officer, <strong>Sarankumar K, Chief Executive Officer – Director</strong>, by email at <A href="mailto:grievance@elyxer.co">grievance@elyxer.co</A>, or by post at:</P>
+          <P><strong>PROAPEX INNOVATIONS PRIVATE LIMITED</strong><br />Attention: Sarankumar K, Grievance Officer<br />U 101, Oxford Towers, 139/88 HAL Old Airport Road<br />H.A.L II Stage, Bangalore North<br />Bangalore, Karnataka 560008<br />India</P>
+        </DocSection>
+        <DocSection id="section-15" title={"15. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?"}>
+          <P>Subject to applicable Indian law and the commencement of the relevant provisions of the Digital Personal Data Protection Act, 2023, you may have the right to request access to your personal information and information about how it is processed, request correction or completion of inaccurate or incomplete information, request erasure of personal information, and withdraw consent where processing is based on consent.</P>
+          <P>These rights may be subject to legal exceptions and limitations, including where we are required or permitted to retain information. Withdrawing consent does not affect the lawfulness of processing carried out before withdrawal or processing permitted on another lawful basis.</P>
+          <P>To make a request to access, correct, update or delete your personal information, or to withdraw consent, contact us at <A href="mailto:support@elyxer.co">support@elyxer.co</A>. We may ask you to verify your identity before acting on your request and will respond in accordance with applicable law.</P>
+        </DocSection>
       </div>
     </article>
   </Layout>
