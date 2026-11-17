@@ -6,12 +6,14 @@ import { homeStructuredData } from "@/components/Seo";
 import { faqSchema } from "@/lib/faq-schema";
 
 describe("technical SEO rules", () => {
-  it("includes exactly the 15 real public routes, excluding redirects", () => {
-    expect(Object.keys(seoPages)).toHaveLength(15);
+  it("includes exactly the 17 real public routes, excluding redirects", () => {
+    expect(Object.keys(seoPages)).toHaveLength(17);
+    expect(seoPages["/eula"].title).toBe("End User Licence Agreement | Elyxer");
+    expect(seoPages["/disclaimer"].title).toBe("Disclaimer | Elyxer");
     expect(seoPages["/delete-account"]).toBeUndefined();
     expect(seoPages["/help/change-name"]).toBeUndefined();
     expect(seoPages["/"].title).toBe("Elyxer · Built to get you on real dates | Chosen for who you are");
-    expect(new Set(Object.values(seoPages).map(page => page.title)).size).toBe(15);
+    expect(new Set(Object.values(seoPages).map(page => page.title)).size).toBe(17);
   });
   it("keeps every description between 140 and 160 characters without forbidden words", () => {
     for (const { description } of Object.values(seoPages)) {

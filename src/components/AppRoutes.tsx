@@ -14,6 +14,8 @@ import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsOfService from "../pages/TermsOfService";
 import CookiePolicy from "../pages/CookiePolicy";
 import CommunityGuidelines from "../pages/CommunityGuidelines";
+import EndUserLicenceAgreement from "../pages/EndUserLicenceAgreement";
+import Disclaimer from "../pages/Disclaimer";
 import NotFound from "../pages/NotFound";
 
 export default function AppRoutes() {
@@ -40,6 +42,8 @@ export default function AppRoutes() {
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/community-guidelines" element={<CommunityGuidelines />} />
+          <Route path="/eula" element={<EndUserLicenceAgreement />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
   );

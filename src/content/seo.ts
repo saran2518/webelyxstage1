@@ -61,5 +61,13 @@ export const seoPages: Record<string, { title: string; description: string }> = 
   "/community-guidelines": {
     "title": "Community Guidelines · Elyxer",
     "description": "Read the Elyxer Community Guidelines on consent, authenticity, child safety, respectful behaviour and reporting harm to help keep our community safe for all."
+  },
+  "/eula": {
+    "title": "End User Licence Agreement | Elyxer",
+    "description": "Read the Elyxer End User Licence Agreement covering application use, licence terms, technical requirements, support, warranties and applicable legal rights."
+  },
+  "/disclaimer": {
+    "title": "Disclaimer | Elyxer",
+    "description": "Read the Elyxer Disclaimer covering user conduct, personal safety, third-party services, AI-assisted features, service availability and protected legal rights."
   }
 };

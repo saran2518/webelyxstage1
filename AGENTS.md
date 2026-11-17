@@ -3,7 +3,7 @@
 - Keep technical SEO in the shared Seo component mounted by Layout, with the route catalogue in content/seo.ts and FAQ JSON-LD derived from rendered answer nodes, so visible page copy stays independent and schemas cannot drift.
 - Keep classic Vite hosting and client createRoot; a capped closeBundle server render shares AppRoutes, emits public-route HTML with Helmet metadata and static video tags, and retains spa.html because nested-file serving on hosting is unverified.
 - Generate IndexNow payloads from the sitemap and submit only on explicit post-publish request, so unpublished key files are never announced.
-- Use the shared legal Section primitive and existing legal hero classes for Community Guidelines, without supplementary copy or metadata, to preserve the supplied document and legal-page styling.
+- Use the supplied LegalDoc primitives for approved legal documents and preserve their page sources verbatim, so shared presentation does not alter lawyer-approved wording.
 - Keep route scrolling in a single component inside BrowserRouter keyed by navigation entry: new pathname navigations reset instantly, repeat same-page navigations scroll smoothly, hash links (including initial loads and redirects) scroll smoothly to anchors with scroll margin for the navbar, and other POP navigation leaves native browser restoration untouched.
 - Use the shared Tailwind display family for all titles and the global heading rule for normal weight and tracking, so typography changes never affect body text or controls.
 - Keep all page media, brand asset and social profile link references in `src/content/media.ts` (the media map plus the `social` export), with future filenames beside fallback slots, so uploads and profile links need one update.

@@ -4,8 +4,8 @@ import { pathToFileURL } from "node:url";
 export const key = "c7f80054a4a560538f7e4442b1c908b1";
 export function indexNowPayload(sitemap) {
   const urlList = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-  if (urlList.length !== 15 || new Set(urlList).size !== 15 || urlList.some(url => new URL(url).origin !== "https://elyxer.co")) {
-    throw new Error("Expected exactly 15 distinct Elyxer sitemap URLs");
+  if (urlList.length !== 17 || new Set(urlList).size !== 17 || urlList.some(url => new URL(url).origin !== "https://elyxer.co")) {
+    throw new Error("Expected exactly 17 distinct Elyxer sitemap URLs");
   }
   return { host: "elyxer.co", key, keyLocation: `https://elyxer.co/${key}.txt`, urlList };
 }

@@ -15,8 +15,8 @@ beforeAll(() => { HelmetProvider.canUseDOM = false; });
 afterAll(() => { HelmetProvider.canUseDOM = originalCanUseDOM; });
 
 describe("static route generation", () => {
-  it("renders all 15 real routes with their own metadata and content", () => {
-    expect(routes).toHaveLength(15);
+  it("renders all 17 real routes with their own metadata and content", () => {
+    expect(routes).toHaveLength(17);
     for (const route of routes) {
       const result = render(route);
       const document = new DOMParser().parseFromString(pageDocument(template, result), "text/html");
@@ -57,7 +57,7 @@ describe("static route generation", () => {
 });
 
 describe("IndexNow preparation", () => {
-  it("uses the exact verification key and all 15 sitemap URLs without submitting", () => {
+  it("uses the exact verification key and all 17 sitemap URLs without submitting", () => {
     expect(readFileSync(`public/${key}.txt`, "utf8")).toBe("c7f80054a4a560538f7e4442b1c908b1");
     expect(indexNowPayload(readFileSync("public/sitemap.xml", "utf8"))).toEqual({
       host: "elyxer.co", key: "c7f80054a4a560538f7e4442b1c908b1",
