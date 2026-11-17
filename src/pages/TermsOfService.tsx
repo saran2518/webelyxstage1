@@ -1,632 +1,289 @@
 import Layout from "@/components/Layout";
-import {
-  Section,
-  SubSection,
-  LegalTable,
-  Callout,
-  LegalHero,
-  LegalFooterNote,
-} from "@/components/legal/LegalPrimitives";
+import { LegalTable } from "@/components/legal/LegalPrimitives";
+import { LegalDocHero, LegalContents, DocSection, P, UL, OL, LI, A, H3 } from "@/components/legal/LegalDoc";
+
+const contents = [{"id": "section-1", "title": "1. OUR SERVICES"}, {"id": "section-2", "title": "2. INTELLECTUAL PROPERTY RIGHTS"}, {"id": "section-3", "title": "3. USER REPRESENTATIONS"}, {"id": "section-4", "title": "4. FEATURES AND INTERACTION"}, {"id": "section-5", "title": "5. SUBSCRIPTIONS, CANCELLATIONS AND REFUNDS"}, {"id": "section-6", "title": "6. PROHIBITED ACTIVITIES"}, {"id": "section-7", "title": "7. REPORTING, MODERATION AND INVESTIGATIONS"}, {"id": "section-8", "title": "8. GRIEVANCE REDRESSAL"}, {"id": "section-9", "title": "9. USER GENERATED CONTRIBUTIONS"}, {"id": "section-10", "title": "10. MOBILE APPLICATION LICENCE"}, {"id": "section-11", "title": "11. THIRD-PARTY WEBSITES AND CONTENT"}, {"id": "section-12", "title": "12. SERVICES MANAGEMENT"}, {"id": "section-13", "title": "13. PRIVACY POLICY"}, {"id": "section-14", "title": "14. COPYRIGHT INFRINGEMENTS"}, {"id": "section-15", "title": "15. TERM AND TERMINATION"}, {"id": "section-16", "title": "16. MODIFICATIONS AND INTERRUPTIONS"}, {"id": "section-17", "title": "17. GOVERNING LAW"}, {"id": "section-18", "title": "18. DISPUTE RESOLUTION"}, {"id": "section-19", "title": "19. CORRECTIONS"}, {"id": "section-20", "title": "20. DISCLAIMER"}, {"id": "section-21", "title": "21. LIMITATIONS OF LIABILITY"}, {"id": "section-22", "title": "22. INDEMNIFICATION"}, {"id": "section-23", "title": "23. USER DATA"}, {"id": "section-24", "title": "24. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES"}, {"id": "section-25", "title": "25. MISCELLANEOUS"}, {"id": "section-26", "title": "26. CONTACT US"}];
 
 const TermsOfService = () => (
   <Layout>
-    <LegalHero
-      eyebrow="Legal · Terms"
-      title="Terms of Service"
-      subtitle="The agreement between you and PROAPEX INNOVATIONS PRIVATE LIMITED governing your access to and use of the Elyxer application and related services."
-    />
-
+    <LegalDocHero eyebrow="Legal · Terms" title="Terms of Service" updated="November 18, 2026" />
     <article className="pb-20 md:pb-32">
       <div className="container mx-auto px-5 sm:px-6 max-w-3xl">
-        <Callout title="Please Read Carefully">
-          These Terms of Service constitute a legally binding agreement between you and PROAPEX INNOVATIONS PRIVATE
-          LIMITED governing your access to and use of the Elyxer application and related services. By registering,
-          accessing, or using Elyxer, you agree to be bound by these Terms. If you do not agree, please do not use our
-          services.
-        </Callout>
-
-        <Section title="1. About Elyxer">
-          <p>
-            Elyxer is a social connection and dating application owned and operated by PROAPEX INNOVATIONS PRIVATE
-            LIMITED, a company incorporated under the Companies Act, 2013 in India.
-          </p>
-          <ul className="list-none space-y-1">
-            <li><strong className="text-foreground">Registered Name:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED</li>
-            <li><strong className="text-foreground">Application Name:</strong> Elyxer</li>
-            <li><strong className="text-foreground">Registered Address:</strong> Unit 101, Oxford Towers, 139, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka - 560008, India</li>
-            <li><strong className="text-foreground">Email:</strong> support@elyxer.co</li>
-            <li><strong className="text-foreground">Website:</strong> www.elyxer.co</li>
-          </ul>
-        </Section>
-
-        <Section title="2. Acceptance of Terms">
-          <p className="italic">
-            Summary: By using Elyxer, you agree to these Terms. You must be 18 or older. We'll notify you 15 days before
-            making any major changes.
-          </p>
-          <p>By downloading, installing, registering, or using the Elyxer application, you confirm that:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>You are at least 18 years of age;</li>
-            <li>You have read, understood, and agree to be bound by these Terms of Service;</li>
-            <li>You agree to our Privacy Policy, which is incorporated into these Terms by reference;</li>
-            <li>You have the legal capacity to enter into a binding agreement;</li>
-            <li>You are not prohibited from using our services under applicable Indian law.</li>
-          </ul>
-          <p>
-            We reserve the right to modify these Terms at any time. We will notify you of material changes via in-app
-            notification and/or email at least 15 days before they take effect. Your continued use of Elyxer after the
-            effective date constitutes your acceptance of the revised Terms.
-          </p>
-        </Section>
-
-        <Section title="3. Eligibility and Age Verification">
-          <p className="italic">
-            Summary: You must be 18+. We verify your age using your date of birth. We do not allow registered sex
-            offenders on our platform.
-          </p>
-          <p>
-            Elyxer is strictly intended for users who are 18 years of age or older. By using Elyxer, you represent and
-            warrant that you meet this age requirement.
-          </p>
-
-          <SubSection title="3.1 Age Verification Process">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>During registration, you are required to enter your date of birth. Our system automatically calculates your age;</li>
-              <li>You are then shown your calculated age and asked to explicitly confirm it before proceeding;</li>
-              <li>Accounts where the entered date of birth indicates the user is below 18 years of age are automatically placed on hold;</li>
-              <li>A held account may only be reactivated upon providing valid government-issued proof of age to our support team;</li>
-              <li>Providing false date of birth information to bypass age verification is a material breach of these Terms and may result in permanent account termination.</li>
-            </ul>
-          </SubSection>
-
-          <SubSection title="3.2 Account Eligibility">
-            <p>You are not eligible to use Elyxer if:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>You are under 18 years of age;</li>
-              <li>You have previously been suspended or permanently banned from Elyxer;</li>
-              <li>You are a convicted sex offender or are currently required to register as a sex offender under any applicable law in India or any other jurisdiction;</li>
-              <li>You have been convicted of any violent crime, crime of sexual abuse, or any offence involving minors;</li>
-              <li>Your use of Elyxer would violate any applicable law or regulation.</li>
-            </ul>
-          </SubSection>
-
-          <Callout title="Important — No Background Verification">
-            ELYXER DOES NOT CONDUCT CRIMINAL BACKGROUND CHECKS OR IDENTITY VERIFICATION ON ITS USERS. By using Elyxer,
-            you acknowledge and accept that other users may not be who they claim to be. We strongly encourage you to
-            exercise caution, use your judgment, and follow our safety guidelines at all times — both online and when
-            meeting anyone in person. Elyxer is not responsible for the conduct of any user on or off the platform.
-          </Callout>
-        </Section>
-
-        <Section title="4. Account Registration and Security">
-          <SubSection title="4.1 Account Creation">
-            <p>
-              To access Elyxer's features, you must create an account by providing accurate, current, and complete
-              information including your mobile number, name, email address, and date of birth. You agree to keep this
-              information up to date.
-            </p>
-          </SubSection>
-          <SubSection title="4.2 Account Security">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>You are solely responsible for maintaining the confidentiality of your account credentials;</li>
-              <li>You are responsible for all activities that occur under your account;</li>
-              <li>You must notify us immediately at support@elyxer.co if you suspect any unauthorised access to your account;</li>
-              <li>You may not share your account with any other person or create accounts on behalf of others;</li>
-              <li>You may not create more than one active account on Elyxer.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="4.3 Account Deactivation and Deletion">
-            <p>
-              You may choose to either deactivate (pause) or permanently delete your account at any time through Account
-              Settings &gt; Privacy Controls or by contacting support@elyxer.co.
-            </p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li><strong className="text-foreground">Deactivation:</strong> Your profile is hidden from other users but your data is retained. You may reactivate at any time;</li>
-              <li><strong className="text-foreground">Permanent Deletion:</strong> Your account and associated data are permanently deleted within 90 days. This action is irreversible.</li>
-            </ul>
-          </SubSection>
-        </Section>
-
-        <Section title="5. The Elyxer Platform and Features">
-          <p>Elyxer provides a social connection and dating platform with the following core features:</p>
-
-          <SubSection title="5.1 Profile Studio">
-            <p>
-              Upon onboarding, you provide descriptive information about yourself which our AI processes to generate
-              structured profile components including My Story, Interests, Narratives, and Join Me For sections. You
-              retain the right to review, edit, or delete any AI-generated content through your account settings.
-            </p>
-          </SubSection>
-          <SubSection title="5.2 Magic Search">
-            <p>
-              Elyxer's Magic Search feature uses AI algorithms to identify and suggest users with similar interests and
-              compatible traits. This is a discovery tool only and does not constitute any guarantee of compatibility,
-              connection, or outcome.
-            </p>
-          </SubSection>
-          <SubSection title="5.3 Invite, Vibe and Chat System">
-            <ul className="list-disc pl-6 space-y-1">
-              <li><strong className="text-foreground">Invite:</strong> You may send an invite to another user expressing interest in connecting;</li>
-              <li><strong className="text-foreground">Vibe:</strong> You may express a positive reaction to another user's profile or Moment;</li>
-              <li><strong className="text-foreground">Vibe Back:</strong> When both users mutually Vibe each other, a text chat conversation is automatically unlocked;</li>
-              <li><strong className="text-foreground">Chat:</strong> Text-based messaging is available between users who have mutually Vibed.</li>
-            </ul>
-            <p>
-              You are solely responsible for the content of your messages. Elyxer reserves the right to review, access,
-              and analyse messages and other communications — including through automated tools and human review — for
-              safety, moderation, and policy compliance purposes. By using the chat feature, you consent to this review
-              for the purposes stated.
-            </p>
-          </SubSection>
-          <SubSection title="5.4 Virtual Date Rooms">
-            <p>
-              Virtual Date Rooms provide a dedicated in-app space for real-time interaction between connected users.
-              Both participants must actively accept entry into a Virtual Date Room session before it begins,
-              constituting mutual consent to participate. By using Virtual Date Rooms, you agree that:
-            </p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>You will only enter a session after both parties have mutually accepted — entry itself constitutes consent;</li>
-              <li>Sessions are not recorded or stored by Elyxer;</li>
-              <li>You will conduct yourself respectfully and in accordance with our Community Guidelines;</li>
-              <li>You will not record, screenshot, or capture any content from Virtual Date Room sessions without the explicit prior consent of the other participant — doing so without consent is a serious violation of these Terms and may constitute a criminal offence under applicable law;</li>
-              <li>Elyxer is not liable for the conduct of other users during Virtual Date Room sessions.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="5.5 Selfie Badge">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>You may choose to take a real-time selfie using your device camera within the Elyxer app;</li>
-              <li>Once uploaded, the selfie is displayed on your public profile alongside a Selfie Badge indicator visible to all other users;</li>
-              <li>Earning a Selfie Badge is voluntary — you are not required to participate and your access to all other features is unaffected by your choice;</li>
-              <li>You may remove your selfie at any time through your profile settings. Upon removal, the Selfie Badge is immediately and permanently removed from your profile;</li>
-              <li>The Selfie Badge remains on your profile for as long as the selfie remains uploaded. If you delete the selfie, the badge is gone.</li>
-            </ul>
-            <Callout title="Selfie Badge — Important Disclaimer">
-              The Selfie Badge indicates only that a user has uploaded a real-time selfie taken within the Elyxer app at
-              a point in time. It does NOT constitute identity verification, background screening, or any guarantee
-              that the user is who they claim to be. Elyxer makes no representations about the authenticity or identity
-              of any user, including those who hold a Selfie Badge. You should exercise the same caution with all users
-              regardless of badge status.
-            </Callout>
-          </SubSection>
-          <SubSection title="5.6 Moments">
-            <p>
-              Elyxer allows you to post short-form content called Moments that are visible to all registered users on
-              the platform. By posting a Moment, you confirm that the content complies with our Community Guidelines
-              and that you have all necessary rights to the content posted.
-            </p>
-          </SubSection>
-          <SubSection title="5.7 Free and Premium Features">
-            <p>
-              Elyxer operates on a freemium model. Core features are available to all registered users at no cost.
-              Certain premium features are available exclusively to subscribers of our paid plans. The features
-              available under each tier are described within the application and may be updated from time to time.
-            </p>
-          </SubSection>
-        </Section>
-
-        <Section title="6. User Content and Intellectual Property">
-          <p className="italic">
-            Summary: You own your photos, bio, and Moments. By posting them, you give us permission to display them on
-            Elyxer. We own the app technology.
-          </p>
-          <SubSection title="6.1 Your Content — Ownership">
-            <p>
-              You retain full ownership of all content you create and upload to Elyxer, including your profile photos,
-              bio, Moments, and messages (collectively, "Your Content"). Elyxer does not claim ownership of Your
-              Content.
-            </p>
-          </SubSection>
-          <SubSection title="6.2 License to Elyxer">
-            <p>
-              By uploading or posting Your Content on Elyxer, you grant PROAPEX INNOVATIONS PRIVATE LIMITED a
-              non-exclusive, royalty-free, worldwide, sublicensable, and transferable license to:
-            </p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Display and distribute Your Content to other users of the Elyxer platform;</li>
-              <li>Process Your Content using AI tools to generate Profile Studio components and power matching features;</li>
-              <li>Use Your Content for safety moderation, content review, and policy enforcement;</li>
-              <li>Store, reproduce, and adapt Your Content solely as necessary to provide and improve the Elyxer service.</li>
-            </ul>
-            <p>
-              This license is granted for as long as Your Content remains on Elyxer and terminates when you delete Your
-              Content or your account, subject to retention obligations described in our Privacy Policy.
-            </p>
-          </SubSection>
-          <SubSection title="6.3 Your Representations">
-            <p>By uploading Your Content, you represent and warrant that:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>You own or have the necessary rights and permissions to upload and license the content;</li>
-              <li>Your Content does not infringe any third-party intellectual property rights;</li>
-              <li>Your Content does not violate any applicable law or these Terms;</li>
-              <li>You have obtained consent from any identifiable individuals appearing in your photos or content.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="6.4 Elyxer's Intellectual Property">
-            <p>
-              All intellectual property in the Elyxer application, including but not limited to the app design,
-              software, algorithms, AI models, brand name, logo, and all technology underlying the platform, is the
-              exclusive property of PROAPEX INNOVATIONS PRIVATE LIMITED. Nothing in these Terms grants you any right to
-              use Elyxer's intellectual property except as expressly permitted herein.
-            </p>
-          </SubSection>
-        </Section>
-
-        <Section title="7. Prohibited Conduct">
-          <p className="italic">
-            Summary: Don't create fake profiles, harass others, send explicit content, scam users, or tamper with the
-            platform. Violations may result in a permanent ban.
-          </p>
-          <SubSection title="7.1 Identity and Authenticity">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Create a fake or misleading profile or impersonate any person or entity;</li>
-              <li>Upload photos that are not of yourself or that misrepresent your appearance;</li>
-              <li>Provide false information including age, location, or identity;</li>
-              <li>Create multiple accounts or access the platform through automated means.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="7.2 Harmful and Illegal Content">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Post, share, or transmit any content that is obscene, pornographic, sexually explicit, or offensive;</li>
-              <li>Share or solicit nude or sexually explicit images;</li>
-              <li>Post content that promotes, glorifies, or facilitates violence, self-harm, or illegal activities;</li>
-              <li>Share content that is hateful, discriminatory, or harassing based on race, religion, gender, sexual orientation, disability, or any other protected characteristic;</li>
-              <li>Post content that infringes any third-party copyright, trademark, or other intellectual property rights.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="7.3 Harassment and Abuse">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Harass, bully, intimidate, stalk, or threaten any user;</li>
-              <li>Send unsolicited, repetitive, or unwanted messages to users;</li>
-              <li>Use Elyxer to engage in any form of sexual harassment;</li>
-              <li>Attempt to contact users who have blocked you through any means.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="7.4 Commercial and Fraudulent Activity">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Use Elyxer to solicit money from other users or engage in financial fraud;</li>
-              <li>Promote, advertise, or solicit for any commercial product or service;</li>
-              <li>Engage in any form of scamming, phishing, or deceptive practices;</li>
-              <li>Solicit personal financial information from other users.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="7.5 Platform Integrity">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Attempt to reverse engineer, decompile, or tamper with Elyxer's software or systems;</li>
-              <li>Introduce malware, viruses, or any harmful code into the platform;</li>
-              <li>Use automated bots, scrapers, or other tools to access or extract data from Elyxer;</li>
-              <li>Attempt to bypass any security or access control measures.</li>
-            </ul>
-          </SubSection>
-        </Section>
-
-        <Section title="8. Community Guidelines and Enforcement">
-          <SubSection title="8.1 Our Commitment">
-            <p>
-              Elyxer is committed to maintaining a safe, respectful, and inclusive community. All users are expected to
-              treat each other with dignity and respect at all times.
-            </p>
-          </SubSection>
-          <SubSection title="8.2 Content Moderation">
-            <p>
-              All profile photos, bios, and Moments posted on Elyxer are subject to moderation using a combination of
-              automated AI scanning and manual review by our trust and safety team. Content found to violate our
-              Community Guidelines may be removed without prior notice.
-            </p>
-          </SubSection>
-          <SubSection title="8.3 Enforcement Actions">
-            <ul className="list-disc pl-6 space-y-1">
-              <li><strong className="text-foreground">Warning:</strong> For minor or first-time violations, we may issue a formal warning to your registered email address;</li>
-              <li><strong className="text-foreground">Temporary Suspension:</strong> Your account may be suspended for a defined period pending investigation or as a consequence of repeated or serious violations;</li>
-              <li><strong className="text-foreground">Permanent Ban:</strong> Accounts found to have committed severe violations — including but not limited to sexual harassment, sharing of explicit content, fraud, impersonation, or illegal activity — will be permanently terminated with no option for reinstatement;</li>
-              <li><strong className="text-foreground">Legal Action:</strong> For violations involving criminal activity or serious harm, we reserve the right to report the matter to law enforcement authorities and pursue legal remedies.</li>
-            </ul>
-            <p>
-              All enforcement actions will be communicated to the affected user via their registered email address with
-              a clear explanation of the reason for the action taken. Users may contact grievance@elyxer.co to appeal
-              an enforcement decision.
-            </p>
-          </SubSection>
-        </Section>
-
-        <Section title="9. Subscriptions and Payments">
-          <p className="italic">
-            Summary: Elyxer is free with optional paid premium features. Subscriptions auto-renew unless cancelled.
-            Refunds are only available for technical payment failures, not voluntary cancellations.
-          </p>
-          <SubSection title="9.1 Free and Premium Tiers">
-            <p>
-              Elyxer offers a freemium model. Core features are available free of charge. Premium features require a
-              paid subscription. Details of what is included in each tier are available within the application.
-            </p>
-          </SubSection>
-          <SubSection title="9.2 Subscription Billing">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Subscriptions are billed on a recurring basis (monthly or annually, as selected);</li>
-              <li>Your subscription will automatically renew at the end of each billing period unless you cancel before the renewal date;</li>
-              <li>Subscription fees are charged to your chosen payment method through our third-party payment gateway;</li>
-              <li>You authorise Elyxer to charge your payment method for the applicable subscription fee on each renewal date;</li>
-              <li>All prices are inclusive of applicable taxes unless otherwise stated.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="9.3 Cancellation">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>You may cancel your subscription at any time through Account Settings &gt; Subscription or by contacting support@elyxer.co;</li>
-              <li>Cancellation takes effect at the end of the current billing period;</li>
-              <li>Upon cancellation, you will retain access to premium features until the end of your paid period;</li>
-              <li>After the paid period ends, your account will revert to the free tier.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="9.4 Refund Policy">
-            <ul className="list-disc pl-6 space-y-1">
-              <li><strong className="text-foreground">Technical payment failures:</strong> If a payment is processed but the corresponding premium service is not activated on your account due to a technical error on our part, you are entitled to a full refund. Please contact support@elyxer.co within 7 days;</li>
-              <li><strong className="text-foreground">Voluntary cancellation:</strong> Cancellation of a subscription does not entitle you to a refund for any unused portion of your current billing period. Your premium access continues until the end of the paid period;</li>
-              <li>All refund requests are reviewed on a case-by-case basis. Approved refunds will be processed to the original payment method within 7-10 business days;</li>
-              <li>Elyxer reserves the right to refuse refund requests where there is evidence of abuse of the refund policy.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="9.5 App Store Subscriptions">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Your subscription is managed by Apple or Google respectively, not directly by Elyxer;</li>
-              <li>Billing, renewal, and cancellation are handled according to Apple's or Google's terms and policies;</li>
-              <li>To cancel an App Store subscription, you must do so through your Apple ID account settings or Google Play account — cancelling within Elyxer alone will not cancel an App Store subscription;</li>
-              <li>Refund requests for App Store purchases must be directed to Apple or Google respectively — Elyxer does not process refunds for transactions made through app stores;</li>
-              <li>Price changes to your subscription will be communicated in accordance with Apple's or Google's notification procedures.</li>
-            </ul>
-          </SubSection>
-          <Callout title="Consumer Protection Notice">
-            Your rights under the Consumer Protection Act, 2019 and Consumer Protection (E-Commerce) Rules, 2020 are
-            not affected by these Terms. If you have a complaint regarding a transaction, you may contact our Grievance
-            Officer or approach the appropriate consumer forum.
-          </Callout>
-        </Section>
-
-        <Section title="10. Disclaimers and Limitation of Liability">
-          <SubSection title="10.1 No Guarantee of Connections">
-            <p>
-              Elyxer is a platform that facilitates social connections and dating. We do not guarantee that use of the
-              platform will result in any particular connection, relationship, or outcome. The success of any
-              connection depends entirely on the users involved.
-            </p>
-          </SubSection>
-          <SubSection title="10.2 User Conduct">
-            <p>
-              Elyxer is not responsible for the conduct, behaviour, or actions of any user, whether on or off the
-              platform. You agree to exercise caution and use good judgment when interacting with other users,
-              particularly when meeting in person.
-            </p>
-          </SubSection>
-          <SubSection title="10.3 Platform Availability">
-            <p>
-              Elyxer is provided on an "as is" and "as available" basis. We do not warrant that the platform will be
-              uninterrupted, error-free, or free of harmful components. We reserve the right to modify, suspend, or
-              discontinue any part of the service at any time with reasonable notice.
-            </p>
-          </SubSection>
-          <SubSection title="10.4 Limitation of Liability">
-            <p>
-              To the maximum extent permitted by applicable Indian law, PROAPEX INNOVATIONS PRIVATE LIMITED shall not
-              be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or
-              relating to your use of Elyxer, including but not limited to:
-            </p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Loss of data or content;</li>
-              <li>Personal injury or emotional distress resulting from interactions with other users;</li>
-              <li>Unauthorised access to your account or personal data due to circumstances beyond our reasonable control;</li>
-              <li>Any conduct or content of other users, whether online or offline.</li>
-            </ul>
-            <p>
-              Our total liability to you for any claim arising under these Terms shall not exceed the total amount paid
-              by you to Elyxer in the 3 months immediately preceding the event giving rise to the claim, or INR 5,000,
-              whichever is greater.
-            </p>
-          </SubSection>
-        </Section>
-
-        <Section title="11. Safety Guidelines and Disclaimers">
-          <p className="italic">
-            Summary: We do not run background checks on users. Meeting anyone in person is at your own risk. Always take
-            precautions and report anything suspicious immediately.
-          </p>
-          <Callout title="In-Person Meeting Liability Disclaimer">
-            ELYXER EXPRESSLY DISCLAIMS ALL LIABILITY FOR ANY INJURY, HARM, LOSS, OR DAMAGE — WHETHER PHYSICAL,
-            EMOTIONAL, FINANCIAL, OR OTHERWISE — THAT YOU MAY SUFFER AS A RESULT OF MEETING ANOTHER USER IN PERSON.
-            YOUR DECISION TO MEET ANYONE FROM ELYXER IN PERSON IS ENTIRELY AT YOUR OWN RISK. ELYXER IS AN ONLINE
-            PLATFORM ONLY AND HAS NO CONTROL OVER USER CONDUCT OUTSIDE THE APP.
-          </Callout>
-          <SubSection title="11.1 Online Safety">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Never share personal financial information, bank details, UPI IDs, or passwords with anyone on the platform;</li>
-              <li>Be cautious about sharing your precise home address, workplace, or daily routine;</li>
-              <li>Be alert to signs of romance scams — users asking for money, gifts, or financial assistance should be reported immediately;</li>
-              <li>Trust your instincts — if something feels wrong, use our block and report features immediately;</li>
-              <li>Report any suspicious behaviour, harassment, or threats to our team via the in-app report function or by emailing grievance@elyxer.co.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="11.2 In-Person Meeting Safety">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Always meet for the first time in a well-populated public place — never at a private residence or isolated location;</li>
-              <li>Inform a trusted friend or family member of your plans, including the location and time of the meeting;</li>
-              <li>Arrange your own transportation to and from the meeting — do not rely on the other person for transport;</li>
-              <li>Do not leave your food or drinks unattended;</li>
-              <li>If at any point you feel unsafe, leave immediately and contact emergency services if necessary.</li>
-            </ul>
-          </SubSection>
-        </Section>
-
-        <Section title="12. Copyright Infringement and Takedown Procedure">
-          <p className="italic">
-            Summary: If someone posts content that infringes your copyright, email us at grievance@elyxer.co and we
-            will remove it. Repeat infringers will be permanently banned.
-          </p>
-          <SubSection title="12.1 How to Submit a Takedown Request">
-            <p>To submit a valid copyright takedown request, please send a written notice to grievance@elyxer.co containing all of the following:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Your full name, address, telephone number, and email address;</li>
-              <li>A description of the copyrighted work or intellectual property you claim has been infringed;</li>
-              <li>A description of where the infringing content is located on Elyxer (e.g. profile URL, username, or screenshot);</li>
-              <li>A statement that you have a good faith belief that the use of the content is not authorised by the copyright owner, its agent, or the law;</li>
-              <li>A statement that the information in your notice is accurate and that you are the copyright owner or authorised to act on their behalf;</li>
-              <li>Your electronic or physical signature.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="12.2 Our Response">
-            <ul className="list-disc pl-6 space-y-1">
-              <li>We will acknowledge valid takedown requests within 48 hours;</li>
-              <li>Upon verification, we will remove or disable access to the infringing content promptly;</li>
-              <li>We will notify the user who posted the content that it has been removed;</li>
-              <li>Repeat infringers will have their accounts permanently terminated.</li>
-            </ul>
-          </SubSection>
-          <SubSection title="12.3 Counter-Notification">
-            <p>
-              If you believe your content was removed in error, you may submit a counter-notification to
-              grievance@elyxer.co with your full details, a description of the removed content, and a statement that
-              you have a good faith belief the content was removed by mistake. We will review counter-notifications on
-              a case-by-case basis.
-            </p>
-          </SubSection>
-        </Section>
-
-        <Section title="13. Third-Party Services">
-          <p>
-            Elyxer integrates with certain third-party services including payment processors, cloud infrastructure, and
-            analytics providers. Your use of these third-party services is subject to their respective terms and
-            privacy policies. Elyxer is not responsible for the practices or content of any third-party service.
-          </p>
-          <p>
-            Elyxer may contain links to third-party websites. These links are provided for your convenience only and do
-            not constitute an endorsement of the linked website or its contents.
-          </p>
-        </Section>
-
-        <Section title="14. Indemnification">
-          <p>
-            You agree to indemnify, defend, and hold harmless PROAPEX INNOVATIONS PRIVATE LIMITED, its directors,
-            officers, employees, and agents from and against any claims, liabilities, damages, losses, costs, or
-            expenses (including reasonable legal fees) arising out of or in connection with:
-          </p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Your use of or access to Elyxer;</li>
-            <li>Your violation of these Terms of Service;</li>
-            <li>Your violation of any applicable law or regulation;</li>
-            <li>Your Content or any content you post, share, or transmit on Elyxer;</li>
-            <li>Your interaction with any other user on or off the platform.</li>
-          </ul>
-        </Section>
-
-        <Section title="15. Grievance Redressal">
-          <p>
-            In accordance with the Information Technology Act, 2000 and IT (Intermediary Guidelines and Digital Media
-            Ethics Code) Rules, 2021, we have appointed a Grievance Officer to address your concerns:
-          </p>
-          <Callout title="Grievance Officer">
-            <ul className="list-none space-y-1">
-              <li><strong className="text-foreground">Name:</strong> SARANKUMAR K</li>
-              <li><strong className="text-foreground">Designation:</strong> Co-Founder &amp; Director</li>
-              <li><strong className="text-foreground">Company:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED</li>
-              <li><strong className="text-foreground">Address:</strong> Unit 101, Oxford Towers, 139, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka - 560008, India</li>
-              <li><strong className="text-foreground">Email:</strong> grievance@elyxer.co</li>
-              <li><strong className="text-foreground">Acknowledgment:</strong> Within 24 hours of receipt</li>
-              <li><strong className="text-foreground">Resolution:</strong> Within 48 hours of acknowledgment</li>
-            </ul>
-          </Callout>
-        </Section>
-
-        <Section title="16. Governing Law and Dispute Resolution">
-          <p className="italic">
-            Summary: Indian law applies. Any disputes go to Bengaluru courts. We encourage you to contact us first to
-            resolve issues informally.
-          </p>
-          <SubSection title="16.1 Governing Law">
-            <p>
-              These Terms of Service shall be governed by and construed in accordance with the laws of India, without
-              regard to its conflict of law provisions.
-            </p>
-          </SubSection>
-          <SubSection title="16.2 Jurisdiction">
-            <p>
-              Any dispute, claim, or controversy arising out of or relating to these Terms, the breach thereof, or your
-              use of Elyxer shall be subject to the exclusive jurisdiction of the courts in Bengaluru, Karnataka,
-              India. By agreeing to these Terms, you consent to the personal jurisdiction of such courts.
-            </p>
-          </SubSection>
-          <SubSection title="16.3 Informal Resolution">
-            <p>
-              Before initiating any formal legal proceedings, we encourage you to contact us at support@elyxer.co to
-              attempt to resolve the dispute informally. We will make reasonable efforts to resolve your concern within
-              30 days of receipt.
-            </p>
-          </SubSection>
-        </Section>
-
-        <Section title="17. Termination">
-          <p>
-            Elyxer reserves the right to suspend or permanently terminate your account and access to the platform at
-            any time, with or without notice, if:
-          </p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>You breach any provision of these Terms of Service;</li>
-            <li>You violate our Community Guidelines;</li>
-            <li>We are required to do so by applicable law or a court order;</li>
-            <li>We discontinue the Elyxer service in whole or in part.</li>
-          </ul>
-          <p>
-            Upon termination, your right to use Elyxer ceases immediately. Provisions of these Terms that by their
-            nature should survive termination — including intellectual property, indemnification, disclaimers, and
-            governing law — shall continue to apply.
-          </p>
-        </Section>
-
-        <Section title="18. General Provisions">
-          <SubSection title="18.1 Entire Agreement">
-            <p>
-              These Terms of Service, together with our Privacy Policy, Cookie Policy, and any other policies
-              incorporated by reference, constitute the entire agreement between you and Elyxer with respect to your
-              use of the platform.
-            </p>
-          </SubSection>
-          <SubSection title="18.2 Severability">
-            <p>
-              If any provision of these Terms is found to be unenforceable or invalid under applicable law, that
-              provision shall be modified to the minimum extent necessary to make it enforceable, and the remaining
-              provisions shall continue in full force and effect.
-            </p>
-          </SubSection>
-          <SubSection title="18.3 Waiver">
-            <p>
-              Our failure to enforce any right or provision of these Terms shall not be deemed a waiver of such right
-              or provision. Any waiver must be in writing and signed by an authorised representative of PROAPEX
-              INNOVATIONS PRIVATE LIMITED.
-            </p>
-          </SubSection>
-          <SubSection title="18.4 Assignment">
-            <p>
-              You may not assign or transfer your rights or obligations under these Terms without our prior written
-              consent. Elyxer may assign these Terms in connection with a merger, acquisition, or sale of all or
-              substantially all of our assets, with notice to you.
-            </p>
-          </SubSection>
-          <SubSection title="18.5 Language">
-            <p>
-              These Terms are drafted in English. In case of any conflict between an English version and any translated
-              version, the English version shall prevail.
-            </p>
-          </SubSection>
-        </Section>
-
-        <Section title="19. Contact Us">
-          <p>For any questions, concerns, or feedback regarding these Terms of Service, please contact us at:</p>
-          <ul className="list-none space-y-1">
-            <li><strong className="text-foreground">General Support:</strong> support@elyxer.co</li>
-            <li><strong className="text-foreground">Grievance Officer:</strong> grievance@elyxer.co</li>
-            <li><strong className="text-foreground">Postal Address:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED, Unit 101, Oxford Towers, 139, HAL Old Airport Road, Kodihalli, Bengaluru, Karnataka - 560008, India</li>
-          </ul>
-        </Section>
-
-        <LegalFooterNote>
-          These Terms of Service are governed by the laws of India including the Information Technology Act, 2000,
-          Consumer Protection Act, 2019, and the Digital Personal Data Protection Act, 2023.
-        </LegalFooterNote>
+        <LegalContents items={contents} />
+        <DocSection id="agreement-to-our-legal-terms" title={"AGREEMENT TO OUR LEGAL TERMS"}>
+          <P>We are PROAPEX INNOVATIONS PRIVATE LIMITED, doing business as Elyxer ('<strong>Company</strong>', '<strong>we</strong>', '<strong>us</strong>', or '<strong>our</strong>'), a company registered in India at U 101, Oxford Towers, 139/88 HAL Old Airport Road, H.A.L II Stage, Bangalore North, Bangalore, Karnataka 560008.</P>
+          <P>We operate the website <A href="https://elyxer.co" ext>https://elyxer.co</A> (the '<strong>Site</strong>'), the mobile application <strong>Elyxer</strong> (the '<strong>App</strong>'), as well as any other related products and services that refer or link to these legal terms (the '<strong>Legal Terms</strong>') (collectively, the '<strong>Services</strong>').</P>
+          <P>You can contact us by email at <A href="mailto:support@elyxer.co">support@elyxer.co</A> or by mail to <strong>U 101, Oxford Towers, 139/88 HAL Old Airport Road, H.A.L II Stage, Bangalore North, Bangalore, Karnataka 560008, India</strong>.</P>
+          <P>These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ('<strong>you</strong>'), and PROAPEX INNOVATIONS PRIVATE LIMITED, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</P>
+          <P>Supplemental terms and conditions or documents that may be posted on the Services from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Legal Terms at any time and for any reason. We will notify you of material changes through the app or by email before they take effect, where practicable, and update the 'Last updated' date of these Legal Terms. It is your responsibility to periodically review these Legal Terms to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Legal Terms by your continued use of the Services after the date such revised Legal Terms are posted.</P>
+          <P><strong>Eligibility and Strict 18+ Requirement.</strong> The Services are intended solely for adults who are at least eighteen (18) years old. You must be 18 or older to create an account, access or use any part of the Services, or participate in any activity or interaction through Elyxer. <strong>If you are under 18, you must not register for, access or use the Services, even with the permission or supervision of a parent or guardian.</strong></P>
+          <P>By registering for or using the Services, you represent and warrant that you are at least 18 years old and that the date of birth and other information you provide are accurate and truthful. You must not misstate your age, use another person’s account, allow another person to use your account, or otherwise attempt to bypass our age restrictions.</P>
+          <P>We take the 18+ requirement seriously. We may use age-related information, user reports and other available signals to identify accounts that may belong to minors. We may restrict or suspend an account while we investigate an age concern, and permanently close an account if we determine that its user is under 18 or has materially misrepresented their age. Where appropriate and permitted by law, we may also take steps to prevent the person from creating another account.</P>
+          <P>You must not invite, encourage or help a person under 18 to access or use Elyxer, including by sharing your account or arranging access through another person. If you believe an account belongs to someone under 18, please report it through the reporting tools or contact us at <strong><A href="mailto:grievance@elyxer.co">grievance@elyxer.co</A></strong>.</P>
+          <P>We do not represent that every user’s age or identity has been independently verified. Any age-related checks or safety measures we use do not guarantee that all minors will be detected.</P>
+          <P>We recommend that you print a copy of these Legal Terms for your records.</P>
+        </DocSection>
+        <DocSection id="section-1" title={"1. OUR SERVICES"}>
+          <P>The information provided when using the Services is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access the Services from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.</P>
+        </DocSection>
+        <DocSection id="section-2" title={"2. INTELLECTUAL PROPERTY RIGHTS"}>
+          <H3>Our intellectual property</H3>
+          <P>We are the owner or the licensee of all intellectual property rights in our Services, including all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics in the Services (collectively, the 'Content'), as well as the trademarks, service marks, and logos contained therein (the 'Marks').</P>
+          <P>Our Content and Marks are protected by copyright and trademark laws (and various other intellectual property rights and unfair competition laws) of India and treaties around the world.</P>
+          <P>The Content and Marks are provided in or through the Services 'AS IS' for your personal, non-commercial use or internal business purpose only.</P>
+          <H3>Your use of our Services</H3>
+          <P>Subject to your compliance with these Legal Terms, including the '<A href="#section-6">PROHIBITED ACTIVITIES</A>' section below, we grant you a non-exclusive, non-transferable, revocable licence to:</P>
+          <UL>
+            <LI>access the Services; and</LI>
+            <LI>download or print a copy of any portion of the Content to which you have properly gained access,</LI>
+          </UL>
+          <P>solely for your personal, non-commercial use or internal business purpose.</P>
+          <P>Except as set out in this section or elsewhere in our Legal Terms, no part of the Services and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.</P>
+          <P>If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in our Legal Terms, please address your request to: <A href="mailto:support@elyxer.co">support@elyxer.co</A>. If we ever grant you the permission to post, reproduce, or publicly display any part of our Services or Content, you must identify us as the owners or licensors of the Services, Content, or Marks and ensure that any copyright or proprietary notice appears or is visible on posting, reproducing, or displaying our Content.</P>
+          <P>We reserve all rights not expressly granted to you in and to the Services, Content, and Marks.</P>
+          <P>Any breach of these Intellectual Property Rights will constitute a material breach of our Legal Terms and your right to use our Services will terminate immediately.</P>
+          <H3>Your submissions and contributions</H3>
+          <P>Please review this section and the '<A href="#section-6">PROHIBITED ACTIVITIES</A>' section carefully prior to using our Services to understand the (a) rights you give us and (b) obligations you have when you post or upload any content through the Services.</P>
+          <P><strong>Submissions:</strong> By directly sending us any question, comment, suggestion, idea, feedback, or other information about the Services ('Submissions'), you agree to assign to us all intellectual property rights in such Submission. You agree that we shall own this Submission and be entitled to its unrestricted use and dissemination for any lawful purpose, commercial or otherwise, without acknowledgement or compensation to you.</P>
+          <P><strong>Contributions:</strong> The Services may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality during which you may create, submit, post, display, transmit, publish, distribute, or broadcast content and materials to us or through the Services, including but not limited to text, writings, video, audio, photographs, music, graphics, comments, reviews, rating suggestions, personal information, or other material ('Contributions'). Any Submission that is publicly posted shall also be treated as a Contribution.</P>
+          <P>You understand that Contributions may be viewable by other users of the Services and possibly through third-party websites.</P>
+          <P><strong>You are responsible for what you post or upload:</strong> By sending us Submissions and/or posting Contributions through any part of the Services, you:</P>
+          <UL>
+            <LI>confirm that you have read and agree with our '<A href="#section-6">PROHIBITED ACTIVITIES</A>' and will not post, send, publish, upload, or transmit through the Services any Submission nor post any Contribution that is illegal, harassing, hateful, harmful, defamatory, obscene, bullying, abusive, discriminatory, threatening to any person or group, sexually explicit, false, inaccurate, deceitful, or misleading;</LI>
+            <LI>to the extent permissible by applicable law, waive any and all moral rights to any such Submission and/or Contribution;</LI>
+            <LI>warrant that any such Submission and/or Contributions are original to you or that you have the necessary rights and licences to submit such Submissions and/or Contributions and that you have full authority to grant us the rights described in these Legal Terms in relation to your Submissions and/or Contributions; and</LI>
+            <LI>warrant and represent that your Submissions and/or Contributions do not constitute confidential information.</LI>
+          </UL>
+          <P>You are solely responsible for your Submissions and/or Contributions and you expressly agree to reimburse us for any and all losses that we may suffer because of your breach of (a) this section, (b) any third party’s intellectual property rights, or (c) applicable law.</P>
+          <P><strong>We may remove or edit your Content:</strong> Although we have no obligation to monitor any Contributions, we shall have the right to remove or edit any Contributions at any time without notice if in our reasonable opinion we consider such Contributions harmful or in breach of these Legal Terms. If we remove or edit any such Contributions, we may also suspend or disable your account and report you to the authorities.</P>
+          <H3>Copyright infringement</H3>
+          <P>We respect the intellectual property rights of others. If you believe that any material available on or through the Services infringes upon any copyright you own or control, please immediately refer to the '<A href="#section-14">COPYRIGHT INFRINGEMENTS</A>' section below.</P>
+        </DocSection>
+        <DocSection id="section-3" title={"3. USER REPRESENTATIONS"}>
+          <P>By using Elyxer, you represent and warrant that:</P>
+          <OL>
+            <LI>You are at least 18 years old and legally capable of entering into this agreement. You must not use Elyxer if prohibited by law or if applicable law requires a higher minimum age or additional legal capacity that you do not meet.</LI>
+            <LI>All registration information you provide is true, accurate, current and complete. You will keep it accurate and promptly update it when necessary.</LI>
+            <LI>You will not use another person’s account, impersonate anyone, misstate your age, or create or use a new account to evade a current suspension or ban. If a restriction is overturned on review, Elyxer may approve reinstatement.</LI>
+            <LI>You will not access the Services through bots, scripts or other automated or non-human means, or use the Services for an illegal or unauthorised purpose or in violation of applicable law.</LI>
+            <LI>You have not been convicted of a sexual offence, serious violent offence or offence involving child exploitation that makes you ineligible under Elyxer’s safety rules.</LI>
+          </OL>
+          <P>Anyone under 18 is prohibited from registering, accessing dating features or purchasing services, even with parental or guardian permission. Adults must not create or lend accounts to minors, invite minors into virtual sessions, or help them bypass age controls.</P>
+          <P><strong>Age and eligibility checks.</strong> Entering a date of birth is an age declaration, not documentary verification. Elyxer does not claim to verify every user’s identity, age, statements or criminal record. We may restrict an account where we reasonably suspect that the user is underage or otherwise ineligible, and our moderation team will review it. An account we conclude belongs to a person under 18 will be permanently banned.</P>
+          <P><strong>Payment does not override eligibility.</strong> We will handle related cancellation and refund requests under <A href="#section-5">Section 5</A> and applicable law, without requiring a child to continue using the Services. If you provide information that is false, inaccurate, outdated or incomplete, or breach these requirements, Elyxer may suspend or terminate your account and refuse current or future access to all or part of the Services, subject to applicable law and any available review process.</P>
+        </DocSection>
+        <DocSection id="section-4" title={"4. FEATURES AND INTERACTION"}>
+          <P>Elyxer offers profiles and discovery, Invites, Vibes, Moments, messaging and available virtual-interaction features. The app explains which features are available to you, along with any limits, eligibility requirements and prices.</P>
+          <H3>Invites, Vibes and Messaging</H3>
+          <P>An Invite or Vibe lets you express interest. It does not require the other person to respond, meet, communicate or agree to anything else. Messaging follows the mutual-consent steps shown in the app.</P>
+          <H3>Availability and Access</H3>
+          <P>Elyxer is launching in India city by city. Joining a waitlist or registering does not guarantee immediate access to every feature. The app will show which features are available to you. Payment features may not be available during early access.</P>
+          <P>Profiles and Moments are displayed according to the applicable visibility and access rules. Paying for access does not override a block, privacy setting or another person’s choice. Do not use Elyxer to find or contact someone who has chosen not to engage with you.</P>
+          <H3>Moments</H3>
+          <P>Moments are photo or text posts. They are shown in the feed for a limited live period, which Elyxer sets and shows in the app when you post. We may change the live period from time to time; a change applies only to Moments posted after it takes effect. When the live period ends, a Moment appears only to its author in My Moments and is scheduled for deletion 30 days later, subject to the retention exceptions in our Privacy Policy.</P>
+          <P>Editing a live Moment does not restart its timer. Reposting an ended Moment starts a new live period and counts toward the Moments allowance included with your plan. Moments are not sold as separate paid items. Deleting a Moment does not restore an allowance already used.</P>
+          <H3>Selfie Badge</H3>
+          <P>The optional Selfie Badge shows that a selfie was captured through Elyxer. The selfie appears on your profile according to your visibility settings. It is not compared with other profile photos and does not verify your identity, age, liveness, safety, background or intentions.</P>
+          <P>You can remove your selfie at any time; doing so also removes the badge. Any deletion or retention is handled under our Privacy Policy.</P>
+          <H3>Virtual Sessions</H3>
+          <P>Both participants must agree to join a virtual session, and either participant may leave at any time. Joining does not mean you consent to sexual conduct, recording, disclosure or an in-person meeting.</P>
+          <P>Recording or capturing a virtual session is prohibited, except where applicable law permits limited evidence preservation or reporting. Elyxer does not routinely record virtual sessions and cannot guarantee that another participant will follow these rules.</P>
+        </DocSection>
+        <DocSection id="section-5" title={"5. SUBSCRIPTIONS, CANCELLATIONS AND REFUNDS"}>
+          <H3>Plans and pricing</H3>
+          <P>Elyxer offers a free plan and two paid plans: <strong>Elyxer Plus</strong> and <strong>Elyxer Infinity</strong>. We may also offer one-off packs of Vibes, Invites, Gold Invites, AI-assisted searches and Virtual Dates. Each plan has its own benefits and allowances, and the extras available to buy differ by plan. These are shown in the app before you buy and may change from time to time; a change applies from your next billing period.</P>
+          <P>The purchase screen shows the product, total price and currency, applicable taxes, billing period, renewal terms, payment provider, included benefits and material usage limits. Review these details before confirming. A feature name alone does not promise unlimited use.</P>
+          <H3>Trials and recurring payments</H3>
+          <P>A subscription renews only under the authorisation and terms shown at purchase. Before you confirm, we will explain whether it renews automatically, how often you will be charged and the benefits and limits included.</P>
+          <P>Any trial or introductory offer will state its duration, the price after the offer, when charging begins and how and by when to cancel. A monthly equivalent will not replace or obscure an upfront annual charge. Recurring charges, trial conversions, price changes and renewal notices are handled in accordance with applicable law and the billing provider’s requirements. Any required consent or notice will be provided before the affected charge.</P>
+          <P>We do not guarantee a particular number of dates, responses, connections or relationships in return for payment.</P>
+          <H3>Complimentary access</H3>
+          <P>The first 10,000 eligible early-access sign-ups receive seven days of complimentary Elyxer Plus, starting on the notified date when Discover opens. Eligibility will be confirmed in the app; joining early access alone does not guarantee the offer.</P>
+          <P>At the end of the seven days, your account returns to Free. The offer does not automatically convert to a paid subscription or charge you. Continuing Plus requires a separate purchase.</P>
+          <H3>Cancellation and subscription management</H3>
+          <P>You may cancel future renewals through the billing provider’s cancellation controls. Cancel before the renewal cutoff shown by the provider to avoid the next charge.</P>
+          <H3>For subscriptions purchased through Google Play (Android):</H3>
+          <OL>
+            <LI>Open the Google Play Store.</LI>
+            <LI>Tap your profile icon.</LI>
+            <LI>Select <strong>Payments & subscriptions</strong> → <strong>Subscriptions</strong>.</LI>
+            <LI>Select Elyxer, tap <strong>Cancel subscription</strong>, and follow the prompts.</LI>
+          </OL>
+          <H3>For subscriptions purchased through Apple (iPhone or iPad):</H3>
+          <OL>
+            <LI>Open <strong>Settings</strong> and tap your name.</LI>
+            <LI>Tap <strong>Subscriptions</strong>.</LI>
+            <LI>Select Elyxer, tap <strong>Cancel Subscription</strong>, and follow the prompts.</LI>
+          </OL>
+          <P>Where Elyxer offers a direct payment option and you buy through it, use the cancellation option shown in the app or contact <strong><A href="mailto:support@elyxer.co">support@elyxer.co</A></strong>.</P>
+          <P>Deleting the app or your Elyxer account, pausing your profile, or emailing us does not by itself cancel a store-managed subscription. A profile pause does not pause billing unless a separate billing pause is expressly confirmed. Elyxer provides subscription-management and online cancellation controls, including the relevant store route for store-billed purchases. We do not require a phone call or hidden cancellation steps. Contact support if the cancellation route fails.</P>
+          <H3>What happens after cancellation</H3>
+          <P>Cancellation stops future automatic renewals. Your paid subscription benefits normally continue until the end of the current paid period, after which your account returns to Free unless you purchase another subscription. Cancellation does not automatically refund the current period.</P>
+          <P>Plan changes take effect according to the effective date, charge adjustment and benefit changes shown before confirmation. Failed payments may interrupt paid access under the disclosed billing rules; a payment retry does not authorise undisclosed charges.</P>
+          <H3>Refunds and billing problems</H3>
+          <P>Voluntary cancellation does not ordinarily result in a pro-rata refund for a service properly supplied, subject to applicable law and any rights provided by the relevant app store. This does not exclude remedies for duplicate or unauthorised charges, non-delivery, defective service, misleading descriptions or other grounds protected by law. There is no blanket seven-day forfeiture of statutory rights.</P>
+          <UL>
+            <LI><strong>Apple purchases:</strong> Request a refund through Apple’s refund process.</LI>
+            <LI><strong>Google Play purchases:</strong> Follow Google Play’s refund process. Contact Elyxer if developer assistance is required.</LI>
+            <LI><strong>Purchases through Elyxer’s direct payment option, where offered:</strong> Contact <A href="mailto:support@elyxer.co">support@elyxer.co</A> with your transaction reference. We will review the request under these Terms and applicable law and, where approved, initiate the refund through the payment gateway. The gateway and payment institution process the reversal, normally to the original payment method. We will explain the applicable timeframe and investigate delays.</LI>
+          </UL>
+          <P>If we discontinue a paid feature or end your access for reasons not attributable to your breach, we will provide any remedy required by law and, where appropriate, a proportionate refund for service not delivered. Enforcement action does not remove payment rights that cannot legally be excluded.</P>
+          <P>If you cannot access a purchase, use the purchase-restoration option where available or contact support with your receipt reference. Do not repurchase solely because access is missing. Restoration does not recreate credits already used. We will investigate duplicate charges, missing entitlements and purchases associated with an underage account, and provide any remedy required by law.</P>
+          <P>Do not send passwords, OTPs or full payment-card details with a billing complaint.</P>
+          <H3>Plan allowances and credits</H3>
+          <P><strong>Plan allowances.</strong> Your plan’s benefits and allowances remain available until the plan’s end date shown in the app, including after you cancel renewal. While your plan is active, any allowance you do not use in a week carries over to the following week. When your plan ends, unused plan allowances cannot be used on the Free plan; they are kept on your account and become usable again if you renew the same plan. This also applies to Gold Invites, which can be sent only on the Infinity plan. If you change plans, the benefits and allowances of the new plan apply from the date of the change, as shown before you confirm.</P>
+          <P><strong>Items bought individually.</strong> One-off packs are one-time purchases and do not renew. Items you buy individually carry forward until used, including after a subscription ends, except Gold Invites as described above. They are personal, non-transferable and not redeemable for cash, except where a refund or other remedy is due. We will explain when an item is consumed before use.</P>
+          <P>Moments are not sold separately. Account closure or a lawful restriction is separate from subscription cancellation; applicable payment and consumer rights remain protected.</P>
+        </DocSection>
+        <DocSection id="section-6" title={"6. PROHIBITED ACTIVITIES"}>
+          <P>You may not access or use the Services for any purpose other than that for which we make the Services available. The Services may not be used in connection with any commercial endeavours except those that are specifically endorsed or approved by us.</P>
+          <P>As a user of the Services, you agree not to:</P>
+          <UL>
+            <LI>use Elyxer in violation of applicable law or to plan, promote or facilitate unlawful activity;</LI>
+            <LI>create a false identity, impersonate another person, misrepresent your age or use another person’s account;</LI>
+            <LI>harass, threaten, stalk, coerce, exploit or repeatedly contact someone who has declined contact or blocked you;</LI>
+            <LI>upload, request, share or link to child sexual abuse material, sexually exploit a minor, or post any image or video in which a child appears, including a childhood photo of yourself or a photo showing a child alongside you;</LI>
+            <LI>post or send pornography, sexually explicit content, non-consensual intimate material, sexual threats or unsolicited sexual images;</LI>
+            <LI>use Elyxer for scams, phishing, blackmail, money solicitation, unauthorised advertising, spam or commercial sexual services;</LI>
+            <LI>disclose another person’s private information, scrape profiles, track users or use information to bypass their privacy choices;</LI>
+            <LI>record or capture virtual sessions, except where applicable law permits limited evidence preservation or reporting;</LI>
+            <LI>upload content you do not have the right to use, or content that infringes another person’s intellectual property or privacy rights;</LI>
+            <LI>use bots, scripts, scraping tools, malicious code or other unauthorised methods to access, disrupt or manipulate Elyxer;</LI>
+            <LI>evade age controls, feature limits, suspensions or bans, or interfere with Elyxer’s safety, moderation or security systems;</LI>
+            <LI>
+              <P>host, display, upload, modify, publish, transmit, store, update or share any information that:</P>
+              <UL>
+                <LI>belongs to another person and to which you have no right;</LI>
+                <LI>is obscene, pornographic, paedophilic, invasive of another’s privacy (including bodily privacy), insulting or harassing on the basis of gender, racially or ethnically objectionable, relating to or encouraging money laundering or gambling, or promoting enmity between groups on the grounds of religion or caste with the intent to incite violence;</LI>
+                <LI>is harmful to a child;</LI>
+                <LI>infringes any patent, trademark, copyright or other proprietary right;</LI>
+                <LI>deceives or misleads about the origin of a message, or knowingly communicates misinformation or information that is patently false or untrue;</LI>
+                <LI>impersonates another person, including through synthetically generated or AI-altered images, audio or video;</LI>
+                <LI>threatens the unity, integrity, defence, security or sovereignty of India, friendly relations with foreign states or public order, or incites the commission of any offence;</LI>
+                <LI>contains software viruses or any other code designed to interrupt, destroy or limit the functionality of any computer resource; or</LI>
+                <LI>violates any law in force.</LI>
+              </UL>
+            </LI>
+          </UL>
+          <P>Elyxer has zero tolerance for objectionable content and abusive users. Breaking these rules may lead to immediate removal of content, suspension or termination of your account, and, where the law requires, a report to the authorities. We will remind you of these rules at least once every three months.</P>
+          <P>We may remove content, restrict features, suspend or terminate access, preserve relevant evidence, or report conduct to the appropriate authorities where required or permitted by law.</P>
+          <P>We may take immediate protective action where we reasonably believe there is a serious safety risk. These measures do not limit any rights or remedies available under applicable law.</P>
+        </DocSection>
+        <DocSection id="section-7" title={"7. REPORTING, MODERATION AND INVESTIGATIONS"}>
+          <P>You can report an account, conversation or content using the in-app Report tool or by emailing <strong><A href="mailto:grievance@elyxer.co">grievance@elyxer.co</A></strong>. You can block anyone at any time.</P>
+          <P>By using Elyxer, you agree that when an account, conversation or content is reported, or when we reasonably suspect unlawful activity, a serious safety risk or a breach of these Legal Terms or our Community Guidelines, authorised Elyxer staff may access, review and preserve the relevant messages, shared media, profile information, Moments, Vibes, Invites, session metadata and account records. A report by one participant allows review of the whole reported conversation, including the other participant’s messages. Our Privacy Policy explains this in detail.</P>
+          <P>Depending on the outcome, we may remove content, warn you, restrict features, suspend your account, or permanently ban you and any related accounts. For the most serious report categories, we may suspend an account automatically as soon as the report is received, pending moderator review.</P>
+          <P>We cooperate with law enforcement. We will provide information or assistance to a lawfully authorised government agency or court within the time required by law, including within 72 hours of a lawful order under the Information Technology Rules, and we may report suspected offences, including child sexual abuse material, to the appropriate authorities. We preserve information relating to removed content and investigations for at least 180 days, or longer where the law or a competent authority requires.</P>
+          <P>Knowingly false or malicious reports are a breach of these Legal Terms.</P>
+        </DocSection>
+        <DocSection id="section-8" title={"8. GRIEVANCE REDRESSAL"}>
+          <P>In accordance with the Information Technology Act, 2000 and the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, the details of our Grievance Officer are:</P>
+          <P><strong>Grievance Officer:</strong> Sarankumar K, Chief Executive Officer – Director</P>
+          <P><strong>Email:</strong> <A href="mailto:grievance@elyxer.co">grievance@elyxer.co</A></P>
+          <P><strong>Address:</strong> PROAPEX INNOVATIONS PRIVATE LIMITED, U 101, Oxford Towers, 139/88 HAL Old Airport Road, H.A.L II Stage, Bangalore North, Bangalore, Karnataka 560008, India</P>
+          <P>We will acknowledge your complaint within 24 hours and resolve it within 7 days of receipt. A request to remove content in a category listed in the '<A href="#section-6">PROHIBITED ACTIVITIES</A>' section is acted on within 36 hours. Where you complain that content shows you, or someone you represent, nude, partly nude, in a sexual act, or in an artificially morphed or impersonated image, we will remove or disable access to it within 2 hours.</P>
+          <P>If you are not satisfied with the Grievance Officer’s decision, you may appeal to the Grievance Appellate Committee constituted by the Government of India within 30 days of receiving the decision, at <A href="https://gac.gov.in" ext>https://gac.gov.in</A>.</P>
+        </DocSection>
+        <DocSection id="section-9" title={"9. USER GENERATED CONTRIBUTIONS"}>
+          <P>Elyxer lets you create and share content through your profile, photos, Moments, Vibes, Invites, messages and virtual interactions. Content you submit or make available through these features is called <strong>“User Content.”</strong></P>
+          <P>You are responsible for the User Content you share. You must ensure that:</P>
+          <UL>
+            <LI><strong>You have the right to share it.</strong> Your User Content must be your own or something you have permission to use. It must not infringe another person’s copyright, trademark, privacy, publicity or other rights.</LI>
+            <LI><strong>People shown in it have agreed.</strong> Do not share identifiable images, videos, voices or personal information of another person without their permission, except where sharing is otherwise lawful. Elyxer’s prohibition on images of children applies even if a child appears with you or in the background.</LI>
+            <LI><strong>It is truthful and not misleading.</strong> Do not impersonate anyone, misrepresent your age or identity, or make deceptive claims about yourself.</LI>
+            <LI><strong>It follows these Terms and applicable law.</strong> Do not share unlawful, threatening, harassing, hateful, exploitative, sexually explicit, fraudulent or otherwise prohibited material.</LI>
+            <LI><strong>It is not spam or unauthorised promotion.</strong> Do not use User Content for unsolicited advertising, mass messages, chain letters, pyramid schemes or other unauthorised solicitation.</LI>
+          </UL>
+          <P>Content you share publicly or make visible to other users may be viewed, copied or shared by them, including outside Elyxer. Do not post anything you want to keep private. Private messages and virtual interactions are intended for their participants, but Elyxer cannot guarantee that another participant will not make or share a copy.</P>
+          <P>You retain any ownership rights you have in your User Content. You give Elyxer permission to host, store, reproduce, display, format and transmit it as reasonably necessary to operate, secure and provide the Services, including showing it to the audience you select and processing it through the features you use. This permission is limited to those purposes and ends when the content is deleted, subject to copies or records retained as described in the Privacy Policy or required by law.</P>
+          <P>You must not submit content that violates these Terms or another person’s rights. Elyxer may remove or restrict User Content and may suspend or terminate access for violations, in accordance with these Terms and applicable law.</P>
+        </DocSection>
+        <DocSection id="section-10" title={"10. MOBILE APPLICATION LICENCE"}>
+          <H3>Use Licence</H3>
+          <P>If you access the Services via the App, then we grant you a revocable, non-exclusive, non-transferable, limited right to install and use the App on wireless electronic devices owned or controlled by you, and to access and use the App on such devices strictly in accordance with the terms and conditions of this mobile application licence contained in these Legal Terms. You shall not: (1) except as permitted by applicable law, decompile, reverse engineer, disassemble, attempt to derive the source code of, or decrypt the App; (2) make any modification, adaptation, improvement, enhancement, translation, or derivative work from the App; (3) violate any applicable laws, rules, or regulations in connection with your access or use of the App; (4) remove, alter, or obscure any proprietary notice (including any notice of copyright or trademark) posted by us or the licensors of the App; (5) use the App for any revenue-generating endeavour, commercial enterprise, or other purpose for which it is not designed or intended; (6) make the App available over a network or other environment permitting access or use by multiple devices or users at the same time; (7) use the App for creating a product, service, or software that is, directly or indirectly, competitive with or in any way a substitute for the App; (8) use the App to send automated queries to any website or to send any unsolicited commercial email; or (9) use any proprietary information or any of our interfaces or our other intellectual property in the design, development, manufacture, licensing, or distribution of any applications, accessories, or devices for use with the App.</P>
+          <H3>Apple and Android Devices</H3>
+          <P>The following terms apply when you use the App obtained from either the Apple Store or Google Play (each an 'App Distributor') to access the Services: (1) the licence granted to you for our App is limited to a non-transferable licence to use the application on a device that utilises the Apple iOS or Android operating systems, as applicable, and in accordance with the usage rules set forth in the applicable App Distributor’s terms of service; (2) we are responsible for providing any maintenance and support services with respect to the App as specified in the terms and conditions of this mobile application licence contained in these Legal Terms or as otherwise required under applicable law, and you acknowledge that each App Distributor has no obligation whatsoever to furnish any maintenance and support services with respect to the App; (3) in the event of any failure of the App to conform to any applicable warranty, you may notify the applicable App Distributor, and the App Distributor, in accordance with its terms and policies, may refund the purchase price, if any, paid for the App, and to the maximum extent permitted by applicable law, the App Distributor will have no other warranty obligation whatsoever with respect to the App; (4) you represent and warrant that (i) you are not located in a country that is subject to a US government embargo, or that has been designated by the US government as a 'terrorist supporting' country and (ii) you are not listed on any US government list of prohibited or restricted parties; (5) you must comply with applicable third-party terms of agreement when using the App, e.g. if you have a VoIP application, then you must not be in violation of their wireless data service agreement when using the App; and (6) you acknowledge and agree that the App Distributors are third-party beneficiaries of the terms and conditions in this mobile application licence contained in these Legal Terms, and that each App Distributor will have the right (and will be deemed to have accepted the right) to enforce the terms and conditions in this mobile application licence contained in these Legal Terms against you as a third-party beneficiary thereof.</P>
+        </DocSection>
+        <DocSection id="section-11" title={"11. THIRD-PARTY WEBSITES AND CONTENT"}>
+          <P>The Services may contain (or you may be sent via the Site or App) links to other websites ('Third-Party Websites') as well as articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications, software, and other content or items belonging to or originating from third parties ('Third-Party Content'). Such Third-Party Websites and Third-Party Content are not investigated, monitored, or checked for accuracy, appropriateness, or completeness by us, and we are not responsible for any Third-Party Websites accessed through the Services or any Third-Party Content posted on, available through, or installed from the Services, including the content, accuracy, offensiveness, opinions, reliability, privacy practices, or other policies of or contained in the Third-Party Websites or the Third-Party Content. Inclusion of, linking to, or permitting the use or installation of any Third-Party Websites or any Third-Party Content does not imply approval or endorsement thereof by us. If you decide to leave the Services and access the Third-Party Websites or to use or install any Third-Party Content, you do so at your own risk, and you should be aware these Legal Terms no longer govern. You should review the applicable terms and policies, including privacy and data gathering practices, of any website to which you navigate from the Services or relating to any applications you use or install from the Services. Any purchases you make through Third-Party Websites will be through other websites and from other companies, and we take no responsibility whatsoever in relation to such purchases which are exclusively between you and the applicable third party. You agree and acknowledge that we do not endorse the products or services offered on Third-Party Websites and you shall hold us blameless from any harm caused by your purchase of such products or services. Additionally, you shall hold us blameless from any losses sustained by you or harm caused to you relating to or resulting in any way from any Third-Party Content or any contact with Third-Party Websites.</P>
+        </DocSection>
+        <DocSection id="section-12" title={"12. SERVICES MANAGEMENT"}>
+          <P>We reserve the right, but not the obligation, to: (1) monitor the Services for violations of these Legal Terms; (2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Legal Terms, including without limitation, reporting such user to law enforcement authorities; (3) in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your Contributions or any portion thereof; (4) in our sole discretion and without limitation, notice, or liability, to remove from the Services or otherwise disable all files and content that are excessive in size or are in any way burdensome to our systems; and (5) otherwise manage the Services in a manner designed to protect our rights and property and to facilitate the proper functioning of the Services.</P>
+        </DocSection>
+        <DocSection id="section-13" title={"13. PRIVACY POLICY"}>
+          <P>We care about data privacy and security. Please review our Privacy Policy: <A href="https://elyxer.co/privacy" ext>https://elyxer.co/privacy</A>. By using the Services, you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms. Please be advised the Services are hosted in India. If you access the Services from any other region of the world with laws or other requirements governing personal data collection, use, or disclosure that differ from applicable laws in India, then through your continued use of the Services, you are transferring your data to India, and you expressly consent to have your data transferred to and processed in India.</P>
+        </DocSection>
+        <DocSection id="section-14" title={"14. COPYRIGHT INFRINGEMENTS"}>
+          <P>If you believe content on Elyxer infringes your copyright, send a notice to <A href="mailto:grievance@elyxer.co">grievance@elyxer.co</A>. Include:</P>
+          <UL>
+            <LI>Your name and contact details.</LI>
+            <LI>A description of the copyrighted work you believe has been infringed.</LI>
+            <LI>The Elyxer content’s link, account name or other details that help us locate it.</LI>
+            <LI>An explanation of why you believe the use is unauthorised.</LI>
+            <LI>Screenshots or other supporting evidence, if available.</LI>
+            <LI>A statement that the information in your notice is accurate and that you are the copyright owner or authorised to act for them.</LI>
+          </UL>
+          <P>We may remove or restrict access to the identified content, notify the user who posted it and take further action in accordance with applicable law. Repeated or serious infringement may result in account suspension or termination.</P>
+          <P><strong>Counter-notification:</strong> If you believe your content was removed or restricted by mistake or misidentification, you may send a counter-notification to <A href="mailto:grievance@elyxer.co">grievance@elyxer.co</A>. Include your name and contact details, identify the content and where it appeared before removal, explain why you believe the removal was mistaken, and provide any supporting evidence, including screenshots if available. Confirm that the information you provide is accurate.</P>
+          <P>We may share the counter-notification with the complainant where appropriate and process it in accordance with applicable law. We may restore the content if appropriate, but restoration is not guaranteed. Do not submit false or misleading notices or counter-notifications.</P>
+          <P>Nothing in this clause limits any rights or remedies available under applicable law.</P>
+        </DocSection>
+        <DocSection id="section-15" title={"15. TERM AND TERMINATION"}>
+          <P>These Legal Terms shall remain in full force and effect while you use the Services. WITHOUT LIMITING ANY OTHER PROVISION OF THESE LEGAL TERMS, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SERVICES (INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO ANY PERSON FOR ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE LEGAL TERMS OR OF ANY APPLICABLE LAW OR REGULATION. WE MAY TERMINATE YOUR USE OR PARTICIPATION IN THE SERVICES OR DELETE YOUR ACCOUNT AND ANY CONTENT OR INFORMATION THAT YOU POSTED AT ANY TIME, WITHOUT WARNING, IN OUR SOLE DISCRETION.</P>
+          <P>If we terminate or suspend your account for any reason, you are prohibited from registering and creating a new account under your name, a fake or borrowed name, or the name of any third party, even if you may be acting on behalf of the third party. In addition to terminating or suspending your account, we reserve the right to take appropriate legal action, including without limitation pursuing civil, criminal, and injunctive redress.</P>
+          <P>Where we suspend or terminate your account, we will normally tell you and explain how to request a review, unless the law, an investigation or someone’s safety requires otherwise.</P>
+        </DocSection>
+        <DocSection id="section-16" title={"16. MODIFICATIONS AND INTERRUPTIONS"}>
+          <P>We reserve the right to change, modify, or remove the contents of the Services at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on our Services. We will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of the Services.</P>
+          <P>We cannot guarantee the Services will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance related to the Services, resulting in interruptions, delays, or errors. We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Services at any time or for any reason without notice to you. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Services during any downtime or discontinuance of the Services. Nothing in these Legal Terms will be construed to obligate us to maintain and support the Services or to supply any corrections, updates, or releases in connection therewith.</P>
+        </DocSection>
+        <DocSection id="section-17" title={"17. GOVERNING LAW"}>
+          <P>These Legal Terms and any dispute or claim arising out of or in connection with them shall be governed by the laws of India and, where applicable, the laws of the State of Karnataka. Subject to applicable law, the courts of competent jurisdiction in Bengaluru, Karnataka, India, shall have exclusive jurisdiction over any such dispute or claim.</P>
+        </DocSection>
+        <DocSection id="section-18" title={"18. DISPUTE RESOLUTION"}>
+          <H3>Informal Negotiations</H3>
+          <P>To expedite resolution and control the cost of any dispute, controversy, or claim related to these Legal Terms (each a 'Dispute' and collectively, the 'Disputes') brought by either you or us (individually, a 'Party' and collectively, the 'Parties'), the Parties agree to first attempt to negotiate any Dispute (except those Disputes expressly provided below) informally for at least thirty (30) days before initiating arbitration. Such informal negotiations commence upon written notice from one Party to the other Party.</P>
+          <H3>Binding Arbitration</H3>
+          <P>If the parties are unable to resolve a dispute through informal negotiations, the dispute shall be finally resolved by arbitration in accordance with the Arbitration and Conciliation Act, 1996, as amended.</P>
+          <P>The arbitration shall be conducted by a sole arbitrator appointed by mutual agreement of the parties or, failing such agreement, in accordance with the Act. The seat and legal place of arbitration shall be Bengaluru, Karnataka, India. The arbitration shall be conducted in English. The arbitration agreement and these Legal Terms shall be governed by the substantive laws of India.</P>
+          <P>Nothing in this clause prevents either party from seeking interim or urgent relief from a court of competent jurisdiction, and nothing in this section prevents you from approaching a Consumer Commission under the Consumer Protection Act, 2019.</P>
+          <H3>Restrictions</H3>
+          <P>The Parties agree that any arbitration shall be limited to the Dispute between the Parties individually. To the full extent permitted by law, (a) no arbitration shall be joined with any other proceeding; (b) there is no right or authority for any Dispute to be arbitrated on a class-action basis or to utilise class action procedures; and (c) there is no right or authority for any Dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</P>
+          <H3>Exceptions to Informal Negotiations and Arbitration</H3>
+          <P>The Parties agree that the following Disputes are not subject to the above provisions concerning informal negotiations and binding arbitration: (a) any Disputes seeking to enforce or protect, or concerning the validity of, any of the intellectual property rights of a Party; (b) any Dispute related to, or arising from, allegations of theft, piracy, invasion of privacy, or unauthorised use; and (c) any claim for injunctive relief. If this provision is found to be illegal or unenforceable, then neither Party will elect to arbitrate any Dispute falling within that portion of this provision found to be illegal or unenforceable and such Dispute shall be decided by a court of competent jurisdiction within the courts listed for jurisdiction above, and the Parties agree to submit to the personal jurisdiction of that court.</P>
+        </DocSection>
+        <DocSection id="section-19" title={"19. CORRECTIONS"}>
+          <P>There may be information on the Services that contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Services at any time, without prior notice.</P>
+        </DocSection>
+        <DocSection id="section-20" title={"20. DISCLAIMER"}>
+          <P>The Services are provided on an “as is” and “as available” basis, to the fullest extent permitted by applicable law. Your use of the Services is at your own discretion and risk. We disclaim warranties that may lawfully be excluded, whether express, implied or statutory, including implied warranties of merchantability, fitness for a particular purpose and non-infringement.</P>
+          <P>We do not guarantee the accuracy, completeness or reliability of user content; successful connections; any user’s identity, intentions or behaviour; or uninterrupted, secure or error-free availability of the Services. Ordinary security and moderation measures cannot eliminate every risk. We do not guarantee that the Services or any content will always be free from errors, interruptions or harmful components.</P>
+          <P>We are not responsible for third-party products, services, websites, links, venues, transport, accommodation or activities that we do not provide or organise. A link, advertisement or user recommendation does not by itself constitute our endorsement. Any transaction or arrangement you make with a third party is between you and that third party, subject to any rights or obligations imposed on us by law.</P>
+          <P>These disclaimers do not exclude our responsibility for obligations imposed on us by law, our own legally actionable conduct, or any liability that cannot lawfully be excluded or limited.</P>
+        </DocSection>
+        <DocSection id="section-21" title={"21. LIMITATIONS OF LIABILITY"}>
+          <P>To the fullest extent permitted by applicable law, Elyxer and its directors, employees and agents shall not be liable for any indirect, incidental, special, consequential, exemplary or punitive loss or damage, or for loss of profits, revenue, business opportunity, goodwill or data, arising out of or in connection with your access to or use of the Services.</P>
+          <P>Elyxer is a platform for connecting users. We do not conduct background checks or independently verify every user’s identity, age, intentions, statements or conduct, and we cannot guarantee that a user is genuine, trustworthy or safe. We do not supervise or control users’ communications, meetings, travel, private arrangements or other interactions, particularly those arranged or occurring outside the Services. You are responsible for exercising caution and making your own decisions when communicating with or meeting other users.</P>
+          <P>To the fullest extent permitted by applicable law, Elyxer shall not be liable for injury, loss, damage, fraud, harassment, assault, misconduct or other harm caused by another user or arising from an interaction, meeting, transaction or arrangement between users, whether online or offline. This includes harm arising from a user’s identity, statements, intentions or conduct, or from a venue, transport, accommodation or other third-party service independently selected or arranged by a user. You acknowledge that safety measures, reporting tools and moderation cannot eliminate every risk.</P>
+          <P>To the fullest extent permitted by applicable law, Elyxer’s total aggregate liability for claims arising out of or in connection with the Services shall not exceed the amount you paid to Elyxer for the Services during the three (3) months immediately preceding the event giving rise to the claim. If you paid nothing during that period, Elyxer’s liability shall be limited to the maximum extent permitted by applicable law.</P>
+          <P>Nothing in these Legal Terms excludes or limits liability for Elyxer’s own legally actionable conduct, any duty or liability that cannot lawfully be excluded or limited, or any consumer right or remedy that applicable law protects. If any part of this section is unenforceable, it shall apply only to the extent legally permitted, and the remainder shall continue in effect.</P>
+        </DocSection>
+        <DocSection id="section-22" title={"22. INDEMNIFICATION"}>
+          <P>You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys’ fees and expenses, made by any third party due to or arising out of: (1) your Contributions; (2) use of the Services; (3) breach of these Legal Terms; (4) any breach of your representations and warranties set forth in these Legal Terms; (5) your violation of the rights of a third party, including but not limited to intellectual property rights; or (6) any overt harmful act toward any other user of the Services with whom you connected via the Services. Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defence and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defence of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.</P>
+        </DocSection>
+        <DocSection id="section-23" title={"23. USER DATA"}>
+          <P>We will maintain certain data that you transmit to the Services for the purpose of managing the performance of the Services, as well as data relating to your use of the Services. Although we perform regular routine backups of data, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the Services. You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or corruption of such data.</P>
+        </DocSection>
+        <DocSection id="section-24" title={"24. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES"}>
+          <P>Visiting the Services, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications we provide to you electronically, via email and on the Services, satisfy any legal requirement that such communication be in writing. YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC DELIVERY OF NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY US OR VIA THE SERVICES. You hereby waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any jurisdiction which require an original signature or delivery or retention of non-electronic records, or to payments or the granting of credits by any means other than electronic means.</P>
+        </DocSection>
+        <DocSection id="section-25" title={"25. MISCELLANEOUS"}>
+          <P>These Legal Terms and any policies or operating rules posted by us on the Services or in respect to the Services constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Legal Terms shall not operate as a waiver of such right or provision. These Legal Terms operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Legal Terms is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Legal Terms and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Legal Terms or use of the Services. You agree that these Legal Terms will not be construed against us by virtue of having drafted them. You hereby waive any and all defences you may have based on the electronic form of these Legal Terms and the lack of signing by the parties hereto to execute these Legal Terms.</P>
+        </DocSection>
+        <DocSection id="section-26" title={"26. CONTACT US"}>
+          <P>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:</P>
+          <P><strong>PROAPEX INNOVATIONS PRIVATE LIMITED</strong><br />U 101, Oxford Towers, 139/88 HAL Old Airport Road<br />H.A.L II Stage, Bangalore North<br />Bangalore, Karnataka 560008<br />India<br /><A href="mailto:support@elyxer.co">support@elyxer.co</A></P>
+        </DocSection>
       </div>
     </article>
   </Layout>
